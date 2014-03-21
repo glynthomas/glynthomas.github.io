@@ -1,516 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="utf-8">
+<meta charset="utf-8">
 
- <title>Glyn Thomas Web | Web Maker</title>
+<title>Glyn Thomas Web | Web Developer</title>
+
+<!-- 
+Glyn Thomas Web v1.0 :: static page
+simple layout ported from blog
+hosted on github
+-->
      
- <meta name="googlebot" content="index, follow"/>
- <meta name="robots" content="index, follow, all"/>
- <meta name="googlebot" content="all"/>
- <meta name="msnbot" content="all"/>
- <meta name="googlebot-Image" content="all"/>
- <meta name="slurp" content="all"/>
- <meta name="zyBorg" content="all"/>
- <meta name="scooter" content="all"/>
+<meta name="googlebot" content="index, follow"/>
+<meta name="robots" content="index, follow, all"/>
+<meta name="googlebot" content="all"/>
+<meta name="msnbot" content="all"/>
+<meta name="googlebot-Image" content="all"/>
+<meta name="slurp" content="all"/>
+<meta name="zyBorg" content="all"/>
+<meta name="scooter" content="all"/>
         
- <link rel="author" href="https://plus.google.com/u/0/111960631932286880510"/>
+<link rel="author" href="https://plus.google.com/u/0/111960631932286880510"/>
     
- <!-- google analytics -->
- <meta name="text:Google Analytics ID" content="UA-35972032-1" />
+<!-- google analytics -->
+<meta name="text:Google Analytics ID" content="UA-35972032-1" />
     
- <!-- defunked twitter cards start -->
- <meta name="twitter:card" content="summary">
- <meta name="twitter:site" content="@glynthom">
- <meta name="twitter:creator" content="@glynthom">
- <meta name="twitter:url" content="http://glynthomasweb.com">
- <meta name="twitter:description" content="web ...developer.">
- 
- <!-- defunked twitter cards stop -->
+<!-- defunked twitter cards start -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@glynthom">
+<meta name="twitter:creator" content="@glynthom">
+<meta name="twitter:url" content="http://glynthomasweb.com">
+<meta name="twitter:description" content="web ...developer.">
+<!-- defunked twitter cards stop -->
     
- <!-- ogp tags start -->
- <meta content="en_US" property="og:locale">
- <meta content="article" property="og:type">
- <meta content="glyn thomas" property="og:title">
+<!-- ogp tags start -->
+<meta content="en_US" property="og:locale">
+<meta content="article" property="og:type">
+<meta content="glyn thomas" property="og:title">
         
- <meta content="web ...developer." property="og:description">
+<meta content="web ...developer." property="og:description">
         
- <meta content="glyn thomas" property="og:site_name">
- <meta content="glyn thomas" property="article:author">
- <meta content="/img/avatar_bw_128.png" property="og:image">
- <!-- ogp tags stop -->
+<meta content="glyn thomas" property="og:site_name">
+<meta content="glyn thomas" property="article:author">
+<meta content="/img/avatar_bw_128.png" property="og:image">
+<!-- ogp tags stop -->
     
- <meta name="title" content="glyn thomas" /> 
- <meta name="description" content="web ...developer." />  
+<meta name="title" content="glyn thomas" /> 
+<meta name="description" content="web ...developer." />  
     
- <link rel="shortcut icon" href="/img/avatar_bw_128.png">
- <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
- <link rel="apple-touch-icon" href="/img/avatar_bw_128.png">
+<link rel="shortcut icon" href="/img/avatar_bw_128.png">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="apple-touch-icon" href="/img/avatar_bw_128.png">
       
- <meta name=viewport content='width=device-width, initial-scale=1'>
- <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
- <![endif]-->
- <style>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<style>
       
-      * {
-        margin: 0;
-        padding: 0;
-      }
+* {
+  margin: 0;
+  padding: 0;
+}
       
-      body {
-        border-top: 5px solid #333333;
-        color: #444;
-        font-family: "Source Sans Pro","Helvetica Neue",Helvetica,sans-serif;
-        font-weight: 400;
-        line-height: 1.5;
-      }
+body {
+  border-top: 5px solid #333333;
+  color: #444;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
       
+h1, h2, .h1, .h2 {
+  font-weight: 400;
+  line-height: 1.25;
+  margin-top: .5em;
+}
       
-      h1, h2, .h1, .h2 {
-        font-weight: 400;
-        line-height: 1.25;
-        margin-top: .5em;
-      }
+h1, .h1 {
+  font-weight:bold;
+  font-size: 32px;
+}
       
-      h1, .h1 {
-        font-weight:bold;
-        font-size: 32px;
-      }
+h2, .h2 {
+  font-size: 24px;
+}
       
-      h2, .h2 {
-        font-size: 24px;
-      }
+h3, .h3 {
+  font-size: 20px;
+}
       
-      h3, .h3 {
-        font-size: 20px;
-      }
+ul {
+  list-style-type: none;
+}
       
-      ul
-      {
-        list-style-type: none;
-      }
+h1+h2 { margin-top: 0; }
       
-      h1+h2 { margin-top: 0; }
+p, .p, ul, ol {
+  /* text-align: justify; */
+  font-size: 18px;
+}
       
-      p, .p, ul, ol {
-        /* text-align: justify; */
-        font-size: 18px;
-      }
+p.middle { text-align: center; }
       
-      p.middle { text-align: center; }
+small, .small {
+  margin-top: 23px;
+  font-size: 14px;
+  /* color: rgba(34, 59, 74, 0.4); */
+  color: #999999;
+}
       
-      small, .small {
-        margin-top: 23px;
-        font-size: 14px;
-        /* color: rgba(34, 59, 74, 0.4); */
-        color: #999999;
-      }
+strong, .strong {
+  font-weight: 700;
+}
       
-      strong, .strong {
-        font-weight: 700;
-      }
+p, ul, ol { margin-top: 1em; }
       
-      p, ul, ol { margin-top: 1em; }
-      
-      @media screen and (min-width: 480px) {
-             h1, .h1 { font-size: 40px; }
-             h2, .h2 { font-size: 32px; }
-             h3, .h3 { font-size: 24px; }
-             p, .p, ul, ol { font-size: 20px;}
-             small, .small { font-size: 16px;}
-      }
+@media screen and (min-width: 480px) {
+      h1, .h1 { font-size: 40px; }
+      h2, .h2 { font-size: 32px; }
+      h3, .h3 { font-size: 24px; }
+      p, .p, ul, ol { font-size: 20px;}
+      small, .small { font-size: 16px;}
+}
             
-      @media screen and (min-width: 640px) {
-             h1, .h1 { font-size: 64px; }
-             h2, .h2 { font-size: 40px; } 
-             h3, .h3 { font-size: 32px; }
-             .logo {margin-top: 10px;}
-             header p { padding-left: 91px;}
-      }
+@media screen and (min-width: 640px) {
+      h1, .h1 { font-size: 64px; }
+      h2, .h2 { font-size: 40px; } 
+      h3, .h3 { font-size: 32px; }
+      .logo {margin-top: 10px;}
+      header p { padding-left: 91px;}
+}
       
-      .wrap {
-        
-        width: 90%;
-        padding: 0 5%;
-        max-width: 48em;
-        margin: 0 auto;
-        overflow: hidden;
-      }
+.wrap {
+  width: 90%;
+  padding: 0 5%;
+  max-width: 48em;
+  margin: 0 auto;
+  overflow: hidden;
+}
       
-      article {
-        margin-top: 2em;
-        text-rendering: optimizelegibility;
-      }
+article {
+  margin-top: 2em;
+  text-rendering: optimizelegibility;
+}
       
-      a {
-        color: #4083a9;
-        text-decoration: none;
-      }
+a {
+  color: #4083a9;
+  text-decoration: none;
+}
       
-      a:hover {
-        text-decoration: underline;
-      }
+a:hover {
+  text-decoration: underline;
+}
       
-      header {          
-        width: 90%;
-        padding: 2em 5% 0;
-        max-width: 48em;
-        margin: 0 auto;
-        overflow: hidden;
-      }
+header {          
+  width: 90%;
+  padding: 2em 5% 0;
+  max-width: 48em;
+  margin: 0 auto;
+  overflow: hidden;
+}
       
-      header:after {
-        clear: both;
-        content: '.';
-        display: block;
-        height: 0;
-        visibility: hidden;
-      }
+header:after {
+  clear: both;
+  content: '.';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
       
-      .logo {
-        float: left;
-        margin-right: 1em;
-      }
+.logo {
+  float: left;
+  margin-right: 1em;
+}
       
-      .pulse {
-        -webkit-animation-name: pulse;
-        -moz-animation-name: pulse;
-        -o-animation-name: pulse;
-        animation-name: pulse;
-      }
-        @-webkit-keyframes bounceIn {
-        0% {
-        opacity: 0;
-        -webkit-transform: scale(.3);
-      }
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse;
+}
+@-webkit-keyframes bounceIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale(.3);
+}
   
-      50% {
-        opacity: 1;
-        -webkit-transform: scale(1.05);
-      }
+50% {
+  opacity: 1;
+  -webkit-transform: scale(1.05);
+}
   
-      70% {
-        -webkit-transform: scale(.9);
-      }
+70% {
+  -webkit-transform: scale(.9);
+}
   
-      100% {
-        -webkit-transform: scale(1);
-      }
-    }
-      
-      header h1 a{
-        /* color:#111111; */
-        color: #555555;
-        letter-spacing: -1.5px;
-      }
-      
-      header h1, header p {
-        margin: 0;
-      }
-      
-      header p {
-        color:#9D9D9D;  
-        /* color:rgba(34, 59, 74, 0.4); */    
-      }
-      
-      header a, a.post-title {
-        /* color: #333333; */
-        color: #555555;
-        /* text-shadow: 0px 2px 3px #FFF; */
-        /* color: #444; */
-      }
-      
-      a.post-title:hover {
-        text-decoration: none;
-        color: #4083a9;
-      }
-      
-      header a:hover {
-        text-decoration: none;
-      }
-      
-      .post img,
-      .photoset,
-      .photoset img,
-      .photoset_row {
-        max-width: 100%;
-      }
-      
-      .post iframe, .video object {
-        width: 100%;
-        max-width: 100%;
-      }
-      
-      .post blockquote {
-        padding-left: 1em;
-        border-left: 1px solid #ddd;
-      }
-      
-      .post ul, .post ol {
-        margin-left: 2em;
-      }
-      
-      .post footer ul, .post footer ol {
-        margin: 0;
-        padding-bottom:1em;
-      }
-      
-      .quote blockquote {
-        padding: 0;
-        border: none;
-        font-style: italic;
-      }
-      
-      .quote .source {
-        text-align: right;
-      }
-      
-      .post footer {
-        padding: 0;
-        margin-top: 1em;
-        color: #aaa;
-        /* font-style: italic; */
-      }
-      
-      .post footer a {
-        color: #aaa;
-      }
-      
-      .post footer a:hover {
-        color: #4083A9;
-      }
-      
-      .post footer .source {
-        float: right;
-        margin-right: 0;
-      }
-      
-      .post footer ul li {
-        display: inline-block;
-        margin-right: 1em;
-      }
-      
-      
-      .pagination {
-        margin-top: 4em;
-        text-align: center;
-        line-height: 3em;
-      }
-      
-      .pagination:after {
-        clear: both;
-        content: '.';
-        display: block;
-        height: 0;
-        visibility: hidden;
-      }
-      
-      .pagination a {
-        display: block;
-        height: 3em;
-        padding: 0 1em;
-        border-radius: 0.25em;
-      }
-      
-      .pagination a:hover {
-        background: #eee;
-        text-decoration: none;
-      }
-      
-      .pagination .previous {
-        float: left;
-      }
-      
-      .pagination .next {
-        float: right;
-      }
+100% {
+  -webkit-transform: scale(1);
+}
 
-    
-      footer.wrap {
-        padding-top: 1em;
-        padding-bottom: 2em;
-      }
+}
       
-      ul.pages {
-        list-style: none;
-      }
+header h1 a{
+  /* color:#111111; */
+  color: #555555;
+  letter-spacing: -1.5px;
+}
       
-      ul.pages li {
-        display: inline-block;
-        margin-right: 1em;        
-      }
+header h1, header p {
+  margin: 0;
+}
       
-      ul.pages li a {
-        display: block;
-        height: 3em;
-        line-height: 3em;
-      }
+header p {
+  color:#9D9D9D;  
+}
       
+header a, a.post-title {
+  color: #555555;
+  /* text-shadow: 0px 2px 3px #FFF; */
+       
+}
       
-      /* Permalink Notes */
+a.post-title:hover {
+  text-decoration: none;
+  color: #4083a9;
+}
       
-      aside.notes {
-        margin-top: 4em;
-      }
+header a:hover {
+  text-decoration: none;
+}
       
-      ol.notes {
-        list-style: none;
-        margin-top: 1em;
-        border: 1px solid #ddd;
-        border-radius: 0.25em;
-      }
+.post img,
+.photoset,
+.photoset img,
+.photoset_row {
+  max-width: 100%;
+}
       
-      ol.notes, ol.notes a {
-        color: #aaa;
-      }
+.post iframe, .video object {
+  width: 100%;
+  max-width: 100%;
+}
       
-      li.note {
-        display: block;
-        line-height: 2em;
-        padding: 0.5em 1em;
-        border-bottom: 1px solid #ddd;
-      }
-      li.note:last-child {
-        border: none;
-      }
+.post blockquote {
+  padding-left: 1em;
+  border-left: 1px solid #ddd;
+}
       
-      ol.notes li.note img.avatar {
-        display: block;
-        float: left;
-        width: 2em;
-        height: 2em;
-        margin-right: 1em;
-        border-radius: 0.25em;
-      }
+.post ul, .post ol {
+  margin-left: 2em;
+}
       
-      .notes .action a {
-        color: #444;
-      }
+.post footer ul, .post footer ol {
+  margin: 0;
+  padding-bottom:1em;
+}
       
-      .action {
-        display: block;
-        margin-left: 3em;
-      }
+.quote blockquote {
+  padding: 0;
+  border: none;
+  font-style: italic;
+}
       
-      .notes blockquote {
-        line-height: 1.5;
-        margin-left: 3em;
-      }
-     
-      .tags {
-        margin-top: 1em;
-      }
+.quote .source {
+  text-align: right;
+}
       
-      .tags li a, .tags li a:visited {
-        background: none repeat scroll 0 0 rgba(34, 59, 74, 0.2);
-        border-radius: 3px 3px 3px 3px;
-        display: block;
-        color: #5E5E5E;
-        font-size: 13px;
-        font-weight: bold;
-        height: 20px;
-        padding: 1px 4px 2px;
-        position: relative;
-        left:-47px;
-        top:-5px;
-        transition: all 0.2s ease-in-out 0s;
-        z-index: 100;
-      }
-     
-       ul.tags .notch {
-        -moz-border-bottom-colors: none;
-        -moz-border-left-colors: none;
-        -moz-border-right-colors: none;
-        -moz-border-top-colors: none;
-        border-color: transparent rgba(34, 59, 74, 0.2) transparent transparent;
-        border-image: none;
-        border-style: solid;
-        border-width: 4px;
-        display: block;
-        height: 0;
-        left: -55px;
-        position: relative;
-        top: 10px;
-        transition: all 0.2s ease-in-out 0s;
-        width: 0;
-      }
+.post footer {
+  padding: 0;
+  margin-top: 1em;
+  color: #aaa;
+  /* font-style: italic; */
+}
+      
+.post footer a {
+  color: #aaa;
+}
+      
+.post footer a:hover {
+  color: #4083A9;
+}
+      
+.post footer .source {
+  float: right;
+  margin-right: 0;
+}
+      
+.post footer ul li {
+  display: inline-block;
+  margin-right: 1em;
+}
          
-      .tags li a:hover, .tags li a:visited:hover {
-        background: none repeat scroll 0 0 rgba(34, 59, 74, 0.3);
-        list-style-type: none;
-        /* background: none repeat scroll 0 0 #4083A9; */
-        text-decoration: none;
-        color: #5E5E5E;
-        opacity: 1;
-      }
-  
-      ul.social_links li a.twitter{
-        list-style-type: none;
-        background: url("http://mediacdn.disqus.com/1367623065/img/next/social-icons.png") repeat scroll -76px 0 transparent;
-        color: #FFFFFF;
-        padding: 4.5px 17px;
-      }
-     
-      ul.social_links li a.twitter:hover, a.twitter:visited:hover {
-        list-style-type: none;
-        color: #1977CA;
-      }
+.pagination {
+  margin-top: 4em;
+  text-align: center;
+  line-height: 3em;
+}
       
-      ul#twitter_update_list {
-        background: none repeat scroll 0 0 rgba(255, 255, 255, 0.95);
-        border-radius: 4px 4px 4px 4px;
-        box-shadow: 0 0 0 2px rgba(16, 48, 68, 0.2) inset;
-        margin: 0 0 0 0px;
-        padding: 10px;
-        position: relative;
-      }
+.pagination:after {
+  clear: both;
+  content: '.';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+      
+.pagination a {
+  display: block;
+  height: 3em;
+  padding: 0 1em;
+  border-radius: 0.25em;
+}
+      
+.pagination a:hover {
+  background: #eee;
+  text-decoration: none;
+}
+      
+.pagination .previous {
+  float: left;
+}
+      
+.pagination .next {
+  float: right;
+}
     
-      ul#twitter_update_list li {
-        border-bottom: 2px solid rgba(0, 49, 79, 0.08);
-        clear: both;
-        padding: 24px 0 10px;
-        margin-left:20px;
-        margin-right:20px;
-        background: #FFFFFF;
-      }
+footer.wrap {
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
       
-      .social_likes {
+ul.pages {
+  list-style: none;
+}
       
-      }
+ul.pages li {
+  display: inline-block;
+  margin-right: 1em;        
+}
       
-      .disclaim {
-       font-weight: bold;
-       color: #555555;
-      }
+ul.pages li a {
+  display: block;
+  height: 3em;
+  line-height: 3em;
+}
+            
+/* Permalink Notes */
       
-      /* animate start */
+aside.notes {
+  margin-top: 4em;
+}
       
-      .animated{
-       -webkit-animation-fill-mode:both;
-       -moz-animation-fill-mode:both;
-       -ms-animation-fill-mode:both;
-       -o-animation-fill-mode:both;
-       animation-fill-mode:both;
-       -webkit-animation-duration:2.5s;
-       -moz-animation-duration:2.5s;
-       -ms-animation-duration:2.5s;
-       -o-animation-duration:2.5s;
-       animation-duration:2.5s;
+ol.notes {
+  list-style: none;
+  margin-top: 1em;
+  border: 1px solid #ddd;
+  border-radius: 0.25em;
+}
       
-       -webkit-transition: all 3s ease;
-       -moz-transition: all 3s ease;
-       -o-transition: all 3s ease;
-       transition: all 3s ease;
-      }
+ol.notes, ol.notes a {
+  color: #aaa;
+}
       
-      .animated.hinge{
-       -webkit-animation-duration:2s;
-       -moz-animation-duration:2s;
-       -ms-animation-duration:2s;
-       -o-animation-duration:2s;
-       animation-duration:2s;
-      }
+li.note {
+  display: block;
+  line-height: 2em;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+li.note:last-child {
+  border: none;
+}
+      
+ol.notes li.note img.avatar {
+  display: block;
+  float: left;
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+  border-radius: 0.25em;
+}
+      
+.notes .action a {
+  color: #444;
+}
+      
+.action {
+  display: block;
+  margin-left: 3em;
+}
+      
+.notes blockquote {
+  line-height: 1.5;
+  margin-left: 3em;
+}
+     
+.tags {
+  margin-top: 1em;
+}
+      
+.tags li a, .tags li a:visited {
+  background: none repeat scroll 0 0 rgba(34, 59, 74, 0.2);
+  border-radius: 3px 3px 3px 3px;
+  display: block;
+  color: #5E5E5E;
+  font-size: 13px;
+  font-weight: bold;
+  height: 20px;
+  padding: 1px 4px 2px;
+  position: relative;
+  left:-47px;
+  top:-5px;
+  transition: all 0.2s ease-in-out 0s;
+  z-index: 100;
+}
+     
+ul.tags .notch {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: transparent rgba(34, 59, 74, 0.2) transparent transparent;
+  border-image: none;
+  border-style: solid;
+  border-width: 4px;
+  display: block;
+  height: 0;
+  left: -55px;
+  position: relative;
+  top: 10px;
+  transition: all 0.2s ease-in-out 0s;
+  width: 0;
+}
+         
+.tags li a:hover, .tags li a:visited:hover {
+  background: none repeat scroll 0 0 rgba(34, 59, 74, 0.3);
+  list-style-type: none;
+  /* background: none repeat scroll 0 0 #4083A9; */
+  text-decoration: none;
+  color: #5E5E5E;
+  opacity: 1;
+}
+  
+ul.social_links li a.twitter{
+  list-style-type: none;
+  background: url("http://mediacdn.disqus.com/1367623065/img/next/social-icons.png") repeat scroll -76px 0 transparent;
+  color: #FFFFFF;
+  padding: 4.5px 17px;
+}
+     
+ul.social_links li a.twitter:hover, a.twitter:visited:hover {
+  list-style-type: none;
+  color: #1977CA;
+}
+      
+ul#twitter_update_list {
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.95);
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 0 0 2px rgba(16, 48, 68, 0.2) inset;
+  margin: 0 0 0 0px;
+  padding: 10px;
+  position: relative;
+}
+    
+ul#twitter_update_list li {
+  border-bottom: 2px solid rgba(0, 49, 79, 0.08);
+  clear: both;
+  padding: 24px 0 10px;
+  margin-left:20px;
+  margin-right:20px;
+  background: #FFFFFF;
+}
+      
+.social_likes {
+      
+}
+      
+.disclaim {
+  font-weight: bold;
+  color: #555555;
+}
+      
+/* animate start */
+      
+.animated{
+  -webkit-animation-fill-mode:both;
+  -moz-animation-fill-mode:both;
+  -ms-animation-fill-mode:both;
+  -o-animation-fill-mode:both;
+  animation-fill-mode:both;
+  -webkit-animation-duration:2.5s;
+  -moz-animation-duration:2.5s;
+  -ms-animation-duration:2.5s;
+  -o-animation-duration:2.5s;
+  animation-duration:2.5s;
+      
+  -webkit-transition: all 3s ease;
+  -moz-transition: all 3s ease;
+  -o-transition: all 3s ease;
+  transition: all 3s ease;
+}
+      
+.animated.hinge {
+  -webkit-animation-duration:2s;
+  -moz-animation-duration:2s;
+  -ms-animation-duration:2s;
+  -o-animation-duration:2s;
+  animation-duration:2s;
+}
       
 @-webkit-keyframes shake {
   0%, 100% {-webkit-transform: translateX(0);}
@@ -724,7 +725,7 @@
 <a href="/"><img src="/img/avatar_bw_128.png" height="73" width="73" class="logo" /></a>
 <h1><a href="/">glyn thomas</a></h1>
     
-<p>web ...maker.</p>
+<p>web ...developer.</p>
     
 </header>
 
@@ -749,19 +750,18 @@
 
 </footer>
         
-</article> <!-- /post -->
+</article>
 
 <article class="post text">
       
 <h3>Social</h3>
              
-<p>Frequently on <a href="https://twitter.com/glynthom">twitter</a>, blog via <a href="https://glynthomas.net">tumblr</a>, post images to <a href="http://www.flickr.com/photos/glynthom/">flickr</a> and very occasionally update <a href="https://gist.github.com/glynthomas">github</a>.</p>              
+<p>Frequently on <a href="https://twitter.com/glynthom">twitter</a>, blog via <a href="https://glynthomas.net">tumblr</a>, post images to <a href="http://www.flickr.com/photos/glynthom/">flickr</a> and occasionally update <a href="https://gist.github.com/glynthomas">github</a>.</p>              
                               
 </footer>
         
-</article> <!-- /post -->
+</article>
      
-                
 <!-- twitter stream starts -->
 <!--
 <h4>Latest From Twitter</h4>
@@ -779,8 +779,8 @@
 -->                                          
 <!-- twitter stream ends  -->
               
-</section> <!-- /posts -->
-</div> <!-- /content -->
+</section>
+</div>
   
 <footer class="small wrap">
             
@@ -788,7 +788,6 @@
       
 </ul>
                     
-<!-- <p class="small">orginal theme by jxnblk</p> -->
 <p class="small"><span class="disclaim">Disclaimer :</span>
 I don't know what I am talking <a href="https://plus.google.com/u/0/111960631932286880510?rel=author">about</a>.</p>
             
