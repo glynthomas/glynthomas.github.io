@@ -3,7 +3,7 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url> 
-   <loc>http://glynthomasweb.com/</loc>  
+   <loc>http://www.glynthomasweb.com/</loc>  
    <changefreq>hourly</changefreq>
    <lastmod>2014-02-17T18:00:00Z</lastmod>
   </url>
