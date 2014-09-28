@@ -83,6 +83,12 @@ body {
   text-rendering: optimizelegibility;
 
 }
+
+#avatar {
+  background-image: url('/img/avatar_bw_128.png');
+  height: 73px;
+  width: 73px;
+}
       
 h1, h2, .h1, .h2 {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -722,7 +728,8 @@ animate end */
 <body>
 
 <header>
-<a href="http://glynthomas.net"><img src="/img/avatar_bw_128.png" height="73" width="73" class="logo" /></a>
+
+<a href="http://glynthomas.net"><div id="avatar" class="logo"></div></a>
 <h1><a href="/">glyn thomas</a></h1>
     
 <p>web ...developer.</p>
@@ -797,25 +804,25 @@ sometimes I don't know what I am talking <a href="https://plus.google.com/u/0/11
       
 <script type="text/javascript">
       
-$('.logo').addClass('animated bounceIn');
+// $('.logo').addClass('animated bounceIn');
       
-$(window).load(function(){
-$('.logo').removeClass('animated bounceIn');
-});
+// $(window).load(function(){
+// $('.logo').removeClass('animated bounceIn');
+// });
       
-$('.logo').click(function() {  
-$(this).removeClass('animated rotateIn');    
-$(this).addClass('animated bounceOut');
-});
+// $('.logo').click(function() {  
+// $(this).removeClass('animated rotateIn');    
+// $(this).addClass('animated bounceOut');
+// });
         
-$('.logo').mouseover(function() {  
-$(this).removeClass('animated bounceIn');    
-$(this).addClass('animated rotateIn');
-});
+// $('.logo').mouseover(function() {  
+// $(this).removeClass('animated bounceIn');    
+// $(this).addClass('animated rotateIn');
+// });
       
-$('.logo').mouseout(function() {
-$(this).removeClass('animated rotateIn');
-});
+// $('.logo').mouseout(function() {
+// $(this).removeClass('animated rotateIn');
+// });
       
 </script>
       
