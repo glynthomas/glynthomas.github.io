@@ -627,37 +627,24 @@ ul#twitter_update_list li {
 <ul class="social_links">
       
 </ul>
-                    
-<p class="small"><span class="disclaim">disclaimer :</span>
-sometimes I don't know what I am talking <a href="https://plus.google.com/u/0/111960631932286880510?rel=author" target="_blank">about</a>.</p>
+       
+<div class="small">
+  <div class="disclaim center-text">disclaimer</div>
+  <div class="disclaim center-text">sometimes I don't know what I am talking <a href="https://plus.google.com/u/0/111960631932286880510?rel=author" target="_blank">about</a>.</div>
+</div>  
             
 </footer>
       
 <!-- animate script start -->
       
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script src="js/tooltip.js"></script>
       
 <script type="text/javascript">
-      
-// $('.logo').addClass('animated bounceIn');
-      
-// $(window).load(function(){
-// $('.logo').removeClass('animated bounceIn');
-// });
-      
-// $('.logo').click(function() {  
-// $(this).removeClass('animated rotateIn');    
-// $(this).addClass('animated bounceOut');
-// });
-        
-// $('.logo').mouseover(function() {  
-// $(this).removeClass('animated bounceIn');    
-// $(this).addClass('animated rotateIn');
-// });
-      
-// $('.logo').mouseout(function() {
-// $(this).removeClass('animated rotateIn');
-// });
+
+    $('#logotag').tooltip({ selector: "a[data-toggle=tooltip]" })
+    $("a[data-toggle=popover]").popover({ html : true }).click(function(e) {e.preventDefault()})
       
 </script>
       
