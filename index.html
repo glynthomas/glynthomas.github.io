@@ -174,13 +174,6 @@ p, ul, ol { margin-top: 1em; }
       h3, .h3 { font-size: 24px; }
       p, .p, ul, ol { font-size: 20px;}
       small, .small { font-size: 15px;}
-      
-    <script type="text/javascript">
-     $('#logotag').tooltip({ selector: "" })
-     /* $("a[data-toggle=popover]").popover({ html : true }).click(function(e) {e.preventDefault()}) */
-     $('#logotag').hover(function(event) {event.preventDefault()})
-     $('#logotag').click(function(event) {event.preventDefault()});
-    </script>
 }
       
 @media screen and (min-width: 480px) {
@@ -204,8 +197,7 @@ p, ul, ol { margin-top: 1em; }
       h2, .h2 { font-size: 40px; } 
       h3, .h3 { font-size: 24px; }
       .logo {margin-top: 10px;}
-      header p { padding-left: 91px;}
-      
+      header p { padding-left: 91px; }
 }
       
 .wrap {
@@ -830,10 +822,11 @@ ul#twitter_update_list li {
 
 <script type="text/javascript">
 
+if (!$(window).width() < 480) {
     $('#logotag').tooltip({ selector: "a[data-toggle=tooltip]" })
-    /* $("a[data-toggle=popover]").popover({ html : true }).click(function(e) {e.preventDefault()}) */
     $('#logotag').hover(function(event) { setTimeout(function() { $('.tooltip').fadeOut('slow',function() {}); },2000);});
     $('#logotag').click(function(event) { setTimeout(function() { $('.tooltip').fadeOut('slow',function() {}); },2000);});
+}
 
 </script>
       
