@@ -821,15 +821,10 @@ ul#twitter_update_list li {
 <script src="js/tooltip.js"></script>
 
 <script type="text/javascript">
-
-/* woaw ... that's a bit clunky! */
-
-    if ( $(this).width() > 1024 ) {
-         $('#logotag').tooltip({ selector: "a[data-toggle=tooltip]" })
-         $('#logotag').hover(function(event) { setTimeout(function() { $('.tooltip').fadeOut('slow',function() {}); },2000);});
-         $('#logotag').click(function(event) { setTimeout(function() { $('.tooltip').fadeOut('slow',function() {}); },2000);});
-    }
-
+ /* woaw ... that's a bit clunky! */
+  $('#logotag').tooltip({ selector: "a[data-toggle=tooltip]" })
+  $('#logotag').hover(function(event) { setTimeout(function() { $('.tooltip').fadeOut('slow',function() {}); },2000);});
+  $('#logotag').click(function(event) { setTimeout(function() { $('.tooltip').fadeOut('slow',function() {}); },2000);});
 </script>
       
 <!-- animate script end -->
