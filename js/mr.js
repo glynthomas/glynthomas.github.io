@@ -490,6 +490,8 @@ document.onclick = function keyClick(event) {
 
 /* hamburger */
 
+   case (tagid === 'body'):
+   case (tagid === 'menu'):
    case (tagid === 'nav-toggle'):
    case (tagclass === 'mobile-menu-trigger'):
 
