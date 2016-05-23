@@ -493,6 +493,7 @@ document.onclick = function keyClick(event) {
    case (tagid === 'body'):
    case (tagid === 'menu'):
    case (tagid === 'wrapper'):
+   case (tagid === 'main-nav'):
    case (tagid === 'overlay'):
    case (tagid === 'nav-toggle'):
    case (tagclass === 'mobile-menu-trigger'):
