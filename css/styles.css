@@ -598,8 +598,9 @@ section header p {margin: auto;font-size: 1.5rem;line-height: 2.9rem;letter-spac
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
 
-.overlay nav {margin-top: 70px; line-height: 2.5rem;font-size: 2.5rem;}
-div.home header {padding-top: 120px;}
+#main-nav {position: relative;}
+.overlay nav {margin-top: 80px; line-height: 2.5rem;font-size: 2.3rem;}
+div.home header {padding-top: 70px;}
 
 
 }
@@ -609,8 +610,9 @@ div.home header {padding-top: 120px;}
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
 
-.overlay nav {margin-top: 70px; line-height: 2.5rem;font-size: 2.5rem;}
-div.home header {padding-top: 120px;}
+#main-nav {position: relative;}
+.overlay nav {margin-top: 80px; line-height: 2.5rem;font-size: 2.3rem;}
+div.home header {padding-top: 70px;}
 
 }
  
