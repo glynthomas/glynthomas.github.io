@@ -474,8 +474,8 @@ p .focus {text-align: center;}
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
 
-.overlay nav {margin-top: 80px;}
-div.home header {padding-top: 30px;}
+.overlay nav {margin-top: 70px;}
+div.home header {padding-top: 70px;}
 
 }
 
@@ -484,8 +484,8 @@ div.home header {padding-top: 30px;}
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
 
-.overlay nav {margin-top: 80px;}
-div.home header {padding-top: 30px;}
+.overlay nav {margin-top: 70px;}
+div.home header {padding-top: 70px;}
 
 }
 
