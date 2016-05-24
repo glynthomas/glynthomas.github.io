@@ -151,8 +151,6 @@ document.onreadystatechange = function () {
   }
 }
 
-window.addEventListener('orientationchange', doOnOrientationChange);
-
 window.onload = function() {
 
   /* onload */
@@ -192,30 +190,6 @@ window.onload = function() {
 }
 
 
-function doOnOrientationChange()
-  {
-    switch(window.orientation) 
-    {  
-      case -90:
-      case 90:
-        updateLayout();
-        break; 
-      default:
-        break; 
-    }
-  }
-
-
-function updateLayout()
-{
-
-    var size = iOS_getViewportSize();
-    var bottomBar = document.getElementById("bottomBar");
-    bottomBar.style.top = size.height + "px"; 
-
-} 
-
-
 function changeimg() {
   var totalCount = 3;
   var num = Math.ceil( Math.random() * totalCount );
@@ -229,7 +203,7 @@ function changeimg() {
 
 
 function isodd(num) { return num % 2;}
-  
+
 // window.onscroll = function() { navmaincolor() };
 
 function navmaincolor() {
@@ -1390,6 +1364,19 @@ function imgcntrl(state) {
     }
   }
 }
+
+/*
+window.addEventListener('orientationchange', doOnOrientationChange);
+function doOnOrientationChange() {
+  switch(window.orientation) {  
+    case (-90):
+    case (90):
+    break; 
+    default:
+    break; 
+  }
+}
+*/
                                            
 //console.log('\n\n\n\n .d8888b.  888                       888\nd88P  Y88b 888                       888\nY88b.      888                       888    This is a browser feature intended for \n "Y888b.   888888  .d88b.  88888b.   888    developers. Ok so I borrowed this message\n    "Y88b. 888    d88""88b 888 "88b  888    from a popular social media site, other sites  \n      "888 888    888  888 888  888  Y8P    also seems to be disabling this browser feature \nY88b  d88P Y88b.  Y88..88P 888 d88P         to try and prevent Self-XSS scams!  \n "Y8888P"   "Y888  "Y88P"  88888P"   888    \n                           888      \n                           888              \n                           888              \n\nSee https://en.wikipedia.org/wiki/Self-XSS for more information.\n\n')
 //window.console.log = function(){

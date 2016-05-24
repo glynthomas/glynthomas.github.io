@@ -548,6 +548,11 @@ section header p {margin: auto;font-size: 1.5rem;line-height: 2.9rem;letter-spac
 
 @media screen and (max-width: 500px) {#main-nav .menu-social-promoted { display: none; } #nav-toggle { margin-top: 19px; }}
 
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+
+   div.home header { padding-top: 80px;}
+}
+
 
 @media screen and (max-width: 360px) {
 
