@@ -143,8 +143,6 @@ function callrequest(data) {
 document.onreadystatechange = function () {
   if (document.readyState == "interactive") {
 
-    // scrollTo(0, 700);
-
     // navmaincolor();
     // changeimg();
    
@@ -161,8 +159,6 @@ window.onload = function() {
   /* var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; */
 
   // imgload("/vid/background_spaceman.png");
-
-  console.log('test');
 
   switch (true) {
 
@@ -262,7 +258,6 @@ function navmaincolor() {
     }
 
     switch (true) {
-
 
       case (document.documentElement.scrollTop > 1000 || document.body.scrollTop > 1000):
  
