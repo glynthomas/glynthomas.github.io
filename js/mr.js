@@ -1220,9 +1220,6 @@ console.log('overlay state : ' + overlaystate);
 
   if (overlaystate === 0) {
 
-      set_css_class('hamburger','display','none');
-      set_css_class('ex','display','block');
-
       clear_css_class('main-nav', 'stopcolorease');
       clear_css_class('contact_submit', 'stopcolorease');
 
@@ -1246,8 +1243,6 @@ console.log('overlay state : ' + overlaystate);
 
   } else {
 
-      set_css_class('hamburger','display','block');
-      set_css_class('ex','display','none');
 
       clear_css_class('overlay', 'overlay');
       clear_css_class('nav-toggle','');
