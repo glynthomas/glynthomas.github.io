@@ -138,7 +138,6 @@ function callrequest(data) {
   datastr = null;
 }
 
-
 /* client side events * functions */
 
 document.onreadystatechange = function () {
@@ -152,39 +151,7 @@ document.onreadystatechange = function () {
   }
 }
 
-window.onorientationchange = function() {
-      /*window.orientation returns a value that indicates whether iPhone is in portrait mode, landscape mode with the screen turned to the
-        left, or landscape mode with the screen turned to the right. */
-      var orientation = window.orientation;
-      switch(orientation) {
-        case 0:
-            /* If in portrait mode, sets the body's class attribute to portrait. Consequently, all style definitions matching the body[class="portrait"] declaration
-               in the iPhoneOrientation.css file will be selected and used to style "Handling iPhone or iPod touch Orientation Events". */
-            // document.body.setAttribute("class","portrait");
-
-            /* Add a descriptive message on "Handling iPhone or iPod touch Orientation Events"  */
-            // document.getElementById("currentOrientation").innerHTML="Now in portrait orientation (Home button on the bottom).";
-            break; 
-
-        case 90:
-            /* If in landscape mode with the screen turned to the left, sets the body's class attribute to landscapeLeft. In this case, all style definitions matching the
-               body[class="landscapeLeft"] declaration in the iPhoneOrientation.css file will be selected and used to style "Handling iPhone or iPod touch Orientation Events". */
-            // document.body.setAttribute("class","landscape");
-            // document.getElementById("currentOrientation").innerHTML="Now in landscape orientation and turned to the left (Home button to the right).";
-            scrollTo(0, 700);
-
-            break;
-
-        case -90: 
-            /* If in landscape mode with the screen turned to the right, sets the body's class attribute to landscapeRight. Here, all style definitions matching the
-               body[class="landscapeRight"] declaration in the iPhoneOrientation.css file will be selected and used to style "Handling iPhone or iPod touch Orientation Events". */
-            // document.body.setAttribute("class","landscape");
-            // document.getElementById("currentOrientation").innerHTML="Now in landscape orientation and turned to the right (Home button to the left).";
-            scrollTo(0, 700);
-            break;
-      }
-    }
-
+window.addEventListener('orientationchange', doOnOrientationChange);
 
 window.onload = function() {
 
@@ -224,6 +191,21 @@ window.onload = function() {
   }
 }
 
+
+function doOnOrientationChange()
+  {
+    switch(window.orientation) 
+    {  
+      case -90:
+      case 90:
+        alert('landscape');
+        scrollTo(0, 700);
+        break; 
+      default:
+        alert('portrait');
+        break; 
+    }
+  }
 
 function changeimg() {
   var totalCount = 3;
