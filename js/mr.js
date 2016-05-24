@@ -198,12 +198,23 @@ function doOnOrientationChange()
     {  
       case -90:
       case 90:
-        scrollTo(0, 700);
+        updateLayout();
         break; 
       default:
         break; 
     }
   }
+
+
+function updateLayout()
+{
+
+    var size = iOS_getViewportSize();
+    var bottomBar = document.getElementById("bottomBar");
+    bottomBar.style.top = size.height + "px"; 
+
+} 
+
 
 function changeimg() {
   var totalCount = 3;
