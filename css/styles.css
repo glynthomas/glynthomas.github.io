@@ -590,29 +590,15 @@ section header p {margin: auto;font-size: 1.5rem;line-height: 2.9rem;letter-spac
 
 }
 
-/* mobile device media queries */
 
-
-/* iPhone 4 and 4S */
-
-/* Landscape */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-
-#main-nav {position: relative;}
-.overlay nav {margin-top: 80px; line-height: 2.5rem;font-size: 2.3rem;}
-div.home header {padding-top: 70px;}
-
-
-}
-
-/* iPhone 5 and 5S */
-
-/* Landscape */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-
-#main-nav {position: relative;}
-.overlay nav {margin-top: 80px; line-height: 2.5rem;font-size: 2.3rem;}
-div.home header {padding-top: 70px;}
-
-}
+@media screen and (orientation:landscape) {
+      #body {
+        -ms-transform: rotate(-90deg); /* IE 9 */
+        -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+        transform: rotate(-90deg);
+        width: /* screen width */ ;
+        height: /* screen height */ ;
+        overflow: scroll;
+      }
+    }
  

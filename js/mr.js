@@ -41,6 +41,11 @@ window.contactstate = 0;
 window.overlaystate = 0;
 window.scrollstate = 0;
 
+if (window.innerHeight > window.innerWidth){
+    document.getElementsByTagName("body").style.transform = "rotate(90deg)";
+}
+
+
 function _process(ctype, cwho, cdata, cpath) {
 
   var data = '';
