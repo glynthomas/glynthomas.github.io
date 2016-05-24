@@ -432,6 +432,7 @@ document.onclick = function keyClick(event) {
 /* menu items */
 
    case (tagclass === 'logo'):
+   case (tagclass === 'navbar-brand'):
          timtoggle('toggle');
    case (tagclass === 'homenav'):
    case (tagid === 'homenav'):
@@ -442,6 +443,8 @@ document.onclick = function keyClick(event) {
          scrollTo(0, 700);
    break;
 
+   case (tagclass === 'how'):
+         timtoggle('resume');
    case (tagclass === 'aboutnav'):
    case (tagid === 'aboutnav'):
    case (tagclass === 'aboutspace'):
@@ -467,8 +470,6 @@ document.onclick = function keyClick(event) {
          scrollTo(0, 700);
    break;
 
-   case (tagclass === 'how'):
-         timtoggle('resume');
    case (tagclass === 'contactnav'):
    case (tagid === 'contactnav'):
    case (tagclass === 'contactspace'):
@@ -498,10 +499,18 @@ document.onclick = function keyClick(event) {
    case (tagid === 'nav-toggle'):
    case (tagclass === 'mobile-menu-trigger'):
 
+/* extended hamburger */
+
+   case (tagclass === 'figure__caption'):
+   case (tagclass === 'caption__inner'):
+
+   case (tagclass === 'talk'):
+   case (tagclass === 'homekey'):
+
+   case (tagid === '' && tagclass === ''):
+         if ( contactstate !== 1 ) { gifcntrl('toggle'); }
          navtoggle();
-
    break;
-
 
 /* contact us we can help */
 
@@ -571,17 +580,6 @@ document.onclick = function keyClick(event) {
 
     case (tagclass === 'copyright'):
           window.open("http://www.unbios.com");
-    break;
-
-    case (tagclass === 'figure__caption'):
-    case (tagclass === 'talk'):
-    case (tagclass === 'homekey'):
-          document.getElementsByTagName("body")[0].removeAttribute("style");
-    break;
-
-    case (tagid === '' && tagclass === ''):
-          if ( contactstate !== 1 ) { gifcntrl('toggle'); }
-          document.getElementsByTagName("body")[0].removeAttribute("style");
     break;
 
   }
@@ -1217,6 +1215,8 @@ console.log('contactstate : ' + contactstate);
 function navtoggle() {
 
 console.log('overlay state : ' + overlaystate);
+
+  document.getElementsByTagName("body")[0].removeAttribute("style");
 
   if (overlaystate === 0) {
 
