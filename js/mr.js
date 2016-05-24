@@ -198,11 +198,9 @@ function doOnOrientationChange()
     {  
       case -90:
       case 90:
-        alert('landscape');
         scrollTo(0, 700);
         break; 
       default:
-        alert('portrait');
         break; 
     }
   }
