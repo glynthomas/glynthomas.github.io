@@ -553,7 +553,6 @@ section header p {margin: auto;font-size: 1.5rem;line-height: 2.9rem;letter-spac
    div.home header { padding-top: 80px;}
 }
 
-
 @media screen and (max-width: 360px) {
 
     #main-nav {position: relative;}
@@ -593,6 +592,10 @@ section header p {margin: auto;font-size: 1.5rem;line-height: 2.9rem;letter-spac
 
     .overlay nav { margin-top: 130px; }
 
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    div.home header { padding-top: 80px;}
 }
 
  
