@@ -576,11 +576,11 @@ div.home header {padding-top: 350px;}
 }
 
 @media screen and (max-width: 360px) {#main-nav {position: relative;}#main-nav.dark {padding: 0.1em 1.6em 5.6em;}.terms, .privacy {padding-top: 10px;}#main-nav ul li {margin-left: 0;}#main-nav.overlay-visible {position: fixed !important;}div.home header { padding-top: 80px;}
-   .contact {padding-top: 10px;}.about {padding-top: 10px;}.overlay nav { margin-top: 130px;}.termsprivacy {padding-top: 10px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 10px;}
+   .contact {padding-top: 10px;}.about {padding-top: 10px;}.overlay nav { margin-top: 80px;}.termsprivacy {padding-top: 10px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 10px;}
 }
 
 @media screen and (max-width: 350px) {#main-nav {position: relative;}#main-nav ul li {margin-left: 0;}#main-nav.overlay-visible {position: fixed !important;}div.home header { padding-top: 40px;}.contact {padding-top: 10px;}
-   .about {padding-top: 10px;}.termsprivacy {padding-top: 10px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 0px;}ol {margin: -5px;padding: 0;}ol > li::before {padding-right: 5px;}.overlay nav { margin-top: 130px;}
+   .about {padding-top: 10px;}.termsprivacy {padding-top: 10px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 0px;}ol {margin: -5px;padding: 0;}ol > li::before {padding-right: 5px;}.overlay nav { margin-top: 80px;}
 }
 
 /* iphone 6 */
