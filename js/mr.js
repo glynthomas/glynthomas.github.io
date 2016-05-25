@@ -145,6 +145,9 @@ document.onreadystatechange = function () {
 
     // navmaincolor();
     // changeimg();
+    changetxt();
+    timtoggle('resume');
+    // contactmsg();
    
   }
 }
@@ -185,20 +188,6 @@ window.onload = function() {
   }
 }
 
-
-function changeimg() {
-  var totalCount = 3;
-  var num = Math.ceil( Math.random() * totalCount );
-  var ext = 'jpg';
-  if (isodd(num)) {ext = 'gif';} else {ext = 'jpg';}
-  // console.log('number image : ' + num + '.' + ext);
-  document.getElementsByTagName("body")[0].style.backgroundImage = 'url(img/background/'+num+'.'+ext+')';
-  document.body.style.backgroundSize="cover";
-  document.body.style.backgroundRepeat="fixed";
-}
-
-
-function isodd(num) { return num % 2;}
 
 // window.onscroll = function() { navmaincolor() };
 
@@ -321,8 +310,8 @@ document.onmouseover = function mouseover(event) {
 
  switch(true) {
 
-  case (tagid === 'hometoday'):
-        elem.setAttribute('src', '/img/today-48-blank.png');
+  case (tagclass === 'logo'):
+        // changetxt();
   break;
 
  }
@@ -1110,6 +1099,91 @@ function randomnumber(min, max) {
 
 }
 
+function isodd(num) { return num % 2;}
+
+function changeimg() {
+
+  var totalCount = 3;
+  var num = Math.ceil( Math.random() * totalCount );
+  var ext = 'jpg';
+  if (isodd(num)) {ext = 'gif';} else {ext = 'jpg';}
+  // console.log('number image : ' + num + '.' + ext);
+  document.getElementsByTagName("body")[0].style.backgroundImage = 'url(img/background/'+num+'.'+ext+')';
+  document.body.style.backgroundSize="cover";
+  document.body.style.backgroundRepeat="fixed";
+
+}
+
+function changetxt() {
+
+  set_html_id('code','Contact');
+  setTimeout( function() { set_html_id('word',' Glyn'); } , 25 );
+  setTimeout( function() { set_html_id('code','he can'); } , 50 );
+  setTimeout( function() { set_html_id('word',' help'); } , 100 );
+  setTimeout( function() { set_html_id('code','Tech'); } , 200 );
+  setTimeout( function() { set_html_id('word',' Consultant'); } , 300 );
+
+}
+
+function changeapps() {
+
+  set_html_id('code','Apps'); set_html_id('word',' Consultant');
+  setTimeout( function() { set_html_id('code','Tech'); } , 100 );
+  setTimeout( function() { set_html_id('code','Code'); } , 200 );
+  setTimeout( function() { set_html_id('code','Apps'); } , 300 );
+  setTimeout( function() { set_html_id('code','Tech'); } , 400 );
+  setTimeout( function() { set_html_id('code','Code'); } , 500 );
+  setTimeout( function() { set_html_id('code','Apps'); } , 600 );
+
+}
+
+function changecode() {
+
+  set_html_id('code','Code'); set_html_id('word',' Consultant');
+  setTimeout( function() { set_html_id('code','Tech'); } , 100 );
+  setTimeout( function() { set_html_id('code','Apps'); } , 200 );
+  setTimeout( function() { set_html_id('code','Code'); } , 300 );
+  setTimeout( function() { set_html_id('code','Tech'); } , 400 );
+  setTimeout( function() { set_html_id('code','Apps'); } , 500 );
+  setTimeout( function() { set_html_id('code','Code'); } , 600 );
+
+}
+
+function changetech() {
+
+  set_html_id('code','Tech'); set_html_id('word',' Consultant');
+  setTimeout( function() { set_html_id('code','Apps'); } , 100 );
+  setTimeout( function() { set_html_id('code','Code'); } , 200 );
+  setTimeout( function() { set_html_id('code','Tech'); } , 300 );
+  setTimeout( function() { set_html_id('code','Code'); } , 400 );
+  setTimeout( function() { set_html_id('code','Apps'); } , 500 );
+  setTimeout( function() { set_html_id('code','Tech'); } , 600 );
+
+}
+
+function changeagent() {
+
+  set_html_id('code','Angel'); set_html_id('word',' Advisor');
+  setTimeout( function() { set_html_id('code','Code'); } , 50 );
+  setTimeout( function() { set_html_id('code','Apps'); } , 100 );
+  setTimeout( function() { set_html_id('code','Tech'); } , 200 );
+  setTimeout( function() { set_html_id('code','Code'); } , 300 );
+  setTimeout( function() { set_html_id('word',' Consultant'); } , 400 );
+  setTimeout( function() { set_html_id('code','Angel'); } , 500);
+  setTimeout( function() { set_html_id('word',' Advisor'); } , 600 );
+
+}
+
+function contactmsg() {
+ var data = [[0, 11, "Good morning"], [12, 17, "Good afternoon"],[18, 24, "Good night"]],hr = new Date().getHours();
+ for(var i = 0; i < data.length; i++){
+  if(hr >= data[i][0] && hr <= data[i][1]){
+     console.log(data[i][2]);
+  }
+ }
+ data = null;
+}
+
 function colorswitch() {
 
   console.log('color number : ' + un.cs[0])
@@ -1150,21 +1224,28 @@ function wordswitch() {
   switch (un.ws[0]) {
     case (0):
          console.log('default words 0 yeah!');
-         set_html_id('code','Tech');
+         changetech();
          un.ws[0] = un.ws[0] + 1; 
     break;
     case (1):
          console.log('default words 1 yeah!');
-         set_html_id('code','Code');
+         changecode();
          un.ws[0] = un.ws[0] + 1; 
     break;
     case (2):
          console.log('default words 2 yeah!');
-         set_html_id('code','Tech');
+         changeagent();
          un.ws[0] = un.ws[0] + 1; 
     break;
     case (3):
          console.log('default words 3 yeah!');
+         changeapps();
+         un.ws[0] = un.ws[0] + 1; 
+         set_html_id('code','Code');
+    break;
+    case (4):
+         console.log('default words 4 yeah!');
+         changeagent();
          un.ws[0] = 0;
          set_html_id('code','Code');
     break;

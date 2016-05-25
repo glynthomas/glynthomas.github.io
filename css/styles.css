@@ -110,7 +110,7 @@ h3 {text-align: center; }
 
 .titletxt {color: white;font-size: 2.9rem;font-weight: 200;margin-bottom: 0.5em;padding-left: 15px;padding-right: 15px;}
 .titletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-weight: 800;font-size: 3.2rem; letter-spacing: -1px;}
-.homekey {color: inherit;font-size: 1.1rem;font-weight: 600;letter-spacing: 1px;padding-top: 10px;text-transform: uppercase;}
+.homekey {color: inherit;font-size: 1.1rem;font-weight: 600;letter-spacing: 1px;padding-top: 17px;text-transform: uppercase;}
 
 .titletxt-umodal {color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.2em; margin-bottom: 1em; padding-bottom: 3px; padding-top: 15px; text-transform: uppercase; border-bottom: 3px solid rgba(255, 255, 255, 1); padding-bottom: 3px; width: 135px; text-align: center;}
 
@@ -534,23 +534,41 @@ section header p {margin: auto;font-size: 1.5rem;line-height: 2.9rem;letter-spac
 
 @media screen and (max-width: 480px) {#main-nav .menu-promoted {font-size: 0.9rem;line-height: 1.5rem; } }
 
-@media screen and (min-width: 950px){
+@media screen and (min-width: 951px){
 div.home header {padding-top: 250px;}
+.abouthead {font-size: 3.7rem; letter-spacing: -1.5px; margin-left: -3px;}
+.contacthead {font-size: 3.7rem; letter-spacing: -1.5px; margin-left: -3px;}
 .titletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-size: 4.2rem;font-weight: 800;letter-spacing: -1px;}
 .overlay nav {color: white;font-size: 3.9rem;font-weight: 800;letter-spacing: 0.05rem;line-height: 5.7rem;margin-top: 190px;text-align: center;}
 }
 
-@media screen and (max-width: 950px) {#main-nav .abouts { display: none; } .overlay nav { margin-top: 190px;} }
+@media screen and (min-width: 1250px){
+div.home header {padding-top: 250px;}
+.abouthead {font-size: 4.7rem; letter-spacing: -1.5px; margin-left: -3px;}
+.contacthead {font-size: 4.7rem; letter-spacing: -1.5px; margin-left: -3px;}
+.titletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-size: 5.2rem;font-weight: 800;letter-spacing: -1px;}
+.overlay nav {color: white;font-size: 4.9rem;font-weight: 800;letter-spacing: 0.05rem;line-height: 6.7rem;margin-top: 190px;text-align: center;}
+}
 
-@media screen and (max-width: 850px) {#main-nav .approachs { display: none; } .overlay nav { margin-top: 190px;} }
+@media screen and (min-width: 1450px){
+div.home header {padding-top: 350px;}
+.abouthead {font-size: 5.7rem; letter-spacing: -1.5px; margin-left: -5px;}
+.contacthead {font-size: 5.7rem; letter-spacing: -1.5px; margin-left: -5px;}
+.titletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-size: 6.2rem;font-weight: 800;letter-spacing: -1px;}
+.overlay nav {color: white;font-size: 5.9rem;font-weight: 800;letter-spacing: 0.05rem;line-height: 7.7rem;margin-top: 190px;text-align: center;}
+}
 
-@media screen and (max-width: 720px) {#main-nav .products { display: none; } .overlay nav { margin-top: 190px;} }
+@media screen and (max-width: 950px) {#main-nav .abouts { display: none; } .overlay nav { margin-top: 190px;} .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
 
-@media screen and (max-width: 630px) {#main-nav .homes { display: none; }.overlay nav { margin-top: 130px;} }
+@media screen and (max-width: 850px) {#main-nav .approachs { display: none; } .overlay nav { margin-top: 190px;} .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
 
-@media screen and (max-width: 520px) {#main-nav .contacts { display: none; } .overlay nav { margin-top: 130px;}}
+@media screen and (max-width: 720px) {#main-nav .products { display: none; } .overlay nav { margin-top: 190px;} .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
 
-@media screen and (max-width: 500px) {#main-nav .menu-social-promoted { display: none; } #nav-toggle { margin-top: 19px; }}
+@media screen and (max-width: 630px) {#main-nav .homes { display: none; }.overlay nav { margin-top: 130px;} .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
+
+@media screen and (max-width: 520px) {#main-nav .contacts { display: none; } .overlay nav { margin-top: 130px;} .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
+
+@media screen and (max-width: 500px) {#main-nav .menu-social-promoted { display: none; } #nav-toggle { margin-top: 19px; } .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
 
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 
