@@ -507,32 +507,6 @@ section {max-width: 68em;margin-left: auto;margin-right: auto;text-align: center
 section::after {clear: both;content: "";display: table; }
 section header p {margin: auto;font-size: 1.5rem;line-height: 2.9rem;letter-spacing: 0.01px;font-weight: 200; }
 
-@media screen and (max-width: 620px) { .columns-3 .icon { display: inline-block;} }
-@media screen and (max-width: 800px) {}
-
-@media screen and (max-width: 768px) {p.howtxt {padding:0; margin-top:11px; margin-right:25px; margin-bottom:11px; margin-left:25px; font-size:15px; letter-spacing: 0.01px;}  }
-
-@media screen and (max-width: 600px) {}
-@media screen and (max-width: 480px) {}
-@media screen and (max-width: 400px) {.termsprivacy {font-size: 1rem;}}
-
-@media screen and (max-width: 320px) {#main-nav ul li {margin-left: 0;} }
-@media screen and (max-width: 480px) {.section-title {font-size: 0.9rem;line-height: 1.5rem; } }
-@media screen and (max-width: 480px) {#main-nav {margin-bottom: 4em; } }
-@media screen and (max-width: 480px) {#main-nav h1 {font-size: 3.1rem; } }
-@media screen and (max-width: 480px) {#main-nav h2 {font-size: 0.9rem;line-height: 1.5rem; } }
-@media screen and (max-width: 480px) {#main-nav h2 {display: none; } }
-
-/* footer note container table * start */
-
-@media screen and (max-width: 480px) { .footnotecontainer{ margin-left: -8px;}  }
-
-/* footer note container table * end */
-
-@media screen and (max-width: 768px) {.howright {display: none;}.footum-fixed {width:97%;} }
-@media screen and (max-width: 768px) {.howdown {display: block;}.footum-fixed {width:97%;} p.saintxt {padding:0; margin-top:11px; margin-right:25px; margin-bottom:25px; margin-left:25px; font-size:15px; letter-spacing: 0.01px;} .regions p {text-align: center;margin-left: 30px;margin-right: 30px;} .next p {text-align: center;margin-left: 30px; margin-right: 30px;}}
-
-@media screen and (max-width: 480px) {#main-nav .menu-promoted {font-size: 0.9rem;line-height: 1.5rem; } }
 
 @media screen and (min-width: 951px){
 div.home header {padding-top: 250px;}
@@ -566,6 +540,8 @@ div.home header {padding-top: 350px;}
 
 @media screen and (max-width: 630px) {#main-nav .homes { display: none; }.overlay nav { margin-top: 130px;} .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
 
+@media screen and (max-width: 400px) {.termsprivacy {font-size: 1rem;}}
+
 @media screen and (max-width: 520px) {#main-nav .contacts { display: none; } .overlay nav { margin-top: 130px;} .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
 
 @media screen and (max-width: 500px) {#main-nav .menu-social-promoted { display: none; } #nav-toggle { margin-top: 19px; } .abouthead {margin-left: -1px;} .contacthead {margin-left: -1px;} }
@@ -576,17 +552,20 @@ div.home header {padding-top: 350px;}
 }
 
 @media screen and (max-width: 360px) {#main-nav {position: relative;}#main-nav.dark {padding: 0.1em 1.6em 5.6em;}.terms, .privacy {padding-top: 10px;}#main-nav ul li {margin-left: 0;}#main-nav.overlay-visible {position: fixed !important;}div.home header { padding-top: 80px;}
-   .contact {padding-top: 10px;}.about {padding-top: 10px;}.overlay nav { margin-top: 80px;}.termsprivacy {padding-top: 10px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 10px;}
+   .contact {padding-top: 10px;}.about {padding-top: 10px;}.overlay nav { margin-top: 130px;}.termsprivacy {padding-top: 10px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 10px;}
 }
 
-@media screen and (max-width: 350px) {#main-nav {position: relative;}#main-nav ul li {margin-left: 0;}#main-nav.overlay-visible {position: fixed !important;}div.home header { padding-top: 40px;}.contact {padding-top: 10px;}
-   .about {padding-top: 10px;}.termsprivacy {padding-top: 10px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 0px;}ol {margin: -5px;padding: 0;}ol > li::before {padding-right: 5px;}.overlay nav { margin-top: 80px;}
-}
 
 /* iphone 6 */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2)and (orientation: landscape) { 
    div.home header { padding-top: 148px;}.overlay nav { margin-top: 80px;}
 }
+
+
+@media screen and (max-width: 350px) {#main-nav {position: relative;}#main-nav ul li {margin-left: 0;}#main-nav.overlay-visible {position: fixed !important;} div.home header { padding-top: 130px;}.contact {padding-top: 10px;}
+   .about {padding-top: 10px;}.termsprivacy {padding-top: 10px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 0px;}ol {margin: -5px;padding: 0;}ol > li::before {padding-right: 5px;}.overlay nav { margin-top: 180px;}
+}
+
 /* iphone 5 */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     div.home header { padding-top: 148px;}.overlay nav { margin-top: 80px;}
