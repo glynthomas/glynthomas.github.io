@@ -438,17 +438,6 @@ document.onclick = function keyClick(event) {
          scrollTo(0, 700);
    break;
 
-   case (tagclass === 'blognav'):
-   case (tagid === 'blognav'):
-   case (tagid === 'blog'):
-   case (tagclass === 'blogspace'):
-   case (tagclass === 'blog'):
-   case (tagid === 'blog'):
-         if (overlaystate === 1) { navtoggle();}
-         selectmenu('blog');
-         scrollTo(0, 700);
-   break;
-
    case (tagclass === 'termsandprivacy'):
          selectmenu('termsprivacy');
          scrollTo(0, 700);
@@ -604,7 +593,7 @@ function selectmenu(menu) {
 
   clear_css_class('home','menu'); 
   clear_css_class('about','menu');
-  clear_css_class('blog','menu');
+  clear_css_class('project','menu');
   clear_css_class('contact','menu');
   clear_css_class(menu,'menu-select');
 
@@ -641,7 +630,6 @@ function selectmenu(menu) {
 
           set_css_class('home','display','block');
           set_css_class('about','display','none');
-          set_css_class('blog','display','none');
           set_css_class('contact','display','none');
           set_css_class('termsprivacy','display','none');
      
@@ -678,50 +666,11 @@ function selectmenu(menu) {
   
           set_css_class('home','display','none');
           set_css_class('about','display','block');
-          set_css_class('blog','display','none');
           set_css_class('contact','display','none');
           set_css_class('termsprivacy','display','none');
     
           gifcntrl('stop');
           menustate = 'about';
-          scrollstate = 1;
-    break;
-
-    case ('blog'):
-
-          switch (un.cs[0]) {
-
-            case (0):
-                 clear_css_class('body','stopcolor');
-                 clear_css_class('main-nav', 'stopcolor');
-                 clear_css_class('contact_submit', 'stopcolor');
-            break;
-            case (1):
-                 clear_css_class('body','readycolor');
-                 clear_css_class('main-nav', 'readycolor');
-                 clear_css_class('contact_submit', 'readycolor');
-            break;
-            case (2):
-                 clear_css_class('body','gocolor');
-                 clear_css_class('main-nav', 'gocolor');
-                 clear_css_class('contact_submit', 'gocolor');
-            break;
-            case (3):
-                 clear_css_class('body','pausecolor');
-                 clear_css_class('main-nav', 'pausecolor');
-                 clear_css_class('contact_submit', 'pausecolor');
-            break;
-
-          }
-
-          set_css_class('home','display','none');
-          set_css_class('about','display','none');
-          set_css_class('blog','display','block');
-          set_css_class('contact','display','none');
-          set_css_class('termsprivacy','display','none');
-    
-          gifcntrl('stop');
-          menustate = 'blog';
           scrollstate = 1;
     break;
 
@@ -754,8 +703,6 @@ function selectmenu(menu) {
 
           set_css_class('home','display','none');
           set_css_class('about','display','none');
-          set_css_class('approach','display','none');
-          set_css_class('blog','display','none');
           set_css_class('contact','display','block');
           set_css_class('termsprivacy','display','none');
 
@@ -793,7 +740,6 @@ function selectmenu(menu) {
 
           set_css_class('home','display','none');
           set_css_class('about','display','none');
-          set_css_class('blog','display','none');
           set_css_class('contact','display','none');
           set_css_class('termsprivacy','display','block');
 

@@ -8,7 +8,7 @@ html {box-sizing: border-box; }
 
 *, *::after, *::before {box-sizing: inherit; }
 
-.profileproduct {background: #fff none repeat scroll 0 0;border: 5px solid #fff;border-radius: 12px;box-shadow: 0 1px 1px rgba(136, 153, 166, 0.15);height: 200px;position: relative;width: 200px;}
+.profileproduct {background: #fff none repeat scroll 0 0;border: 3px solid #2f2f2f;border-radius: 5px;box-shadow: 0 1px 1px rgba(136, 153, 166, 0.15);height: 200px;position: relative;width: 200px;}
 .visible {visibility: visible;opacity: 1; /* transition: opacity 2s linear; */}
 .hidden {visibility: hidden;opacity: 0;transition: visibility 0s 2s, opacity 2s linear;}
 
@@ -119,7 +119,7 @@ select {-webkit-appearance:none; }
 div.home h1, div.home h2, div.home p, div.home li, div.home a {color: white; }
 div.home h1 {text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15); }
 .overlay-visible div.home h1 {text-shadow: none; }
-div.home p, div.home h2, div.home li, div.home a {text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25); }
+/* div.home p, div.home h2, div.home li, div.home a {text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25); } */
 div.home p mark, div.home h2 mark, div.home li mark, div.home a mark {text-shadow: none; }
 div.home a.button {text-shadow: none; }
 div.home header {max-width: 68em;margin-left: auto;margin-right: auto;text-align: center;font-size: 1.5em;padding-top: 200px; }
@@ -185,6 +185,8 @@ li ol > li:before {content: counters(item, ".") " ";}
 
 .forgotpassword {text-align: center; margin-top: -15px; font-size: 14px; color: #0066c0;}
 .forgotpassword:hover {text-decoration: underline; color: #E47930;}
+
+/* .menu {font-size: 17px;}.menu-select {font-size: 17px;}} */
 
 .menu:hover {padding-bottom:3px; border-color: #FFFFFF; border-bottom: 3px solid rgba(255, 255, 255, 0.7); cursor: pointer; cursor:hand;}
 .email:hover {padding-bottom:21px; border-color: #FFFFFF; border-bottom: 3px solid rgba(255, 255, 255, 0.7) !important; cursor: pointer; cursor:hand} 
@@ -332,7 +334,7 @@ p .focus {text-align: center;}
 
 .srvrow-centered {text-align:center;}
 .srvcol-centered {display:inline-block;float:none;}
-.srvcol-fixed {width:320px;}
+.srvcol-fixed {/*width:320px;*/}
 .srvcol-min {min-width:320px;}
 .srvcol-max {max-width:320px;}
 
@@ -370,9 +372,17 @@ p .focus {text-align: center;}
 .abouthead {font-size: 2.9rem;font-weight: 800; letter-spacing: -1px;}
 .aboutkey {font-size: 1.1rem; font-weight: 600; text-transform: uppercase;}
 
-.about {font-size: 1.2rem;padding-top: 100px;padding-bottom: 65px; margin-left: 25px;margin-right: 25px;}
-.about h2 {font-size: 40px;text-align: left;}
+.about {font-size: 1.2rem; padding-top: 100px; padding-bottom: 65px;}
+.aboutcontent {margin-left: 25px;margin-right: 25px;}
+.about h2 {font-size: 40px; text-align: left;}
 .about p {text-align: left; line-height: 33px;}
+
+.projecthead {font-size: 2.9rem;font-weight: 800; letter-spacing: -1px;}
+.projectkey {font-size: 1.1rem; font-weight: 600; text-transform: uppercase;}
+
+.project {font-size: 1.2rem;padding-top: 100px;padding-bottom: 65px; margin-left: 25px;margin-right: 25px;}
+.project h2 {font-size: 40px;text-align: left;}
+.project p {text-align: left; line-height: 33px;}
 
 .approachhead {font-size: 2.9rem;font-weight: 800;letter-spacing: 1px;}
 .approachkey {font-size: 1.1rem; font-weight: 600; text-transform: uppercase;}
@@ -511,6 +521,7 @@ section header p {margin: auto;font-size: 1.5rem;line-height: 2.9rem;letter-spac
 @media screen and (min-width: 951px){
 div.home header {padding-top: 250px;}
 .abouthead {font-size: 3.7rem; letter-spacing: -1.5px; margin-left: -3px;}
+.projecthead {font-size: 3.7rem; letter-spacing: -1.5px; margin-left: -3px;}
 .contacthead {font-size: 3.7rem; letter-spacing: -1.5px; margin-left: -3px;}
 .titletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-size: 4.2rem;font-weight: 800;letter-spacing: -1px;}
 .overlay nav {color: white;font-size: 3.9rem;font-weight: 800;letter-spacing: 0.05rem;line-height: 5.7rem;margin-top: 190px;text-align: center;}
@@ -519,6 +530,7 @@ div.home header {padding-top: 250px;}
 @media screen and (min-width: 1250px){
 div.home header {padding-top: 250px;}
 .abouthead {font-size: 4.7rem; letter-spacing: -1.5px; margin-left: -3px;}
+.projecthead {font-size: 4.7rem; letter-spacing: -1.5px; margin-left: -3px;}
 .contacthead {font-size: 4.7rem; letter-spacing: -1.5px; margin-left: -3px;}
 .titletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-size: 5.2rem;font-weight: 800;letter-spacing: -1px;}
 .overlay nav {color: white;font-size: 4.9rem;font-weight: 800;letter-spacing: 0.05rem;line-height: 6.7rem;margin-top: 190px;text-align: center;}
@@ -527,6 +539,7 @@ div.home header {padding-top: 250px;}
 @media screen and (min-width: 1450px){
 div.home header {padding-top: 350px;}
 .abouthead {font-size: 5.7rem; letter-spacing: -1.5px; margin-left: -5px;}
+.projecthead {font-size: 5.7rem; letter-spacing: -1.5px; margin-left: -5px;}
 .contacthead {font-size: 5.7rem; letter-spacing: -1.5px; margin-left: -5px;}
 .titletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-size: 6.2rem;font-weight: 800;letter-spacing: -1px;}
 .overlay nav {color: white;font-size: 5.9rem;font-weight: 800;letter-spacing: 0.05rem;line-height: 7.7rem;margin-top: 190px;text-align: center;}
