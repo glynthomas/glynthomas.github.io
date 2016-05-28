@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/*! styles.css v1.00.00 | (c) 2016 glynthomas.github.io */
+
 /* @import "https://necolas.github.io/normalize.css/3.0.2/normalize.css"; */
 /* @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"; */
 /* @import "//cloud.typography.com/7092232/615982/css/fonts.css"; */
@@ -429,10 +431,12 @@ p .focus {text-align: center;}
 
 /* overlay */
 
+.ioverlay {background: #F70C36; opacity: 0;visibility: hidden;position: fixed;width: 100%;height: 100%;top: 0;left: 0;z-index: 100;/* transition: opacity 0.5s, text-shadow 0.5s; */}
+.ioverlay nav {font-size: 2.9rem; line-height: 4.7rem; margin-top: 90px; font-weight: 800; color: white; letter-spacing: 0.05rem; text-align: center;}
+.ioverlay nav ul {list-style: none;padding-left:0px; }
+
 .overlay {background: #F70C36; opacity: 0;visibility: hidden;position: fixed;width: 100%;height: 100%;top: 0;left: 0;z-index: 100;/* transition: opacity 0.5s, text-shadow 0.5s; */}
-
 .overlay nav {font-size: 2.9rem; line-height: 4.7rem; margin-top: 90px; font-weight: 800; color: white; letter-spacing: 0.05rem; text-align: center;}
-
 .overlay nav ul {list-style: none;padding-left:0px; }
 
 /*
@@ -571,16 +575,16 @@ div.home header {padding-top: 350px;}
 
 /* iphone 6 */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2)and (orientation: landscape) { 
-   div.home header { padding-top: 148px;}.overlay nav { margin-top: 80px;}
+   div.home header { padding-top: 148px;}.overlay nav { margin-top: 80px;}.ioverlay nav {font-size: 2.9rem; line-height: 4.7rem; margin-top: 70px;}
 }
 
 
 @media screen and (max-width: 350px) {#main-nav {position: relative;} #main-nav ul li {margin-left: 0;}#main-nav.overlay-visible {position: fixed !important;} div.home header { padding-top: 110px;}.contact {padding-top: 79px;}
-   .about {padding-top: 79px;}.termsprivacy {padding-top: 79px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 0px;}ol {margin: -5px;padding: 0;}ol > li::before {padding-right: 5px;}.overlay nav { margin-top: 130px;}
+   .about {padding-top: 79px;}.termsprivacy {padding-top: 79px;}.termsprivacy {font-size: 1rem;}.list-space {padding-left: 0px;}ol {margin: -5px;padding: 0;}ol > li::before {padding-right: 5px;}.overlay nav { margin-top: 130px;}.ioverlay nav {font-size: 2.9rem; line-height: 4.7rem; margin-top: 70px;}
 }
 
 /* iphone 5 */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-    div.home header { padding-top: 148px;}.overlay nav { margin-top: 80px;}
+    div.home header { padding-top: 148px;}.overlay nav { margin-top: 80px;}.ioverlay nav {font-size: 2.9rem; line-height: 4.7rem; margin-top: 70px;}
 }
 

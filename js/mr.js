@@ -145,9 +145,15 @@ document.onreadystatechange = function () {
 
     // navmaincolor();
     // changeimg();
+    
     changetxt();
+    timtoggle('toggle');
     timtoggle('resume');
-   
+
+    if ( (isplatform.Any().indexOf('iPhone') > -1) && iniframe() ) {
+       /* switch (true) { case ( window.innerHeight > window.innerWidth ): // portrait mode clear_css_class('overlay','ioverlay');break;case ( window.innerWidth > window.innerHeight ): // landscape modeclear_css_class('overlay','ioverlay');break;} */
+       clear_css_class('overlay','ioverlay');
+    }  
   }
 }
 
@@ -156,11 +162,8 @@ window.onload = function() {
   /* onload */
 
   /* gifcntrl('load'); // or start * browser implementation */
-
   /* var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; */
   /* var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; */
-
-  // imgload("/vid/background_spaceman.png");
 
   switch (true) {
 
@@ -403,13 +406,6 @@ document.onclick = function keyClick(event) {
   console.log(tagid);
   console.log(tagclass);
   /*console.log(tagtype);*/
-
-/* howmain * main menu */
-
-  // timtoggle('resume');
-  // clear_css_class('footer','open');
-  // timtoggle('toggle');
-
 
   switch (true) {
 
@@ -1252,12 +1248,10 @@ console.log('overlay state : ' + overlaystate);
       add_css_class('main-nav', 'overlay-visible');
       add_css_class('title-bar', 'dark');
    
-      gifcntrl('toggle');
-
       /* reset default color set */
       un.cs[0] = 0;
     
-      /* upause(); */
+      timtoggle('pause');
 
       console.log('color number : ' + un.cs[0]);
 
@@ -1272,8 +1266,9 @@ console.log('overlay state : ' + overlaystate);
       clear_css_class('main-nav', 'stopcolor');
       clear_css_class('title-bar', 'title-bar');
  
-      gifcntrl('toggle');
-   
+      timtoggle('toggle');
+      timtoggle('resume');
+
       overlaystate = 0;
 
     switch (true) {
@@ -1384,6 +1379,14 @@ function imgcntrl(state) {
 
     }
   }
+}
+
+function iniframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
 }
 
 
