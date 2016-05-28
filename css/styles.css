@@ -110,6 +110,9 @@ strong {font-weight: 400; }
 
 h3 {text-align: center; }
 
+.ititletxt {color: white;font-size: 2.9rem;font-weight: 200;margin-bottom: 0.5em;padding-left: 15px;padding-right: 15px; margin-top: -10px;}
+.ititletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-weight: 800;font-size: 3.2rem; letter-spacing: -1px;}
+
 .titletxt {color: white;font-size: 2.9rem;font-weight: 200;margin-bottom: 0.5em;padding-left: 15px;padding-right: 15px;}
 .titletxt mark {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: inherit;font-weight: 800;font-size: 3.2rem; letter-spacing: -1px;}
 .homekey {color: inherit;font-size: 1.1rem;font-weight: 600;letter-spacing: 1px;padding-top: 17px;text-transform: uppercase;}

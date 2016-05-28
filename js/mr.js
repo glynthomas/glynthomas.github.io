@@ -151,8 +151,15 @@ document.onreadystatechange = function () {
     timtoggle('resume');
 
     if ( (isplatform.Any().indexOf('iPhone') > -1) && iniframe() ) {
-       /* switch (true) { case ( window.innerHeight > window.innerWidth ): // portrait mode clear_css_class('overlay','ioverlay');break;case ( window.innerWidth > window.innerHeight ): // landscape modeclear_css_class('overlay','ioverlay');break;} */
-       clear_css_class('overlay','ioverlay');
+      switch (true) { 
+         case ( window.innerHeight > window.innerWidth ):
+         break; // iphone portrait
+         case ( window.innerWidth > window.innerHeight ):
+                // iphone landscape
+               clear_css_class('titletxt','ititletxt');
+               clear_css_class('overlay','ioverlay');
+         break;
+      }
     }  
   }
 }
