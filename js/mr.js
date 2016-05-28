@@ -150,7 +150,7 @@ document.onreadystatechange = function () {
     timtoggle('toggle');
     timtoggle('resume');
 
-    if ( (isplatform.Any().indexOf('iPhone') > -1) && iniframe() ) {
+    if ( (isplatform.Any().indexOf('iPhone') > -1) === true && iniframe() === true ) {
       switch (true) { 
          case ( window.innerHeight > window.innerWidth ):
          break; // iphone portrait
