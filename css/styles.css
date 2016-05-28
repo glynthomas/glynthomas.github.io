@@ -242,7 +242,7 @@ li ol > li:before {content: counters(item, ".") " ";}
 #main-nav ul li {display: block;float: left;margin-left: 0.9em; }
 
 #main-nav #nav-toggle {font-size: 2rem; margin-top: 0.6em; margin-right: 0.1em; cursor: pointer; }
-.darker {color: #000000 !important;}
+.darker {color: #0941CC !important;}
 
 #main-nav .menu-button-promoted {line-height: 1.8rem;margin-bottom: 0.5rem;font-weight: 500;margin-top: 21px;}
 #main-nav .menu-text-promoted {line-height: 1.8rem; margin-bottom: 0.5rem;font-weight: 500; letter-spacing: 0.04rem; margin-left: 1.5rem; margin-top: 31px;}
