@@ -242,7 +242,7 @@ li ol > li:before {content: counters(item, ".") " ";}
 #main-nav ul li {display: block;float: left;margin-left: 0.9em; }
 
 #main-nav #nav-toggle {font-size: 2rem; margin-top: 0.6em; margin-right: 0.1em; cursor: pointer; }
-.darker {color: #0941CC !important;}
+.darker {color: #FFFFFF !important;}
 
 #main-nav .menu-button-promoted {line-height: 1.8rem;margin-bottom: 0.5rem;font-weight: 500;margin-top: 21px;}
 #main-nav .menu-text-promoted {line-height: 1.8rem; margin-bottom: 0.5rem;font-weight: 500; letter-spacing: 0.04rem; margin-left: 1.5rem; margin-top: 31px;}
@@ -371,8 +371,8 @@ p .focus {text-align: center;}
 .gocolorease {background: #6BA635; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
 .gocolor {background: #54832A; color:white; cursor: pointer; cursor: hand;}
 
-.pausecolorease {background: #2d2d2d; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
-.pausecolor {background: #2d2d2d; color:white; cursor: pointer; cursor: hand;}
+.pausecolorease {background: #0941CC; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
+.pausecolor {background: #0941CC; color:white; cursor: pointer; cursor: hand;}
 
 .abouthead {font-size: 2.9rem;font-weight: 800; letter-spacing: -1px;}
 .aboutkey {font-size: 1.1rem; font-weight: 600; text-transform: uppercase;}
