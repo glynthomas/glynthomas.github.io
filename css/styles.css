@@ -102,7 +102,7 @@ a {color: inherit;text-decoration: none; cursor: pointer; cursor: hand; outline:
 
 .fullbackground {background: #0941CC url("") no-repeat fixed center center / cover ;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;cursor: hand;cursor: pointer;}
 
-body {background: #F70C36; color: white; font-family: 'Gotham SSm A', 'Gotham SSm B';font-weight: 300;font-style: normal;padding-top: 0;}
+body {background: #E7192A; color: white; font-family: 'Gotham SSm A', 'Gotham SSm B';font-weight: 300;font-style: normal;padding-top: 0;}
 
 strong {font-weight: 400; }
 
@@ -362,8 +362,8 @@ p .focus {text-align: center;}
 
 .logotxt {font-size: 1rem;font-weight: 500; letter-spacing: -2px;}
 
-.stopcolorease {background: #D62323; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
-.stopcolor {background: #D62323; color:white; cursor: pointer; cursor: hand;}
+.stopcolorease {background: #E7192A; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
+.stopcolor {background: #E7192A; color:white; cursor: pointer; cursor: hand;}
 
 .readycolorease {background: #E55525; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
 .readycolor {background: #E55525; color:white; cursor: pointer; cursor: hand;}
