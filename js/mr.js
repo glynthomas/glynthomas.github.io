@@ -150,17 +150,6 @@ document.onreadystatechange = function () {
     timtoggle('toggle');
     timtoggle('resume');
 
-    if ( (isplatform.Any().indexOf('iPhone') > -1) === true && iniframe() === true ) {
-      switch (true) { 
-         case ( window.innerHeight > window.innerWidth ):
-         break; // iphone portrait
-         case ( window.innerWidth > window.innerHeight ):
-                // iphone landscape
-               clear_css_class('titletxt','ititletxt');
-               clear_css_class('overlay','ioverlay');
-         break;
-      }
-    }  
   }
 }
 
@@ -1386,14 +1375,6 @@ function imgcntrl(state) {
 
     }
   }
-}
-
-function iniframe () {
-    try {
-        return window.self !== window.top;
-    } catch (e) {
-        return true;
-    }
 }
 
 
