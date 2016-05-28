@@ -362,14 +362,14 @@ p .focus {text-align: center;}
 
 .logotxt {font-size: 1rem;font-weight: 500; letter-spacing: -2px;}
 
-.stopcolorease {background: #F70C36; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
-.stopcolor {background: #F70C36; color:white; cursor: pointer; cursor: hand;}
+.stopcolorease {background: #D62323; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
+.stopcolor {background: #D62323; color:white; cursor: pointer; cursor: hand;}
 
 .readycolorease {background: #E55525; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
 .readycolor {background: #E55525; color:white; cursor: pointer; cursor: hand;}
 
-.gocolorease {background: #6BA635; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
-.gocolor {background: #54832A; color:white; cursor: pointer; cursor: hand;}
+.gocolorease {background: #821C76; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
+.gocolor {background: #821C76; color:white; cursor: pointer; cursor: hand;}
 
 .pausecolorease {background: #0941CC; color:white; cursor: pointer; cursor: hand; transition: background-color 0.2s ease;}
 .pausecolor {background: #0941CC; color:white; cursor: pointer; cursor: hand;}
