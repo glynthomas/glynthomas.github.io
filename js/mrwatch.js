@@ -1,4 +1,6 @@
 
+/*! mrwatch.js v1.00.00 | (c) 2016 unbios.com */
+
 /**
  *
  * Implements cookie-less JavaScript session variables
@@ -188,8 +190,10 @@ function ustart() {
             /* optional refresh * currently disabled * need to check code for any suspect memory leaks */
             // window.location.href = window.location.href;
 
-            un.tg[0] = 120;                 /* global time (2 mins) */
-            un.tp[0] = 30;                  /* api time (get more fwd content) (every 30 secs or so ...) */
+            clickchat(cstate);
+            
+            un.tg[0] = 10;                  /* global time (10 secs) */
+            un.tp[0] = 3;                   /* api time (get more fwd content) (every 3 secs or so ...) */
 
             apihits = 0;
             freq = 1000;                    /* 1000 == 1 second */
@@ -202,7 +206,7 @@ function ustart() {
             console.log('bak api hit * currently enabled !');
             
             // get_in_bkobj();
-            wordswitch();
+            // wordswitch();
                      
             /* --------------- */
             lm = 1;
@@ -215,7 +219,7 @@ function ustart() {
             console.log('bak local hit * currently enabled !');
 
             // read_unin_obj(un.sp[0]);
-            wordswitch();
+            // wordswitch();
 
             /* --------------- */
             ll = 1;
@@ -223,14 +227,15 @@ function ustart() {
             ml = 0;
       break;
 
-      case (un.tp[0] === 30):
+      case (un.tp[0] === 3):
             /* --fwd api hit-- */
             console.log('fwd api hit * currently enabled !');
             
             un.ts[0] = 3                  /* disable more arrow down button in order to prevent timing clash issue */
             
             // get_in_fwobj();
-            colorswitch();
+            // colorswitch();
+            clickchat(cstate);
      
             un.ts[0] = 0                  /* enable more arrow down button */
 
@@ -245,7 +250,8 @@ function ustart() {
             un.ts[0] = 3                  /* disable more arrow down button in order to prevent timing clash issue */
 
             // get_in_fwobj();
-            colorswitch();
+            // colorswitch();
+            clickchat(cstate);
 
 
             un.ts[0] = 0                  /* enable more arrow down button */
@@ -261,7 +267,7 @@ function ustart() {
 
         console.log('we are init!');
 
-        un.tg[0] = 120;                                             /* global time (3 mins) */
+        un.tg[0] = 10;                                              /* global time (10 secs) */
         un.tp[0] = 30;                                              /* api time (get more fwd content) (every 30 secs or so ...) */
         un.ls[0] = 0;
         un.ts[0] = 0;
@@ -307,7 +313,7 @@ function ustart() {
 
             /* // set_html_id('uwatch', mi+':'+se+':'+un.tp[0]+':'+lm+':'+apihits+':'+apimsg+':'+ll+':local:'+calhits+':store:'+ un.ls[0]); */
 
-            set_html_id('uwatch', mi+':'+se+':'+un.tp[0]+':'+lm+':'+apihits+':'+apimsg+':'+ll+':local:'+calhits+':colorswitch:'+ un.cs + ':wordswitch:'+ un.ws +':visits:' + un.vi);        
+            // set_html_id('uwatch', mi+':'+se+':'+un.tp[0]+':'+lm+':'+apihits+':'+apimsg+':'+ll+':local:'+calhits+':colorswitch:'+ un.cs + ':wordswitch:'+ un.ws +':visits:' + un.vi);        
 
             tidcc = setTimeout( function() { ustart(); } ,freq );
 

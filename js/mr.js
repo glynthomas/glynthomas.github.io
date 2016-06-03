@@ -35,248 +35,44 @@ window.isplatform = {
     Any: function() {return (isplatform.Android() || isplatform.BlackBerry() || isplatform.iPhone() || isplatform.iPad() || isplatform.iPod() || isplatform.IEMobile() || isplatform.OS() );}};
 
 window.process = [];
-
 window.menustate = 'home';
-window.contactstate = 0;
-window.overlaystate = 0;
+
 window.scrollstate = 0;
+window.hoverstate = 0;
+window.cstate = 'start';
+window.fwdstate = 0;
 
-
-function _process(ctype, cwho, cdata, cpath) {
-
-  var data = '';
-  var baseurl = window.location.protocol + "//" + (window.location.host + "/" + window.location.pathname).replace('//', '/') + '/';
-  /* configured to allow for requests to different resources for load balance option * default * baseurl */
-  console.log('using default baseurl :' + baseurl);
-   
-  switch (ctype) {
-
-    case ('get'):
-          getdata(baseurl + cpath, callrequest, 'url', cwho);
-    break;
-      
-    case ('post'):
-          switch (cwho) {
-            case ('_contact'):   /* contact us widget */
-                  postdata(baseurl + cpath, callrequest , 'url',  cdata , cwho);
-            break;
-          }
-    break;
-  }
-
-  baseurl = null;
-  callrequest(data);
-  data = null;
-}
-
-function callrequest(data) {
-   
-  /* responce data || user messaged || error handling  */
-
-  var datastr = data.split(':*:');
-
-  if (datastr[0] !== '') {
-  
-  /*
-  console.log('(status: post or get or error) -> ' + datastr[0]); // status: post or get or error
-  console.log('(postfrom: who made request) -> ' + datastr[1]);   // postfrom: who made the post 
-  console.log('this is the data in -->' + data);
-  */
-
-    switch (datastr[0]) {
-
-      case ('get'):
-
-           switch (true) {
-
-            case (datastr[1] === '_kcode'):
-                  /* now check for error bubbled, returned from process */
-                  datastr[3] = trimquote(datastr[3]);
-                  set_html_val('authenticity_token', datastr[3]);
-                  console.log('update auth token: ' + datastr[3]);
- 
-            break;
-
-            case ('error'):
-                  console.log(datastr[1]);
-                  console.log(datastr[2]);
-                  console.log('unable to connect to unbios, please try later');
-            break;
-             
-            }
-            datastr = null;
-      break;
-
-      case ('post'):          
-          /* post returned good (error not bubbled from post action) check postfrom */
-
-           switch (true) {
-
-            case (datastr[1] === '_contact'):
-                  /* now check for error bubbled, returned from process */
-                  datastr[3] = trimquote(datastr[3]);
-
-                  if ( datastr[3] === 'correct_contact_send' ) {
-
-                       statemsg('_contact', 'correct');
-
-                       console.log('contact us process completed * correct');
-                  
-                  } else {
-
-                       statemsg('_contact','error');
-
-                       console.log('contact us process completed * error');
-                  }            
-            break;
-                    
-            }
-            datastr = null;
-      break;
-   }
-  }
-  datastr = null;
-}
 
 /* client side events * functions */
 
 document.onreadystatechange = function () {
   if (document.readyState == "interactive") {
-
-    // navmaincolor();
-    // changeimg();
-    
-    changetxt();
-    timtoggle('toggle');
-    timtoggle('resume');
-
-  }
-}
-
-window.onload = function() {
-
-  /* onload */
-
-  /* gifcntrl('load'); // or start * browser implementation */
-  /* var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; */
-  /* var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; */
-
-  switch (true) {
-
-      case (document.documentElement.scrollTop > 740 || document.body.scrollTop > 740 ):
-            /* console.log('white the header'); */
-            clear_css_class('main-nav', 'home');
-            add_css_class('main-nav', 'dark');
-            scrollstate = 2;
-      break;
-
-      case (document.documentElement.scrollTop > 150 || document.body.scrollTop > 150):
-            /* console.log('darken the header'); */
-            clear_css_class('main-nav', 'home');
-            add_css_class('main-nav', 'light');
-            scrollstate = 1;
-      break;
-
-      case (document.documentElement.scrollTop < 150 || document.body.scrollTop < 150 ):
-            /* console.log('lighten the header'); */
-            clear_css_class('main-nav', 'home');
-            scrollstate = 0;
-      break;
-
+     checkurlvalue();
   }
 }
 
 
-// window.onscroll = function() { navmaincolor() };
+function checkurlvalue() {
+  if ( (window.location.search.substring(1).toString().split('=')[1]) !== 'terms' ) {
+      console.log ('no url param detected !');
+      document.getElementById('mrglynthomas').style.display = 'block'; 
+      document.getElementById('mrlegal').style.display = 'none';
+      cstate = 'start';
 
-function navmaincolor() {
-
-  console.log(document.body.scrollTop);
-  console.log(document.documentElement.scrollTop);
-/*
-  if (document.documentElement.scrollTop !== 0 || document.body.scrollTop !== 0 ) { 
-
-      switch (true) {
-        case (visible_css_class('homepage')):
-        case (visible_css_id('findmore')):
-              //gifcntrl('stop'); imgcntrl('color'); 
-        break;
-      }
-  
-  } else { 
-
-     switch (true) {
-        case (visible_css_class('homepage')):
-        case (visible_css_id('findmore')):
-              //gifcntrl('start');imgcntrl('uncolor'); 
-        break;
-     }
+  } else {
+      console.log ('url param detected !');
+      document.getElementById('mrglynthomas').style.display = 'none'; 
+      document.getElementById('mrlegal').style.display = 'block';
+      cstate = 'legal';
   }
-  */
-  
-  if ( !( visible_css_class('visible') || visible_css_class('about') || visible_css_class('contact') || visible_css_class('privacy') || visible_css_class('terms')  ) ) { 
 
-    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var sevenforty = 0;
-    var onefifty = 0;
+  timtoggle('toggle');
+  timtoggle('resume'); 
 
-    console.log('width : ' + width);
-
-    switch (true) {
-
-      case (width <= 355):    /* 320x480 */
-            onefifty = 80;    /* 150 - 99px approx */
-            sevenforty = 580; /* 740 adjusted for small screen */
-      break; 
-
-      case (width > 320):    /* 320x480 */
-            onefifty = 80;    /* 150 - 99px approx */
-            sevenforty = 673; /* 740 adjusted for small screen */
-      break; 
-
-      case (width === 360):   /* 360x640 */
-            onefifty = 80;    /* 150 - 99px approx */
-            sevenforty = 666; /* 740 adjusted for small screen */
-      break;
-
-      default:
-            onefifty = 150;   /* 150 default */
-            sevenforty = 740; /* 740 default */
-    }
-
-    switch (true) {
-
-      case (document.documentElement.scrollTop > 1000 || document.body.scrollTop > 1000):
- 
-      break;
-
-      case (document.documentElement.scrollTop > sevenforty || document.body.scrollTop > sevenforty ):
-            console.log('white the header');
-            clear_css_class('main-nav', 'home');
-            //add_css_class('main-nav', 'light');
-            add_css_class('main-nav', 'dark');
-            scrollstate = 2;
-      break;
-
-      case (document.documentElement.scrollTop > onefifty || document.body.scrollTop > onefifty):
-            console.log('darken the header');
-            clear_css_class('main-nav', 'home');
-            //add_css_class('main-nav', 'light');
-            add_css_class('main-nav', 'dark');
-            scrollstate = 1;
-      break;
-
-      case (document.documentElement.scrollTop < onefifty || document.body.scrollTop < onefifty ):
-            console.log('lighten the header');
-            clear_css_class('main-nav', 'home'); 
- 
-            scrollstate = 0;
-      break;
-
-    } 
-    width = null; sevenforty = null; onefifty = null;   
-  }
 }
+
+// window.onload = function() {}
+// window.onscroll = function() {  console.log(document.body.scrollTop); console.log(document.documentElement.scrollTop); };
 
 /*
 ref : http://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation
@@ -304,16 +100,17 @@ document.onmouseover = function mouseover(event) {
  try { var tagclass = elem.className.split(" ")[0]; } catch(e) { var tagclass = null; }
  var tagid = elem.id;
 
- var tagclass = elem.className.split(" ")[0];
+ var tagclass = elem.className.toString().split(" ")[0];
+
+ //console.log('mouseover here : '+ tagclass);
 
  switch(true) {
 
-  case (tagclass === 'logo'):
-        // changetxt();
+  case (tagclass === 'profile'):
+        //rmoore('once');
   break;
 
  }
-
 }
 
 document.onmouseout = function mouseover(event) {
@@ -323,70 +120,13 @@ document.onmouseout = function mouseover(event) {
  try { var tagclass = elem.className.split(" ")[0]; } catch(e) { var tagclass = null; }
  var tagid = elem.id;
 
- var tagclass = elem.className.split(" ")[0];
+ var tagclass = elem.className.toString().split(" ")[0];
 
  switch(true) {
-
-  case (tagid === 'hometoday'):
-        elem.setAttribute('src', '/img/today-48.png');
+  case (tagclass === 'profile'):    
   break;
 
-
  }
-
-}
-
-document.onkeyup = function keyPress(event) {
-
-  console.log('onkeyup contactstate : ' + contactstate);
-
-  switch (true) {
-
-    case ( contactstate === 1 ):
-
-    var tagid = event.target.id;
-    if (tagid) {
-
-      switch (tagid) {
-
-        case ('contact_name'):
-        case ('contact_email'):
-        case ('contact_subject'):
-        case ('contact_message'):
-              validate('contact');
-        break;
-      }
-    }
-
-    break;
-
-  }
-}
-
-document.onchange = function onChange(event) {
-
-  console.log('onchange contactstate : ' + contactstate);
-
-  switch (true) {
-
-    case ( contactstate === 1 ):
-
-    var tagid = event.target.id;
-    if (tagid) {
-
-      switch (tagid) {
-
-        case ('contact_name'):
-        case ('contact_email'):
-        case ('contact_subject'):
-        case ('contact_message'):
-              validate('contact');
-        break;
-      }
-    }
-    break;
-
-  }
 }
 
 document.onclick = function keyClick(event) {
@@ -396,7 +136,7 @@ document.onclick = function keyClick(event) {
   try { var tagclass = elem.className.split(" ")[0]; } catch(e) { var tagclass = null; }
   var tagid = elem.id;
 
-  var tagclass = elem.className.split(" ")[0];
+  var tagclass = elem.className.toString().split(" ")[0];
   var tagtype = elem.tagName.toLowerCase();
 
   console.log(tagid);
@@ -405,153 +145,100 @@ document.onclick = function keyClick(event) {
 
   switch (true) {
 
-/* menu items */
-
-   case (tagclass === 'logo'):
-   case (tagclass === 'navbar-brand'):
-         timtoggle('toggle');
-   case (tagclass === 'homenav'):
-   case (tagid === 'homenav'):
-   case (tagclass === 'homespace'):
-   case (tagid === 'home'):
-         if (overlaystate === 1) { navtoggle();}
-         selectmenu('home');
+   case (tagclass === 'profile'):
+         // clicksound.playclip();
+         clickchat('start');
+   break;
+   case (tagclass === 'profilelegal'):
+         // clicksound.playclip();
+         clickchat('legal');
+   break;
+   case (tagclass === 'privacyfooter'):
+         scrollTo(8544, 700);
+   break;
+   case (tagclass === 'termsfooter'):
          scrollTo(0, 700);
    break;
-
-   case (tagclass === 'how'):
-         timtoggle('resume');
-   case (tagclass === 'aboutnav'):
-   case (tagid === 'aboutnav'):
-   case (tagclass === 'aboutspace'):
-   case (tagid === 'about'):
-         if (overlaystate === 1) { navtoggle();}
-         selectmenu('about');
-         scrollTo(0, 700);
-   break;
-
-   case (tagclass === 'termsandprivacy'):
-         selectmenu('termsprivacy');
-         scrollTo(0, 700);
-   break;
-
-   case (tagclass === 'contactnav'):
-   case (tagid === 'contactnav'):
-   case (tagclass === 'contactspace'):
-   case (tagclass === 'getintouch'):    
-   case (tagid === 'contact'):
-         if (overlaystate === 1) { navtoggle();}
-         scrollTo(0, 700);
-         selectmenu('contact');
-         timtoggle('resume');
-         /*clear_css_class('footer','open');
-         setTimeout( function() {  clear_css_class('footer',''); } , 2500 ); */
-   break;
-
-   case (tagclass === 'open'):
-   case (tagclass === 'footxt'):
-          /* setTimeout( function() {  clear_css_class('footer',''); } , 2500 ); */
-   break;
-
-
-/* hamburger */
-
-   case (tagid === 'body'):
-   case (tagid === 'menu'):
-   case (tagid === 'wrapper'):
-   case (tagid === 'main-nav'):
-   case (tagid === 'overlay'):
-   case (tagid === 'nav-toggle'):
-   case (tagclass === 'mobile-menu-trigger'):
-
-/* extended hamburger */
-
-   case (tagclass === 'figure__caption'):
-   case (tagclass === 'caption__inner'):
-
-   case (tagclass === 'talk'):
-   case (tagclass === 'homekey'):
-
-   case (tagid === '' && tagclass === ''):
-         if ( contactstate !== 1 ) { gifcntrl('toggle'); }
-         navtoggle();
-   break;
-
-/* contact us we can help */
-
-    case (tagid === 'mail-widget'):
-    case (tagclass === 'title-bar'):
-    case (tagclass === 'title-text'):
-    case (tagclass === 'online-dot'):
-    case (tagclass === 'title-click'):
-    case (tagclass === 'controls'):
-          contoggle();
-    break;
-
-    case (tagclass === 'contactclose'):
-    case (tagid === 'sendclose'):
-          clearcontent();
-          quitclose();
-    break;
-
-/* summary service buttons * unable * pre-post */
-
-    case (tagid === 'contact_name'):
-    case (tagid === 'contact_email'):
-    case (tagid === 'contact_subject'):
-          if ( visible_css_class('buttonprocess') ) {
-             document.getElementById("contact_name").blur();
-             document.getElementById("contact_email").blur();
-             document.getElementById("contact_subject").blur();
-          }
-    break;
-
-/* contact us, we can help message widget  */
-
-    case (tagid === 'contact_message'):
-          if ( visible_css_class('buttonprocess') ) {
-              document.getElementById("contact_message").blur();
-          } else {
-              validate('contact');
-          }
-    break;
-
-    case (tagid === 'contact_submit'):
-
-          if ( validate('contact')) {
-               process['_contact'] = '_contact' + '=' + base64_encode( 'contact' ) + ':'
-               + encrypt( document.getElementById("contact_name").value ) + ':'
-               + encrypt((document.getElementById("contact_email").value).toLowerCase()) + ':'
-               + base64_encode( document.getElementById("contact_subject").value ) + ':'
-               + encrypt( document.getElementById("contact_message").value ) + ':'
-               + base64_encode(un.vi) + ':' 
-               + base64_encode(isplatform.Any()) + ':' 
-               + base64_encode(isbrowser.Any()) + ':' 
-               + base64_encode(istimezone()) + ':'
-               + base64_encode( document.getElementById("authenticity_token").value );
-
-               _process('post', '_contact', process['_contact'] ,'callin');
-
-               stateprocess('_contact','set');
-
-               console.log('send process completed!');
-          
-          } else {
-
-               console.log('send process problem!');
-          }
-
-    break;
-
-    case (tagclass === 'copyright'):
-          window.open("http://www.unbios.com");
-    break;
 
   }
 
-  elem = null;tagclass = null;tagid = null;tagclass = null;tagtype = null;
+  elem = null;tagclass = null;tagid = null;tagtype = null;
 
 }
+
+
+function clickchat(begin) {
+  switch (begin) {
+    case ('start'):
+         if (fwdstate === 0) {
+         setTimeout( function() { document.getElementById('normal').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 50 );
+         setTimeout( function() { set_html_id('saythings','hello'); } , 500 );
+         setTimeout( function() { set_html_id('saythings','I\'m Glyn'); } , 700 );
+         setTimeout( function() { set_html_id('saythings','Freelance'); } , 900 );
+         setTimeout( function() { set_html_id('saythings','Creative'); } , 1100 );
+         setTimeout( function() { set_html_id('saythings','Developer'); } , 1300 );
+         setTimeout( function() { set_html_id('saythings','Project'); } , 1500 );
+         setTimeout( function() { set_html_id('saythings','Manager'); } , 1700 );
+         setTimeout( function() { set_html_id('saythings','Tech'); } , 1900 );
+         setTimeout( function() { set_html_id('saythings','Consultant'); } , 2100 );
+         setTimeout( function() { set_html_id('saythings','Maybe'); } , 2400 );
+         setTimeout( function() { set_html_id('saythings','I'); } , 2600 );
+         setTimeout( function() { set_html_id('saythings','can'); } , 2800 );
+         setTimeout( function() { set_html_id('saythings','help'); } , 3000 );
+         // setTimeout( function() { set_html_id('saythings','you'); } , 3200 );
+         setTimeout( function() { set_html_id('saythings','?'); } , 3400 );
+         setTimeout( function() { document.getElementById('details').style.display = 'block';} , 3600 );
+         setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 3700 );
+         setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 3800 );
+         setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 3900 );
+         setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 4700 );
+         setTimeout( function() { timtoggle('stop');} , 5000 );
+         fwdstate = 1;
+         }
+    break;
+        case ('legal'):
+         if (fwdstate === 0) {
+         setTimeout( function() { document.getElementById('surpriselegal').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 50 );
+         setTimeout( function() { set_html_id('saythings','hello'); } , 500 );
+         setTimeout( function() { set_html_id('saythings','I\'m Glyn'); } , 700 );
+         setTimeout( function() { set_html_id('saythings','Freelance'); } , 900 );
+         setTimeout( function() { set_html_id('saythings','Creative'); } , 1100 );
+         setTimeout( function() { set_html_id('saythings','Developer'); } , 1300 );
+         setTimeout( function() { set_html_id('saythings','Project'); } , 1500 );
+         setTimeout( function() { set_html_id('saythings','Manager'); } , 1700 );
+         setTimeout( function() { set_html_id('saythings','Tech'); } , 1900 );
+         setTimeout( function() { set_html_id('saythings','Consultant'); } , 2100 );
+         setTimeout( function() { set_html_id('saythings','Maybe'); } , 2400 );
+         setTimeout( function() { set_html_id('saythings','I'); } , 2600 );
+         setTimeout( function() { set_html_id('saythings','can'); } , 2800 );
+         setTimeout( function() { set_html_id('saythings','help'); } , 3000 );
+         setTimeout( function() { set_html_id('saythings','?'); } , 3400 );
+         setTimeout( function() { document.getElementById('legal').style.display = 'block';} , 3600 );
+         setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 3700 );
+         setTimeout( function() { scrollTo(document.body.scrollHeight, 10); } , 3800 );
+         setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 3900 );
+         setTimeout( function() { document.getElementById('legal-logo-alt').style.display = 'none'; document.getElementById('legal-logo-default').style.display = 'block'; } , 4700 );
+         setTimeout( function() { scrollTo(0, 700) } , 4800 );
+         setTimeout( function() { timtoggle('stop');} , 5000 );
+         fwdstate = 1;
+         }
+    break;
+
+  }
+}
+
+function rmoore(often) {
+  if (hoverstate === 0) {
+    switch (often) {
+     case ('once'):
+           document.getElementById('normal').style.display = 'none'; document.getElementById('surprise').style.display = 'block';
+           setTimeout( function() { document.getElementById('normal').style.display = 'block'; document.getElementById('surprise').style.display = 'none'; } , 250 );
+           hoverstate = 1;
+     break;
+    }
+  }
+}
+
 
 function unscroll(state) {
 
@@ -566,215 +253,8 @@ function unscroll(state) {
 }
 
 
-function clearwidget(widget) {
-
-  switch (widget) {
-
-    case ('contact'):
-
-          document.getElementById(widget + '_name').value = '';
-          document.getElementById(widget + '_email').value = '';
-          document.getElementById(widget + '_subject').selectedIndex = 'selectsubject';
-          document.getElementById(widget + '_message').value = '';
-    break;
-
-  }
-}
-
-function selectmenu(menu) {
-
-  clear_css_class('home','menu'); 
-  clear_css_class('about','menu');
-  clear_css_class('project','menu');
-  clear_css_class('contact','menu');
-  clear_css_class(menu,'menu-select');
-
-  document.getElementsByTagName("body")[0].removeAttribute("style");
-
-  switch (menu) {
-
-    case ('home'):
-          
-           switch (un.cs[0]) {
-
-            case (0):
-                 clear_css_class('body','stopcolor');
-                 clear_css_class('main-nav', 'stopcolor');
-                 clear_css_class('contact_submit', 'stopcolor');
-            break;
-            case (1):
-                 clear_css_class('body','readycolor');
-                 clear_css_class('main-nav', 'readycolor');
-                 clear_css_class('contact_submit', 'readycolor');
-            break;
-            case (2):
-                 clear_css_class('body','gocolor');
-                 clear_css_class('main-nav', 'gocolor');
-                 clear_css_class('contact_submit', 'gocolor');
-            break;
-            case (3):
-                 clear_css_class('body','pausecolor');
-                 clear_css_class('main-nav', 'pausecolor');
-                 clear_css_class('contact_submit', 'pausecolor');
-            break;
-
-          }
-
-          set_css_class('home','display','block');
-          set_css_class('about','display','none');
-          set_css_class('contact','display','none');
-          set_css_class('termsprivacy','display','none');
-     
-          menustate = 'home';
-          gifcntrl('start');
-    break;
-
-    case ('about'):
-
-           switch (un.cs[0]) {
-
-            case (0):
-                 clear_css_class('body','stopcolor');
-                 clear_css_class('main-nav', 'stopcolor');
-                 clear_css_class('contact_submit', 'stopcolor');
-            break;
-            case (1):
-                 clear_css_class('body','readycolor');
-                 clear_css_class('main-nav', 'readycolor');
-                 clear_css_class('contact_submit', 'readycolor');
-            break;
-            case (2):
-                 clear_css_class('body','gocolor');
-                 clear_css_class('main-nav', 'gocolor');
-                 clear_css_class('contact_submit', 'gocolor');
-            break;
-            case (3):
-                 clear_css_class('body','pausecolor');
-                 clear_css_class('main-nav', 'pausecolor');
-                 clear_css_class('contact_submit', 'pausecolor');
-            break;
-
-          }
-  
-          set_css_class('home','display','none');
-          set_css_class('about','display','block');
-          set_css_class('contact','display','none');
-          set_css_class('termsprivacy','display','none');
-    
-          gifcntrl('stop');
-          menustate = 'about';
-          scrollstate = 1;
-    break;
-
-    case ('contact'):
-
-          switch (un.cs[0]) {
-
-            case (0):
-                 clear_css_class('body','stopcolor');
-                 clear_css_class('main-nav', 'stopcolor');
-                 clear_css_class('contact_submit', 'stopcolor');
-            break;
-            case (1):
-                 clear_css_class('body','readycolor');
-                 clear_css_class('main-nav', 'readycolor');
-                 clear_css_class('contact_submit', 'readycolor');
-            break;
-            case (2):
-                 clear_css_class('body','gocolor');
-                 clear_css_class('main-nav', 'gocolor');
-                 clear_css_class('contact_submit', 'gocolor');
-            break;
-            case (3):
-                 clear_css_class('body','pausecolor');
-                 clear_css_class('main-nav', 'pausecolor');
-                 clear_css_class('contact_submit', 'pausecolor');
-            break;
-
-          }
-
-          set_css_class('home','display','none');
-          set_css_class('about','display','none');
-          set_css_class('contact','display','block');
-          set_css_class('termsprivacy','display','none');
-
-          gifcntrl('stop');
-          menustate = 'contact';
-          scrollstate = 1;
-    break;
-
-    case ('termsprivacy'):
-
-          switch (un.cs[0]) {
-
-            case (0):
-                 clear_css_class('body','stopcolor');
-                 clear_css_class('main-nav', 'stopcolor');
-                 clear_css_class('contact_submit', 'stopcolor');
-            break;
-            case (1):
-                 clear_css_class('body','readycolor');
-                 clear_css_class('main-nav', 'readycolor');
-                 clear_css_class('contact_submit', 'readycolor');
-            break;
-            case (2):
-                 clear_css_class('body','gocolor');
-                 clear_css_class('main-nav', 'gocolor');
-                 clear_css_class('contact_submit', 'gocolor');
-            break;
-            case (3):
-                 clear_css_class('body','pausecolor');
-                 clear_css_class('main-nav', 'pausecolor');
-                 clear_css_class('contact_submit', 'pausecolor');
-            break;
-
-          }
-
-          set_css_class('home','display','none');
-          set_css_class('about','display','none');
-          set_css_class('contact','display','none');
-          set_css_class('termsprivacy','display','block');
-
-          gifcntrl('stop');
-          menustate = 'termsandprivacy';
-          scrollstate = 1;
-    break;
-
-  }
-
-}
-
-function validate(widget) {
-
-  /* basic : name, postcode, email, select, message validate  */
-
-  var valchk = 0;
-
-  switch (widget) {
-
-    case ('contact'):
-
-          if ( isvalid( document.getElementById(widget + '_name').value ) === false ) { clear_css_class(widget + '_name', 'mail_un');valchk = valchk - 1;} else { clear_css_class(widget + '_name', 'mail');valchk = valchk + 1;}
-          if ( isemail( document.getElementById(widget + '_email').value ) === false ) { clear_css_class(widget + '_email', 'mail_un');valchk = valchk - 1;} else { clear_css_class(widget + '_email', 'mail');valchk = valchk + 1;}
-          if ( isselect( document.getElementById(widget + '_subject')) === false )  { clear_css_class(widget + '_subject', 'mail_un');valchk = valchk - 1;} else { clear_css_class(widget + '_subject', 'mail');valchk = valchk + 1;} 
-          if ( isvalid( document.getElementById(widget + '_message').value) === false ) { clear_css_class(widget + '_message', 'mail_message_un');valchk = valchk - 1;} else { clear_css_class(widget + '_message', 'mail_message');valchk = valchk + 1;} 
-              
-          console.log('valchk : ' + valchk);
-
-          if (valchk === 4) {ustop(); clear_css_class('contact_submit','buttonfillmenu'); return true;} else {clear_css_class('contact_submit','buttonunable'); return false;}
-              
-          valchk = null;
-     
-    break;
-
-  }  
-}
-
-
 function isvalid(html) {
 
-  /* html === document.getElementById('comments').value */
-
   if (html === null || html === "") { return false; }
 
   var unchars = "!@#$%^&*()+=-[]\\\';/{}|\":<>?";
@@ -788,124 +268,6 @@ function isvalid(html) {
   }
 }
 
-function isvalidaddress(html) {
-
-  /* html === document.getElementById('comments').value */
-
-  if (html === null || html === "") { return false; }
-
-  var unchars = "!@#$%^&*()+=-[]\\\';/{}|\":<>?";
-
-  for (var i = 0; i < html.length; i++) {
-    if (unchars.indexOf( html.charAt(i)) != -1 ) {
-    /* alert ("Your username has special characters. \nThese are not allowed.\n Please remove them and try again."); */
-    return false;
-    unchars = null;
-    }
-  }
-
-  if ( html.length < 15 ) { return false; }
-
-}
-
-function isvalidzero(html) {
-
-  /* html === document.getElementById('comments').value */
-
-  var unchars = "!@#$%^&*()+=-[]\\\';/{}|\":<>?";
-
-  for (var i = 0; i < html.length; i++) {
-    if (unchars.indexOf( html.charAt(i)) != -1 ) {
-    /* alert ("Your username has special characters. \nThese are not allowed.\n Please remove them and try again."); */
-    return false;
-    unchars = null;
-    }
-  }
-}
-
-function isvalidpromo(html) {
-
-  /* html === document.getElementById('comments').value */
-
-  var unchars = "!@#$%^&*()+=-[]\\\';/{}|\":<>?";
-
-  for (var i = 0; i < html.length; i++) {
-    if (unchars.indexOf( html.charAt(i)) != -1 ) {
-    /* alert ("Your username has special characters. \nThese are not allowed.\n Please remove them and try again."); */
-    return false;
-    unchars = null;
-    }
-  }
-
-  switch (true) {
-
-    case (html.length === 0):
-    case (html.length < 5 ):
-          return true;
-    break;
-    case (html.length > 5 ):
-          return false;
-    break;
-  }
-}
-
-
-function isnumber(number) {
-
-  if (number === null || number === "" ) { return false; }
-
-   var regex=/^[0-9]+$/;
-    if (number.match(regex) || ( number.replace(/\s/g,'').length > 8 )) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
-function iszip(postcode) {
-
-  if (postcode === null || postcode === "") { return false; }
-  postcode = postcode.replace(/\s/g, "");
-  var regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
-  return regex.test(postcode);
-
-}
-
-
-function isemail(email) {
-
-  var hasError = false;
-  var emReg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
- 
-  switch (true) {
-    case (!email):
-          console.log('we are here ... !em');
-          hasError = true;
-    break;
-    case (!emReg.test(email)):
-          hasError = true;
-    break;
-  }
-  if (!hasError) {
-      emReg, hasError = null;   
-      console.log('we are here ... !hasError true');
-      return true;
-  } else {
-      console.log('we are here ... !hasError false');
-      return false;
-  }
-}
-
-
-function isselect(selector) {
-
-  var selectedvalue = selector.options[selector.selectedIndex].value;
-  if (selectedvalue === "selectsubject") {
-      selectedvalue = null;
-      return false;
-  }
-}
 
 function istimezone() {
   var tz = jstz.determine(); var response_text = '';
@@ -918,114 +280,12 @@ function istimezone() {
   tz = null; response_text = null;
 }
 
-function checkzip() {
- 
-  var el = document.getElementById('zipcheck_zip');
-
-  switch (true) {
-
-    case (el.value.toUpperCase().indexOf('SW18') !== -1):
-          console.log('return 2');
-          return 2;
-    break
-
-    default:
-          console.log('return 1');
-          return 1;
-  }
-
-  el = null;
-
-}
 
 function stripnotes(msg) {
   
   msg = msg.replace(/<br>/gi, "\n");
   msg = msg.replace(/\s+$/, '');
   return msg;
-
-}
-
-function stateprocess(who,action) {
-
- /* feedback to inform that the action is being processed */
-
-  switch (who) {
-
-
-    case ('_contact'):
-
-      if (action === 'set') {
-
-          clear_css_class('contact_name', 'mail_grey');
-          clear_css_class('contact_email', 'mail_grey');
-          clear_css_class('contact_subject', 'mail_grey');
-          clear_css_class('contact_message', 'mail_message_grey');
-     
-          set_css_id('contact_submit', 'display', 'none');
-          set_css_id('contact_process', 'display', 'block');
-
-      } else {
-
-          clear_css_class('contact_name', 'mail');
-          clear_css_class('contact_email', 'mail');
-          clear_css_class('contact_subject', 'mail');
-          clear_css_class('contact_message', 'mail_message');
-
-          set_css_id('contact_process', 'display', 'none');
-          set_css_id('contact_submit', 'display', 'block');
-
-      }
-
-    break;
-
-  }
-}
-
-
-function statemsg(who,state) {
-
-  switch (who) {
-
-    case ('_contact'):
-
-      if (state === 'error') {
-          add_css_class('openModal', 'darkmodal');
-          set_css_class('summaryfail', 'display', 'block');
-      } else {
-          add_css_class('openModal', 'darkmodal');
-          set_html_id('sendmail', '' + (document.getElementById("contact_email").value) + '' );
-          set_css_class('contactsendmsg', 'display', 'block');
-      }
-
-      contactclose();
-      stateprocess('_contact','unset');
-      clearwidget('contact');
-
-      console.log('we are in statemsg, close this dialog ... then display either success dialog or fail dialog!');
-
-    break;
-
-  }
-}
-
-function contactclose() {
-
-  /* maybe settimeout * input data * process message * close dialog * <- no delay between -> * display message */
-  add_css_class('mail-widget', 'closed');add_css_class('widget-state', 'closed');clear_css_class('online-dot', 'online-dot'); add_css_class('online-dot', 'animateflicker');contactstate = 0;
-
-}
-
-function clearcontent() {
-
-  document.getElementById("sendmail").value = '';
- 
-}
-
-function quitclose() {
-
-  clear_css_class('openModal', 'modalDialog'); 
-  set_css_class('contactsendmsg', 'display', 'none');
 
 }
 
@@ -1051,66 +311,6 @@ function changeimg() {
 
 }
 
-function changetxt() {
-
-  set_html_id('code','Contact');
-  setTimeout( function() { set_html_id('word',' Glyn'); } , 25 );
-  setTimeout( function() { set_html_id('code','he can'); } , 50 );
-  setTimeout( function() { set_html_id('word',' help'); } , 100 );
-  setTimeout( function() { set_html_id('code','Tech'); } , 200 );
-  setTimeout( function() { set_html_id('word',' Consultant'); } , 300 );
-
-}
-
-function changeapps() {
-
-  set_html_id('code','Apps'); set_html_id('word',' Consultant');
-  setTimeout( function() { set_html_id('code','Tech'); } , 100 );
-  setTimeout( function() { set_html_id('code','Code'); } , 200 );
-  setTimeout( function() { set_html_id('code','Apps'); } , 300 );
-  setTimeout( function() { set_html_id('code','Tech'); } , 400 );
-  setTimeout( function() { set_html_id('code','Code'); } , 500 );
-  setTimeout( function() { set_html_id('code','Apps'); } , 600 );
-
-}
-
-function changecode() {
-
-  set_html_id('code','Code'); set_html_id('word',' Consultant');
-  setTimeout( function() { set_html_id('code','Tech'); } , 100 );
-  setTimeout( function() { set_html_id('code','Apps'); } , 200 );
-  setTimeout( function() { set_html_id('code','Code'); } , 300 );
-  setTimeout( function() { set_html_id('code','Tech'); } , 400 );
-  setTimeout( function() { set_html_id('code','Apps'); } , 500 );
-  setTimeout( function() { set_html_id('code','Code'); } , 600 );
-
-}
-
-function changetech() {
-
-  set_html_id('code','Tech'); set_html_id('word',' Consultant');
-  setTimeout( function() { set_html_id('code','Apps'); } , 100 );
-  setTimeout( function() { set_html_id('code','Code'); } , 200 );
-  setTimeout( function() { set_html_id('code','Tech'); } , 300 );
-  setTimeout( function() { set_html_id('code','Code'); } , 400 );
-  setTimeout( function() { set_html_id('code','Apps'); } , 500 );
-  setTimeout( function() { set_html_id('code','Tech'); } , 600 );
-
-}
-
-function changeagent() {
-
-  set_html_id('code','Angel'); set_html_id('word',' Advisor');
-  setTimeout( function() { set_html_id('code','Code'); } , 50 );
-  setTimeout( function() { set_html_id('code','Apps'); } , 100 );
-  setTimeout( function() { set_html_id('code','Tech'); } , 200 );
-  setTimeout( function() { set_html_id('code','Code'); } , 300 );
-  setTimeout( function() { set_html_id('word',' Consultant'); } , 400 );
-  setTimeout( function() { set_html_id('code','Angel'); } , 500);
-  setTimeout( function() { set_html_id('word',' Advisor'); } , 600 );
-
-}
-
 function contactmsg() {
   var data = [[0, 11, "Good morning"], [12, 17, "Good afternoon"],[18, 24, "Good night"]],hr = new Date().getHours();
   for(var i = 0; i < data.length; i++){
@@ -1121,166 +321,6 @@ function contactmsg() {
   data = null;
 }
 
-function colorswitch() {
-
-  console.log('color number : ' + un.cs[0])
-
-  switch (un.cs[0]) {
-    case (0):
-          console.log('default color 0 yeah!');
-          clear_css_class('body','stopcolorease');
-          clear_css_class('main-nav', 'stopcolorease');
-          un.cs[0] = un.cs[0] + 1;
-    break;
-    case (1):
-          console.log('default color 1 yeah!');
-          clear_css_class('body','readycolorease');
-          clear_css_class('main-nav', 'readycolorease');
-          un.cs[0] = un.cs[0] + 1;
-    break;
-    case (2):
-          console.log('default color 2 yeah!');
-          clear_css_class('body','gocolorease');
-          clear_css_class('main-nav', 'gocolorease');
-          un.cs[0] = un.cs[0] + 1;
-    break;
-    case (3):
-          console.log('default color 3 yeah!');
-          clear_css_class('body','pausecolorease');
-          clear_css_class('main-nav', 'pausecolorease');
-          un.cs[0] = 0;
-    break;
-
-  }
-
-  ll = 0;  
-}
-
-function wordswitch() {
-
-  switch (un.ws[0]) {
-    case (0):
-         console.log('default words 0 yeah!');
-         changetech();
-         un.ws[0] = un.ws[0] + 1; 
-    break;
-    case (1):
-         console.log('default words 1 yeah!');
-         changecode();
-         un.ws[0] = un.ws[0] + 1; 
-    break;
-    case (2):
-         console.log('default words 2 yeah!');
-         changeagent();
-         un.ws[0] = un.ws[0] + 1; 
-    break;
-    case (3):
-         console.log('default words 3 yeah!');
-         changeapps();
-         un.ws[0] = un.ws[0] + 1; 
-         set_html_id('code','Code');
-    break;
-    case (4):
-         console.log('default words 4 yeah!');
-         changeagent();
-         un.ws[0] = 0;
-         set_html_id('code','Code');
-    break;
-
-  }
- 
-}
-
-function contoggle() {
-
-console.log('contactstate : ' + contactstate);
-
-  if (contactstate === 0) {
-      clear_css_class('mail-widget', 'chatlio-widget');
-      clear_css_class('widget-state', 'controls');
-      set_css_id('contact_name', 'focus', 'focus');
-      clear_css_class('online-dot', 'online-dot');
-
-      selectmenu(menustate);
-
-      gifcntrl('stop');
-      timtoggle('pause');
-
-      contactstate = 1;
-  } else { 
-      add_css_class('mail-widget', 'closed');
-      add_css_class('widget-state', 'closed');
-      clear_css_class('online-dot', 'online-dot');
-      clear_css_class('contact_name', 'mail');
-      clear_css_class('contact_email', 'mail');
-      clear_css_class('contact_subject', 'mail');
-      clear_css_class('contact_message', 'mail_message');
-      document.getElementById('contact_subject').selectedIndex = '0';
-      add_css_class('online-dot', 'animateflicker');
-
-      gifcntrl('start'); 
-      timtoggle('resume');
-
-      contactstate = 0;
-  }
-}
-
-
-function navtoggle() {
-
-console.log('overlay state : ' + overlaystate);
-
-  document.getElementsByTagName("body")[0].removeAttribute("style");
-
-  if (overlaystate === 0) {
-
-      clear_css_class('main-nav', 'stopcolorease');
-      clear_css_class('contact_submit', 'stopcolorease');
-
-      clear_css_class('nav-toggle','darker');
-      clear_css_class('body','stopcolor');
-
-      add_css_class('overlay', 'visible');
-      add_css_class('main-nav', 'overlay-visible');
-      add_css_class('title-bar', 'dark');
-   
-      /* reset default color set */
-      un.cs[0] = 0;
-    
-      timtoggle('pause');
-
-      console.log('color number : ' + un.cs[0]);
-
-      overlaystate = 1;
-
-  } else {
-
-
-      clear_css_class('overlay', 'overlay');
-      clear_css_class('nav-toggle','');
-      
-      clear_css_class('main-nav', 'stopcolor');
-      clear_css_class('title-bar', 'title-bar');
- 
-      timtoggle('toggle');
-      timtoggle('resume');
-
-      overlaystate = 0;
-
-    switch (true) {
-
-      case (scrollstate === 0):
-            clear_css_class('main-nav', 'home');
-      break;
-      case (scrollstate === 1):
-            //add_css_class('main-nav', 'light');
-      break;
-      case (scrollstate === 2):
-            add_css_class('main-nav', 'dark');
-      break;
-    }
-  }
-}
 
 function timtoggle(ctrl) {
 
@@ -1377,8 +417,45 @@ function imgcntrl(state) {
   }
 }
 
+/* audio */
+
+//** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+//** Call: uniquevar.playclip() to play sound
+
+/*
+var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+  "mp3": "audio/mpeg",
+  "mp4": "audio/mp4",
+  "ogg": "audio/ogg",
+  "wav": "audio/wav"
+}
+function createsoundbite(sound){
+  var html5audio=document.createElement('audio')
+  if (html5audio.canPlayType){ //check support for HTML5 audio
+    for (var i=0; i<arguments.length; i++){
+      var sourceel=document.createElement('source')
+      sourceel.setAttribute('src', arguments[i])
+      if (arguments[i].match(/\.(\w+)$/i))
+        sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+      html5audio.appendChild(sourceel)
+    }
+    html5audio.load()
+    html5audio.playclip=function(){
+      html5audio.pause()
+      html5audio.currentTime=0
+      html5audio.play()
+    }
+    return html5audio
+  }
+  else{
+    return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+  }
+}
+var mouseoversound=createsoundbite("/aud/whistle.ogg", "/aud/whistle.mp3");
+var clicksound=createsoundbite("/aud/click.ogg", "/aud/click.mp3");
+var beepsound=createsoundbite("/aud/beep.ogg", "/aud/beep.mp3");
+*/
 
 // console.log('Hello fellow developer, the console is temporarily disabled, See https://en.wikipedia.org/wiki/Self-XSS for more information.');
 // window.console.log = function(){console.error('The developer console is temporarily disabled; See https://en.wikipedia.org/wiki/Self-XSS for more information.');window.console.log = function() {return false;}}
-
 /* console.log('trigger disable message'); */
