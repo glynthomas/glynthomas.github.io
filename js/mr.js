@@ -167,6 +167,7 @@ document.onclick = function keyClick(event) {
          clearTimeout(chat);
          document.getElementById('begin').style.display = 'none'; 
          document.getElementById('details').style.display = 'block';
+         scrollTo(0, 400);
    break;
 
   }
