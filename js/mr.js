@@ -208,7 +208,7 @@ function clickchat(begin) {
          fwdstate = 1;
          }
     break;
-        case ('legal'):
+    case ('legal'):
          if (fwdstate === 0) {
          chat = setTimeout( function() { document.getElementById('surpriselegal').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 50 );
          chat = setTimeout( function() { set_html_id('saythings','hello'); } , 500 );
