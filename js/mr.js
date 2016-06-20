@@ -56,13 +56,13 @@ document.onreadystatechange = function () {
 
 function checkurlvalue() {
   if ( (window.location.search.substring(1).toString().split('=')[1]) !== 'terms' ) {
-      console.log ('no url param detected !');
+      // console.log ('no url param detected !');
       document.getElementById('mrglynthomas').style.display = 'block'; 
       document.getElementById('mrlegal').style.display = 'none';
       cstate = 'start';
 
   } else {
-      console.log ('url param detected !');
+      // console.log ('url param detected !');
       document.getElementById('mrglynthomas').style.display = 'none'; 
       document.getElementById('mrlegal').style.display = 'block';
       cstate = 'legal';
@@ -141,8 +141,8 @@ document.onclick = function keyClick(event) {
   var tagclass = elem.className.toString().split(" ")[0];
   var tagtype = elem.tagName.toLowerCase();
 
-  console.log(tagid);
-  console.log(tagclass);
+  // console.log(tagid);
+  // console.log(tagclass);
   /*console.log(tagtype);*/
 
   switch (true) {
@@ -326,7 +326,7 @@ function contactmsg() {
   var data = [[0, 11, "Good morning"], [12, 17, "Good afternoon"],[18, 24, "Good night"]],hr = new Date().getHours();
   for(var i = 0; i < data.length; i++){
     if(hr >= data[i][0] && hr <= data[i][1]){
-       console.log(data[i][2]);
+       // console.log(data[i][2]);
     }
   }
   data = null;
