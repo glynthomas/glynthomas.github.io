@@ -59,12 +59,18 @@ function checkurlvalue() {
       // console.log ('no url param detected !');
       document.getElementById('mrglynthomas').style.display = 'block'; 
       document.getElementById('mrlegal').style.display = 'none';
+      document.getElementById('begin').style.display = 'block'; 
+      document.getElementById('details').style.display = 'none';
+      document.getElementById('legal').style.display = 'none';
       cstate = 'start';
 
   } else {
       // console.log ('url param detected !');
       document.getElementById('mrglynthomas').style.display = 'none'; 
       document.getElementById('mrlegal').style.display = 'block';
+      document.getElementById('begin').style.display = 'none'; 
+      document.getElementById('details').style.display = 'none';
+      document.getElementById('legal').style.display = 'block';
       cstate = 'legal';
   }
 
@@ -335,6 +341,8 @@ function contactmsg() {
 
 function timtoggle(ctrl) {
 
+ if (cstate !== 'legal') {
+
   switch(ctrl) {
 
     case ('stop'):
@@ -388,6 +396,7 @@ function timtoggle(ctrl) {
     break;
 
   }
+ }
 }
 
 function gifcntrl(state) {
