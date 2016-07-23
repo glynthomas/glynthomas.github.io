@@ -153,6 +153,21 @@ document.onclick = function keyClick(event) {
 
   switch (true) {
 
+   case (tagclass === 'twitter'):
+   case (tagclass === 'detailtwitter'):
+         window.open('https://twitter.com/mrglynthomas', '_blank');
+   break;
+
+   case (tagclass === 'instagram'):
+   case (tagclass === 'detailinstagram'):
+         window.open('https://www.instagram.com/mrglynthomas', '_blank');
+   break;
+   
+   case (tagclass === 'linkedin'):
+   case (tagclass === 'detaillinkedin'):
+         window.open('https://www.linkedin.com/in/mrglynthomas', '_blank');
+   break;
+
    case (tagclass === 'profile'):
          // clicksound.playclip();
          clickchat('start');
