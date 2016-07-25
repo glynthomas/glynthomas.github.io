@@ -215,6 +215,9 @@ document.onmouseout = function mouseover(event) {
   case (tagclass === 'twitter'):
   case (tagclass === 'darktwitter'):
         window.open('https://twitter.com/mrglynthomas', '_blank');
+        setTimeout(function() {
+        window.open('https://twitter.com/mrglynthomas', '_blank');  
+        }, 500);
   break;
 
   case (tagclass === 'instagram'):
