@@ -106,7 +106,7 @@ window.onfocus = function() {
   set_css_class('darktwitter', 'display', 'block');
   set_css_class('bluetwitter', 'display', 'none');
  }, 1000);
- 
+
 }
 
 document.onmouseover = function mouseover(event) {
@@ -212,13 +212,6 @@ document.onmouseout = function mouseover(event) {
  }
 }
 
-
-function newbrowserwin(url) {
-  var win = window.open(url, '_blank');
-  win.focus();
-}
-
-
 document.onclick = function keyClick(event) {
 
   var elem = (event.target) ? event.target : event.srcElement;
@@ -254,7 +247,6 @@ document.onclick = function keyClick(event) {
    case (tagclass === 'darktwitter'):
          set_css_class('darktwitter', 'display', 'none');
          set_css_class('bluetwitter', 'display', 'block');
-         newbrowserwin('https://twitter.com/mrglynthomas');
    break;
 
    case (tagid === '' && tagclass === ''):
