@@ -140,8 +140,7 @@ document.onmouseover = function mouseover(event) {
         setTimeout(function() {
         set_css_class('darktwitter', 'display', 'block');
         set_css_class('bluetwitter', 'display', 'none');
-        window.open('https://twitter.com/mrglynthomas', '_blank');  
-        }, 1000);
+        }, 200);
   break;
 
   case (tagclass === 'instagram'):
@@ -153,7 +152,7 @@ document.onmouseover = function mouseover(event) {
         set_css_class('darkinstagram', 'display', 'block');
         set_css_class('blueinstagram', 'display', 'none');
 
-        }, 1000);
+        }, 200);
   break;
 
   case (tagclass === 'linkedin'):
@@ -165,7 +164,7 @@ document.onmouseover = function mouseover(event) {
         set_css_class('darklinkedin', 'display', 'block');
         set_css_class('bluelinkedin', 'display', 'none');
   
-        }, 1000);
+        }, 200);
   break;
 
   case (tagclass === "darkprofile"):
@@ -176,7 +175,7 @@ document.onmouseover = function mouseover(event) {
         set_css_class('darkprofile', 'display', 'block');
         set_css_class('blueprofile', 'display', 'none');
 
-        }, 1000);
+        }, 200);
   break;
 
  }
@@ -214,24 +213,16 @@ document.onmouseout = function mouseover(event) {
 
   case (tagclass === 'twitter'):
   case (tagclass === 'darktwitter'):
-        window.open('https://twitter.com/mrglynthomas', '_blank');
-        setTimeout(function() {
-        window.open('https://twitter.com/mrglynthomas', '_blank');  
-        }, 500);
+        newbrowserwin('https://twitter.com/mrglynthomas');
   break;
-
-  case (tagclass === 'instagram'):
-  case (tagclass === 'darkinstagram'):
-        window.open('https://www.instagram.com/mrglynthomas', '_blank');
-  break;
-
-  case (tagclass === 'linkedin'):
-  case (tagclass === 'darklinkedin'):
-        window.open('https://www.linkedin.com/in/mrglynthomas', '_blank');
-  break;
-
 
  }
+}
+
+
+function newbrowserwin(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
 }
 
 
@@ -264,6 +255,11 @@ document.onclick = function keyClick(event) {
    break;
    case (tagclass === 'termsfooter'):
          scrollTo(0, 700);
+   break;
+
+   case (tagclass === 'twitter'):
+   case (tagclass === 'darktwitter'):
+         newbrowserwin('https://twitter.com/mrglynthomas');
    break;
 
    case (tagid === '' && tagclass === ''):
