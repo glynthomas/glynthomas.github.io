@@ -132,6 +132,7 @@ document.onmouseover = function mouseover(event) {
         clear_css_class('terms','underline');
   break;
 
+  case (tagclass === 'twitter'):
   case (tagclass === 'darktwitter'):
 
         set_css_class('darktwitter', 'display', 'none');
@@ -143,6 +144,7 @@ document.onmouseover = function mouseover(event) {
         }, 1000);
   break;
 
+  case (tagclass === 'instagram'):
   case (tagclass === 'darkinstagram'):
 
         set_css_class('darkinstagram', 'display', 'none');
@@ -154,6 +156,7 @@ document.onmouseover = function mouseover(event) {
         }, 1000);
   break;
 
+  case (tagclass === 'linkedin'):
   case (tagclass === 'darklinkedin'):
 
         set_css_class('darklinkedin', 'display', 'none');
@@ -209,6 +212,22 @@ document.onmouseout = function mouseover(event) {
         clear_css_class('terms','under');
   break;
 
+  case (tagclass === 'twitter'):
+  case (tagclass === 'darktwitter'):
+        window.open('https://twitter.com/mrglynthomas', '_blank');
+  break;
+
+  case (tagclass === 'instagram'):
+  case (tagclass === 'darkinstagram'):
+        window.open('https://www.instagram.com/mrglynthomas', '_blank');
+  break;
+
+  case (tagclass === 'linkedin'):
+  case (tagclass === 'darklinkedin'):
+        window.open('https://www.linkedin.com/in/mrglynthomas', '_blank');
+  break;
+
+
  }
 }
 
@@ -228,11 +247,6 @@ document.onclick = function keyClick(event) {
   /*console.log(tagtype);*/
 
   switch (true) {
-
-   case (tagclass === 'twitter'):
-   case (tagclass === 'darktwitter'):
-         window.open('https://twitter.com/mrglynthomas', '_blank');
-   break;
 
    case (tagclass === 'profile'):
          // clicksound.playclip();
