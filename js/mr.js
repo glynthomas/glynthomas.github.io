@@ -212,27 +212,6 @@ document.onmouseout = function mouseover(event) {
  }
 }
 
-document.ontouchstart = function KeyTouch(event) {
-  
-  var elem = (event.target) ? event.target : event.srcElement;
- 
-  try { var tagclass = elem.className.split(" ")[0]; } catch(e) { var tagclass = null; }
-  var tagid = elem.id;
-
-  var tagclass = elem.className.toString().split(" ")[0];
-  var tagtype = elem.tagName.toLowerCase();
-
-  switch (true) {
-
-   case (tagclass === 'twitter'):
-         window.open('https://twitter.com/mrglynthomas', '_blank');
-   break;
-   
-  }
-
-  elem = null;tagclass = null;tagid = null;tagtype = null;
-
-}
 
 document.onclick = function keyClick(event) {
 
@@ -249,6 +228,11 @@ document.onclick = function keyClick(event) {
   /*console.log(tagtype);*/
 
   switch (true) {
+
+   case (tagclass === 'twitter'):
+   case (tagclass === 'darktwitter'):
+         window.open('https://twitter.com/mrglynthomas', '_blank');
+   break;
 
    case (tagclass === 'profile'):
          // clicksound.playclip();
