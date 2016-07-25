@@ -135,12 +135,12 @@ document.onmouseover = function mouseover(event) {
   case (tagclass === 'twitter'):
   case (tagclass === 'darktwitter'):
 
-        set_css_class('darktwitter', 'display', 'none');
-        set_css_class('bluetwitter', 'display', 'block');
-        setTimeout(function() {
-        set_css_class('darktwitter', 'display', 'block');
-        set_css_class('bluetwitter', 'display', 'none');
-        }, 200);
+        // set_css_class('darktwitter', 'display', 'block');
+        // set_css_class('bluetwitter', 'display', 'none');
+        // setTimeout(function() {
+        // set_css_class('darktwitter', 'display', 'block');
+        // set_css_class('bluetwitter', 'display', 'none');
+        // }, 200);
   break;
 
   case (tagclass === 'instagram'):
@@ -259,6 +259,8 @@ document.onclick = function keyClick(event) {
 
    case (tagclass === 'twitter'):
    case (tagclass === 'darktwitter'):
+         set_css_class('darktwitter', 'display', 'none');
+         set_css_class('bluetwitter', 'display', 'block');
          newbrowserwin('https://twitter.com/mrglynthomas');
    break;
 
