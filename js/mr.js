@@ -342,29 +342,29 @@ function socialflash() {
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'none');
   set_css_class('bluetwitter', 'display', 'block');
-  }, 100);
+  }, 200);
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'block');
   set_css_class('bluetwitter', 'display', 'none');
-  }, 200);
+  }, 600);
 
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'none');
   set_css_class('blueinstagram', 'display', 'block');
-  }, 300);
+  }, 800);
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'block');
   set_css_class('blueinstagram', 'display', 'none');
-  }, 400);
+  }, 1200);
 
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'none');
   set_css_class('bluelinkedin', 'display', 'block');
-  }, 500);
+  }, 1600);
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'block');
   set_css_class('bluelinkedin', 'display', 'none');
-  }, 600);
+  }, 2000);
 
 }
 
