@@ -105,6 +105,10 @@ window.onfocus = function() {
  setTimeout(function() {
   set_css_class('darktwitter', 'display', 'block');
   set_css_class('bluetwitter', 'display', 'none');
+  set_css_class('darkinstagram', 'display', 'block');
+  set_css_class('blueinstagram', 'display', 'none');
+  set_css_class('darklinkedin', 'display', 'block');
+  set_css_class('bluelinkedin', 'display', 'none');
  }, 1000);
 
 }
@@ -139,30 +143,6 @@ document.onmouseover = function mouseover(event) {
   break;
   case (tagid === 'terms'):
         clear_css_class('terms','underline');
-  break;
-
-  case (tagclass === 'instagram'):
-  case (tagclass === 'darkinstagram'):
-
-        set_css_class('darkinstagram', 'display', 'none');
-        set_css_class('blueinstagram', 'display', 'block');
-        setTimeout(function() {
-        set_css_class('darkinstagram', 'display', 'block');
-        set_css_class('blueinstagram', 'display', 'none');
-
-        }, 200);
-  break;
-
-  case (tagclass === 'linkedin'):
-  case (tagclass === 'darklinkedin'):
-
-        set_css_class('darklinkedin', 'display', 'none');
-        set_css_class('bluelinkedin', 'display', 'block');
-        setTimeout(function() {
-        set_css_class('darklinkedin', 'display', 'block');
-        set_css_class('bluelinkedin', 'display', 'none');
-  
-        }, 200);
   break;
 
   case (tagclass === "darkprofile"):
@@ -247,6 +227,18 @@ document.onclick = function keyClick(event) {
    case (tagclass === 'darktwitter'):
          set_css_class('darktwitter', 'display', 'none');
          set_css_class('bluetwitter', 'display', 'block');
+   break;
+
+   case (tagclass === 'instagram'):
+   case (tagclass === 'darkinstagram'):
+         set_css_class('darkinstagram', 'display', 'none');
+         set_css_class('blueinstagram', 'display', 'block');
+   break;
+
+   case (tagclass === 'linkedin'):
+   case (tagclass === 'darklinkedin'):
+         set_css_class('darklinkedin', 'display', 'none');
+         set_css_class('bluelinkedin', 'display', 'block');
    break;
 
    case (tagid === '' && tagclass === ''):
