@@ -37,8 +37,8 @@
 }
 */
 
-#currentus {display:block;padding-top: 14px;}
-#contentdetails {}
+/* #currentus {display:block;padding-top: 14px;} */
+#contentdetails {display:block;padding-top: 14px;}
 #projectus {display:block; margin-top: 14px;}
 #contactus {display:block; margin-top: 20px;}
 #social {display:block; margin-top: 14px;}
@@ -123,6 +123,11 @@ a, a:visited, img, input {
 }
 
 #details .instagram {
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+#contentdetails .instagram {
     padding-left: 10px;
     padding-right: 15px;
 }
