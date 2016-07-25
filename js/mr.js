@@ -333,30 +333,32 @@ function darkprofile() {
 
 function socialflash() {
 
+  setTimeout(function() {
   set_css_class('darktwitter', 'display', 'none');
   set_css_class('bluetwitter', 'display', 'block');
+  }, 1000);
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'block');
   set_css_class('bluetwitter', 'display', 'none');
+  }, 1500);
 
-  }, 2000);
-
+  setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'none');
   set_css_class('blueinstagram', 'display', 'block');
+  }, 2000);
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'block');
   set_css_class('blueinstagram', 'display', 'none');
+  }, 2500);
 
-  }, 3000);
-
+  setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'none');
   set_css_class('bluelinkedin', 'display', 'block');
+  }, 3000);
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'block');
   set_css_class('bluelinkedin', 'display', 'none');
-
-  }, 4000);
-
+  }, 3500);
 
 }
 
