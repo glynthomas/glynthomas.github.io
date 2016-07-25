@@ -262,6 +262,10 @@ document.onclick = function keyClick(event) {
          set_css_class('darktwitter', 'display', 'none');
          set_css_class('bluetwitter', 'display', 'block');
          newbrowserwin('https://twitter.com/mrglynthomas');
+         setTimeout(function() {
+         set_css_class('darktwitter', 'display', 'block');
+         set_css_class('bluetwitter', 'display', 'none');
+         }, 200);
    break;
 
    case (tagid === '' && tagclass === ''):
@@ -357,29 +361,29 @@ function socialflash() {
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'none');
   set_css_class('bluetwitter', 'display', 'block');
-  }, 1000);
+  }, 500);
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'block');
   set_css_class('bluetwitter', 'display', 'none');
-  }, 1500);
+  }, 1000);
 
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'none');
   set_css_class('blueinstagram', 'display', 'block');
-  }, 2000);
+  }, 1500);
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'block');
   set_css_class('blueinstagram', 'display', 'none');
-  }, 2500);
+  }, 2000);
 
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'none');
   set_css_class('bluelinkedin', 'display', 'block');
-  }, 3000);
+  }, 2500);
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'block');
   set_css_class('bluelinkedin', 'display', 'none');
-  }, 3500);
+  }, 3000);
 
 }
 
