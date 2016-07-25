@@ -140,7 +140,7 @@ document.onmouseover = function mouseover(event) {
         setTimeout(function() {
         set_css_class('darktwitter', 'display', 'block');
         set_css_class('bluetwitter', 'display', 'none');
- 
+        window.open('https://twitter.com/mrglynthomas', '_blank');  
         }, 1000);
   break;
 
