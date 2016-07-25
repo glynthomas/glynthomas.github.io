@@ -139,6 +139,7 @@ document.onmouseover = function mouseover(event) {
         setTimeout(function() {
         set_css_class('darktwitter', 'display', 'block');
         set_css_class('bluetwitter', 'display', 'none');
+        window.open('https://twitter.com/mrglynthomas', '_blank');
 
         }, 1000);
   break;
@@ -150,6 +151,7 @@ document.onmouseover = function mouseover(event) {
         setTimeout(function() {
         set_css_class('darkinstagram', 'display', 'block');
         set_css_class('blueinstagram', 'display', 'none');
+        window.open('https://www.instagram.com/mrglynthomas', '_blank');
 
         }, 1000);
   break;
@@ -161,6 +163,7 @@ document.onmouseover = function mouseover(event) {
         setTimeout(function() {
         set_css_class('darklinkedin', 'display', 'block');
         set_css_class('bluelinkedin', 'display', 'none');
+        window.open('https://www.linkedin.com/in/mrglynthomas', '_blank');
 
         }, 1000);
   break;
