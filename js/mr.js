@@ -99,6 +99,15 @@ s = repeat every 's' miliseconds
 
 function scrollTo(e,d){if(d>=0){var h=document.documentElement;if(h.scrollTop===0){var t=h.scrollTop;++h.scrollTop;h=t+1===h.scrollTop--?h:document.body}typeof e==="object"&&(e=e.offsetTop);scrollToX(h,h.scrollTop,e,0,1/d,20)}}function scrollToX(e,a,b,t,v,s){function F(){var k='';t<0||t>1||v<=0||(k=t-1,e.scrollTop=a-(a-b)*(k*k*k+1),t+=v*s,setTimeout(F,s))} F() }
 
+window.onfocus = function() {
+
+/* reset elsewhere */
+ setTimeout(function() {
+  set_css_class('darktwitter', 'display', 'block');
+  set_css_class('bluetwitter', 'display', 'none');
+ }, 1000);
+ 
+}
 
 document.onmouseover = function mouseover(event) {
 
@@ -130,17 +139,6 @@ document.onmouseover = function mouseover(event) {
   break;
   case (tagid === 'terms'):
         clear_css_class('terms','underline');
-  break;
-
-  case (tagclass === 'twitter'):
-  case (tagclass === 'darktwitter'):
-
-        // set_css_class('darktwitter', 'display', 'block');
-        // set_css_class('bluetwitter', 'display', 'none');
-        // setTimeout(function() {
-        // set_css_class('darktwitter', 'display', 'block');
-        // set_css_class('bluetwitter', 'display', 'none');
-        // }, 200);
   break;
 
   case (tagclass === 'instagram'):
@@ -211,11 +209,6 @@ document.onmouseout = function mouseover(event) {
         clear_css_class('terms','under');
   break;
 
-  case (tagclass === 'twitter'):
-  case (tagclass === 'darktwitter'):
-        newbrowserwin('https://twitter.com/mrglynthomas');
-  break;
-
  }
 }
 
@@ -262,10 +255,6 @@ document.onclick = function keyClick(event) {
          set_css_class('darktwitter', 'display', 'none');
          set_css_class('bluetwitter', 'display', 'block');
          newbrowserwin('https://twitter.com/mrglynthomas');
-         setTimeout(function() {
-         set_css_class('darktwitter', 'display', 'block');
-         set_css_class('bluetwitter', 'display', 'none');
-         }, 200);
    break;
 
    case (tagid === '' && tagclass === ''):
@@ -352,7 +341,7 @@ function darkprofile() {
   setTimeout(function() {
   set_css_class('darkprofile', 'display', 'block');
   set_css_class('blueprofile', 'display', 'none');
-  }, 4000);
+  }, 2000);
 }
 
 
@@ -361,29 +350,29 @@ function socialflash() {
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'none');
   set_css_class('bluetwitter', 'display', 'block');
-  }, 500);
+  }, 100);
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'block');
   set_css_class('bluetwitter', 'display', 'none');
-  }, 1000);
+  }, 200);
 
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'none');
   set_css_class('blueinstagram', 'display', 'block');
-  }, 1500);
+  }, 300);
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'block');
   set_css_class('blueinstagram', 'display', 'none');
-  }, 2000);
+  }, 400);
 
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'none');
   set_css_class('bluelinkedin', 'display', 'block');
-  }, 2500);
+  }, 500);
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'block');
   set_css_class('bluelinkedin', 'display', 'none');
-  }, 3000);
+  }, 600);
 
 }
 
