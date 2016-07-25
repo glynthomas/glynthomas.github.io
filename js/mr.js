@@ -49,10 +49,9 @@ window.fwdstate = 0;
 
 document.onreadystatechange = function () {
   if (document.readyState == "interactive") {
-     checkurlvalue();
+      checkurlvalue();
   }
 }
-
 
 function checkurlvalue() {
   if ( (window.location.search.substring(1).toString().split('=')[1]) !== 'terms' ) {
@@ -114,8 +113,67 @@ document.onmouseover = function mouseover(event) {
 
  switch(true) {
 
-  case (tagclass === 'profile'):
-        //rmoore('once');
+  case (tagid === 'unbios'):
+        clear_css_class('unbios','underbluline');
+  break;
+  case (tagid === 'supportsaint'):
+        clear_css_class('supportsaint','underline');
+  break;
+  case (tagid === 'busyrocket'):
+        clear_css_class('busyrocket','underline');
+  break;
+  case (tagid === 'crowdcc'):
+        clear_css_class('crowdcc','underline');
+  break;
+  case (tagid === 'email'):
+        clear_css_class('email','underline');
+  break;
+  case (tagid === 'terms'):
+        clear_css_class('terms','underline');
+  break;
+
+  case (tagclass === 'darktwitter'):
+
+        set_css_class('darktwitter', 'display', 'none');
+        set_css_class('bluetwitter', 'display', 'block');
+        setTimeout(function() {
+        set_css_class('darktwitter', 'display', 'block');
+        set_css_class('bluetwitter', 'display', 'none');
+
+        }, 1000);
+  break;
+
+  case (tagclass === 'darkinstagram'):
+
+        set_css_class('darkinstagram', 'display', 'none');
+        set_css_class('blueinstagram', 'display', 'block');
+        setTimeout(function() {
+        set_css_class('darkinstagram', 'display', 'block');
+        set_css_class('blueinstagram', 'display', 'none');
+
+        }, 1000);
+  break;
+
+  case (tagclass === 'darklinkedin'):
+
+        set_css_class('darklinkedin', 'display', 'none');
+        set_css_class('bluelinkedin', 'display', 'block');
+        setTimeout(function() {
+        set_css_class('darklinkedin', 'display', 'block');
+        set_css_class('bluelinkedin', 'display', 'none');
+
+        }, 1000);
+  break;
+
+  case (tagclass === "darkprofile"):
+
+        set_css_class('darkprofile', 'display', 'none');
+        set_css_class('blueprofile', 'display', 'block');
+        setTimeout(function() {
+        set_css_class('darkprofile', 'display', 'block');
+        set_css_class('blueprofile', 'display', 'none');
+
+        }, 1000);
   break;
 
  }
@@ -131,7 +189,24 @@ document.onmouseout = function mouseover(event) {
  var tagclass = elem.className.toString().split(" ")[0];
 
  switch(true) {
-  case (tagclass === 'profile'):    
+
+  case (tagid === 'unbios'):
+        clear_css_class('unbios','underblu');
+  break;
+  case (tagid === 'supportsaint'):
+        clear_css_class('supportsaint','under');
+  break;
+  case (tagid === 'busyrocket'):
+        clear_css_class('busyrocket','under');
+  break;
+  case (tagid === 'crowdcc'):
+        clear_css_class('crowdcc','under');
+  break;
+  case (tagid === 'email'):
+        clear_css_class('email','under');
+  break;
+  case (tagid === 'terms'):
+        clear_css_class('terms','under');
   break;
 
  }
@@ -152,21 +227,6 @@ document.onclick = function keyClick(event) {
   /*console.log(tagtype);*/
 
   switch (true) {
-
-   case (tagclass === 'twitter'):
-   case (tagclass === 'detailtwitter'):
-         window.open('https://twitter.com/mrglynthomas', '_blank');
-   break;
-
-   case (tagclass === 'instagram'):
-   case (tagclass === 'detailinstagram'):
-         window.open('https://www.instagram.com/mrglynthomas', '_blank');
-   break;
-   
-   case (tagclass === 'linkedin'):
-   case (tagclass === 'detaillinkedin'):
-         window.open('https://www.linkedin.com/in/mrglynthomas', '_blank');
-   break;
 
    case (tagclass === 'profile'):
          // clicksound.playclip();
@@ -224,7 +284,9 @@ function clickchat(begin) {
          chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 3900 );
          chat = setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 4700 );
          chat = setTimeout( function() { scrollTo(0, 400) } , 4800 );
-         chat = setTimeout( function() { timtoggle('stop');} , 5000 );
+         chat = setTimeout( function() { darkprofile();} , 5000 );
+         chat = setTimeout( function() { socialflash();} , 5200 );
+         chat = setTimeout( function() { timtoggle('stop');} , 5400 );
          fwdstate = 1;
          }
     break;
@@ -257,6 +319,45 @@ function clickchat(begin) {
     break;
 
   }
+}
+
+function darkprofile() {
+  set_css_class('darkprofile', 'display', 'none');
+  set_css_class('blueprofile', 'display', 'block');
+  setTimeout(function() {
+  set_css_class('darkprofile', 'display', 'block');
+  set_css_class('blueprofile', 'display', 'none');
+  }, 4000);
+}
+
+
+function socialflash() {
+
+  set_css_class('darktwitter', 'display', 'none');
+  set_css_class('bluetwitter', 'display', 'block');
+  setTimeout(function() {
+  set_css_class('darktwitter', 'display', 'block');
+  set_css_class('bluetwitter', 'display', 'none');
+
+  }, 2000);
+
+  set_css_class('darkinstagram', 'display', 'none');
+  set_css_class('blueinstagram', 'display', 'block');
+  setTimeout(function() {
+  set_css_class('darkinstagram', 'display', 'block');
+  set_css_class('blueinstagram', 'display', 'none');
+
+  }, 3000);
+
+  set_css_class('darklinkedin', 'display', 'none');
+  set_css_class('bluelinkedin', 'display', 'block');
+  setTimeout(function() {
+  set_css_class('darklinkedin', 'display', 'block');
+  set_css_class('bluelinkedin', 'display', 'none');
+
+  }, 4000);
+
+
 }
 
 function rmoore(often) {

@@ -31,7 +31,7 @@
 <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
 <link rel="manifest" href="/favicons/manifest.json">
 <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/favicon/favicon.ico">
+<link rel="shortcut icon" href="/favicons/favicon.ico">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
 <meta name="msapplication-config" content="/favicon/browserconfig.xml">
@@ -54,7 +54,7 @@
 
 <link href="/css/normalize.min.css?v=1.00.00" rel="stylesheet" type="text/css" />
 <link href="/fonts/409816/3FD045C45082CEA8C.min.css" type="text/css" rel="stylesheet">
-<link href="/css/style.min.css" type="text/css" rel="stylesheet"></link>
+<link href="/css/style.css" type="text/css" rel="stylesheet"></link>
 
 <title> Glyn Thomas • Tech Consultant • Product Developer </title>
 
@@ -89,14 +89,16 @@
 <header class="clear">
 
 <a id="logo-default" class="logo" href="/" style="display:none">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-dark-1px-margin.jpg">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-blue-1px-margin.jpg">
+<img class="darkprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-dark-1px-margin.jpg">
+<img class="blueprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-blue-1px-margin.jpg" style="display:none;">
 </a>
 
 <a id="logo-alt" class="logo" href="/" style="display:block;">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-blue-1px-margin.jpg">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-dark-1px-margin.jpg">
+<img class="blueprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-blue-1px-margin.jpg" style="display:none;">
+<img class="darkprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-dark-1px-margin.jpg">
 </a>
+
+<span id="currentus">
 
 </header>
 <section id="contentdetails">
@@ -107,41 +109,47 @@
 <p>
 <strong>
 Tech Consultant at
-<a href="http://unbios.com" target="_blank">Unbios</a>
+<a id="unbios" href="http://unbios.com" class="underblu" target="_blank">Unbios</a>
 </strong>
 </p>
-<p> </p>
+
+<span id="projectus">
+
 <h3>PROJECTS:</h3>
 <ul>
 
 <li>
-<a href="http://supportsaint.com" target="_blank">SupportSaint</a>
+<a id="supportsaint" href="http://supportsaint.com" class="under" target="_blank">SupportSaint</a>
 <em>- </em>
 tech support
 </li>
 
 <li>
-<a href="http://busyrocket.com" target="_blank">BusyRocket</a>
+<a id="busyrocket" href="http://busyrocket.com" class="under" target="_blank">BusyRocket</a>
 <em>- </em>
 social growth
 </li>
 
 <li>
-<a href="http://crowdcc.com" target="_blank">Crowdcc</a>
+<a id="crowdcc" href="http://crowdcc.com" class="under" target="_blank">Crowdcc</a>
 <em>- </em>
 tweet utility
 </li>
 
 </ul>
-<p> </p>
+
+<span id="contactus">
+
 <h3>EMAIL:</h3>
 <p>
-<a href="mailto:glyn@unbios.com">glyn@unbios.com</a>
+<a id="email" href="mailto:glyn@unbios.com" class="under">glyn@unbios.com</a>
 </p>
 
 <h3>Legal:</h3>
-<a href="?legal=terms" target="_blank">Terms & Conditions</a>
-<p></p>
+<a id="terms" href="?legal=terms" class="under" target="_blank">Terms & Conditions</a>
+
+<span id="social">
+
 <h3>Elsewhere:</h3>
 </div>
 </div>
@@ -150,18 +158,18 @@ tweet utility
 <nav class="social--icons">
 
 <a class="twitter" href="https://twitter.com/mrglynthomas" target="_blank">
-<img class="detailtwitter" width="19px" height="19px" src="/img/twitter-24-dark.png">
-<img class="detailtwitter" width="19px" height="19px" src="/img/twitter-24-blue.png">
+<img class="darktwitter" width="19px" height="19px" src="/img/twitter-24-dark.png">
+<img class="bluetwitter" width="19px" height="19px" src="/img/twitter-24-blue.png" style="display:none;">
 </a>
 
-<a class="instagram" href="https://twitter.com/mrglynthomas" target="_blank">
-<img class="detailinstagram" width="19px" height="19px" src="/img/instagram-24-dark.png">
-<img class="detailinstagram" width="19px" height="19px" src="/img/instagram-24-blue.png">
+<a class="instagram" href="https://www.instagram.com/mrglynthomas" target="_blank">
+<img class="darkinstagram" width="19px" height="19px" src="/img/instagram-24-dark.png">
+<img class="blueinstagram" width="19px" height="19px" src="/img/instagram-24-blue.png" style="display:none;">
 </a>
 
 <a class="linkedin" href="https://www.linkedin.com/in/mrglynthomas" target="_blank">
-<img class="detaillinkedin" width="19px" height="19px" src="/img/linkedin-24-dark.png">
-<img class="detaillinkedin" width="19px" height="19px" src="/img/linkedin-24-blue.png">
+<img class="darklinkedin" width="19px" height="19px" src="/img/linkedin-24-dark.png">
+<img class="bluelinkedin" width="19px" height="19px" src="/img/linkedin-24-blue.png" style="display:none;">
 </a>
 
 </nav>
@@ -185,6 +193,7 @@ tweet utility
 </a>
 
 </header>
+
 <section id="contentdetails">
 
 <h3>Terms & Privacy:</h3>
@@ -794,18 +803,18 @@ Unbios Ltd is based in SW18, South West London.
 <nav class="social--icons">
 
 <a class="twitter" href="https://twitter.com/mrglynthomas" target="_blank">
-<img class="detailtwitter" width="19px" height="19px" src="/img/twitter-24-dark.png">
-<img class="detailtwitter" width="19px" height="19px" src="/img/twitter-24-blue.png">
+<img class="darktwitter" width="19px" height="19px" src="/img/twitter-24-dark.png">
+<img class="bluetwitter" width="19px" height="19px" src="/img/twitter-24-blue.png" style="display:none;">
 </a>
 
 <a class="instagram" href="https://www.instagram.com/mrglynthomas" target="_blank">
-<img class="detailinstagram" width="19px" height="19px" src="/img/instagram-24-dark.png">
-<img class="detailinstagram" width="19px" height="19px" src="/img/instagram-24-blue.png">
+<img class="darkinstagram" width="19px" height="19px" src="/img/instagram-24-dark.png">
+<img class="blueinstagram" width="19px" height="19px" src="/img/instagram-24-blue.png" style="display:none;">
 </a>
 
 <a class="linkedin" href="https://www.linkedin.com/in/mrglynthomas" target="_blank">
-<img class="detaillinkedin" width="19px" height="19px" src="/img/linkedin-24-dark.png">
-<img class="detaillinkedin" width="19px" height="19px" src="/img/linkedin-24-blue.png">
+<img class="darklinkedin" width="19px" height="19px" src="/img/linkedin-24-dark.png">
+<img class="bluelinkedin" width="19px" height="19px" src="/img/linkedin-24-blue.png" style="display:none;">
 </a>
 
 </nav>
