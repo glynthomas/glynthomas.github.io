@@ -139,8 +139,7 @@ document.onmouseover = function mouseover(event) {
         setTimeout(function() {
         set_css_class('darktwitter', 'display', 'block');
         set_css_class('bluetwitter', 'display', 'none');
-        window.open('https://twitter.com/mrglynthomas', '_blank');
-
+ 
         }, 1000);
   break;
 
@@ -151,7 +150,6 @@ document.onmouseover = function mouseover(event) {
         setTimeout(function() {
         set_css_class('darkinstagram', 'display', 'block');
         set_css_class('blueinstagram', 'display', 'none');
-        window.open('https://www.instagram.com/mrglynthomas', '_blank');
 
         }, 1000);
   break;
@@ -163,8 +161,7 @@ document.onmouseover = function mouseover(event) {
         setTimeout(function() {
         set_css_class('darklinkedin', 'display', 'block');
         set_css_class('bluelinkedin', 'display', 'none');
-        window.open('https://www.linkedin.com/in/mrglynthomas', '_blank');
-
+  
         }, 1000);
   break;
 
@@ -213,6 +210,28 @@ document.onmouseout = function mouseover(event) {
   break;
 
  }
+}
+
+document.ontouchstart = function KeyTouch(event) {
+  
+  var elem = (event.target) ? event.target : event.srcElement;
+ 
+  try { var tagclass = elem.className.split(" ")[0]; } catch(e) { var tagclass = null; }
+  var tagid = elem.id;
+
+  var tagclass = elem.className.toString().split(" ")[0];
+  var tagtype = elem.tagName.toLowerCase();
+
+  switch (true) {
+
+   case (tagclass === 'twitter'):
+         window.open('https://twitter.com/mrglynthomas', '_blank');
+   break;
+   
+  }
+
+  elem = null;tagclass = null;tagid = null;tagtype = null;
+
 }
 
 document.onclick = function keyClick(event) {
