@@ -310,7 +310,7 @@ function clickchat(begin) {
          chat = setTimeout( function() { document.getElementById('internet').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 4000 );
          chat = setTimeout( function() { set_html_id('saythings','the internet'); } , 4200 );
 
-         chat = setTimeout( function() { set_html_id('saythings','Or '); } , 4600 );
+         chat = setTimeout( function() { set_html_id('saythings','or '); } , 4600 );
 
          chat = setTimeout( function() { set_html_id('saythings','smart Home'); } , 4800 );
          chat = setTimeout( function() { document.getElementById('smart').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 5000 );
