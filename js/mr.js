@@ -295,27 +295,27 @@ function clickchat(begin) {
          chat = setTimeout( function() { set_html_id('saythings','problem'); } , 1500 );
          chat = setTimeout( function() { set_html_id('saythings','with your'); } , 1700 );
          
-         chat = setTimeout( function() { set_html_id('saythings','Windows Laptop'); } , 1900 );
+         chat = setTimeout( function() { set_html_id('saythings','windows Laptop'); } , 1900 );
          chat = setTimeout( function() { document.getElementById('computer').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 2200 );
          chat = setTimeout( function() { document.getElementById('computer').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 2400 );
-         chat = setTimeout( function() { set_html_id('saythings','Windows Laptop'); } , 2600 );
+         chat = setTimeout( function() { set_html_id('saythings','windows Laptop'); } , 2600 );
 
-         chat = setTimeout( function() { set_html_id('saythings','Apple Macintosh'); } , 2800 );
+         chat = setTimeout( function() { set_html_id('saythings','apple macintosh'); } , 2800 );
          chat = setTimeout( function() { document.getElementById('apple').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 3000 );
          chat = setTimeout( function() { document.getElementById('apple').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 3200 );
-         chat = setTimeout( function() { set_html_id('saythings','Apple Macintosh'); } , 3400 );
+         chat = setTimeout( function() { set_html_id('saythings','apple macintosh'); } , 3400 );
 
-         chat = setTimeout( function() { set_html_id('saythings','The Internet'); } , 3600 );
+         chat = setTimeout( function() { set_html_id('saythings','the internet'); } , 3600 );
          chat = setTimeout( function() { document.getElementById('internet').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 3800 );
          chat = setTimeout( function() { document.getElementById('internet').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 4000 );
-         chat = setTimeout( function() { set_html_id('saythings','The Internet'); } , 4200 );
+         chat = setTimeout( function() { set_html_id('saythings','the internet'); } , 4200 );
 
          chat = setTimeout( function() { set_html_id('saythings','Or '); } , 4600 );
 
-         chat = setTimeout( function() { set_html_id('saythings','Smart Home'); } , 4800 );
+         chat = setTimeout( function() { set_html_id('saythings','smart Home'); } , 4800 );
          chat = setTimeout( function() { document.getElementById('smart').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 5000 );
          chat = setTimeout( function() { document.getElementById('smart').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 5200 );
-         chat = setTimeout( function() { set_html_id('saythings','Smart Home'); } , 5400 );
+         chat = setTimeout( function() { set_html_id('saythings','smart Home'); } , 5400 );
 
          chat = setTimeout( function() { set_html_id('saythings','I can'); } , 5600 );
          chat = setTimeout( function() { set_html_id('saythings','help'); } , 5800 );
