@@ -317,17 +317,16 @@ function clickchat(begin) {
 
          chat = setTimeout( function() { set_html_id('saythings','i can'); } , 5300 );
          chat = setTimeout( function() { set_html_id('saythings','help'); } , 5600 );
-         chat = setTimeout( function() { set_html_id('saythings','you'); } , 6000 );
 
-         chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 6200 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 6400 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 6600 );
-         chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 6800 );
-         chat = setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 7000 );
-         chat = setTimeout( function() { scrollTo(0, 400) } , 7200 );
-         chat = setTimeout( function() { once = 0;profileflash();} , 7400 );
-         chat = setTimeout( function() { once = 0;socialflash();} , 7600 );
-         chat = setTimeout( function() { timtoggle('stop');} , 7800 );
+         chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 6000 );
+         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 6200 );
+         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 6400 );
+         chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 6600 );
+         chat = setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 6800 );
+         chat = setTimeout( function() { scrollTo(0, 400) } , 7000 );
+         chat = setTimeout( function() { once = 0;profileflash();} , 7200 );
+         chat = setTimeout( function() { once = 0;socialflash();} , 7400 );
+         chat = setTimeout( function() { timtoggle('stop');} , 7600 );
          fwdstate = 1;
          }
     break;
