@@ -311,10 +311,10 @@ function clickchat(begin) {
 
          chat = setTimeout( function() { set_html_id('saythings','or '); } , 4000 );
 
-         chat = setTimeout( function() { set_html_id('saythings','smart home'); } , 4200 );
-         chat = setTimeout( function() { document.getElementById('smart').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 4600 );
-         chat = setTimeout( function() { document.getElementById('smart').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 4800 );
+         chat = setTimeout( function() { document.getElementById('smart').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 4200 );
+         chat = setTimeout( function() { document.getElementById('smart').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 4600 );
 
+         chat = setTimeout( function() { set_html_id('saythings','smart home'); } , 4800 );
          chat = setTimeout( function() { set_html_id('saythings','i can'); } , 5000 );
          chat = setTimeout( function() { set_html_id('saythings','help'); } , 5200 );
          chat = setTimeout( function() { set_html_id('saythings','you'); } , 5400 );
