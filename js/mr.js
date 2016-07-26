@@ -290,9 +290,8 @@ function clickchat(begin) {
          chat = setTimeout( function() { set_html_id('saythings','hello'); } , 100 );
          chat = setTimeout( function() { set_html_id('saythings','if'); } , 700 );
          chat = setTimeout( function() { set_html_id('saythings','you'); } , 900 );
-         chat = setTimeout( function() { set_html_id('saythings','have'); } , 1100 );
-         chat = setTimeout( function() { set_html_id('saythings','a'); } , 1300 );
-         chat = setTimeout( function() { set_html_id('saythings','problem'); } , 1500 );
+         chat = setTimeout( function() { set_html_id('saythings','need'); } , 1000 );
+         chat = setTimeout( function() { set_html_id('saythings','help'); } , 1300 );
          chat = setTimeout( function() { set_html_id('saythings','with your'); } , 1700 );
          
          chat = setTimeout( function() { set_html_id('saythings','windows Laptop'); } , 1900 );
