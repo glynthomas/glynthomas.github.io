@@ -74,8 +74,7 @@ function checkurlvalue() {
       cstate = 'legal';
   }
 
-  timtoggle('toggle');
-  timtoggle('resume'); 
+  timtoggle('toggle'); timtoggle('resume'); 
 
 }
 
@@ -268,8 +267,8 @@ document.onclick = function keyClick(event) {
    break;
 
    case (tagid === '' && tagclass === ''):
-         timtoggle('stop');
          clearTimeout(chat);
+         timtoggle('stop');
          document.getElementById('begin').style.display = 'none'; 
          document.getElementById('details').style.display = 'block';
    break;
