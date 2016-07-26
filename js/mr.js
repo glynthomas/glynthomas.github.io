@@ -318,7 +318,7 @@ function clickchat(begin) {
 
          chat = setTimeout( function() { set_html_id('saythings','i can'); } , 5200 );
          chat = setTimeout( function() { set_html_id('saythings','help'); } , 5400 );
-         chat = setTimeout( function() { set_html_id('saythings','You'); } , 5600 );
+         chat = setTimeout( function() { set_html_id('saythings','you'); } , 5600 );
 
          chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 5800 );
          chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 6000 );
