@@ -322,21 +322,23 @@ function clickchat(begin) {
 
          chat = setTimeout( function() { set_html_id('saythings','<b>contact</b>'); } , 6200 );
          chat = setTimeout( function() { set_html_id('saythings','<b>me</b>'); } , 6600 );
-          chat = setTimeout( function() { set_html_id('saythings','<b>for</b>'); } , 7000 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>help</b>'); } , 7400 );
+         chat = setTimeout( function() { set_html_id('saythings','<b>at</b>'); } , 7000 );
+         chat = setTimeout( function() { set_html_id('saythings','<b>SupportSaint</b>'); } , 7400 );
+         chat = setTimeout( function() { set_html_id('saythings','<b>for</b>'); } , 7800 );
+         chat = setTimeout( function() { set_html_id('saythings','<b>help</b>'); } , 8200 );
 
-         chat = setTimeout( function() { document.getElementById('cool').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 7800 );
-         chat = setTimeout( function() { document.getElementById('cool').style.display = 'none';} , 9000 );
+         chat = setTimeout( function() { document.getElementById('cool').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 8400 );
+         chat = setTimeout( function() { document.getElementById('cool').style.display = 'none';} , 9200 );
 
-         chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 9200 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 9400 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 9600 );
-         chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 9800 );
-         chat = setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 10000 );
-         chat = setTimeout( function() { scrollTo(0, 400) } , 10100 );
-         chat = setTimeout( function() { once = 0;profileflash();} , 10200 );
-         chat = setTimeout( function() { once = 0;socialflash();} , 10400 );
-         chat = setTimeout( function() { timtoggle('stop');} , 10600 );
+         chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 9400 );
+         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 9600 );
+         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 9800 );
+         chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 10000 );
+         chat = setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 10100 );
+         chat = setTimeout( function() { scrollTo(0, 400) } , 10200 );
+         chat = setTimeout( function() { once = 0;profileflash();} , 10400 );
+         chat = setTimeout( function() { once = 0;socialflash();} , 10600 );
+         chat = setTimeout( function() { timtoggle('stop');} , 10800 );
          fwdstate = 1;
          }
     break;
