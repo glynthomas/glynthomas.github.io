@@ -328,7 +328,6 @@ function clickchat(begin) {
          chat = setTimeout( function() { document.getElementById('cool').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 7800 );
          chat = setTimeout( function() { document.getElementById('cool').style.display = 'none';} , 9000 );
 
-
          chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 9200 );
          chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 9400 );
          chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 9600 );
