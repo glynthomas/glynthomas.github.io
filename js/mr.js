@@ -315,26 +315,29 @@ function clickchat(begin) {
          
          chat = setTimeout( function() { set_html_id('saythings','<b>or smart home too?</b>'); document.getElementById('saythings').style.display = 'block';} , 4200 );
 
-         chat = setTimeout( function() { document.getElementById('smart').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 4400 );
-         chat = setTimeout( function() { document.getElementById('smart').style.display = 'none'; document.getElementById('crying').style.display = 'block';} , 4600 );
+         chat = setTimeout( function() { document.getElementById('smart').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 4800 );
+         chat = setTimeout( function() { document.getElementById('smart').style.display = 'none'; document.getElementById('crying').style.display = 'block';} , 5400 );
    
-         chat = setTimeout( function() { document.getElementById('crying').style.display = 'none'; set_html_id('saythings','<b>contact me</b>');document.getElementById('saythings').style.display = 'block'; } , 4800 );
+         chat = setTimeout( function() { document.getElementById('crying').style.display = 'none'; set_html_id('saythings','');document.getElementById('saythings').style.display = 'block'; } , 6000 );
 
-         chat = setTimeout( function() { set_html_id('saythings','<b>for help</b>'); } , 5000 );
+         chat = setTimeout( function() { set_html_id('saythings','<b>contact</b>'); } , 6200 );
+         chat = setTimeout( function() { set_html_id('saythings','<b>me</b>'); } , 6600 );
+          chat = setTimeout( function() { set_html_id('saythings','<b>for</b>'); } , 7000 );
+         chat = setTimeout( function() { set_html_id('saythings','<b>help</b>'); } , 7400 );
 
-         chat = setTimeout( function() { document.getElementById('cool').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 5200 );
-         chat = setTimeout( function() { document.getElementById('cool').style.display = 'none';} , 7000 );
+         chat = setTimeout( function() { document.getElementById('cool').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 7800 );
+         chat = setTimeout( function() { document.getElementById('cool').style.display = 'none';} , 9000 );
 
 
-         chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 7400 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 7600 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 7800 );
-         chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 8000 );
-         chat = setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 8200 );
-         chat = setTimeout( function() { scrollTo(0, 400) } , 8400 );
-         chat = setTimeout( function() { once = 0;profileflash();} , 8600 );
-         chat = setTimeout( function() { once = 0;socialflash();} , 9000 );
-         chat = setTimeout( function() { timtoggle('stop');} , 9200 );
+         chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 9200 );
+         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 9400 );
+         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 9600 );
+         chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 9800 );
+         chat = setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 10000 );
+         chat = setTimeout( function() { scrollTo(0, 400) } , 10100 );
+         chat = setTimeout( function() { once = 0;profileflash();} , 10200 );
+         chat = setTimeout( function() { once = 0;socialflash();} , 10400 );
+         chat = setTimeout( function() { timtoggle('stop');} , 10600 );
          fwdstate = 1;
          }
     break;
