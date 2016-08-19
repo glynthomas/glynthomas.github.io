@@ -105,8 +105,8 @@ window.onfocus = function() {
  setTimeout(function() {
   clear_css_class('unbios','underblu');
   clear_css_class('supportsaint','under');
-  clear_css_class('busyrocket','under');
-  clear_css_class('crowdcc','under');
+  clear_css_class('angel','under');
+  clear_css_class('aws','under');
   clear_css_class('email','under');
   clear_css_class('terms','under');
 
@@ -145,11 +145,11 @@ document.onmouseover = function mouseover(event) {
   case (tagid === 'supportsaint'):
         if (isodd(num)) {clear_css_class('supportsaint','underbluline');} else {clear_css_class('supportsaint','underredline')};
   break;
-  case (tagid === 'busyrocket'):
-        if (isodd(num)) {clear_css_class('busyrocket','underbluline');} else {clear_css_class('busyrocket','underredline')};
+  case (tagid === 'angel'):
+        if (isodd(num)) {clear_css_class('angel','underbluline');} else {clear_css_class('angel','underredline')};
   break;
-  case (tagid === 'crowdcc'):
-        if (isodd(num)) {clear_css_class('crowdcc','underbluline');} else {clear_css_class('crowdcc','underredline')};
+  case (tagid === 'aws'):
+        if (isodd(num)) {clear_css_class('aws','underbluline');} else {clear_css_class('aws','underredline')};
   break;
   case (tagid === 'email'):
         if (isodd(num)) {clear_css_class('email','underbluline');} else {clear_css_class('email','underredline')};
@@ -194,11 +194,11 @@ document.onmouseout = function mouseover(event) {
   case (tagid === 'supportsaint'):
         clear_css_class('supportsaint','under');
   break;
-  case (tagid === 'busyrocket'):
-        clear_css_class('busyrocket','under');
+  case (tagid === 'angel'):
+        clear_css_class('angel','under');
   break;
-  case (tagid === 'crowdcc'):
-        clear_css_class('crowdcc','under');
+  case (tagid === 'aws'):
+        clear_css_class('aws','under');
   break;
   case (tagid === 'email'):
         clear_css_class('email','under');
@@ -380,14 +380,14 @@ function profileflash() {
   clear_css_class('supportsaint','under');
   }, 1500);
 
-  clear_css_class('busyrocket','underbluline');
+  clear_css_class('angel','underbluline');
   setTimeout(function() {
-  clear_css_class('busyrocket','under');
+  clear_css_class('angel','under');
   }, 2000);
 
-  clear_css_class('crowdcc','underbluline');
+  clear_css_class('aws','underbluline');
   setTimeout(function() {
-  clear_css_class('crowdcc','under');
+  clear_css_class('aws','under');
   }, 2500);
 
   once = 1;
