@@ -107,7 +107,7 @@ window.onfocus = function() {
   clear_css_class('supportsaint','under');
   clear_css_class('angel','under');
   clear_css_class('aws','under');
-  clear_css_class('email','under');
+  clear_css_class('blog','under');
   clear_css_class('terms','under');
 
   set_css_class('unbios', 'display', 'none');
@@ -151,8 +151,8 @@ document.onmouseover = function mouseover(event) {
   case (tagid === 'aws'):
         if (isodd(num)) {clear_css_class('aws','underbluline');} else {clear_css_class('aws','underredline')};
   break;
-  case (tagid === 'email'):
-        if (isodd(num)) {clear_css_class('email','underbluline');} else {clear_css_class('email','underredline')};
+  case (tagid === 'blog'):
+        if (isodd(num)) {clear_css_class('blog','underbluline');} else {clear_css_class('blog','underredline')};
   break;
   case (tagid === 'terms'):
         if (isodd(num)) {clear_css_class('terms','underbluline');} else {clear_css_class('terms','underredline')};
@@ -200,8 +200,8 @@ document.onmouseout = function mouseover(event) {
   case (tagid === 'aws'):
         clear_css_class('aws','under');
   break;
-  case (tagid === 'email'):
-        clear_css_class('email','under');
+  case (tagid === 'blog'):
+        clear_css_class('blog','under');
   break;
   case (tagid === 'terms'):
         clear_css_class('terms','under');
