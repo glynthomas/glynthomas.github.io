@@ -57,29 +57,31 @@ document.onreadystatechange = function () {
 function checkurlvalue() {
   if ( (window.location.search.substring(1).toString().split('=')[1]) !== 'terms' ) {
       // console.log ('no url param detected !');
-      document.getElementById('mrglynthomas').style.display = 'block'; 
+
       document.getElementById('mrlegal').style.display = 'none';
-      document.getElementById('begin').style.display = 'block'; 
-      document.getElementById('details').style.display = 'none';
+      document.getElementById('details').style.display = 'block';
       document.getElementById('legal').style.display = 'none';
       cstate = 'start';
 
+      chat = setTimeout( function() { once = 0;profileflash();} , 10 );
+      chat = setTimeout( function() { once = 0;socialflash();} , 20 );
+
   } else {
       // console.log ('url param detected !');
-      document.getElementById('mrglynthomas').style.display = 'none'; 
-      document.getElementById('mrlegal').style.display = 'block';
-      document.getElementById('begin').style.display = 'none'; 
+  
       document.getElementById('details').style.display = 'none';
       document.getElementById('legal').style.display = 'block';
       cstate = 'legal';
+
+      // chat = setTimeout( function() { document.getElementById('saythings').style.display = 'block';} , 50 );
+      chat = setTimeout( function() { document.getElementById('legal').style.display = 'block';} , 100 );
+      chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 150 );
+      chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 10); } , 200 );
+      chat = setTimeout( function() { scrollTo(0, 700) } , 350 );
+      chat = setTimeout( function() { timtoggle('stop');} , 400 );
   }
 
-  timtoggle('toggle'); timtoggle('resume'); 
-
 }
-
-// window.onload = function() {}
-// window.onscroll = function() {  console.log(document.body.scrollTop); console.log(document.documentElement.scrollTop); };
 
 /*
 ref : http://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation
@@ -233,14 +235,6 @@ document.onclick = function keyClick(event) {
 
   switch (true) {
 
-   case (tagclass === 'profile'):
-         // clicksound.playclip();
-         clickchat('start');
-   break;
-   case (tagclass === 'profilelegal'):
-         // clicksound.playclip();
-         clickchat('legal');
-   break;
    case (tagclass === 'privacyfooter'):
          scrollTo(8544, 700);
    break;
@@ -283,81 +277,26 @@ document.onclick = function keyClick(event) {
 function clickchat(begin) {
   switch (begin) {
     case ('start'):
-         if (fwdstate === 0) {
    
-         chat = setTimeout( function() { document.getElementById('normal').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 10 );
-         
-         chat = setTimeout( function() { set_html_id('saythings','<b>hello</b>'); } , 20 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>if</b>'); } , 300 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>your</b>'); } , 600 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>tech</b>'); } , 800 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>makes</b>'); } , 1000 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>you</b>'); } , 1200 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>want</b>'); } , 1400 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>to</b>'); } , 1600 );
-
-         chat = setTimeout( function() { document.getElementById('crying').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 2000 );
-         chat = setTimeout( function() { document.getElementById('crying').style.display = 'none';} , 2200 );
-        
-         chat = setTimeout( function() { document.getElementById('computer').style.display = 'block';} , 2400 );
-         chat = setTimeout( function() { document.getElementById('computer').style.display = 'none'; document.getElementById('crying').style.display = 'block';} , 2600 );
-
-         chat = setTimeout( function() { document.getElementById('crying').style.display = 'none'; document.getElementById('apple').style.display = 'block'; } , 2800 );
-         chat = setTimeout( function() { document.getElementById('apple').style.display = 'none'; document.getElementById('crying').style.display = 'block';} , 3000 );
-
-         chat = setTimeout( function() { document.getElementById('crying').style.display = 'none'; document.getElementById('router').style.display = 'block';} , 3200 );
-         chat = setTimeout( function() { document.getElementById('router').style.display = 'none'; document.getElementById('crying').style.display = 'block';} , 3400 );
-
-         chat = setTimeout( function() { document.getElementById('crying').style.display = 'none'; document.getElementById('internet').style.display = 'block';} , 3600 );
-         chat = setTimeout( function() { document.getElementById('internet').style.display = 'none'; document.getElementById('crying').style.display = 'block';} , 3800 );
-
-         chat = setTimeout( function() {  document.getElementById('crying').style.display = 'none';} , 4000 );
-         
-         chat = setTimeout( function() { set_html_id('saythings','<b>or smart home too?</b>'); document.getElementById('saythings').style.display = 'block';} , 4200 );
-
-         chat = setTimeout( function() { document.getElementById('smart').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 4800 );
-         chat = setTimeout( function() { document.getElementById('smart').style.display = 'none'; document.getElementById('crying').style.display = 'block';} , 5400 );
-   
-         chat = setTimeout( function() { document.getElementById('crying').style.display = 'none'; set_html_id('saythings','');document.getElementById('saythings').style.display = 'block'; } , 6000 );
-
-         chat = setTimeout( function() { set_html_id('saythings','<b>contact</b>'); } , 6200 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>me</b>'); } , 6600 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>at</b>'); } , 7000 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>SupportSaint</b>'); } , 7400 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>for</b>'); } , 7800 );
-         chat = setTimeout( function() { set_html_id('saythings','<b>help</b>'); } , 8200 );
-
-         chat = setTimeout( function() { document.getElementById('cool').style.display = 'block'; document.getElementById('saythings').style.display = 'none';} , 8400 );
-         chat = setTimeout( function() { document.getElementById('cool').style.display = 'none';} , 9200 );
-
-         chat = setTimeout( function() { document.getElementById('details').style.display = 'block';} , 9400 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 9600 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 500); } , 9800 );
-         chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 10000 );
-         chat = setTimeout( function() { document.getElementById('logo-alt').style.display = 'none'; document.getElementById('logo-default').style.display = 'block'; } , 10100 );
-         chat = setTimeout( function() { scrollTo(0, 400) } , 10200 );
-         chat = setTimeout( function() { once = 0;profileflash();} , 10400 );
-         chat = setTimeout( function() { once = 0;socialflash();} , 10600 );
-         chat = setTimeout( function() { timtoggle('stop');} , 10800 );
-         fwdstate = 1;
-         }
+         chat = setTimeout( function() { once = 0;profileflash();} , 10 );
+         chat = setTimeout( function() { once = 0;socialflash();} , 20 );
+      
     break;
     case ('legal'):
-         if (fwdstate === 0) {
-         chat = setTimeout( function() { document.getElementById('surpriselegal').style.display = 'none'; document.getElementById('saythings').style.display = 'block';} , 50 );
+      
+         chat = setTimeout( function() { document.getElementById('saythings').style.display = 'none';} , 50 );
          chat = setTimeout( function() { document.getElementById('legal').style.display = 'block';} , 100 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 150 );
-         chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 10); } , 200 );
+         //chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 0); } , 150 );
+         //chat = setTimeout( function() { scrollTo(document.body.scrollHeight, 10); } , 200 );
          chat = setTimeout( function() { document.getElementById('begin').style.display = 'none'; } , 250 );
          chat = setTimeout( function() { document.getElementById('legal-logo-alt').style.display = 'none'; document.getElementById('legal-logo-default').style.display = 'block'; } , 300 );
          chat = setTimeout( function() { scrollTo(0, 700) } , 350 );
-         chat = setTimeout( function() { timtoggle('stop');} , 400 );
-         fwdstate = 1;
-         }
+     
     break;
 
   }
 }
+
 
 function profileflash() {
 
@@ -368,27 +307,22 @@ function profileflash() {
   setTimeout(function() {
   set_css_class('darkprofile', 'display', 'block');
   set_css_class('blueprofile', 'display', 'none');
-  }, 2500);
+  }, 250);
 
   clear_css_class('unbios','underbluline');
   setTimeout(function() {
   clear_css_class('unbios','underblu');
-  }, 800);
-
-  clear_css_class('supportsaint','underbluline');
-  setTimeout(function() {
-  clear_css_class('supportsaint','under');
-  }, 1500);
+  }, 300);
 
   clear_css_class('angel','underbluline');
   setTimeout(function() {
   clear_css_class('angel','under');
-  }, 2000);
+  }, 350);
 
   clear_css_class('aws','underbluline');
   setTimeout(function() {
   clear_css_class('aws','under');
-  }, 2500);
+  }, 400);
 
   once = 1;
 
@@ -403,11 +337,11 @@ function socialflash() {
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'none');
   set_css_class('bluetwitter', 'display', 'block');
-  }, 200);
+  }, 500);
   setTimeout(function() {
   set_css_class('darktwitter', 'display', 'block');
   set_css_class('bluetwitter', 'display', 'none');
-  }, 600);
+  }, 650);
 
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'none');
@@ -416,16 +350,16 @@ function socialflash() {
   setTimeout(function() {
   set_css_class('darkinstagram', 'display', 'block');
   set_css_class('blueinstagram', 'display', 'none');
-  }, 1200);
+  }, 950);
 
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'none');
   set_css_class('bluelinkedin', 'display', 'block');
-  }, 1600);
+  }, 1000);
   setTimeout(function() {
   set_css_class('darklinkedin', 'display', 'block');
   set_css_class('bluelinkedin', 'display', 'none');
-  }, 2000);
+  }, 1150);
 
   once = 1;
 

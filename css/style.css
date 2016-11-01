@@ -3,12 +3,22 @@
 /* #saythings {margin-top: -20px;} */
 
 
-#details, #legal {
+#details {
 
     color: #777;
     background: #FFFFFF;
     font: 400 13.5px/1.4 "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif;
-    padding: 100px 13.2%;
+    padding: 62px 13.2%;
+    max-width: 600px;
+
+}
+
+#legal {
+
+    color: #777;
+    background: #FFFFFF;
+    font: 400 13.5px/1.4 "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif;
+    padding: 62px 13.2%;
     max-width: 600px;
 
 }
@@ -147,8 +157,8 @@ a, a:visited, img, input {
 }
 
 #legal {
-    /* margin: 25px auto; */
     padding: 25px 20px;
+
 }
 
 #details hr {
@@ -358,7 +368,7 @@ p,
 ul,
 ol,
 #footnotes {
-    padding-bottom: 1.55em
+    padding-bottom: 2.2em
 }
 
 p>img {
