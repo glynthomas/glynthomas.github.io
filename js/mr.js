@@ -58,7 +58,6 @@ function checkurlvalue() {
   if ( (window.location.search.substring(1).toString().split('=')[1]) !== 'terms' ) {
       // console.log ('no url param detected !');
 
-      document.getElementById('mrlegal').style.display = 'none';
       document.getElementById('details').style.display = 'block';
       document.getElementById('legal').style.display = 'none';
       cstate = 'start';
