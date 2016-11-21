@@ -392,6 +392,8 @@ window.onload = function() {
 
   SendMsg();
 
+  document.documentElement.addEventListener('touchmove', function (event) { event.preventDefault();}, false);
+
 }
 
 function SendMsg(talker) {
