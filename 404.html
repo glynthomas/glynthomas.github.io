@@ -1,27 +1,21 @@
 <!DOCTYPE html>
-
-<!-- 404.html v1.00.00 | (c) 2016 mrglynthomas.com -->
-
-<html lang="en-GB" itemtype="http://schema.org/WebPage" itemscope="" xmlns:website="http://ogp.me/ns/website" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" style="">
-
+<html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-<meta content=" Glyn Thomas • Tech Security Consultant • Product Tester " name="description">
-
-<meta content="width=device-width" name="viewport">
-
-<link href="/img/favicon.ico?v=1.00.00" type="image/x-icon" rel="shortcut icon">
-
-<meta content="img/kind-of-dark.jpg" property="og:image">
-<meta content="Mr Glyn Thomas" property="og:site_name">
-<meta content="website" property="og:type">
-<meta content="Mr Glyn Thomas" property="og:title">
-<meta content="Mr Glyn Thomas • Tech Security Consultant • Product Tester " property="og:description">
-<meta content="About" property="og:title">
-<meta content="http://mrglynthomas.com/" property="og:url">
+<title>Glyn Thomas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="I design and code things on the web.">
+<meta property="og:site_name" content="mrglynthomas.com">
+<meta property="og:title" content="Mr Glyn Thomas">
+<meta property="og:description" content="I help create products.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://mrglynthomas.com">
+<meta property="og:image" content="http://mrglynthomas.com/img/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="768">
+<meta property="og:image:height" content="416">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
 <meta content="http://mrglynthomas.com/" itemprop="url">
 <meta content="Mr Glyn Thomas" name="twitter:title">
@@ -30,796 +24,538 @@
 <meta content="@mrglynthomas" name="twitter:creator">
 <meta content="http://mrglynthomas.com/" name="twitter:url">
 
-<link href="/css/normalize.min.css?v=1.00.00" rel="stylesheet" type="text/css" />
-<link href="/fonts/409816/3FD045C45082CEA8C.min.css" type="text/css" rel="stylesheet">
-<link href="/css/style.min.css" type="text/css" rel="stylesheet"></link>
+<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/favicons/manifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
 
-<title> Glyn Thomas • Tech Security Consultant • Product Tester </title>
+<style>
+
+:root { font-size: 1.125rem; }
+@media (min-width: 600px) { :root {font-size: 1.5rem;}  }
+@media (min-width: 900px) { :root {font-size: 1.75rem;} }
+@media (min-width: 1200px) { :root {font-size: 2rem;} }
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #FFF;
+  overflow-y: scroll;
+  width: auto;
+  white-space: nowrap;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+.messages {
+  overflow: auto;
+  width: 100vw;
+  /* max-height: 100vh; */
+  max-height: 90vh;
+  padding: 1rem .9rem;
+}
+.bubble {
+  overflow: hidden;
+  display: inline-block;
+  margin: 0 0 .125rem 0;
+  padding: .5rem .85rem;
+  line-height: 1.25rem;
+  border-radius: 1.25rem;
+  transform-origin: 0 100%;
+  vertical-align: middle;
+  transition: border-radius .25s ease-out .075s;
+}
+
+.bubble.left.cornered {
+  border-bottom-left-radius: 0;
+}
+.bubble.left {
+  /* background: rgba(206,206,206,0.50); */
+  background: rgba(229, 229, 234, 1);
+}
+
+.bubble.right.cornered {
+  border-bottom-right-radius: 0;
+}
+.bubble.right {
+  background: rgba(5, 127, 255, 1);
+  color: #fff;
+}
+
+.bubble.right a {
+  color: #fff;
+}
+
+.bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -.5rem;
+  width: .5rem;
+  height: .5rem;
+  background-image: url(../img/corner.svg);
+  background-size: .5rem .5rem;
+  background-position: .5rem 0;
+  background-repeat: no-repeat;
+  transition: background-position .15s ease-in;
+}
+.bubble.cornered:after {
+  background-position: 0 0;
+}
+.bubble span {
+  display: block;
+}
+.bubble span.message {
+  opacity: 0;
+}
+.bubble a {
+  color: #0076FF;
+}
+.bubble .loading {
+  position: absolute;
+  width: 2.25rem;
+  font-size: 2rem;
+  line-height: 1rem;
+}
+.bubble .loading b {
+  display: inline-block;
+  color: rgba(0,0,0,.5);
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+
+@media (min-width: 600px) { footer {font-size: 1.5rem !important; } }
+@media (min-width: 900px) { footer {font-size: 1.2rem !important} }
+@media (min-width: 1200px) { footer {font-size: 2rem } }
+
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-height: 50px;
+    width: 100%;
+    background: #dadae1;
+    font-size: 2rem;
+}
+
+
+.left-foot{
+cursor: pointer;
+cursor: hand;
+text-align:left;
+float:left;
+padding-top: 5px;
+font-weight: 400;
+color: #a4a4b5;
+/* text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7); */
+}
+
+.right-foot{
+cursor: pointer;
+cursor: hand;
+float:right;
+text-align:right;
+padding-top: 5px;
+font-weight: 400;
+color: #a4a4b5;
+/* text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);*/
+}
+
+.centered-foot{
+cursor: pointer;
+cursor: hand;
+text-align:center;
+padding-top: 5px;
+font-weight: 400;
+color: #a4a4b5;
+/* text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);*/
+}
+
+.font-foot {
+font-weight: 400;
+font-size: 99%;
+color: #a4a4b5;
+/* text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);*/
+}
+
+</style>
 
 </head>
 <body>
-
-<div id="begin" class="begin" style="display:block;">
-
-<table id="wrapper">
-<tr>
-<td>
-
-<div id="mrglynthomas" class="mrglynthomas" style="display:block;">
-<img id="normal" class="profile" alt="Mr Glyn Thomas" src="/img/kind-of-clear.jpg" style="display:block;">
-<img id="surprise" class="profile" alt="Mr Glyn Thomas" src="/img/kind-of-clear-moore.jpg" style="display:none;">
-</div>
-
-<div id="mrlegal" class="mrglynthomas" style="display:none;">
-<img id="surpriselegal" class="profilelegal" alt="Mr Glyn Thomas" src="/img/kind-of-clear-moore.jpg">
-</div>
-
-<span id="saythings" style="display:none;">hello</span>
-
-</td>
-</tr>
-</table>
-
-</div>
-
-<div id="details" style="display:none;">
-
-<header class="clear">
-
-<a id="logo-default" class="logo" href="/" style="display:none">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-dark-1px-margin.jpg">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-blue-1px-margin.jpg">
-</a>
-
-<a id="logo-alt" class="logo" href="/" style="display:block;">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-blue-1px-margin.jpg">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-dark-1px-margin.jpg">
-</a>
-
-</header>
-<section id="contentdetails">
-
-<div>
-<div>
-<h3>Currently:</h3>
-<p>
-<strong>
-Freelance Tech Consultant & product developer at
-<a href="http://unbios.com" target="_blank">Unbios</a>
-</strong>
-</p>
-<p> </p>
-<h3>PROJECTS:</h3>
-<ul>
-<li>
-<a href="http://busyrocket.com" target="_blank">BusyRocket</a>
-<em>- </em>
-social growth platform .. in progress.
-</li>
-<li>
-<a href="http://supportsaint.com" target="_blank">SupportSaint</a>
-<em>- </em>
-on demand technical support.
-</li>
-<li>
-<a href="http://crowdcc.com" target="_blank">Crowdcc</a>
-<em>- </em>
-tweet curation utility .. re-design soon.
-</li>
-</ul>
-<p> </p>
-<h3>EMAIL:</h3>
-<p>
-<a href="mailto:glyn@unbios.com">glyn@unbios.com</a>
-</p>
-
-<h3>Legal:</h3>
-<a href="http://mrglynthomas.apc?legal=terms" target="_blank">Terms & Conditions</a>
-<p></p>
-<h3>Elsewhere:</h3>
+<div class="page-wrap">
+<div id="msg" class="messages">
 </div>
 </div>
 
-
-<nav class="social--icons">
-
-<a class="twitter" href="https://twitter.com/mrglynthomas" target="_blank">
-<img class="detailtwitter" width="19px" height="19px" src="/img/twitter-24-dark.png">
-<img class="detailtwitter" width="19px" height="19px" src="/img/twitter-24-blue.png">
-</a>
-
-<a class="instagram" href="https://twitter.com/mrglynthomas" target="_blank">
-<img class="detailinstagram" width="19px" height="19px" src="/img/instagram-24-dark.png">
-<img class="detailinstagram" width="19px" height="19px" src="/img/instagram-24-blue.png">
-</a>
-
-<a class="linkedin" href="https://www.linkedin.com/in/mrglynthomas" target="_blank">
-<img class="detaillinkedin" width="19px" height="19px" src="/img/linkedin-24-dark.png">
-<img class="detaillinkedin" width="19px" height="19px" src="/img/linkedin-24-blue.png">
-</a>
-
-</nav>
-
-</section>
-
-</div>
-
-<div id="legal" style="display:none;">
-
-<header class="clear">
-
-<a id="legal-logo-default" class="logo" href="/" style="display:none">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-blue-1px-margin.jpg">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-dark-1px-margin.jpg">
-</a>
-
-<a id="legal-logo-alt" class="logo" href="/" style="display:block;">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-dark-1px-margin.jpg">
-<img class="detailprofile" height="55px" width="55px" alt="Mr Glyn Thomas" src="/img/kind-of-blue-1px-margin.jpg">
-</a>
-
-</header>
-<section id="contentdetails">
-
-<h3>Terms & Privacy:</h3>
-<p>
-<strong>
-Terms of Service & Use and Privacy
-</strong>
-</p>
-<p> </p>
-<h3>Terms of Use : Effective: January 1, 2016</h3>
-<p>
-<b>Acceptance of Terms.</b>
-</p>
-<ul>
-<li>
-This terms of use (together with the documents referred to in it) tells you the terms of use on which you may make use of our website www.mrglynthomas.com (our site), whether as a guest or a registered user. Use of our site includes accessing, browsing, or registering to use our site.
-</li>
-                    
-<li>
-Please read these terms of use carefully before you start to use our site, as these will apply to your use of our site. We recommend that you print a copy of this for future reference.</li>
-<li>
-By using our site, you confirm that you accept these terms of use and that you agree to comply with them. 
-</li>
-<li>
-If you do not agree to these terms of use, you must not use our site.
-</li>
-</ol>
-</li>
-
-<br>
-
-<li>
-<b>Other Applicable Terms.</b>
-<br>These terms of use refer to the following additional terms, which also apply to your use of our site:<p> 
-<ol class="list-pad ">
-
-<li>
-Our <a class="privacyfooter">Privacy</a> Policy, sets out the terms on which we process any personal data we collect from you, or that you provide to us. By using our site, you consent to such processing and you warrant that all data provided by you is accurate. 
-</li>
-                    
-<li>
-Our <a class="termsfooter">Terms of Use</a> Policy, sets out the permitted uses and prohibited uses of our site. When using our site, you must comply with this Acceptable Use Policy.
-</li>
-
-<li>
-Our <a class="termsfooter">Terms of Use</a> Policy, sets out information about the cookies on our site.
-</li>
-
-</ol>
-</li>
-
-<li>
-<b>Information about us</b>
-<ol class="list-pad">
-<li>
-mrglynthomas.com is a site operated by unbios ltd ("We"). We are registered in England and Wales under company number 03024075 and have our registered office at 107 Engadine Street, Southfields, SW18 5DU, England. We are a limited company.  We can be contacted by email at <a href="mailto:glynk@unbios.com">glyn@unbios.com</a>.
-</li>
-</ol>
-</li>
-
-<li>
-<b>Changes to these terms (with the exception of the Terms of Service)</b>
-<ol class="list-pad">
-<li>
-We may revise these terms of use at any time by amending this page. Please check this page from time to time to take notice of any changes we made, as they are binding on you.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Changes to our site</b>
-<ol class="list-pad">
-<li>
-We may update our site from time to time, and may change the content at any time. However, please note that any of the content on our site may be out of date at any given time, and we are under no obligation to update it. We do not guarantee that our site, or any content on it, will be free from errors or omissions.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Accessing our site</b>
-<ol class="list-pad">
-<li>
-Our site is made available free of charge.<br>
-We do not guarantee that our site, or any content on it, will always be available or be uninterrupted. Access to our site is permitted on a temporary basis. We may suspend, withdraw, discontinue or change all or any part of our site without notice. We will not be liable to you if for any reason our site is unavailable at any time or for any period.<br>
-You are responsible for making all arrangements necessary for you to have access to our site.<br>
-You are also responsible for ensuring that all persons who access our site through your internet connection are aware of these terms of use and other applicable terms and conditions, and that they comply with them.
-
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Your account and password</b>
-<ol class="list-pad">
-<li>
-If you choose, or you are provided with, a user identification code, password or any other piece of information as part of our security procedures, you must treat such information as confidential. You must not disclose it to any third party.<br>
-We have the right to disable any user identification code or password, whether chosen by you or allocated by us, at any time, if in our reasonable opinion you have failed to comply with any of the provisions of these terms of use.<br>
-If you know or suspect that anyone other than you knows your user identification code or password, you must promptly notify us at <a href="mailto:glyn@unbios.com">glyn@unbios.com</a>.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Intellectual property rights</b>
-<ol class="list-pad">
-<li>
-We are the owner or the licensee of all intellectual property rights in our site, and in the material published on it.  Those works are protected by copyright laws and treaties around the world. All such rights are reserved.<br>
-You may print off one copy, and may download extracts, of any page(s) from our site for your personal use and you may draw the attention of others within your organisation to content posted on our site.<br>
-You must not modify the paper or digital copies of any materials you have printed off or downloaded in any way, and you must not use any illustrations, photographs, video or audio sequences or any graphics separately from any accompanying text.<br>
-Our status (and that of any identified contributors) as the authors of content on our site must always be acknowledged.<br>
-You must not use any part of the content on our site for commercial purposes without obtaining a licence to do so from us or our licensors.<br>
-If you print off, copy or download any part of our site in breach of these terms of use, your right to use our site will cease immediately and you must, at our option, return or destroy any copies of the materials you have made.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>No reliance on information</b>
-<ol class="list-pad">
-<li>
-The content on our site is provided for general information only. It is not intended to amount to advice on which you should rely. You must obtain professional or specialist advice before taking, or refraining from, any action on the basis of the content on our site.<br>
-Although we make reasonable efforts to update the information on our site, we make no representations, warranties or guarantees, whether express or implied, that the content on our site is accurate, complete or up-to-date.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Limitation of our liability</b>
-<ol class="list-pad">
-                    
-Nothing in these terms of use excludes or limits our liability for death or personal injury arising from our negligence, or our fraud or fraudulent misrepresentation, or any other liability that cannot be excluded or limited by English law.<br>
-To the extent permitted by law, we exclude all conditions, warranties, representations or other terms which may apply to our site or any content on it, whether express or implied.<br> 
-We will not be liable to any user for any loss or damage, whether in contract, tort (including negligence), breach of statutory duty, or otherwise, even if foreseeable, arising under or in connection with:<p>
-
-<li>use of, or inability to use, our site; or</li>
-                    
-<li>use of or reliance on any content displayed on our site.</li>
-<br>
-<p>If you are a business user, please note that in particular, we will not be liable for:</p>
-
-<li>loss of profits, sales, business, or revenue;</li>
-<li>business interruption;</li>
-<li>loss of anticipated savings;</li>
-<li>loss of business opportunity, goodwill or reputation; or</li>
-<li>any indirect or consequential loss or damage.</li>
-
-<br>
-If you are a consumer user, please note that we only provide our site for domestic and private use. You agree not to use our site for any commercial or business purposes, and we have no liability to you for any loss of profit, loss of business, business interruption, or loss of business opportunity.<br>
-We will not be liable for any loss or damage caused by a virus, distributed denial-of-service attack, or other technologically harmful material that may infect your computer equipment, computer programs, data or other proprietary material due to your use of our site or to your downloading of any content on it, or on any website linked to it.<br>
-We assume no responsibility for the content of websites linked on our site. Such links should not be interpreted as endorsement by us of those linked websites. We will not be liable for any loss or damage that may arise from your use of them.<br>
-</ol>           
-</li>
-
-<li>
-<b>Uploading content to our site</b>
-<ol class="list-pad">
-<li>
-Whenever you make use of a feature that allows you to upload or post content to our site, or to make contact with other users of our site, you must comply with the content standards set out in our <a class="termsfooter">Terms of Use</a> Policy.
-</li>
-<li>
-You warrant that any such contribution does comply with those standards, and you will be liable to us and indemnify us for any breach of that warranty. If you are a consumer user, this means you will be responsible for any loss or damage we suffer as a result of your breach of warranty.
-</li>
-<li>
-Any content you upload to our site will be considered non-confidential and non-proprietary. You retain all of your ownership rights in your content, but you are required to grant us and other users of the Site a limited licence to use, store and copy that content and to distribute and make it available to third parties. The rights you licence to us are described in the next paragraph (Rights you licence).
-</li>
-<li>
-We also have the right to disclose your identity to any third party who is claiming that any content posted or uploaded by you to our site constitutes a violation of their intellectual property rights, or of their right to privacy.
-</li>
-<li>
-We will not be responsible, or liable to any third party, for the content or accuracy of any content posted by you or any other user of our site.
-</li>
-<li>
-We have the right to remove any posting you make on our site if, in our opinion, your post does not comply with the content standards set out in our <a class="termsfooter">Terms of Use</a> Policy.
-</li>
-<li>
-The views expressed by other users on our site do not represent our views or values.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Rights you licence</b>
-<ol class="list-pad">
-<li>
-When you upload or post content to our site, you grant the following licenses:
-You will provide us  and any third parties (including other users, partners, advertisers and other third parties) with a perpetual, worldwide, non-exclusive, royalty-free, transferable licence to use, store, share, reproduce, distribute, prepare derivative works of, display,  make available and perform that user generated content in connection with the service provided by the Site and across different media including in connection with any advertising, marketing and promotional activities undertaken and materials developed pursuant to the services and/or in accordance with the functionality of the site.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Viruses</b>
-<ol class="list-pad">
-<li>
-We do not guarantee that our site will be secure or free from bugs or viruses.<br>
-You are responsible for configuring your information technology, computer programmes and platform in order to access our site. You should use your own virus protection software.
-</li>
-<li>
-You must not misuse our site by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful. You must not attempt to gain unauthorised access to our site, the server on which our site is stored or any server, computer or database connected to our site. You must not attack our site via a denial-of-service attack or a distributed denial-of service attack. By breaching this provision, you would commit a criminal offence under the Computer Misuse Act 1990.
-</li>
-<li>
-We will report any such breach to the relevant law enforcement authorities and we will co-operate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use our site will cease immediately.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Linking to our site</b>
-<ol class="list-pad">
-<li>
-You may link to our home page <a href="http://mrglynthomas.com">mrglynthomas.com</a> provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it.
-</li>
-<li>
-You must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part where none exists.
-</li>
-<li>
-You must not establish a link to our site in any website that is not owned by you.
-</li>
-<li>
-Our site must not be framed on any other site, nor may you create a link to any part of our site other than the home page.
-</li>
-<li>
-We reserve the right to withdraw linking permission without notice.
-</li>
-<li>
-The website in which you are linking must comply in all respects with the content standards set out in our <a class="termsfooter">Terms of Use</a> Policy.
-</li>
-<li>
-If you wish to make any use of content on our site other than that set out above, please contact me <a href="mailto:glyn@unbios.com">glyn@unbios.com</a>.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Third party links and resources in our site</b>
-<ol class="list-pad">
-<li>
-Where our site contains links to other sites and resources provided by third parties, these links are provided for your information only.
-</li>
-<li>
-We have no control over the contents of those sites or resources.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Applicable Law</b>
-<ol class="list-pad">
-<li>
-If you are a consumer, please note that these terms of use, its subject matter and its formation, are governed by English law. You and we both agree to that the courts of England and Wales will have non-exclusive jurisdiction. However, if you are a resident of Northern Ireland you may also bring proceedings in Northern Ireland, and if you are resident of Scotland, you may also bring proceedings in Scotland.
-</li>
-<li>
-If you are a business, these terms of use, its subject matter and its formation (and any non-contractual disputes or claims) are governed by English law. We both agree to the exclusive jurisdiction of the courts of England and Wales.
-</li>
-</ol>           
-</li>
-
-<li>
-<b>Trade Marks</b>
-<ol class="list-pad">
-<li>
-unbios, mrglynthomas.com and it's associated Unbios logo are trade marks of mrglynthomas.com owned and operated by unbios ltd.
-</li>
-</ol>           
-</li>
-</ol>
-
-<h3 class="text-left top-minus">Basic terms</h3>
-
-<p>You are responsible for your use of the services and for any content you post.</p>
-
-<h3 class="text-left">Prohibited Uses</h3>
-
-<p>You may use our site only for lawful purposes and not to engage in, foster or promote illegal, abusive or irresponsible behaviour.  You may not use our site:</p>
-
-<ul class="list-pad">
-
-<li>In any way that breaches any applicable local, national or international law or regulation including data protection and privacy laws and laws related to unsolicited commercial electronic messages.</li>
-<li>In any way that is unlawful or fraudulent, or has any unlawful or fraudulent purpose or effect.</li>
-<li>For the purpose of harming or attempting to harm minors in any way.</li>
-<li>To send, knowingly receive, upload, download, use or re-use any material which does not comply with our content standards set out below.</li>
-<li>To transmit, or procure the sending of, any unsolicited or unauthorised advertising or promotional material or any other form of similar solicitation (spam).</li>
-<li>To knowingly transmit any data, send or upload any material that contains viruses, Trojan horses, worms, time-bombs, keystroke loggers, spyware, adware or any other harmful programs or similar computer code designed to adversely affect the operation of any computer software or hardware.</li>
-<li>To collect or use information including email addresses, screen names or other identifiers by deceit (including phishing, internet scamming, password robbery, spidering or harvesting)</li>
-<li>To distribute software that covertly gathers or transmits information about a user.</li>
-<li>To engage in any conduct that is likely to result in retaliation against our network or website or that of any third party hosting provider we may use including engaging in behaviour that results in any server being the target of a denial of service attack (DoS) including (without limitation) mail bombing, flooding, deliberate attempts to overload a system and broadcast attacks.</li>
-<li>For any activity intended to withhold or cloak identity or contact information, including the omission, deletion, forgery or misreporting of any transmission or identification information, such as return mailing and IP addresses.</li>
-
-</ul>
-
-<p>You also agree:</p>
-
-<p>Not to reproduce, duplicate, copy or re-sell any part of our site in contravention of the provisions of our <a class="termsfooter">terms of Use</a> policy.</p>
-
-<p>Not to access without authority, interfere with, damage or disrupt (including any attempt to probe, scan or test the vulnerability of a system or network or to breach security of authentication measures):</p>
-
-<ul class="list-pad">
-
-<li>any part of our site;</li>
-<li>any equipment or network on which our site is stored;</li>
-<li>For the purpose of harming or attempting to harm minors in any way.</li>
-<li>any software used in the provision of our site; or </li>
-<li>any equipment or network or software owned or used by any third party.</li>
-
-</ul>
-
-<h3 class="text-left">Interactive Services</h3>
-
-<p>We may from time to time provide interactive services on our site, including, without limitation:</p>
-
-<ul class="list-pad">
-
-<li>Chat rooms.</li>
-<li>Bulletin boards.</li>
-<li>Community Forums</li>
-
-</ul>
-
-<p>Where we do provide any interactive service, we will provide clear information to you about the kind of service offered, if it is moderated and what form of moderation is used (including whether it is human or technical).</p>
-
-<p>We will do our best to assess any possible risks for users (and in particular, for children) from third parties when they use any interactive service provided on our site, and we will decide in each case whether it is appropriate to use moderation of the relevant service (including what kind of moderation to use) in the light of those risks. However, we are under no obligation to oversee, monitor or moderate any interactive service we provide on our site, and we expressly exclude our liability for any loss or damage arising from the use of any interactive service by a user in contravention of our content standards, whether the service is moderated or not.</p>
-
-<p>The use of any of our interactive services by a minor is subject to the consent of their parent or guardian. We advise parents who permit their children to use an interactive service that it is important that they communicate with their children about their safety online, as moderation is not foolproof. Minors who are using any interactive service should be made aware of the potential risks to them.</p>
-
-<p>Where we do moderate an interactive service, we will normally provide you with a means of contacting the moderator, should a concern or difficulty arise.</p>
-
-<h3 class="text-left">Content Standards</h3>
-
-<p>These content standards apply to any and all material which you contribute to our site (contributions), and to any interactive services associated with it.</p>
-
-<p>You must comply with the spirit and the letter of the following standards. The standards apply to each part of any contribution as well as to its whole.</p>
-
-<p>Contributions must:</p>
-
-<ul class="list-pad">
-        
-<li>Be accurate (where they state facts).</li>
-<li>Be genuinely held (where they state opinions).</li>
-<li>Comply with applicable law in the UK and in any country from which they are posted.</li>
-
-</ul>
-
-<p>Contributions must not:</p>
-
-<ul class="list-pad">
-        
-<li>Contain any material which is defamatory of any person.</li>
-<li>Contain any material which is obscene, offensive, hateful or inflammatory.</li>
-<li>Promote sexually explicit material.</li>
-<li>Promote violence or store any content or links to any content that is violent, incites violence, threatens violence, contains harassing content or hate speech, creates a risk to a person’s safety or health or public safety or health, compromises national security of interferes with an investigation by law enforcement.</li>
-<li>Promote discrimination based on gender, race, sex, religion, nationality, disability, sexual orientation, age or disability.</li>
-<li>Infringe any copyright, database right or trade mark of any other person.</li>
-<li>Be likely to deceive any person.</li>
-<li>Be made in breach of any legal duty owed to a third party, such as a contractual duty or a duty of confidence.</li>
-<li>Promote any illegal activity.</li>
-<li>Be threatening, abuse or invade another’s privacy, or cause annoyance, inconvenience or needless anxiety.</li>
-<li>Be likely to harass, upset, embarrass, alarm or annoy any other person.</li>
-<li>Be used to impersonate any person, or to misrepresent your identity or affiliation with any person.</li>
-<li>Give the impression that they emanate from us, if this is not the case.</li>
-<li>Advocate, promote or assist any unlawful act such as (by way of example only) copyright infringement or computer misuse.</li>
-<li>otherwise malicious, fraudulent or morally repugnant.</li>
-<li>Include private and confidential information including (by way of example) credit card information, addresses or locations, non-public personal telephone numbers and email addresses; images or videos that are considered and treated as private under applicable laws or intimate photos or videos that were taken or distributed without the subject’s consent.</li>
-
-</ul>
-
-<h3 class="text-left">Export Control</h3>
-
-<p>The services may not be used in violent of export laws, controls, regulations or sanctions policies of the United States or the UK. The services may not be used by persons, organisations, companies or any such other legal entity or unincorporated body, including any affiliate or group company, which is involved with or suspect of involvement in activities or causes relating to: illegal gambling; terrorism; narcotics trafficking; arms trafficking or the proliferation, development, design, manufacture, production, stockpiling, or use of nuclear, chemical or biological weapons, weapons of mass destruction or missiles; in each case including any affiliation with others whatsoever who sponsor or support the above such activities or causes.</p>
-
-<h3 class="text-left">Intellectual Property</h3>
-
-<p>You may not use our services in manner that infringes on or misappropriates the rights of third party in any work protected by copyright, trade or service mark, invention or other intellectual property or proprietary information.  For example:</p>
-
-<ul class="list-pad">
-        
-<li>You may not use the services to download, publish, torrent, distribute, use or otherwise copy in any manner any text, music software, art, image or other work protected by copyright law unless you have permission from the owner of the work or are otherwise permitted by established intellectual property law to copy or use the work or rights in that manner;</li>
-<li>You may not use the services to publish content intended to assist others in defeating technical copyright protections;</li>
-<li>You may not display another person’s trademark without permission.</li>
-
-</ul>
-
-<h3 class="text-left">Suspension and Termination</h3>
-
-<p>We will determine, in our discretion, whether there has been a breach of this acceptable use policy through your use of our site.  When a breach of this policy has occurred, we may take such action as we deem appropriate.</p>
-
-<p>Failure to comply with this acceptable use policy constitutes a material breach of the <a class="termsfooter">Terms of Use</a> policy upon which you are permitted to use our site, and may result in our taking all or any of the following actions:</p>
-
-<ul class="list-pad">
-        
-<li>Immediate, temporary or permanent withdrawal of your right to use our site.</li>
-<li>Immediate, temporary or permanent removal of any posting or material uploaded by you to our site.</li>
-<li>Issue of a warning to you.</li>
-<li>Legal proceedings against you for reimbursement of all costs on an indemnity basis (including, but not limited to, reasonable administrative and legal costs) resulting from the breach.</li>
-<li>Further legal action against you.</li>
-<li>Disclosure of such information to law enforcement authorities as we reasonably feel is necessary.</li>
-
-</ul>
-
-<p>We exclude liability for actions taken in response to breaches of this acceptable use policy.  The responses described in this policy are not limited, and we may take any other action we reasonably deem appropriate.  We also reserve the right to access, read, preserve and disclose any information as we reasonably believe is necessary to (i) satisfy any applicable law, regulation, legal process or governmental request (ii) enforce any of the terms of your relationship with us including investigation of potential violations of such terms (iii) detect, prevent or otherwise address fraud, security or technical issues (iv) respond to user support requests or (v) protect the rights, property or safety of mrglynthomas.com, its users and the public.</p>
-
-<h3 class="text-left">Changes to these Terms of Use and Acceptable Use Policy</h3>
-
-<p>The terms of this acceptable use policy sets out the terms between you and us under which you may access our website www.mrglynthomas.com (our site). This acceptable use policy applies to all users of, and visitors to, our site.</p>
-
-<p>Your use of our site means that you accept, and agree to abide by, all the policies in this acceptable use policy, which supplement our <a class="termsfooter">Terms of Use</a> policy.</p>
-
-<p>
-We may revise this acceptable use policy at any time by amending this page. You are expected to check this page from time to time to take notice of any changes we make, as they are legally binding on you. Some of the provisions contained in this acceptable use policy may also be superseded by provisions or notices published elsewhere on our site.
-</p>
-
-<p>We may change these policies from time to time, and if we do we’ll post any changes on this page. If you continue to use Unbios after those changes are in effect, you agree to the revised policy. If the changes are material, we may provide more prominent notice or seek your consent to the new policy.</p>
-
-<p>www.mrglynthomas.com is a site operated by unbios ltd (we or us).  We are registered in England and Wales under company number 03024075 and we have our registered office at 107 Engadine Street, Southfields, SW18 5DU.</p>
-
-<h3 class="text-left">Contacting Mr Glyn Thomas</h3>
-
-<p>
-Please also feel free to contact me if you have any questions about our Acceptable Use Policy or practices. You may contact me at <a href="mailto:glyn@unbios.com">glyn@unbios.com</a>
-</p>
-
-
-<h2> Our Privacy Policy </h2>
-
-<h3 class="text-left">Effective: January 1, 2016</h3>
-
-<p>If you read nothing else, please read this:</p>
-
-<p>www.mrglynthomas.com ("We") are committed to protecting and respecting your privacy.</p>
-
-<p>This policy (together with our <a class="termsfooter">Terms of Service & Use</a> and any other documents referred to in it) sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us.  Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it. By visiting <a href="http://www.mrglynthomas.com">www.mrglynthomas.com</a> you are accepting and consenting to the practices described in this policy. </p>
-
-<p>For the purpose of the Data Protection Act 1998 (the “Act”), the data controller is unbios ltd a company registered under the laws of England and Wales with number 03024075.</p>
-
-<h3 class="text-left">Information we may collect from you</h3>
-
-<p>We collect different kinds of information. Some of it is personally identifiable and some is non-identifying or aggregated.</p>
-
-<p>We may collect and process the following data about you:
-
-<p>Information you give us. You may give us information about you by filling in forms on our site <a href="http://www.mrglynthomas.com">www.mrglynthomas.com</a> (our site) or by corresponding with us by phone, e-mail or otherwise. This includes information you provide when you register to use our site, subscribe to our services, participate in discussion boards or other social media functions on our site or enter a competition, promotion or survey and when you report a problem with our site. The information you give us may include your name, address, e-mail address and phone number, financial and credit card information, personal description and photograph or other information.</p>
-    
-<p>Information we collect about you. With regard to each of your visits to our site we may automatically collect the following information:
-
-<ul class="list-pad">
-
-<li>technical information, including the Internet protocol (IP) address used to connect your computer to the Internet, your login information, browser type and version, time zone setting, browser plug-in type and version, platform and associated operating system.</li>
-
-<li>information about your visit, including the full Uniform Resource Locators (URL) clickstream to, through and from our site (including date and time); products you viewed or searched for; page response times, download errors, length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs), and methods used to browse away from the page and any phone number used to call our customer service number.</i>
-
-</ul>
-
-<p>Information we receive from other sources. We may receive information about you if you use any of the other websites we operate or the other services we provide. We may also work with third parties (including, for example, business partners, sub-contractors in technical, payment and delivery services, advertising networks, analytics providers, search information providers, credit reference agencies) and may receive information about you from them.</p>
-
-<h3 class="text-left">Cookies</h3>
-
-<p>Our website may use cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site.</p>
-
-<p>
-Cookies are small text files sent by us to your computer, they are unique to your Unbios account or your browser.  Session-based cookies last only while your browser is open and are automatically deleted when you close your browser.  Persistent cookies last until you or your browser delete them or until they expire.
-</p>
-
-<p>
-Unbios uses cookies, or similar technologies like single-pixel gifs and web beacons, to record log data. We use both session-based and persistent cookies. 
-</p>
-
-<p>
-In order to collect the information this website may use cookies. A cookie is a small file of letters and numbers that is sent to your browser and stored on the hard drive of your computer (or internet enabled device) when you visit a website. We may, from time to time, use the following types of cookies on our website.
-</p>
-
-<ul class="list-pad">
-            
-<li>Strictly necessary cookies are essential in order to enable you to move around the website and use its features. Without these cookies, services you have asked for cannot be provided. They are deleted when you close the browser.</li>
-        
-<li>Analytical / performance cookies are used to collect information in an anonymous form about how visitors use our website. They allow us to recognise and count the number of visitors and to see how visitors move around the site when they are using it.</li>
-        
-<li>Functionality cookies are used to recognise you when you return to our Website. This enables us to personalise our content for you, greet you by name and remember your preferences.</li>
-
-<li>Targeting cookies record your visit to our website, the pages you have visited and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose.</li>
-
-</ul>
-
-<p>
-Our cookies are associated with your Unbios account.  Other cookies are not tied to your Unbios account but are unique and allow us to do site analytics and customization, among other things. If you access Unbios through your browser, you can manage your cookie settings there but if you disable all cookies you may not be able to use Unbios.
-</p>
-
-<p>
-Unbios sets and accesses our own cookies on our company-owned domains. In addition, we use 3rd parties like Google Analytics for website analytics. Google Analytics provides its own <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">opt-out</a>. We do not currently recognize or respond to browser-initiated Do Not Track signals as there is no consistent industry standard for compliance.
-</p>
-
-<h3 class="text-left">Other Choices</h3>
-
-<ul class="list-pad">
-<li>The browser you use may provide you with the ability to control cookies or other types of local data storage.</li>
-<li>Your mobile device may provide you with choices around how and whether location or other data is shared with us.</li>
-</ul>
-
-<p>We use information held about you in the following ways:</p>
-
-<p>Information you give to us. We will use this information:</p>
-
-<ul class="list-pad">
-<li>to carry out our obligations arising from any contracts entered into between you and us and to provide you with the information, products and services that you request from us;</li>
-
-<li>to provide you with information about other goods and services we offer that are similar to those that you have already purchased or enquired about.  If you do not want us to use your data in this way, please tick the relevant box situated on the form on which we collect your data which forms part of our <a class="termsfooter">Terms of Service & Use</a> policy;</i>
-
-<li>to provide you, or permit selected third parties to provide you, with information about goods or services we feel may interest you. If you do not want us to pass your details on to third parties for marketing purposes, please tick the relevant box situated on the form on which we collect your data which forms part of our <a class="termsfooter">Terms of Service & Use</a> policy;</i>
-
-<li>to notify you about changes to our service;</li>
-
-<li>to ensure that content from our site is presented in the most effective manner for you and for your computer.</li>
-</ul>
-
-<p>Information we collect about you. We will use this information:</p>
-
-<ul class="list-pad">
-
-<li>to administer our site and for internal operations, including troubleshooting, data analysis, testing, research, statistical and survey purposes;</li>
-<li>to improve our site to ensure that content is presented in the most effective manner for you and for your computer;</i>
-<li>to allow you to participate in interactive features of our service, when you choose to do so;</i>
-<li>as part of our efforts to keep our site safe and secure;</li>
-<li>to measure or understand the effectiveness of advertising we serve to you and others, and to deliver relevant advertising to you;</li>
-<li>to make suggestions and recommendations to you and other users of our site about goods or services that may interest you or them.</li>
-
-</ul>
-
-<p>Information we receive from other sources. We may combine this information with information you give to us and information we collect about you.
-       We may us this information and the combined information for the purposes set out above (depending on the types of information we receive).</p>
-
-<h3 class="text-left">Disclosure of your Information</h3>
-
-<p>We may share your information with selected third parties including:<p>
-
-<ul class="list-pad">
-    
-<li>Business partners, suppliers and sub-contractors for the performance of any contract we enter into with them or you.</li>
-
-<li>Advertisers and advertising networks that require the data to select and serve relevant adverts to you and others.
-    We do not disclose information about identifiable individuals to our advertisers, but we may provide them with aggregate information about our users
-    (for example, we may inform them that 500 men aged under 30 have clicked on their advertisement on any given day).
-    We may also use such aggregate information to help advertisers reach the kind of audience they want to target (for example, women in SW1).
-    We may make use of the personal data we have collected from you to enable us to comply with our advertisers' wishes by displaying their advertisement to that target audience.
-</li>
-
-<li>Analytics and search engine providers that assist us in the improvement and optimisation of our site.</i>
-
-<li>Credit reference agencies for the purpose of assessing your credit score where this is a condition of us entering into a contract with you.</li>
-
-</ul>
-
-<p>We may disclose your personal information to third parties:</p>
-
-<ul class="list-pad">
-    
-<li>In the event that we sell or buy any business or assets, in which case we may disclose your personal data to the prospective seller or buyer of such business or assets.</li>
-
-<li>If Unbios ltd or substantially all of its assets are acquired by a third party, in which case personal data held by it about its customers will be one of the transferred assets.</li>
-
-<li>If we are under a duty to disclose or share your personal data in order to comply with any legal obligation, or in order to enforce or apply our <a class="termsfooter">Terms of Service & Use</a> policy or terms and conditions of supply in our agreements; or to protect the rights, property, or safety of unbios ltd, www.mrglynthomas.com, our customers, or others. This includes exchanging information with other companies and organisations for the purposes of fraud protection and credit risk reduction.</i>
-
-</ul>
-
-<h3 class="text-left">Where we store your personal data</h3>
-
-<p>The data that we collect from you may be transferred to, and stored at, a destination outside the European Economic Area ("EEA"). The data may also be processed by staff operating outside the EEA who work for us or for one of our suppliers. Such staff maybe engaged in, among other things, the fulfilment of your order, the processing of your payment details and the provision of support services. By submitting your personal data, you agree to this transfer, storing or processing. We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this privacy policy.</p>
-
-<p>Where we have given you (or where you have chosen) a password which enables you to access certain parts of our site, you are responsible for keeping this password confidential. We ask you not to share a password with anyone.</p>
-
-<p>Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorised access.</p>
-
-<h3 class="text-left">Your Rights</h3>
-
-<p>If you are a registered user of our services we provide you with tolls and account settings to access or modify the personal information you provided to us and associated with your account.</p>
-
-<p>You have the right to ask us not to process your personal data for marketing purposes. We will usually inform you (before collecting your data) if we intend to use your data for such purposes or if we intend to disclose your information to any third party for such purposes. You can exercise your right to prevent such processing by checking certain boxes on the forms we use to collect your data.  You can also exercise the right at any time by contacting me at <a href="mailto:glyn@unbios.com">glyn@unbios.com</a></p>
-
-<p>Our site may, from time to time, contain links to and from the websites of our partner networks, advertisers and affiliates.  If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for these policies.  Please check these policies before you submit any personal data to these websites.</p>
-
-<h3 class="text-left">Access to Information</h3>
-
-<p>The Act gives you the right to access information held about you. Your right of access can be exercised in accordance with the Act. Any access request may be subject to a fee of £10 to meet our costs in providing you with details of the information we hold about you.</p>
-
-<h3 class="text-left">Our Policy towards Children</h3>
-
-<p>Our site and services are not directed to persons under 13.  If you become aware that your child has provided us with personal information without your consent, please contact us at
-feedback@mrglynthomas.com.  We do not knowingly collect personal information from children under 13.  If we become aware that a child under 13 has provided us with personal information we will take steps to remove such information and termination the child’s account.</p>
-
-<h3 class="text-left">Changes to our Privacy Policy</h3>
-
-<p>We may revise this Privacy Policy from time to time.  The most current version of the policy will govern our use of your information and will be available on our <a class="privacyfooter">Privacy Policy</a>.  Please check back frequently to see any updates or changes to our privacy policy. If we make changes to this policy that, in our sole discretion, we adjudge to be material we will notify registered users via an email to the email address associated with your account.  By continuing to access or use the services after those changes become effective, you agree to be bound by the revised Privacy Policy.
-</p>
- 
-<h3 class="text-left">Contacting Mr Glyn Thomas @Unbios</h3>
-
-<p>
-Please also feel free to contact us if you have any questions about mrglynthomas.com Privacy Policy or practices. You may contact me at <a href="mailto:glyn@unbios.com">glyn@unbios.com</a>
-</p>
-
-<p>
-
-Unbios Ltd is based in SW18, South West London.
-
-<p>
-
-<p></p>
-<h3>Elsewhere:</h3>
-
-<nav class="social--icons">
-
-<a class="twitter" href="https://twitter.com/mrglynthomas" target="_blank">
-<img class="detailtwitter" width="19px" height="19px" src="/img/twitter-24-dark.png">
-<img class="detailtwitter" width="19px" height="19px" src="/img/twitter-24-blue.png">
-</a>
-
-<a class="instagram" href="https://twitter.com/mrglynthomas" target="_blank">
-<img class="detailinstagram" width="19px" height="19px" src="/img/instagram-24-dark.png">
-<img class="detailinstagram" width="19px" height="19px" src="/img/instagram-24-blue.png">
-</a>
-
-<a class="linkedin" href="https://www.linkedin.com/in/mrglynthomas" target="_blank">
-<img class="detaillinkedin" width="19px" height="19px" src="/img/linkedin-24-dark.png">
-<img class="detaillinkedin" width="19px" height="19px" src="/img/linkedin-24-blue.png">
-</a>
-
-</nav>
-
-</section>
-
-</div>
-
-</body>
-
-<script type="text/javascript" src="/js/mrquery.min.js?v=1.00.00"></script>
-<script type="text/javascript" src="/js/error.min.js?v=1.00.00"></script>
-<script type="text/javascript" src="/js/mr.min.js?v1.00.00"></script>
-<script type="text/javascript" src="/js/mrwatch.min.js?v1.00.00"></script>
-
-<script type="text/javascript">
-
-window.onload = function(){
-      
-var uriarr = window.location.href.split('/');
-  
-/* console.log(uriarr[0] + '/'+ uriarr[1] +'/'+ uriarr[2] +'/'+ uriarr[3]); */
-
-var backlen = -1; 
-    history.go(-backlen);
-    window.history.replaceState( '', 'mrglynthomas', uriarr[0] + '/'+ uriarr[1] +'/'+ uriarr[2] );
-    uriarr = null; backlen = null;
-
-};
-
-function escapehtml(unsafe) {return unsafe
-    .replace(/&/g,'')
-    .replace(/%3C/g, '')
-    .replace(/.*=/g,'')
-    .replace(/\?/g,'')
-    .replace(/%3E/g, '')
-    .replace(/"/g, '')
-    .replace(/'/g, '');
+<script async="" src="//www.google-analytics.com/analytics.js"></script>
+
+<script>
+
+
+function ClearMsg() {
+  document.getElementById('msg').innerHTML = "";
+  console.log(messageIndex);
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+function random() {
+  /* console.log(messageIndex); */
+  if (messageIndex >= 7) {  // 8 default message!
+  ClearMsg();
+
+  var shake = getRandomInt(1, 3);
+
+   switch (shake) {
+
+    case (1):
+     window.messages = [
+      '5 💣 &nbsp;',
+      '4 🚑 &nbsp;',
+      '3 🚑 &nbsp;',
+      '2 🚑',
+      '1 🚑',
+      'Go 💥',
+      'Your only supposed',
+      'to blow the bloody',
+      'doors off!',
+     ]
+     SendMsg();
+    break;
+
+    case (2):
+      window.messages = [
+      '... Rodger that',
+      'Beep ... BEep ... BEEP 🚀',
+      'Hey we gotta a problem here &nbsp;',
+      'What did you do? &nbsp;',
+      'Nothing just stirred the tanks &nbsp;',
+      'This is Huston say again please?',
+      'Huston we have a problem!',
+     ]
+     SendMsg('chat');
+    break;
+
+    case (3):
+      window.messages = [
+      'The unknown future rolls',
+      'toward us. I face it, for the',
+      'first time, with a sense of',
+      'hope. Because if a machine,',
+      'a Terminator 🤖, can learn the',
+      'value of human life, maybe',
+      'we can too ...',
+     ]
+     SendMsg();
+    break;
+   }
+  }
+}
+
+function talker() {
+  /* console.log(messageIndex); */
+  if (messageIndex >= 7) {  // 8 default message!
+   ClearMsg();
+
+ window.messages = [
+    'What\'s next?',
+    'I\'ve just recently sold a<br>small start-up which I built<br> over a short space of time, now<br> I am looking to work in<br> or with a team.',
+    'What type of challenge?',
+    'One which will give me an<br>opportunity to create new<br>products or provide support<br> to someone else who<br> is doing the same.',
+    'Can you work flexibly?',
+    'Yes, my main driver is to do<br> something interesting<br> and challenging while sharing<br> knowledge and experience<br> with others.',
+    'What are your skills?',
+    'I 😍 help create, fix or<br> improve digital products <br>or services ..',
+    'What is it about tech?',
+    'I enjoy hacking or coding<br> from scratch, or fixing code.<br>I quickly hacked together<br>this site, from two sites. Adding<br>two way communication and<br>some interesting new features 😀.<br>If you read this far, maybe<br> I can help you with your project?',
+    'How can I contact you?',
+    'Email <a href=mailto:hello@mrglynthomas.com>hello@mrglynthomas.com</a><br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊 Glyn.&nbsp;',
+    'Thank you for reading this 😀',
+  ]
+
+   SendMsg('chat');
+  }
+
+}
+
+function social() {
+  /* console.log(messageIndex); */
+  if (messageIndex >= 7) {	// 8 default message!
+   ClearMsg();
+
+ window.messages = [
+    'Often on <a href=https://instagram.com/mrglynthomas title=mr glynthomas on instagram target=_blank>instagram</a> 📸 &nbsp;',
+    'Sometimes on <a href=https://twitter.com/mrglynthomas title=mr glynthomas on twitter target=_blank>twitter</a> 🐦 &nbsp;',
+    'Infrequently <a href=https://facebook.com/mrglynthomas title=mr glynthomas on facebook target=_blank>facebook</a> 🐴 &nbsp;',
+    'Code shared on <a href=https://github.com/glynthomas title=mr glynthomas on github target=_blank>github</a> 💾 &nbsp;',
+    'Always on <a href="mailto:hello@mrglynthomas.com" title="hello@glynthomas.com">email</a> ✉️',
+    getCurrentTime(),
+    '😊 Glyn.&nbsp;'
+  ]
+
+   SendMsg();
+  }
 }
 
 </script>
 
+
+<!-- <script src="js/anime.js"> -->
+<script>
+
+/*
+ * Anime v0.0.0
+ * http://anime-js.com
+ * Polyvalent yet lightweight Javascript animation library
+ * Copyright (c) 2016 Julian Garnier
+ * http://juliangarnier.com
+ * Released under the MIT license
+ */
+var anime=function(){var t={linear:function(t,n,e,r){return n+t/r*e},easeInQuad:function(t,n,e,r){return e*(t/=r)*t+n},easeOutQuad:function(t,n,e,r){return-e*(t/=r)*(t-2)+n},easeInOutQuad:function(t,n,e,r){return(t/=r/2)<1?e/2*t*t+n:-e/2*(--t*(t-2)-1)+n},easeInCubic:function(t,n,e,r){return e*(t/=r)*t*t+n},easeOutCubic:function(t,n,e,r){return e*((t=t/r-1)*t*t+1)+n},easeInOutCubic:function(t,n,e,r){return(t/=r/2)<1?e/2*t*t*t+n:e/2*((t-=2)*t*t+2)+n},easeInQuart:function(t,n,e,r){return e*(t/=r)*t*t*t+n},easeOutQuart:function(t,n,e,r){return-e*((t=t/r-1)*t*t*t-1)+n},easeInOutQuart:function(t,n,e,r){return(t/=r/2)<1?e/2*t*t*t*t+n:-e/2*((t-=2)*t*t*t-2)+n},easeInQuint:function(t,n,e,r){return e*(t/=r)*t*t*t*t+n},easeOutQuint:function(t,n,e,r){return e*((t=t/r-1)*t*t*t*t+1)+n},easeInOutQuint:function(t,n,e,r){return(t/=r/2)<1?e/2*t*t*t*t*t+n:e/2*((t-=2)*t*t*t*t+2)+n},easeInSine:function(t,n,e,r){return-e*Math.cos(t/r*(Math.PI/2))+e+n},easeOutSine:function(t,n,e,r){return e*Math.sin(t/r*(Math.PI/2))+n},easeInOutSine:function(t,n,e,r){return-e/2*(Math.cos(Math.PI*t/r)-1)+n},easeInExpo:function(t,n,e,r){return 0==t?n:e*Math.pow(2,10*(t/r-1))+n},easeOutExpo:function(t,n,e,r){return t==r?n+e:e*(-Math.pow(2,-10*t/r)+1)+n},easeInOutExpo:function(t,n,e,r){return 0==t?n:t==r?n+e:(t/=r/2)<1?e/2*Math.pow(2,10*(t-1))+n:e/2*(-Math.pow(2,-10*--t)+2)+n},easeInCirc:function(t,n,e,r){return-e*(Math.sqrt(1-(t/=r)*t)-1)+n},easeOutCirc:function(t,n,e,r){return e*Math.sqrt(1-(t=t/r-1)*t)+n},easeInOutCirc:function(t,n,e,r){return(t/=r/2)<1?-e/2*(Math.sqrt(1-t*t)-1)+n:e/2*(Math.sqrt(1-(t-=2)*t)+1)+n},easeInElastic:function(t,n,e,r,a){var u=1.70158,i=r*(1-Math.min(a,99)/100),o=e;if(0==t)return n;if(1==(t/=r))return n+e;if(o<Math.abs(e)){o=e;var u=i/4}else var u=i/(2*Math.PI)*Math.asin(e/o);return-(o*Math.pow(2,10*(t-=1))*Math.sin((t*r-u)*(2*Math.PI)/i))+n},easeOutElastic:function(t,n,e,r,a){var u=1.70158,i=r*(1-Math.min(a,999)/1e3),o=e;if(0==t)return n;if(1==(t/=r))return n+e;if(o<Math.abs(e)){o=e;var u=i/4}else var u=i/(2*Math.PI)*Math.asin(e/o);return o*Math.pow(2,-10*t)*Math.sin((t*r-u)*(2*Math.PI)/i)+e+n},easeInOutElastic:function(t,n,e,r,a){var u=1.70158,i=r*(1-Math.min(a,99)/100),o=e;if(0==t)return n;if(2==(t/=r/2))return n+e;if(o<Math.abs(e)){o=e;var u=i/4}else var u=i/(2*Math.PI)*Math.asin(e/o);return 1>t?-.5*(o*Math.pow(2,10*(t-=1))*Math.sin((t*r-u)*(2*Math.PI)/i))+n:o*Math.pow(2,-10*(t-=1))*Math.sin((t*r-u)*(2*Math.PI)/i)*.5+e+n},easeInBack:function(t,n,e,r,a){var a=1.70158;return e*(t/=r)*t*((a+1)*t-a)+n},easeOutBack:function(t,n,e,r,a){var a=1.70158;return e*((t=t/r-1)*t*((a+1)*t+a)+1)+n},easeInOutBack:function(t,n,e,r,a){var a=1.70158;return(t/=r/2)<1?e/2*(t*t*(((a*=1.525)+1)*t-a))+n:e/2*((t-=2)*t*(((a*=1.525)+1)*t+a)+2)+n},easeInBounce:function(t,n,e,r){return e-jQuery.easing.easeOutBounce(r-t,0,e,r)+n},easeOutBounce:function(t,n,e,r){return(t/=r)<1/2.75?e*(7.5625*t*t)+n:2/2.75>t?e*(7.5625*(t-=1.5/2.75)*t+.75)+n:2.5/2.75>t?e*(7.5625*(t-=2.25/2.75)*t+.9375)+n:e*(7.5625*(t-=2.625/2.75)*t+.984375)+n},easeInOutBounce:function(n,e,r,a){return a/2>n?.5*t.easeInBounce(2*n,0,r,a)+e:.5*t.easeOutBounce(2*n-a,0,r,a)+.5*r+e}},n={duration:1e3,delay:0,loop:!1,autoPlay:!0,direction:"normal",easing:"easeInOutQuad",elasticity:50,speed:1,round:!1,begin:void 0,update:void 0,complete:void 0},e=["translateX","translateY","translateZ","rotate","rotateX","rotateY","rotateZ","scale","scaleX","scaleY","scaleZ","skewX","skewY"],r=function(){return{array:function(t){return Array.isArray(t)},object:function(t){return Object.prototype.toString.call(t).indexOf("Object")>-1},nodeList:function(t){return t instanceof NodeList||t instanceof HTMLCollection},html:function(t){return t.nodeType},svg:function(t){return t instanceof SVGElement},number:function(t){return!isNaN(parseInt(t))},string:function(t){return"string"==typeof t},func:function(t){return"function"==typeof t},undef:function(t){return"undefined"==typeof t},"null":function(t){return"null"==typeof t},hex:function(t){return/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(t)},rgb:function(t){return/^rgb/.test(t)},rgba:function(t){return/^rgba/.test(t)},hsl:function(t){return/^hsl/.test(t)},color:function(t){return r.hex(t)||r.rgb(t)||r.rgba(t)||r.hsl(t)}}}(),a=function(t,n){return Math.floor(Math.random()*(n-t+1))+t},u=function(t){return r.string(t)?t:t+""},i=function(t){return t.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase()},o=function(t){for(var n=t.split(" "),e=/^[\#\.\[\]:>+~*A-Za-z][A-Za-z0-9\-_=:>+~*$|^()\"\'\[\]\.]*$/,r=0;r<n.length;r++)if(!e.test(n[r]))return!1;return document.querySelectorAll(t).length?document.querySelectorAll(t):!1},s=function(t){return t.reduce(function(t,n){return t.concat(r.array(n)?s(n):n)},[])},c=function(t){return r.array(t)?t:(r.string(t)&&(t=o(t)||t),r.nodeList(t)?[].slice.call(t):[t])},f=function(t,n){return t.some(function(t){return t===n})},l=function(t,n){var e={};return t.forEach(function(t){var r=JSON.stringify(n.map(function(n){return t[n]}));e[r]=e[r]||[],e[r].push(t)}),Object.keys(e).map(function(t){return e[t]})},m=function(t){var n={};for(var e in t)n[e]=t[e];return n},p=function(t,n){for(var e in n)t[e]=r.undef(t[e])?n[e]:t[e];return t},d=function(t){var n=/^#?([a-f\d])([a-f\d])([a-f\d])$/i,t=t.replace(n,function(t,n,e,r){return n+n+e+e+r+r}),e=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(t),r=parseInt(e[1],16),a=parseInt(e[2],16),u=parseInt(e[3],16);return"rgb("+r+","+a+","+u+")"},g=function(t){var n,e,r,t=/hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(t),a=parseInt(t[1])/360,u=parseInt(t[2])/100,i=parseInt(t[3])/100,o=function(t,n,e){return 0>e&&(e+=1),e>1&&(e-=1),1/6>e?t+6*(n-t)*e:.5>e?n:2/3>e?t+(n-t)*(2/3-e)*6:t};if(0==u)n=e=r=i;else var s=.5>i?i*(1+u):i+u-i*u;var c=2*i-s;return n=o(c,s,a+1/3),e=o(c,s,a),r=o(c,s,a-1/3),"rgb("+255*n+","+255*e+","+255*r+")"},h=function(t){return r.rgb(t)||r.rgba(t)?t:r.hex(t)?d(t):r.hsl(t)?g(t):void 0},v=function(t){return/([\+\-]?[0-9|auto\.]+)(%|px|pt|em|rem|in|cm|mm|ex|pc|vw|vh|deg)?/.exec(t)[2]},b=function(t,n,e){return v(n)?n:t.indexOf("translate")>-1?v(e)?n+v(e):n+"px":t.indexOf("rotate")>-1||t.indexOf("skew")>-1?n+"deg":n},M=function(t,n){return(r.html(t)||r.svg(t))&&f(e,n)?"transform":(r.html(t)||r.svg(t))&&y(t,n)?"css":(r.html(t)||r.svg(t))&&t.getAttribute(n)&&!t[n]?"attribute":r["null"](t[n])||r.undef(t[n])?void 0:"object"},y=function(t,n){return getComputedStyle(t).getPropertyValue(i(n))},I=function(t,n){var e=n.indexOf("scale")>-1?1:0,r=t.style.transform;if(!r)return e;for(var a=/(\w+)\((.+?)\)/g,u=[],i=[],o=[];u=a.exec(r);)i.push(u[1]),o.push(u[2]);var s=o.filter(function(t,e){return i[e]===n});return s.length?s[0]:e},O=function(t,n){switch(M(t,n)){case"transform":return I(t,n);case"css":return y(t,n);case"attribute":return t.getAttribute(n)}return t[n]||0},w=function(t,n,e){if(r.color(n))return h(n);if(v(n))return n;var a=v(v(t.to)?t.to:t.from);return!a&&e&&(a=v(e)),a?n+a:n},x=function(t,n,e){return n.reduce(function(n,r,a){var r=r?r:e[a-1];return n+t[a-1]+r})},A=function(t){var n=/-?\d*\.?\d+/g;return{numbers:u(t).match(n)?u(t).match(n).map(Number):[0],strings:u(t).split(n)}},k=function(t){return t.map(function(t,n){return{target:t,id:n}})},E=function(t){var e=p(t,n);return"alternate"!==e.direction||e.loop||(e.loop=1),e},P=function(t,e){var a=[];for(var u in t)if(!n.hasOwnProperty(u)&&"targets"!==u){var i=r.object(t[u])?m(t[u]):{value:t[u]};i.name=u,a.push(p(i,e))}return a},Q=function(t,n,e,a){var u=c(r.func(e)?e(t,a):e);return{from:u.length>1?u[0]:O(t,n),to:u.length>1?u[1]:u[0]}},D=function(t,n,e,r){var a={};if("transform"===e)a.from=t+"("+b(t,n.from,n.to)+")",a.to=t+"("+b(t,n.to)+")";else{var u="css"===e?y(r,t):void 0;a.from=w(n,n.from,u),a.to=w(n,n.to,u)}return{from:A(a.from),to:A(a.to)}},j=function(t,n){var e=[];return t.forEach(function(a,u){var i=a.target;n.forEach(function(n){var o=M(i,n.name);if(o){var s=Q(i,n.name,n.value,u),c=m(n);c.animatables=a,c.type=o,c.round=r.color(s.from)?!0:c.round,c.delay=(r.func(c.delay)?c.delay(u,t.length):c.delay)/c.speed,c.duration=(r.func(c.duration)?c.duration(u,t.length):c.duration)/c.speed,c.from=D(n.name,s,c.type,i).from,c.to=D(n.name,s,c.type,i).to,e.push(c)}})}),e},q=function(t,n){var e=j(t,n),r=l(e,["name","from","to","delay","duration"]);return r.map(function(t){var n=m(t[0]);return n.animatables=t.map(function(t){return t.animatables}),n.totalDuration=n.delay+n.duration,n})},B=function(t){var n=t.to,e=t.from;t.from=n,t.to=e},C=function(n,e){var r=Math.min(Math.max(e-n.delay,0),n.duration),a=n.to.numbers.map(function(e,a){var u=n.from.numbers[a],i=e-u,o=t[n.easing](r,u,i,n.duration,n.elasticity);return n.round?Math.round(o):o});return n.currentValues={progress:a,full:x(a,n.to.strings,n.from.strings)},n.currentValues.full},S=function(t,n){var e=void 0;if(t.currentTime=Math.min(n,t.totalDuration),t.progress=t.currentTime/t.totalDuration*100,t.interpolations.forEach(function(r){var a=C(r,n);t.values[r.name]={},r.animatables.forEach(function(n){var u=n.id;switch(t.values[r.name][u]=r.currentValues,r.type){case"css":n.target.style[r.name]=a;break;case"attribute":n.target.setAttribute(r.name,a);break;case"object":n.target[r.name]=a;break;case"transform":e||(e={}),e[u]||(e[u]=[]),f(e[u],a)||e[u].push(a)}})}),e)for(var r in e)t.animatables[r].target.style.transform=e[r].join(" ");t.settings.update&&t.settings.update(t)},$=function(t){var n={};return n.targets=s(r.array(t.targets)?t.targets.map(c):c(t.targets)),n.animatables=k(n.targets),n.settings=E(t),n.properties=P(t,n.settings),n.interpolations=q(n.animatables,n.properties),n.totalDuration=Math.max.apply(Math,n.interpolations.map(function(t){return t.totalDuration})),n.values={},n.currentTime=0,n.progress=0,n.running=!1,n.ended=!1,n},T=function(t){if(t&&t.targets){var n=$(t),e={};return e.tick=function(){n.running&&(n.ended=!1,e.now=+new Date,e.current=e.last+e.now-e.start,S(n,e.current),e.current>=n.totalDuration?(n.settings.loop?(e.start=+new Date,r.number(n.settings.loop)&&n.settings.loop--,"alternate"===n.settings.direction&&n.interpolations.forEach(B),e.raf=requestAnimationFrame(e.tick)):(n.ended=!0,n.settings.complete?n.settings.complete(n):n.pause()),e.last=0):e.raf=requestAnimationFrame(e.tick))},n.set=function(t){var e=p(t,n.settings);n=p($(e),n)},n.seek=function(t){var e=r.number(t)?t:r.number(t.time)?t.time:t.percent/100*n.totalDuration;S(n,e)},n.play=function(t){t&&n.set(t),n.running=!0,e.start=+new Date,e.last=n.ended?0:n.currentTime,"reverse"===n.settings.direction&&n.interpolations.forEach(B),n.settings.begin&&n.settings.begin(n),e.raf=requestAnimationFrame(e.tick)},n.pause=function(t){t&&n.set(t),n.running=!1,cancelAnimationFrame(e.raf)},n.restart=function(t){t&&n.set(t),n.running=!1,n.currentTime=0,n.play()},n.settings.autoPlay&&n.play(),n}};return T.easings=t,T.is=r,T.getInitialValue=O,T.random=a,T}();
+</script>
+
+
+<script>
+/*
+ * This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. 
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.
+ */
+
+window.onload = function() {
+
+  window.getCurrentTime = function() {
+    var date = new Date();
+    var hours =  date.getHours();
+    var minutes =  date.getMinutes();
+    var current = hours + (minutes * .01);
+    if (current >= 5 && current < 19) return 'Have a nice day';
+    if (current >= 19 && current < 22) return 'Have a nice evening';
+    if (current >= 22 || current < 5) return 'Have a good night';
+  }
+
+  window.messages = [
+    'Hey I\'m <a target="_blank" title="Mr Glyn Thomas" href="https://linkedin.com/in/mrglynthomas">Glyn</a> 👋 &nbsp;',
+    'I 😍 helping create 😎 products ..',
+    '💰 sold a startup I founded 🙌',
+    'I\'m currently available<br> for freelance work. Contact me ..<br><a href="mailto:hello@mrglynthomas.com">hello@mrglynthomas.com</a>',
+    '<a target="_blank" href="https://linkedin.com/in/mrglynthomas">linkedin.com/in/mrglynthomas</a>',
+    'Or download my <a class="link-pdf" title="Download PDF Resume" href="pdf/mrglynthomas-resume.pdf" target="_blank">C.V</a>',
+    getCurrentTime(),
+    '😊 Glyn.&nbsp;'
+  ]
+
+  SendMsg();
+
+}
+
+function SendMsg(talker) {
+
+  var messagesEl = document.querySelector('.messages');
+  var typingSpeed = 20;
+  var loadingText = '<b>•</b><b>•</b><b>•</b>';
+  window.messageIndex = 0;
+
+  var getFontSize = function() {
+    return parseInt(getComputedStyle(document.body).getPropertyValue('font-size'));
+  }
+
+  var pxToRem = function(px) {
+    return px / getFontSize() + 'rem';
+  }
+
+  var createBubbleElements = function(message, position) {
+    var bubbleEl = document.createElement('div');
+    var messageEl = document.createElement('span');
+    var loadingEl = document.createElement('span');
+    bubbleEl.classList.add('bubble');
+    bubbleEl.classList.add('is-loading');
+    bubbleEl.classList.add('cornered');
+    bubbleEl.classList.add(position === 'right' ? 'right' : 'left');
+    messageEl.classList.add('message');
+    loadingEl.classList.add('loading');
+    messageEl.innerHTML = message;
+    loadingEl.innerHTML = loadingText;
+    bubbleEl.appendChild(loadingEl);
+    bubbleEl.appendChild(messageEl);
+    bubbleEl.style.opacity = 0;
+    return {
+      bubble: bubbleEl,
+      message: messageEl,
+      loading: loadingEl
+    }
+  }
+
+  var getDimentions = function(elements) {
+    return dimensions = {
+      loading: {
+        w: '4rem',
+        h: '2.25rem'
+      },
+      bubble: {
+        w: pxToRem(elements.bubble.offsetWidth + 4),
+        h: pxToRem(elements.bubble.offsetHeight)
+      },
+      message: {
+        w: pxToRem(elements.message.offsetWidth + 4),
+        h: pxToRem(elements.message.offsetHeight)
+      }
+    }
+  }
+
+  var sendMessage = function(message, position) {
+    var loadingDuration = (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + 500;
+    var elements = createBubbleElements(message, position);
+    messagesEl.appendChild(elements.bubble);
+    messagesEl.appendChild(document.createElement('br'));
+    var dimensions = getDimentions(elements);
+    elements.bubble.style.width = '0rem';
+    elements.bubble.style.height = dimensions.loading.h;
+    elements.message.style.width = dimensions.message.w;
+    elements.message.style.height = dimensions.message.h;
+    elements.bubble.style.opacity = 1;
+    var mtop = 0;
+    if (talker == 'chat' && messageIndex%2 == 0 ) {
+    	elements.bubble.style.cssFloat = 'right';
+    	elements.bubble.style.styleFloat = 'right';
+    	elements.bubble.classList.remove('left');
+    	elements.bubble.classList.add('right');
+      	mtop = 5;
+    }
+    if (talker == 'chat' && messageIndex%2 != 0){ mtop = 30;}
+    var bubbleOffset = elements.bubble.offsetTop + elements.bubble.offsetHeight;
+    if (bubbleOffset > messagesEl.offsetHeight) {
+      var scrollMessages = anime({
+        targets: messagesEl,
+        scrollTop: bubbleOffset,
+        duration: 750
+      });
+    }
+    var bubbleSize = anime({
+      targets: elements.bubble,
+      width: ['0rem', dimensions.loading.w],
+      marginTop: ['2.5rem', 0],
+      marginLeft: ['-2.5rem', 0],
+      duration: 800,
+      easing: 'easeOutElastic'
+    });
+    var loadingLoop = anime({
+      targets: elements.bubble,
+      scale: [1.05, .95],
+      duration: 1100,
+      loop: true,
+      direction: 'alternate',
+      easing: 'easeInOutQuad'
+    });
+    var dotsStart = anime({
+      targets: elements.loading,
+      translateX: ['-2rem', '0rem'],
+      scale: [.5, 1],
+      duration: 400,
+      delay: 25,
+      easing: 'easeOutElastic',
+    });
+    var dotsPulse = anime({
+      targets: elements.bubble.querySelectorAll('b'),
+      scale: [1, 1.25],
+      opacity: [.5, 1],
+      duration: 300,
+      loop: true,
+      direction: 'alternate',
+      delay: function(i) {return (i * 100) + 50}
+    });
+
+    setTimeout(function() {
+      loadingLoop.pause();
+      dotsPulse.restart({
+        opacity: 0,
+        scale: 0,
+        loop: false,
+        direction: 'forwards',
+        update: function(a) {
+          if (a.progress >= 65 && elements.bubble.classList.contains('is-loading')) {
+            elements.bubble.classList.remove('is-loading');
+            anime({
+              targets: elements.message,
+              opacity: [0, 1],
+              duration: 300,
+            });
+          }
+        }
+      });
+      bubbleSize.restart({
+        scale: 1,
+        width: [dimensions.loading.w, dimensions.bubble.w ],
+        height: [dimensions.loading.h, dimensions.bubble.h ],
+        marginTop: mtop,
+        marginLeft: 0,
+        begin: function() {
+          if (messageIndex < messages.length) elements.bubble.classList.remove('cornered');
+        }
+      })
+    }, loadingDuration - 50);
+  }
+
+  var sendMessages = function() {
+    var message = messages[messageIndex];
+    if (!message) return;
+    sendMessage(message);
+    ++messageIndex;
+    setTimeout(sendMessages, (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + anime.random(900, 1200))
+  }
+
+  sendMessages();
+
+}
+
+</script>
+
+<footer>
+	  <div onclick="random();" class="left-foot">&nbsp; 🎱 </div>
+    <div onclick="social();" class="right-foot"> 😀 &nbsp;</div>
+    <div onclick="talker();" class="centered-foot"> 🎯 </div>
+</footer>
+
+</body>
 </html>
