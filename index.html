@@ -237,7 +237,7 @@ color: #a4a4b5;
 
 function ClearMsg() {
   document.getElementById('msg').innerHTML = "";
-  console.log(messageIndex);
+  /* console.log(messageIndex); */
 }
 
 function getRandomInt(min, max) {
@@ -393,11 +393,25 @@ window.onload = function() {
   SendMsg();
 
   document.documentElement.addEventListener('touchstart', function (event) {
-   if (event.touches.length > 1) {
-       event.preventDefault();
-   }
+   if (event.touches.length > 1) { event.preventDefault();}
   }, false);
 
+  document.addEventListener("touchmove", ScrollStart, false);
+  document.addEventListener("scroll", Scroll, false);
+
+}
+
+function ScrollStart() {
+  //start of scroll event for iOS
+  document.getElementById("foot").style.display = "none";
+
+}
+
+function Scroll() {
+  //end of scroll event for iOS
+  //and
+  //start/end of scroll event for other browsers
+  document.getElementById("test").style.display = "block";
 }
 
 function SendMsg(talker) {
@@ -561,7 +575,7 @@ function SendMsg(talker) {
 
 </script>
 
-<footer>
+<footer id="foot">
 	  <div onclick="random();" class="left-foot">&nbsp; 🎱 </div>
     <div onclick="social();" class="right-foot"> 😀 &nbsp;</div>
     <div onclick="talker();" class="centered-foot"> 🎯 </div>
