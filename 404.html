@@ -66,7 +66,7 @@ body {
   min-height: 100vh;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #FFF;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   width: auto;
   white-space: nowrap;
   -webkit-user-select: none; /* Chrome/Safari */        
@@ -168,15 +168,14 @@ body {
 
 
 footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    min-height: 50px;
-    width: 100%;
-    background: #dadae1;
-    font-size: 2rem;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ min-height: 50px;
+ width: 100%;
+ background: #dadae1;
+ font-size: 2rem;
 }
-
 
 .left-foot{
 cursor: pointer;
@@ -222,11 +221,10 @@ color: #a4a4b5;
 </head>
 <body>
 <div class="page-wrap">
-<div id="msg" class="messages">
+<div id="msg" class="messages" style="overflow-y: scroll;">
 </div>
 </div>
 
-<script async="" src="//www.google-analytics.com/analytics.js"></script>
 
 <script>
 
@@ -322,7 +320,7 @@ function talker() {
 
 function social() {
   /* console.log(messageIndex); */
-  if (messageIndex >= 7) {	// 8 default message!
+  if (messageIndex >= 7) {  // 8 default message!
    ClearMsg();
 
  window.messages = [
@@ -457,11 +455,11 @@ function SendMsg(talker) {
     elements.bubble.style.opacity = 1;
     var mtop = 0;
     if (talker == 'chat' && messageIndex%2 == 0 ) {
-    	elements.bubble.style.cssFloat = 'right';
-    	elements.bubble.style.styleFloat = 'right';
-    	elements.bubble.classList.remove('left');
-    	elements.bubble.classList.add('right');
-      	mtop = 5;
+      elements.bubble.style.cssFloat = 'right';
+      elements.bubble.style.styleFloat = 'right';
+      elements.bubble.classList.remove('left');
+      elements.bubble.classList.add('right');
+        mtop = 5;
     }
     if (talker == 'chat' && messageIndex%2 != 0){ mtop = 30;}
     var bubbleOffset = elements.bubble.offsetTop + elements.bubble.offsetHeight;
@@ -552,7 +550,7 @@ function SendMsg(talker) {
 </script>
 
 <footer>
-	  <div onclick="random();" class="left-foot">&nbsp; 🎱 </div>
+    <div onclick="random();" class="left-foot">&nbsp; 🎱 </div>
     <div onclick="social();" class="right-foot"> 😀 &nbsp;</div>
     <div onclick="talker();" class="centered-foot"> 🎯 </div>
 </footer>
