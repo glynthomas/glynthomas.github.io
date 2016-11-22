@@ -14,8 +14,6 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="768">
 <meta property="og:image:height" content="416">
-<link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
 <meta content="http://mrglynthomas.com/" itemprop="url">
 <meta content="Mr Glyn Thomas" name="twitter:title">
@@ -24,26 +22,25 @@
 <meta content="@mrglynthomas" name="twitter:creator">
 <meta content="http://mrglynthomas.com/" name="twitter:url">
 
-<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
-<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
 <link rel="manifest" href="/favicons/manifest.json">
-<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/favicons/favicon.ico">
 <meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
-<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+<meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
 <style>
 
@@ -272,7 +269,7 @@ function random() {
       'Go 💥',
       'Your only supposed',
       'to blow the bloody',
-      'doors off!',
+      'doors <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>off</a>!',
      ]
      SendMsg();
     break;
@@ -285,7 +282,7 @@ function random() {
       'What did you do? &nbsp;',
       'Nothing just stirred the tanks &nbsp;',
       'This is Huston say again please?',
-      'Huston we have a problem!',
+      'Huston we have a <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>problem</a>!',
      ]
      SendMsg('chat');
     break;
@@ -298,7 +295,7 @@ function random() {
       'hope. Because if a machine,',
       'a Terminator 🤖, can learn the',
       'value of human life, maybe',
-      'we can too ...',
+      'we can <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>too</a> ...',
      ]
      SendMsg();
     break;
@@ -326,7 +323,7 @@ function talker() {
     'What is it about tech?',
     'I enjoy hacking or coding<br> from scratch, or fixing code.<br>I quickly hacked together<br>this site, from two sites.<br> Adding half-duplex<br> and some interesting new<br> features 😀.<br> If you read this far,<br> maybe I can help you with<br>your project?',
     'How can I contact you?',
-    'By <a href=mailto:hello@mrglynthomas.com>Email</a> ✉️<br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊 Glyn.',
+    'By <a href=mailto:hello@mrglynthomas.com>Email</a> ✉️<br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊 <a title=Mr onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn.</a>',
     'Thank you for reading this 😀',
   ]
 
@@ -352,12 +349,36 @@ function social() {
     'Code shared on <a href=https://github.com/glynthomas title=mr glynthomas on github target=_blank>github</a> 💾 &nbsp;',
     'Always on <a href="mailto:hello@mrglynthomas.com" title="hello@glynthomas.com">email</a> ✉️',
     getCurrentTime(),
-    '😊 Glyn.&nbsp;'
+    '😊 <a title=Mr onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn.</a>'
   ]
 
    SendMsg();
   }
 }
+
+function hello() {
+  /* console.log(messageIndex); */
+
+ ClearMsg();
+
+ // check if mobile
+ /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "1";} */
+
+ window.messages = [
+    'Hey I\'m <a target="_blank" title="Mr Glyn Thomas" href="https://linkedin.com/in/mrglynthomas">Glyn</a> 👋 &nbsp;',
+    'I 😍 helping create 😎 products',
+    '💰 sold a startup I founded 🙌',
+    'I\'m currently available for <br>freelance work. Contact me;<br><a href="mailto:hello@mrglynthomas.com">hello@mrglynthomas.com</a>',
+    '<a target="_blank" href="https://linkedin.com/in/mrglynthomas">linkedin.com/in/mrglynthomas</a>',
+    'Or download my <a class="link-pdf" title="Download PDF Resume" href="pdf/mrglynthomas-resume.pdf" target="_blank">C.V</a>',
+    getCurrentTime(),
+    '😊 <a title=Mr onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn.</a>'
+  ]
+
+  SendMsg();
+
+}
+
 
 </script>
 
@@ -405,22 +426,12 @@ window.onload = function() {
     if (current >= 22 || current < 5) return 'Have a good night';
   }
 
-  window.messages = [
-    'Hey I\'m <a target="_blank" title="Mr Glyn Thomas" href="https://linkedin.com/in/mrglynthomas">Glyn</a> 👋 &nbsp;',
-    'I 😍 helping create 😎 products',
-    '💰 sold a startup I founded 🙌',
-    'I\'m currently available for <br>freelance work. Contact me;<br><a href="mailto:hello@mrglynthomas.com">hello@mrglynthomas.com</a>',
-    '<a target="_blank" href="https://linkedin.com/in/mrglynthomas">linkedin.com/in/mrglynthomas</a>',
-    'Or download my <a class="link-pdf" title="Download PDF Resume" href="pdf/mrglynthomas-resume.pdf" target="_blank">C.V</a>',
-    getCurrentTime(),
-    '😊 Glyn.&nbsp;'
-  ]
-
-  SendMsg();
-
   document.documentElement.addEventListener('touchstart', function (event) {
    if (event.touches.length > 1) { event.preventDefault();}
   }, false);
+
+
+  hello();
 
 }
 
@@ -429,6 +440,7 @@ function SendMsg(talker) {
   var messagesEl = document.querySelector('.messages');
   var typingSpeed = 20;
   var loadingText = '<b>•</b><b>•</b><b>•</b>';
+
   window.messageIndex = 0;
 
   var getFontSize = function() {
