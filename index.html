@@ -323,7 +323,7 @@ function talker() {
     'What are your skills?',
     'I 😍 help create, fix or<br> improve digital products <br>or services ..',
     'What is it about tech?',
-    'I enjoy hacking or coding<br> from scratch, or fixing code.<br>I quickly hacked together<br>this site, from two sites.<br> Adding half-duplex<br> and some interesting new<br> features 😀.<br> If you read this far, maybe I can help<br> you with your project?',
+    'I enjoy hacking or coding<br> from scratch, or fixing code.<br>I quickly hacked together<br>this site, from two sites.<br> Adding half-duplex<br> and some interesting new<br> features 😀.<br> If you read this far, maybe<br>I can help you with your project?',
     'How can I contact you?',
     'By <a href=mailto:hello@mrglynthomas.com>Email</a> ✉️<br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊 Glyn.&nbsp;',
     'Thank you for reading this 😀',
@@ -384,14 +384,14 @@ var anime=function(){var t={linear:function(t,n,e,r){return n+t/r*e},easeInQuad:
 
 window.onload = function() {
 
-  /*
+
   var delayedExec = function(after, fn) {
   var timer;return function() {timer && clearTimeout(timer);timer = setTimeout(fn, after);};};
   var scrollStopper = delayedExec(500, function() {
-      document.getElementById("foot").style.display = "block";
+      document.getElementById("foot").style.opacity = "1";
   });
   document.getElementById('msg').addEventListener('scroll', scrollStopper);
-  */
+
   
   window.getCurrentTime = function() {
     var date = new Date();
@@ -558,8 +558,6 @@ function SendMsg(talker) {
           if (typeof window.orientation !== 'undefined') {
             switch (messageIndex) {
               case (13):
-              case (8):
-              case (7):
                    document.getElementById("foot").style.opacity = "1";
               break;
 
