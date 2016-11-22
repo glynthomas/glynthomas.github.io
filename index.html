@@ -240,23 +240,15 @@ color: #a4a4b5;
 </head>
 <body>
 <div class="page-wrap">
-<div onscroll="scroller();" id="msg" class="messages">
+<div id="msg" class="messages">
 </div>
 </div>
-
 
 <script>
 
+function ClearMsg() {document.getElementById('msg').innerHTML = "";}
 
-function ClearMsg() {
-  document.getElementById('msg').innerHTML = "";
-  /* console.log(messageIndex); */
-}
-
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
+function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
 
 function random() {
 
@@ -315,8 +307,7 @@ function talker() {
 
   // check if mobile
   if (typeof window.orientation !== 'undefined') {
-   // document.getElementById('foot').style.display = "none";
-   document.getElementById("foot").style.opacity = "0.4";
+      document.getElementById("foot").style.opacity = "0.4";
   }
 
   if (messageIndex >= 7) {  // 8 default message!
@@ -334,7 +325,7 @@ function talker() {
     'What is it about tech?',
     'I enjoy hacking or coding<br> from scratch, or fixing code.<br>I quickly hacked together<br>this site, from two sites.<br> Adding half-duplex<br> and some interesting new<br> features 😀. If you read this<br> far, maybe I can help you with<br>your project?',
     'How can I contact you?',
-    'Email <a href=mailto:hello@mrglynthomas.com>hello@mrglynthomas.com</a><br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊 Glyn.&nbsp;',
+    '<a href=mailto:hello@mrglynthomas.com>Email</a> ✉️<br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊 Glyn.&nbsp;',
     'Thank you for reading this 😀',
   ]
 
@@ -393,39 +384,17 @@ var anime=function(){var t={linear:function(t,n,e,r){return n+t/r*e},easeInQuad:
 
 window.onload = function() {
 
-/*
-   var lastScrollTop = 0;
-   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no  target element.
-   document.getElementById('msg').addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-   if (st > lastScrollTop){
-       // downscroll code
-       console.log('downscroll');
-   } else {
-      // upscroll code
-      console.log('upscroll');
-   }
-   lastScrollTop = st;
-   }, false);
-*/
-
   window.msgDone = 0;
 
+  /*
   var delayedExec = function(after, fn) {
-  var timer;
-    return function() {
-        timer && clearTimeout(timer);
-        timer = setTimeout(fn, after);
-    };
-  };
-
+  var timer;return function() {timer && clearTimeout(timer);timer = setTimeout(fn, after);};};
   var scrollStopper = delayedExec(500, function() {
       document.getElementById("foot").style.display = "block";
-      document.getElementById("foot").style.bottom = 0;
   });
-
   document.getElementById('msg').addEventListener('scroll', scrollStopper);
-
+  */
+  
   window.getCurrentTime = function() {
     var date = new Date();
     var hours =  date.getHours();
@@ -454,18 +423,6 @@ window.onload = function() {
   }, false);
 
 }
-
-function scroller(){  
- // called when the window is scrolled.
-  if(typeof window.orientation !== 'undefined') {
-    console.log('we are mobile!');
-    switch (msgDone) {
-      case (13):
-           document.getElementById("foot").style.display = "none";
-      break;
-    }
-  }
-} 
 
 function SendMsg(talker) {
 
