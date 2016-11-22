@@ -256,7 +256,7 @@ function random() {
   ClearMsg();
 
   // check if mobile
-  if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "1";}
+  /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "1";} */
 
   var shake = getRandomInt(1, 3);
 
@@ -312,7 +312,7 @@ function talker() {
      ClearMsg();
 
  // check if mobile
- if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "0.4";}
+ /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "0.4";} */
 
  window.messages = [
     'What\'s next?',
@@ -326,7 +326,7 @@ function talker() {
     'What is it about tech?',
     'I enjoy hacking or coding<br> from scratch, or fixing code.<br>I quickly hacked together<br>this site, from two sites.<br> Adding half-duplex<br> and some interesting new<br> features 😀.<br> If you read this far,<br> maybe I can help you with<br>your project?',
     'How can I contact you?',
-    'By <a href=mailto:hello@mrglynthomas.com>Email</a> ✉️<br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊 Glyn.&nbsp;',
+    'By <a href=mailto:hello@mrglynthomas.com>Email</a> ✉️<br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊 Glyn.',
     'Thank you for reading this 😀',
   ]
 
@@ -343,7 +343,7 @@ function social() {
      ClearMsg();
 
  // check if mobile
- if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "1";}
+ /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "1";} */
 
  window.messages = [
     'Often on <a href=https://instagram.com/mrglynthomas title=mr glynthomas on instagram target=_blank>instagram</a> 📸 &nbsp;',
@@ -557,13 +557,14 @@ function SendMsg(talker) {
             });
           }
           /* console.log('index:'+ messageIndex); */
-          if (typeof window.orientation !== 'undefined') {
+          /* if (typeof window.orientation !== 'undefined') {
             switch (messageIndex) {
               case (13):
                    document.getElementById("foot").style.opacity = "1";
               break;
             }
-          }
+          } 
+          */
         }
       });
       bubbleSize.restart({
