@@ -419,6 +419,7 @@ window.onload = function() {
 
   var scrollStopper = delayedExec(500, function() {
       document.getElementById("foot").style.display = "block";
+      document.getElementById("foot").style.bottom = 0;
   });
 
   document.getElementById('msg').addEventListener('scroll', scrollStopper);
