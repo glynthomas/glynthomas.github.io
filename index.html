@@ -306,9 +306,7 @@ function random() {
 function talker() {
 
   // check if mobile
-  if (typeof window.orientation !== 'undefined') {
-      document.getElementById("foot").style.opacity = "0.4";
-  }
+  /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "0.4";} */
 
   if (messageIndex >= 7) {  // 8 default message!
    ClearMsg();
@@ -384,14 +382,12 @@ var anime=function(){var t={linear:function(t,n,e,r){return n+t/r*e},easeInQuad:
 
 window.onload = function() {
 
-
+  /*
   var delayedExec = function(after, fn) {
   var timer;return function() {timer && clearTimeout(timer);timer = setTimeout(fn, after);};};
-  var scrollStopper = delayedExec(500, function() {
-      document.getElementById("foot").style.opacity = "1";
-  });
+  var scrollStopper = delayedExec(500, function() {document.getElementById("foot").style.opacity = "1";});
   document.getElementById('msg').addEventListener('scroll', scrollStopper);
-
+  */
   
   window.getCurrentTime = function() {
     var date = new Date();
@@ -554,15 +550,15 @@ function SendMsg(talker) {
               duration: 300,
             });
           }
-          /* console.log('index:'+ messageIndex); */
+          /* console.log('index:'+ messageIndex);
           if (typeof window.orientation !== 'undefined') {
             switch (messageIndex) {
               case (13):
                    document.getElementById("foot").style.opacity = "1";
               break;
-
             }
           }
+          */
         }
       });
       bubbleSize.restart({
