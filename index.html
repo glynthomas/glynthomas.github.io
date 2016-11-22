@@ -75,13 +75,10 @@ body {
   /* Rules below not implemented in browsers yet */
   -o-user-select: none;
   user-select: none;
-
-
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-
-
+   margin: 0 0;
+   height: 100%;
+   width: 100%;
+   overflow: auto;
 }
 .messages {
   overflow: auto;
@@ -168,6 +165,8 @@ body {
   width:100%;
   bottom:0;
   left:0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 
 }
 .page-wrap:after {
