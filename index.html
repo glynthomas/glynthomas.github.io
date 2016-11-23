@@ -259,7 +259,7 @@ function random() {
   // check if mobile
   /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "1";} */
 
-  var shake = getRandomInt(1, 3);
+  var shake = getRandomInt(1, 5);
 
    switch (shake) {
 
@@ -303,6 +303,34 @@ function random() {
      ]
      SendMsg();
     break;
+
+    case (4):
+      window.messages = [
+      'You’ve never heard',
+      'of the Millennium',
+      'Falcon? 🚀',
+      '… It’s the ship',
+      'that made the Kessel',
+      'run in less than',
+      '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>12 parsecs.</a> ...',
+     ]
+     SendMsg();
+    break;
+
+    case (5):
+      window.messages = [
+      'Listen, and understand! ',
+      'That Terminator 🤖 is out there!',
+      'It can\'t be bargained with.',
+      'It can\'t be reasoned with.',
+      'It doesn\'t feel pity, or remorse',
+      'or fear. And it absolutely',
+      'will not stop...',
+      '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>ever.</a>',
+     ]
+     SendMsg();
+    break;
+
    }
   }
 }
