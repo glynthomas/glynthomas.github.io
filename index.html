@@ -90,7 +90,6 @@ body {
   /* max-height: 90vh; */
   max-height: 92%;
   padding: 1rem .9rem;
-  -webkit-transform': 'translate(0, 100%)';
 }
 .bubble {
   overflow: hidden;
@@ -248,14 +247,14 @@ color: #a4a4b5;
 
 <script>
 
-function ClearMsg() {document.getElementById('msg').innerHTML = "";}
+function ClearMsg() {document.getElementById('msg').innerHTML = "";messageIndex = 9;}
 
 function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
 
 function random() {
   /* console.log(messageIndex); */
-
-  if (messageIndex === 8) {  // 8 default message!
+  if (messageIndex === 8) { setTimeout( messageIndex = messageIndex + 1, 500) };
+  if (messageIndex === 9) {  // 8 default message!
   ClearMsg();
 
   // check if mobile
@@ -276,7 +275,7 @@ function random() {
       'supposed to blow',
       'the bloody doors <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>off</a>!',
      ]
-     SendMsg('');
+     SendMsg();
     break;
 
     case (2):
@@ -304,7 +303,7 @@ function random() {
       'we can ...', 
       '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>too</a>',
      ]
-     SendMsg('');
+     SendMsg();
     break;
 
     case (4):
@@ -318,7 +317,7 @@ function random() {
       '12 ...',
       '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>parsecs.</a>'
      ]
-     SendMsg('');
+     SendMsg();
     break;
 
     case (5):
@@ -332,7 +331,7 @@ function random() {
       'will not stop...',
       '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>ever!</a>',
      ]
-     SendMsg('');
+     SendMsg();
     break;
 
    }
@@ -341,8 +340,8 @@ function random() {
 
 function talker() {
   /* console.log(messageIndex); */
-
- if (messageIndex === 8) {  // 8 default message!
+ if (messageIndex === 8) { setTimeout( messageIndex = messageIndex + 1, 1200) };
+ if (messageIndex === 9) {  // 8 default message!
      ClearMsg();
 
  // check if mobile
@@ -364,8 +363,8 @@ function talker() {
 
 function social() {
   /* console.log(messageIndex); */
-
- if (messageIndex === 8) {	// 8 default message!
+ if (messageIndex === 8) { setTimeout( messageIndex = messageIndex + 1, 1200) };
+ if (messageIndex === 9) {	// 8 default message!
      ClearMsg();
 
  // check if mobile
@@ -382,7 +381,7 @@ function social() {
     '😊 <a title=👍 onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn</a>'
   ]
 
-   SendMsg('');
+   SendMsg();
   }
 }
 
@@ -404,7 +403,7 @@ function hello() {
     '😊 <a title=👋 onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn</a>'
   ]
 
-  SendMsg('');
+  SendMsg();
 
 }
 
@@ -626,7 +625,7 @@ function SendMsg(talker) {
     if (!message) return;
     sendMessage(message);
     ++messageIndex;
-    setTimeout(sendMessages, (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + anime.random(900, 1200))
+    setTimeout(sendMessages, (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + anime.random(900, 1200));
   }
 
   sendMessages();
