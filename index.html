@@ -253,8 +253,7 @@ function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 
 
 function random() {
   /* console.log(messageIndex); */
-  if (messageIndex === 8) { setTimeout( messageIndex = messageIndex + 1, 500) };
-  if (messageIndex === 9) {  // 8 default message!
+  if (messageIndex === 8) {  // 8 default message!
   ClearMsg();
 
   // check if mobile
@@ -340,31 +339,29 @@ function random() {
 
 function talker() {
   /* console.log(messageIndex); */
- if (messageIndex === 8) { setTimeout( messageIndex = messageIndex + 1, 1200) };
- if (messageIndex === 9) {  // 8 default message!
+ if (messageIndex === 8) {  // 8 default message!
      ClearMsg();
 
  // check if mobile
  /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "0.4";} */
 
  window.messages = [
-    '😍 work as a 👓 co-founder?',
-    'Yes 👍 and work for <a title="Help startups in exchange for 👌 cappuccino 😀" href=mailto:hello@mrglynthomas.com>☕</a> 😊',
-    'What? 😳 help for just a <a title="Help startups in exchange for 👌 cappuccino 😀" href=mailto:hello@mrglynthomas.com>☕</a> ?',
-    '<a title="👍 Help startups in exchange for 👌 cappuccino 😀" href="mailto:hello@mrglynthomas.com">😎</a> Yes for startups',
-    'What you working on now?',
-    'Building a mobile app 🙌',
+    '😍 work as a 👓 co-founder',
+    '👍 help startups for <a title="Help startups in exchange for 👌 cappuccino 😀" href=mailto:hello@mrglynthomas.com>☕</a> 😊',
+    '... maybe a <a title="Help startups in exchange for 👌 bento 😀" href=mailto:hello@mrglynthomas.com>🍱</a> 😀',
+    'or <a title="👍 Help startups in exchange for 👌 pizza 😀" href="mailto:hello@mrglynthomas.com">🍕</a> pizza ...',
+    'Currently building',
+    'some mobile apps 🙌',
      getCurrentTime(),
     '<a title=👋 onClick=location.reload(false); style=cursor:pointer;cursor:hand>Thank you for reading this 😀</a>',
     ]
-   SendMsg('chat');
+   SendMsg();
   }
 }
 
 function social() {
   /* console.log(messageIndex); */
- if (messageIndex === 8) { setTimeout( messageIndex = messageIndex + 1, 1200) };
- if (messageIndex === 9) {	// 8 default message!
+ if (messageIndex === 8) {	// 8 default message!
      ClearMsg();
 
  // check if mobile
