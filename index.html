@@ -347,9 +347,12 @@ function talker() {
 
  window.messages = [
     '😍 work as a 👓 co-founder?',
-    '👍 and work for <a title="Help startups in exchange for 👌 cappuccino 😀" href=mailto:hello@mrglynthomas.com>☕</a> 😊',
-    'What? 😳 help with just a ☕ ?',
-    '<a title="👍 Help startups in exchange for 👌 cappuccino 😀" href="mailto:hello@mrglynthomas.com">😎</a> Yeap',
+    'Yes 👍 and work for <a title="Help startups in exchange for 👌 cappuccino 😀" href=mailto:hello@mrglynthomas.com>☕</a> 😊',
+    'What? 😳 help for just a <a title="Help startups in exchange for 👌 cappuccino 😀" href=mailto:hello@mrglynthomas.com>☕</a> ?',
+    '<a title="👍 Help startups in exchange for 👌 cappuccino 😀" href="mailto:hello@mrglynthomas.com">😎</a> Yes for startups',
+    'What you working on now?',
+    'Creating a mobile app 🙌',
+     getCurrentTime(),
     '<a title=👋 onClick=location.reload(false); style=cursor:pointer;cursor:hand>Thank you for reading this 😀</a>',
     ]
    SendMsg('chat');
@@ -367,8 +370,8 @@ function social() {
 
  window.messages = [
     'Created Mobile, Windows',
-    'Network & Web Apps ...',
-    '👔 : Deloitte, Accenture, PwC ...',
+    'Network & Web Apps ..',
+    '👔 Deloitte, Accenture, PwC ..',
     'Code shared on <a href=https://github.com/glynthomas title=mr glynthomas on github target=_blank>github</a> 💾 &nbsp;',
     '✉️ <a href="mailto:hello@mrglynthomas.com" title="hello@glynthomas.com">email</a>',
     getCurrentTime(),
@@ -620,7 +623,6 @@ function SendMsg(talker) {
     sendMessage(message);
     ++messageIndex;
     setTimeout(sendMessages, (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + anime.random(900, 1200))
-    if(talker === 'chat' && messageIndex == 5) {messageIndex = 8}
   }
 
   sendMessages();
