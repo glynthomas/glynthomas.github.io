@@ -252,6 +252,7 @@ function ClearMsg() {document.getElementById('msg').innerHTML = "";}
 function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
 
 function random() {
+  /* console.log(messageIndex); */
 
   if (messageIndex >= 7) {  // 8 default message!
   ClearMsg();
@@ -275,7 +276,7 @@ function random() {
       'to blow the bloody',
       'doors <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>off</a>!',
      ]
-     SendMsg();
+     SendMsg('');
     break;
 
     case (2):
@@ -297,11 +298,11 @@ function random() {
       'toward us. I face it, for the',
       'first time, with a sense of',
       'hope. Because if a machine,',
-      'a Terminator 🤖, can learn the',
+      'a Terminator, can learn the',
       'value of human life, maybe',
       'we can <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>too</a> ...',
      ]
-     SendMsg();
+     SendMsg('');
     break;
 
     case (4):
@@ -314,13 +315,13 @@ function random() {
       'run in less than',
       '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>12 parsecs.</a> ...',
      ]
-     SendMsg();
+     SendMsg('');
     break;
 
     case (5):
       window.messages = [
       'Listen, and understand! ',
-      'That Terminator 🤖 is out there!',
+      'That Terminator is out there!',
       'It can\'t be bargained with.',
       'It can\'t be reasoned with.',
       'It doesn\'t feel pity, or remorse',
@@ -328,7 +329,7 @@ function random() {
       'will not stop...',
       '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>ever!</a>',
      ]
-     SendMsg();
+     SendMsg('');
     break;
 
    }
@@ -336,6 +337,7 @@ function random() {
 }
 
 function talker() {
+  /* console.log(messageIndex); */
 
  if (messageIndex >= 7) {  // 8 default message!
      ClearMsg();
@@ -344,13 +346,11 @@ function talker() {
  /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "0.4";} */
 
  window.messages = [
-    'What\'s next?',
-    'I\'ve recently sold a<br>small start-up which I built<br> over a short space of time,<br>now I am looking to work <br> ideally with a team.',
-    'Want a challenge?',
-    'Yes, my main driver is to do<br>something challenging and<br>interesting. I 😍 help create,fix<br> or improve digital products or<br> services. I enjoy hacking,<br>design, building projects,<br> or fixing code.',
-    'How do I contact you?',
-    'By <a href=mailto:hello@mrglynthomas.com>Email</a> ✉️<br> Or at <a target=_blank href=https://linkedin.com/in/mrglynthomas>linkedin.com</a><br>Or download my <a class=link-pdf title=Download PDF Resume href=pdf/mrglynthomas-resume.pdf target=_blank>C.V</a><br>😊<a title=Mr onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn.</a>',
-    'Thank you for reading this.',
+    '😍 work as a 👓 co-founder?',
+    '👍 + work for ☕ <a title="Help startups in exchange for 👌 cappuccino 😀" href=mailto:hello@mrglynthomas.com>cappuccino</a> 😊',
+    'What? 😳 help just a ☕ ?',
+    '<a title="👍 Help startups in exchange for 👌 cappuccino 😀" href="mailto:hello@mrglynthomas.com">Yeap</a> 😎',
+    '<a title=👋 onClick=location.reload(false); style=cursor:pointer;cursor:hand>Thank you for reading this 😀</a>',
     ]
    SendMsg('chat');
   }
@@ -366,21 +366,20 @@ function social() {
  /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "1";} */
 
  window.messages = [
-    'Often on <a href=https://instagram.com/mrglynthomas title=mr glynthomas on instagram target=_blank>instagram</a> 📸 &nbsp;',
-    'Sometimes on <a href=https://twitter.com/mrglynthomas title=mr glynthomas on twitter target=_blank>twitter</a> 🐦 &nbsp;',
-    'Infrequently <a href=https://facebook.com/mrglynthomas title=mr glynthomas on facebook target=_blank>facebook</a> 🐴 &nbsp;',
+    'Built Windows, Network',
+    'Web and Mobile Apps ...',
+    '👔 : Deloitte, Accenture, PwC ...',
     'Code shared on <a href=https://github.com/glynthomas title=mr glynthomas on github target=_blank>github</a> 💾 &nbsp;',
-    'Always on <a href="mailto:hello@mrglynthomas.com" title="hello@glynthomas.com">email</a> ✉️',
+    '✉️ <a href="mailto:hello@mrglynthomas.com" title="hello@glynthomas.com">email</a> or call 📱 <a style=cursor:pointer;cursor:hand;>077 4570 4570</a>',
     getCurrentTime(),
-    '😊 <a title=Mr onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn.</a>'
+    '😊 <a title=👍 onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn</a>'
   ]
 
-   SendMsg();
+   SendMsg('');
   }
 }
 
 function hello() {
-  /* console.log(messageIndex); */
 
  ClearMsg();
 
@@ -390,15 +389,15 @@ function hello() {
  window.messages = [
     'Hey I\'m <a target="_blank" title="Mr Glyn Thomas" href="https://linkedin.com/in/mrglynthomas">Glyn</a> 👋 &nbsp;',
     'I 😍 helping create 😎 products',
-    '💰 sold a startup I founded 🙌',
-    'Available pro bono for startups<br>or contract. Contact me;<br><a href="mailto:hello@mrglynthomas.com">hello@mrglynthomas.com</a>',
-    '<a target="_blank" href="https://linkedin.com/in/mrglynthomas">linkedin.com/in/mrglynthomas</a>',
-    'Or download my <a class="link-pdf" title="Download PDF Resume" href="pdf/mrglynthomas-resume.pdf" target="_blank">C.V</a>',
+    '💰 sold a <a class="link-pdf" title="Download 😍 PDF Resume" href="pdf/mrglynthomas-resume.pdf" target="_blank">startup</a> I founded 🙌',
+    '<a title="Help startups in exchange for 👌 cappuccino 😀" href="mailto:hello@mrglynthomas.com">Contact me</a> if your startup 😂',
+    'or if you\'re 👓 for a co-founder',
+    'Work for ☕ <a title="Love 😍 👌 ☕ cappuccino 😀" href="mailto:hello@mrglynthomas.com">cappuccino</a> 😊',
     getCurrentTime(),
-    '😊 <a title=Mr onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn.</a>'
+    '😊 <a title=👋 onClick=location.reload(false); style=cursor:pointer;cursor:hand>Glyn</a>'
   ]
 
-  SendMsg();
+  SendMsg('');
 
 }
 
@@ -621,6 +620,7 @@ function SendMsg(talker) {
     sendMessage(message);
     ++messageIndex;
     setTimeout(sendMessages, (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + anime.random(900, 1200))
+    if(talker === 'chat' && messageIndex == 5) {messageIndex = 8}
   }
 
   sendMessages();
