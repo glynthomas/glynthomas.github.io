@@ -254,7 +254,7 @@ function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 
 function random() {
   /* console.log(messageIndex); */
 
-  if (messageIndex >= 7) {  // 8 default message!
+  if (messageIndex === 8) {  // 8 default message!
   ClearMsg();
 
   // check if mobile
@@ -271,10 +271,9 @@ function random() {
       '3 🚑 &nbsp;',
       '2 🚑',
       '1 🚑',
-      'Go 💥',
-      'Your only supposed',
-      'to blow the bloody',
-      'doors <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>off</a>!',
+      'Go 💥 Your only',
+      'supposed to blow',
+      'the bloody doors <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>off</a>!',
      ]
      SendMsg('');
     break;
@@ -286,7 +285,8 @@ function random() {
       'Hey we gotta a problem here &nbsp;',
       'What did you do? &nbsp;',
       'Nothing just stirred the tanks &nbsp;',
-      'This is Huston say again please?',
+      'This is Huston ...',
+      'Say again please?',
       'Huston we have a <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>problem</a>!',
      ]
      SendMsg('chat');
@@ -300,7 +300,8 @@ function random() {
       'hope. Because if a machine,',
       'a Terminator, can learn the',
       'value of human life, maybe',
-      'we can <a onClick=location.reload(false); style=cursor:pointer;cursor:hand>too</a> ...',
+      'we can ...', 
+      '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>too</a>',
      ]
      SendMsg('');
     break;
@@ -313,7 +314,8 @@ function random() {
       '… It’s the ship',
       'that made the Kessel',
       'run in less than',
-      '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>12 parsecs.</a> ...',
+      '12 ...',
+      '<a onClick=location.reload(false); style=cursor:pointer;cursor:hand>parsecs.</a>'
      ]
      SendMsg('');
     break;
@@ -339,7 +341,7 @@ function random() {
 function talker() {
   /* console.log(messageIndex); */
 
- if (messageIndex >= 7) {  // 8 default message!
+ if (messageIndex === 8) {  // 8 default message!
      ClearMsg();
 
  // check if mobile
@@ -362,14 +364,15 @@ function talker() {
 function social() {
   /* console.log(messageIndex); */
 
- if (messageIndex >= 7) {	// 8 default message!
+ if (messageIndex === 8) {	// 8 default message!
      ClearMsg();
 
  // check if mobile
  /* if (typeof window.orientation !== 'undefined') {document.getElementById("foot").style.opacity = "1";} */
 
  window.messages = [
-    'Created Mobile, Windows',
+    'Created ...',
+    'Mobile & Windows',
     'Network & Web Apps ..',
     '👔 Deloitte, Accenture, PwC ..',
     'Code shared on <a href=https://github.com/glynthomas title=mr glynthomas on github target=_blank>github</a> 💾 &nbsp;',
