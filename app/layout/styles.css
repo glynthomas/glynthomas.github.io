@@ -37,6 +37,17 @@ cursor:pointer
 ul, li {
   list-style-type: none;
 }
+li {
+  min-height: 15px;
+  /*border: 1px solid #000;*/
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px;
+  zoom: 1;
+  *display: inline;
+  _height: 50px;
+}
 *:focus{
 outline:none;
 }
@@ -89,17 +100,15 @@ fieldset{border:0;box-shadow: none;}
 	position: relative;
 }
 .header .social li .ico.instagram{
-	background-position: -26px 0
+	background-position:-40px 0
 }
 .header .social li .ico.youtube{
-	background-position:-60px 0
+	background-position:-80px 0
 }
 .header .social li .ico.twitter{
-	background-position:-95px 0
+	background-position:-120px 0
 }
-.header .social li .ico.blogspot{
-	background-position:-95px 0
-}
+
 .header .social li .ico{
 	display: block;
 	width:100%;
@@ -142,7 +151,7 @@ fieldset{border:0;box-shadow: none;}
 .header .cart a{
 	display: inline-block;
 	position: relative;
-	/*top:0;*/
+	top:0px;
 	transition:all .2s;
 }
 .header .cart{
@@ -782,19 +791,19 @@ width:20px;
 	background:url(ico/remove.png)
 }
 .section-cart .list-cart .table-list-cart tr.row-total .label{
-font-weight: bold;
-margin-right: 5px;
-display: inline-block;
+	font-weight: bold;
+	margin-right: 5px;
+	display: inline-block;
 }
 .section-cart .list-cart .table-legend{
 	font-size:14px;
 	margin-top: 10px
 }
 .section-cart .list-cart .table-list-cart tr.row-total td{
-padding: 10px 0 6px
+	padding: 10px 0 6px
 }
 .section-cart .list-cart .table-list-cart tr.row-total .cost{
-display: inline-block;
+	display: inline-block;
 }
 .section-cart .list-cart .table-list-cart tr{
 	border-bottom:1px solid #000;
@@ -807,8 +816,8 @@ display: inline-block;
 	border-radius:10px
 }
 .section-cart .list-cart .shipping .label{
-display:inline-block;
-width:100px;
+	display:inline-block;
+	width:100px;
 }
 .section-cart .list-cart .shipping-ad{
 	font-family:"MuseoSans", Helvetica, Arial, sans-serif;
@@ -1000,8 +1009,8 @@ background:url(ico/share.gif) no-repeat -67px top !important
 	}
 	.section-cart .list-cart .side,
 	.section-cart .bdata > .side{
-    width: 250px;
-    margin: auto;
+        width: 250px;
+        margin: auto;
 		margin-bottom: 30px;
 		float:none;
 	}
@@ -1072,6 +1081,12 @@ background:url(ico/share.gif) no-repeat -67px top !important
 }
 @media screen and (max-width: 650px) {
 
+   .header .social{
+	   right: 0px;
+	    text-align: right;
+	    top:0px;
+    }
+
     .section-static .hero {
     	padding-top: 20px;
     	margin: 0 30px;
@@ -1084,11 +1099,17 @@ background:url(ico/share.gif) no-repeat -67px top !important
 		text-align: center
 	}
 	.header .cart{
+		top: 0px;
 		margin-left: 8px;
 	}
+/*
+    .header .cart a {
+        display: inline-block;
+    }
+*/
 	.header .social,
 	.header .cart{
-		position: static;
+		position: relative;
 		display: inline;
 	}
 	.header .logo{
@@ -1112,8 +1133,8 @@ background:url(ico/share.gif) no-repeat -67px top !important
 		margin:auto;
 	}
 	.header .menu li .submenu {
-    width: 400px;
-    left: -77px;
+        width: 400px;
+        left: -77px;
 	}
 	.section-static,
 	.section-events .event{
@@ -1125,9 +1146,9 @@ background:url(ico/share.gif) no-repeat -67px top !important
 		max-width: 400px;
 	}
 	.section-home .grid .element {
-    width: 40%;
-    margin-left: 5%;
-    margin-right: 5%;
+        width: 40%;
+        margin-left: 5%;
+        margin-right: 5%;
 	}
 	.section-product .images .cc{
 		width:auto;
