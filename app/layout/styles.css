@@ -504,7 +504,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
 
 .cart{
 	top: -10px;
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 	font-size:15pt;
 	cursor: pointer;
 }
