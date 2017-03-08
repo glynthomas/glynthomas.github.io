@@ -1334,7 +1334,7 @@ background:url(ico/share.gif) no-repeat -67px top !important
 @media screen and (max-width: 360px) {
 
 	.section-static h1 {
-        font-size: 33px;
+        font-size: 32px;
     }
 
     .section-events .event h1 {
