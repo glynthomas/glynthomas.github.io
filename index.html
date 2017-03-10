@@ -145,9 +145,26 @@ window.fbAsyncInit = function() {
 <div class="app-inside">
 
 <div class="event">
-<ul class="recent-posts">
+<ul id="posts" class="recent-posts">
 
-<article class="post">
+<!--
+<article id="exposed" class="post">
+<li>
+<span class="post-title">
+<h1>Over Exposed</h1></a>
+<div class="postdate">March 10, 2017 </div>
+</span>
+<div class="post-content">
+
+I am going to try and organise a show this year, but way before this, I need to connect with an audience who love what I do, of course not everyone is going to interested and not everyone is going to love everything I do!
+
+</div>
+<figure><img src="/i/love.jpg?v2" alt=""></figure>
+</li>
+</article>
+-->
+
+<article id="fake" class="post">
 <li>
 <span class="post-title">
 <h1>London, Fake News</h1>
@@ -155,23 +172,25 @@ window.fbAsyncInit = function() {
 </span>
 <div class="post-content">
 
-I always thought Art was a truth, the Artists truth which is shared with whomever wishes to understand it, then I read this ... “We all know that Art is not truth. Art is a lie that makes us realize truth at least the truth that is given us to understand. The artist must know the manner whereby to convince others of the truthfulness of his lies.” -- Pablo Picasso.
+I always thought Art was a truth, the Artists truth which is shared with whomever wishes to understand it, then I read this ... “We all know that Art is not truth. Art is a lie that makes us realize truth at least the truth that is given us to understand. The artist must know the manner whereby to convince others of the truthfulness of his lies.” -- <a href="http://www.picasso.fr/us/picasso_page_index.php">Pablo Picasso</a>.
  
 </div>
 </li>
 </article>
 
 <!--
-<article class="post">
+<article id="show" class="post">
 <li>
 <span class="post-title">
-<h1>Fake news, London</h1>
-<div class="postdate">February 17, 2017 </div>
+<h1>London, Solo Show</h1>
+<div class="postdate">?, 2017 </div>
 </span>
+
 <div class="post-content">
-<p>I am going to try and organise a show this year, but way before this, I need to connect with an audience who love what I do, of course not everyone is going to interested and not everyone is going to love everything I do!</p>
+
+I am going to try and organise a show this year :)
+ 
 </div>
-<figure><img src="/i/love.jpg?v2" alt=""></figure>
 </li>
 </article>
 -->
@@ -204,6 +223,14 @@ $(document).on('click','.minicart-remove', function () {/*paypal.minicart.cart.r
 CartCount();
 });
 
+var ParseURL = function(){ 
+/* format/?post=title */
+//alert( window.location.href );
+//alert( '#' +((window.location.search).substring(1).split("post=")).join('') );
+$('#' +((window.location.search).substring(1).split("post=")).join('')).hide().prependTo("#posts").slideDown();
+$('.post li').css('display', 'block'); // if content not large enough?!
+};
+
 var CartCount = function(){
   var dataminicart = '';
   $("input[class=minicart-quantity]").each(function(){dataminicart = +dataminicart + +$(this).val();});
@@ -214,7 +241,7 @@ var CartCount = function(){
 var ChangeMenu = function(){
 $('.header .menu li a.active').removeClass('active');
 $('.header .menu > li a').each(function(index, el) {
-if($(el).attr('href') == window.location.href) $(el).addClass('active');
+if ($(el).hasClass( "app-loader-home" )) { $(el).addClass('active');}
   });
 }
 
@@ -245,6 +272,8 @@ $(document).ready(function() {
       $('.section-home .grid').isotope({ filter: '*' })
     });
   });
+
+ParseURL();
   
 $(window).resize(function(){
     $('#content').css('min-height', $(window).height() - $('.header-ff').height() - $('.footer').height() )
