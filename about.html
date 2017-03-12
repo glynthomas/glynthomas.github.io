@@ -234,11 +234,13 @@ $(document).ready(function() {
       $('.section-home .grid').isotope({ filter: '*' })
     });
   });
+  $('.header .menu li a').on('touchend', function(event) {
+      window.location.href = $(this).attr("href");
+  });
   
 $(window).resize(function(){
     $('#content').css('min-height', $(window).height() - $('.header-ff').height() - $('.footer').height() )
   }).resize();
-
 });
 </script>
 
