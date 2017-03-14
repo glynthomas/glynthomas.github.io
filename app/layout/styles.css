@@ -401,7 +401,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
     text-transform: uppercase;
 }
 
-.section-static .post-content {
+.section-static .post-content, .post-contact {
     /*font-family: "AvenirNextLTW01Regular","Avenir Next",sans-serif;*/
     font-family: "MuseoSans","Avenir Next",sans-serif;
     font-size: 20px;
@@ -413,11 +413,15 @@ h1, h2, h3, h4, h5, h6, b, strong {
     max-width: 68rem;
 }
 
-.post-content p, .post-really p {
+.post-really p, .post-content p{
     padding: 0.5rem 0;
 }
 
-.post-content a, .post-really a {
+.post-contact p {
+    padding: 1.5rem 0;
+}
+
+.post-content a, .post-really a, .post-contact a {
     text-decoration: none;
     color: red;
     font-weight: 600;
@@ -430,7 +434,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
     transition: 5s;
 }
 
-.post-content a:hover {
+.post-content a:hover, .post-really a:hover, .post-contact a:hover {
     color: black;
 }
 
@@ -493,6 +497,13 @@ h1, h2, h3, h4, h5, h6, b, strong {
     max-width: 68rem;
     padding-bottom: 2rem;
 }
+
+.section-events .post-contact {
+    margin: 0 auto;
+    max-width: 68rem;
+    padding-bottom: 0.75rem;
+}
+
 .section-events .post-content hr {
     background-color: red;
     border: 0 none;
@@ -616,7 +627,10 @@ h1, h2, h3, h4, h5, h6, b, strong {
 	font-size: 10pt;
 	text-align:center;
 }
-.section-events .event{
+.section-static .event{
+    padding-bottom: 60px;
+}
+.section-events .contact{
     padding-bottom: 60px;
 }
 .section-events .event .text{
