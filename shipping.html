@@ -143,15 +143,13 @@ All items are posted using a delivery service which is insured, trackable and tr
 </div>
 
 <script>
-$(document).ready(function() {
-   if ($('.minicart-quantity').val() > 0){ $('.items-count').html($('.minicart-quantity').val());$('.items-count').show() }
-});
+$(document).ready(function() { CartCount(); });
 </script>
 
 </div>
-<div class="footer">
+<div id="footer" class="footer">
   <div class="finside">
-    <a href="/shipping" title="Shipping" class="app-loader">Shipping</a> · <a title="Legal Warning" href="/legal-warning" class="app-loader">Legal Warning</a> · <a href="/more" title="More" class="app-loader">More</a><span class="lnx"> · </span>COPYRIGHT © 2017 GLYN THOMAS
+    <a href="/shipping" title="Shipping" class="app-loader">Shipping</a> · <a title="Legal Warning" href="/legal-warning" class="app-loader">Legal Warning</a> · <a href="/really" title="Really" class="app-loader">Really</a><span class="lnx"> · </span>COPYRIGHT © 2017 THOMAS
   </div>
 </div>
 
@@ -159,13 +157,13 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 paypal.minicart.render();
-$('#viewcart').click(function (e) {e.stopPropagation();paypal.minicart.view.toggle();$('.items-count').html($('.minicart-quantity').val());});
-$(document).on('click','.items-count',function (e) {e.stopPropagation();paypal.minicart.view.show();$('.items-count').html($('.minicart-quantity').val());});
+$('#viewcart').click(function (e) {e.stopPropagation();paypal.minicart.view.toggle();});
+$(document).on('click','.items-count',function (e) {e.stopPropagation();paypal.minicart.view.show();});
 $(document).on('paste','.minicart-quantity',function (e) {e.preventDefault();});
-$(document).on('input','.minicart-quantity',function (e) {e.stopPropagation();
-$('.items-count').html($('.minicart-quantity').val());});
-$(document).on('click','.minicart-remove', function () {paypal.minicart.cart.destroy();$('.items-count').hide();$('.items-count').html('0');});
-
+$(document).on('input','.minicart-quantity',function (e) {e.stopPropagation();CartCount();});
+$(document).on('click','.minicart-remove', function () {/*paypal.minicart.cart.remove($(this).attr("data-minicart-idx"));*/
+CartCount();
+});
 
 var ChangeMenu = function(){
   $('.header .menu li a.active').removeClass('active');
@@ -181,10 +179,8 @@ $(document).ready(function() {
       if(!$('.section-home .grid').length)
       {
         var url = $('.header .menu .submenu').attr('data-href');
-
         ChangeMenu();
         $(item).addClass('active');
-     
       }
       ChangeMenu();
       $(item).addClass('active');
@@ -198,9 +194,7 @@ $(document).ready(function() {
       if(!$('.section-home .grid').length)
       {
         var url = $(item).attr('href');
- 
-        ChangeMenu();
-      
+        ChangeMenu();    
       }
       ChangeMenu();
       $('.section-home .grid').isotope({ filter: '*' })
@@ -208,10 +202,13 @@ $(document).ready(function() {
   });
 
 $(window).resize(function(){
-    $('#content').css('min-height', $(window).height() - $('.header-ff').height() - $('.footer').height() )
+  var $footer = $("#footer"); 
+  if ( ($(document.body).height()+($footer.height())) < $(window).height()) {
+        $footer.css({position: "fixed",bottom: 0,left:0,right:0})} else {$footer.attr("style", "");}
   }).resize();
-
 });
+
 </script>
+
 </body>
 </html>

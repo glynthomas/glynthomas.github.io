@@ -245,28 +245,34 @@ Please read this Copyright Notice carefully before using this site. By using thi
 </artical>
 
 <script>
-$(document).ready(function() {
-   if ($('.minicart-quantity').val() > 0){ $('.items-count').html($('.minicart-quantity').val());$('.items-count').show() }
-});
+$(document).ready(function() { CartCount(); });
 </script>
 
 </div>
-<div class="footer">
+<div id="footer" class="footer">
   <div class="finside">
-    <a href="http://mrglynthomas.com/shipping" title="Shipping" class="app-loader">Shipping</a> · <a title="Legal Warning" href="http://mrglynthomas.com/legal-warning" class="app-loader">Legal Warning</a> · <a href="http://mrglynthomas.com/more" title="More" class="app-loader">More</a><span class="lnx"> · </span>COPYRIGHT © 2017 GLYN THOMAS
+    <a href="/shipping" title="Shipping" class="app-loader">Shipping</a> · <a title="Legal Warning" href="/legal-warning" class="app-loader">Legal Warning</a> · <a href="/really" title="Really" class="app-loader">Really</a><span class="lnx"> · </span>COPYRIGHT © 2017 THOMAS
   </div>
 </div>
 
-<script src="http://mrglynthomas.com/app/layout/js/minicart.js"></script>
+<script src="/app/layout/js/minicart.js"></script>
 
 <script type="text/javascript">
 paypal.minicart.render();
-$('#viewcart').click(function (e) {e.stopPropagation();paypal.minicart.view.toggle();$('.items-count').html($('.minicart-quantity').val());});
-$(document).on('click','.items-count',function (e) {e.stopPropagation();paypal.minicart.view.show();$('.items-count').html($('.minicart-quantity').val());});
+$('#viewcart').click(function (e) {e.stopPropagation();paypal.minicart.view.toggle();});
+$(document).on('click','.items-count',function (e) {e.stopPropagation();paypal.minicart.view.show();});
 $(document).on('paste','.minicart-quantity',function (e) {e.preventDefault();});
-$(document).on('input','.minicart-quantity',function (e) {e.stopPropagation();
-$('.items-count').html($('.minicart-quantity').val());});
-$(document).on('click','.minicart-remove', function () {paypal.minicart.cart.destroy();$('.items-count').hide();$('.items-count').html('0');});
+$(document).on('input','.minicart-quantity',function (e) {e.stopPropagation();CartCount();});
+$(document).on('click','.minicart-remove', function () {/*paypal.minicart.cart.remove($(this).attr("data-minicart-idx"));*/
+CartCount();
+});
+
+var CartCount = function(){
+  var dataminicart = '';
+  $("input[class=minicart-quantity]").each(function(){dataminicart = +dataminicart + +$(this).val();});
+  if (dataminicart > 0) {$('.items-count').html(dataminicart);$('.items-count').show();} 
+  else {$('.items-count').hide();$('.items-count').html('0');}  
+}
 
 var ChangeMenu = function(){
   $('.header .menu li a.active').removeClass('active');
@@ -282,7 +288,6 @@ $(document).ready(function() {
 			if(!$('.section-home .grid').length)
 			{
 				var url = $('.header .menu .submenu').attr('data-href');
-
 				ChangeMenu();
 				$(item).addClass('active');			
 			}
@@ -298,19 +303,21 @@ $(document).ready(function() {
 			if(!$('.section-home .grid').length)
 			{
 				var url = $(item).attr('href');
-		
 				ChangeMenu();
-			
 			}
 			ChangeMenu();
 			$('.section-home .grid').isotope({ filter: '*' })
 		});
   });
 
-  $(window).resize(function(){
-    $('#content').css('min-height', $(window).height() - $('.header-ff').height() - $('.footer').height() )
+$(window).resize(function(){
+  var $footer = $("#footer"); 
+  if ( ($(document.body).height()+($footer.height())) < $(window).height()) {
+        $footer.css({position: "fixed",bottom: 0,left:0,right:0})} else {$footer.attr("style", "");}
   }).resize();
 });
+
 </script>
+
 </body>
 </html>

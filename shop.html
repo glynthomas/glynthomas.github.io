@@ -171,9 +171,9 @@ $(document).ready(function() { CartCount(); });
 </script>
 
 </div>
-<div class="footer">
+<div id="footer" class="footer">
   <div class="finside">
-    <a href="/shipping" title="Shipping" class="app-loader">Shipping</a> · <a title="Legal Warning" href="/legal-warning" class="app-loader">Legal Warning</a> · <a href="/really" title="Really" class="app-loader">Really</a><span class="lnx"> · </span>COPYRIGHT © 2017 GLYN THOMAS
+    <a href="/shipping" title="Shipping" class="app-loader">Shipping</a> · <a title="Legal Warning" href="/legal-warning" class="app-loader">Legal Warning</a> · <a href="/really" title="Really" class="app-loader">Really</a><span class="lnx"> · </span>COPYRIGHT © 2017 THOMAS
   </div>
 </div>
 
@@ -235,9 +235,12 @@ $(document).ready(function() {
   });
   
 $(window).resize(function(){
-    $('#content').css('min-height', $(window).height() - $('.header-ff').height() - $('.footer').height() )
+  var $footer = $("#footer"); 
+  if ( ($(document.body).height()+($footer.height())) < $(window).height()) {
+        $footer.css({position: "fixed",bottom: 0,left:0,right:0})} else {$footer.attr("style", "");}
   }).resize();
 });
+
 </script>
 
 </body>
