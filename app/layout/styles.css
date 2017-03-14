@@ -50,6 +50,7 @@ li {
   /**display: inline;*/
   _height: 50px;
 }
+
 /*
 #content {
 -webkit-animation: fadein 0.5s;-moz-animation: fadein 0.5s;-ms-animation: fadein 0.5s;-o-animation: fadein 0.5s;animation: fadein 0.5s;}
@@ -412,11 +413,11 @@ h1, h2, h3, h4, h5, h6, b, strong {
     max-width: 68rem;
 }
 
-.post-content p {
+.post-content p, .post-really p {
     padding: 0.5rem 0;
 }
 
-.post-content a {
+.post-content a, .post-really a {
     text-decoration: none;
     color: red;
     font-weight: 600;
@@ -474,11 +475,17 @@ h1, h2, h3, h4, h5, h6, b, strong {
     text-transform: uppercase;
 }
 
-.section-events .post-content {
+.section-events .post-content, .post-really {
     /*font-family: "AvenirNextLTW01Regular","Avenir Next",sans-serif;*/
     font-family: "MuseoSans","Avenir Next",sans-serif;
     font-size: 20px;
     line-height: 1.4;
+}
+
+.section-events .post-really {
+    margin: 0 auto;
+    max-width: 68rem;
+    padding-bottom: 0.5rem;
 }
 
 .section-events .post-content {
