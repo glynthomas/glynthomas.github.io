@@ -95,8 +95,9 @@ font-size: 18px;
 color:#86b233
 }
 .app-inside{
-	width:826px;
-	width:1012px;
+	/*width:826px;
+	width:1012px;*/
+	width: 910px;
 	margin:auto
 }
 #app{
@@ -316,7 +317,7 @@ fieldset{border:0;box-shadow: none;}
 	font-weight: 900;
 	font-size:14pt;
 	padding-top: 30px;
-	margin-bottom: 20px
+	margin-bottom: 12px
 }
 .section-product .info .cc{
 	width:315px;
@@ -410,7 +411,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
 
 .section-static .post-content {
     margin: 0 auto;
-    max-width: 68rem;
+    /*max-width: 68rem;*/
 }
 
 .post-really p, .post-content p{
@@ -438,6 +439,14 @@ h1, h2, h3, h4, h5, h6, b, strong {
     color: black;
 }
 
+.recent-posts article li {
+	display: inline;
+}
+
+.recent-posts article li .list {
+    display: block;
+}
+
 .section-static .post-content hr {
     background-color: red;
     border: 0 none;
@@ -449,7 +458,12 @@ h1, h2, h3, h4, h5, h6, b, strong {
     background-position: center center;
     background-size: cover;
     margin: auto;
-    width: 1012px;
+    /*width: 1012px;*/
+    width: 910px;
+}
+
+.section-static .hero .low {
+    padding-top: 3rem;
 }
 
 /*
@@ -479,7 +493,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
     text-transform: uppercase;
 }
 
-.section-events .post-content, .post-really {
+.section-events .post-content, .post-really, .post-shop {
     /*font-family: "AvenirNextLTW01Regular","Avenir Next",sans-serif;*/
     font-family: "MuseoSans","Avenir Next",sans-serif;
     font-size: 20px;
@@ -490,12 +504,6 @@ h1, h2, h3, h4, h5, h6, b, strong {
     margin: 0 auto;
     max-width: 68rem;
     padding-bottom: 0.5rem;
-}
-
-.section-events .post-content {
-    margin: 0 auto;
-    max-width: 68rem;
-    padding-bottom: 2rem;
 }
 
 .section-events .post-contact {
@@ -509,6 +517,17 @@ h1, h2, h3, h4, h5, h6, b, strong {
     border: 0 none;
     height: 2px;
     width: 25%;
+}
+
+.section-events .post-content {
+    margin: 0 auto;
+    max-width: 48rem;
+    padding-bottom: 3.5rem;
+}
+
+.section-events .event figure{
+	margin-top: 20px;
+    text-align: center;
 }
 
 .namefield {
@@ -646,15 +665,13 @@ h1, h2, h3, h4, h5, h6, b, strong {
 	margin-top: 20px
 }
 .section-events .event figure img{
-	/*max-width: 100%;*/
-	height: 50%;
-	width: 50%;
+	height: 60%;
+	width: 60%;
 }
 .section-events .event figure{
 	margin-top: 20px;
     text-align: center;
 }
-
 .section-events .event h1{
     color: black;
     font-family: "MuseoSans",Helvetica,Arial,sans-serif;
@@ -981,6 +998,26 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
 @media screen and (max-width: 1280px) {
 
+	.section-events .post-content {
+       margin: 0 auto;
+       max-width: 37rem;
+       padding-bottom: 3rem;
+    }
+
+    .section-events .post-shop {
+       margin: 0 auto;
+       padding-bottom: 3rem;
+    }
+
+    .section-events .event figure img{
+	    height: 70%;
+	    width: 70%;
+    }
+    .section-events .event figure{
+	    margin-top: 20px;
+        text-align: center;
+    }
+
 	.header .app-inside{
     /*width: 1012px;*/
         width: 980px;
@@ -988,11 +1025,15 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
 	.section-static .hero {
 		margin: auto;
-        width: 860px;
+        width: 853px;
+    }
+
+    .section-static .hero .low {
+    	padding-top: 1.5rem;
     }
 
 	.app-inside{
-        width: 860px;		
+        width: 853px;		
 	}
 	.section-home .grid .element{
 		width:21%;
@@ -1006,6 +1047,17 @@ background:url(ico/share.gif) no-repeat -67px top !important
 }
 @media screen and (max-width: 1025px) {
 
+    .section-events .post-content {
+       margin: 0 auto;
+       max-width: 37rem;
+       padding-bottom: 2.5rem;
+    }
+
+    .section-events .event figure img{
+	    height: 60%;
+	    width: 60%;
+    }
+
 	.header{
 		height: 90px
 	}
@@ -1014,13 +1066,18 @@ background:url(ico/share.gif) no-repeat -67px top !important
 	}
 
 	.section-static .hero {
-        margin:0 30px;
+        /*margin:0 30px;*/
+        margin: 0 90px;
         width: auto
     }
 
+    .section-static .hero .low {
+    	padding-top: 2rem;
+    }
+
 	.app-inside{		
-		/*margin:0 35px;*/
-		margin:0 30px;
+		/*margin:0 30px;*/
+		margin: 0 90px;
         width: auto
 	}
 	.app-inside .app-inside{
@@ -1071,7 +1128,18 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
 @media screen and (max-width: 800px) {
 
-   .section-events .event h1 {
+	.section-events .post-content {
+       margin: 0 auto;
+       max-width: 37rem;
+       padding-bottom: 2rem;
+    }
+
+    .section-events .event figure img{
+	    height: 60%;
+	    width: 60%;
+    }
+
+    .section-events .event h1 {
        margin-top: 15px;
     }
 
@@ -1096,17 +1164,38 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
 @media screen and (max-width: 780px) {
 
+    .section-events .post-content {
+        margin: 0 auto;
+        max-width: 35rem;
+        padding-bottom: 2rem;
+    }
+
+    .section-events .event figure img{
+	    height: 60%;
+	    width: 60%;
+    }
+
 	.section-cart .bdata > .data p.xradio{
 		width:90%;
 	}
 	.section-home .grid .element {
-    width: 31%;
-    margin-left: 1%;
-    margin-right: 1%;
+        width: 31%;
+        margin-left: 1%;
+        margin-right: 1%;
 	}
 }
 @media screen and (max-width: 730px) {
 
+    .section-events .post-content {
+        margin: 0 auto;
+        max-width: 30rem;
+        padding-bottom: 2rem;
+    }
+
+    .section-events .event figure img{
+	    height: 60%;
+	    width: 60%;
+    }
 
 	.header .logo img{
 		/*width:140px;*/
@@ -1116,6 +1205,17 @@ background:url(ico/share.gif) no-repeat -67px top !important
 	}
 }
 @media screen and (max-width: 650px) {
+
+   .section-events .post-content {
+        margin: 0 auto;
+        max-width: 25rem;
+        padding-bottom: 2rem;
+   }
+
+   .section-events .event figure img{
+	    height: 90%;
+	    width: 90%;
+   }
 
    .app-inside{		
 		margin:0 10px;
@@ -1234,6 +1334,22 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
 @media screen and (max-width: 540px) {
 
+   .section-events .event figure img{
+	    height: 90%;
+	    width: 90%;
+   }
+
+   .section-events .post-content {
+        margin: 0 auto;
+        max-width: 22rem;
+        padding-bottom: 2rem;
+   }
+
+   .section-events .event figure{
+	    margin-top: 20px;
+        text-align: center;
+    }
+
     .app-inside{		
 		margin:0 30px;
         width: auto
@@ -1307,6 +1423,22 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
 }
 @media screen and (max-width: 420px) {
+
+   .section-events .event figure img{
+	    height: 95%;
+	    width: 95%;
+   }
+
+   .section-events .post-content {
+        margin: 0 auto;
+        max-width: 20rem;
+        padding-bottom: 2rem;
+   }
+
+   .section-events .event figure{
+	   margin-top: 20px;
+       text-align: center;
+    }
 
 	.app-inside{		
 		margin:0 30px;
@@ -1407,7 +1539,17 @@ background:url(ico/share.gif) no-repeat -67px top !important
 }
 @media screen and (max-width: 360px) {
 
-   .app-inside{		
+	.section-events .event figure img{
+	    height: 100%;
+	    width: 100%;
+    }
+
+    .section-events .event figure{
+	   margin-top: 20px;
+       text-align: center;
+    }
+
+    .app-inside{		
 		margin:0 30px;
         width: auto
 	}

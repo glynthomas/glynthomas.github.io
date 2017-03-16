@@ -158,73 +158,7 @@ window.fbAsyncInit = function() {
 
 <div class="post-content">
 
-<style>
-
-h1, h2, h3, h4, h5, h6, b, strong {
-    font-family: "AvenirNextLTW01Bold","Avenir Next",sans-serif;
-    font-weight: normal;
-}
-
-.section-static h1 {
-    color: black;
-    font-family: "MuseoSans",Helvetica,Arial,sans-serif;
-    font-size: 36px;
-    line-height: 36px;
-    font-weight: 900;
-    padding-top: 0;
-    text-align: center;
-}
-
-.section-static .postdate {
-    color: red;
-    font-family: "AvenirNextLTW01Bold","Avenir Next",sans-serif;
-    font-size: 13px;
-    font-weight: normal;
-    margin-bottom: 20px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.section-static .post-content {
-    font-family: "AvenirNextLTW01Regular","Avenir Next",sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-.section-static .post-content {
-    margin: 0 auto;
-    max-width: 68rem;
-}
-
-.post-content p {
-    margin: 1rem 0;
-}
-
-.post-content a {
-    text-decoration: none;
-    color: red;
-    transition: border-color 0.2s ease 0s;
-}
-
-.section-static .post-content hr {
-    background-color: red;
-    border: 0 none;
-    height: 2px;
-    width: 25%;
-}
-
-.section-static .hero {
-    background-position: center center;
-    background-size: cover;
-}
-
-.post-content img:not(.emoji) {
-    border-radius: 5px;
-    max-width: 100%;
-    min-width: 100%;
-}	
-
-</style>
+<style>.section-static h1 {padding-top: 0;}</style>
 
 <h1>Legal Warning</h1>
 <div class="text">
@@ -275,9 +209,9 @@ var CartCount = function(){
 }
 
 var ChangeMenu = function(){
-  $('.header .menu li a.active').removeClass('active');
-  $('.header .menu > li a').each(function(index, el) {
-  	if($(el).attr('href') == window.location.href) $(el).addClass('active');
+$('.header .menu li a.active').removeClass('active');
+$('.header .menu > li a').each(function(index, el) {
+if($(el).attr('href') == window.location.href) $(el).addClass('active');
   });
 }
 
@@ -296,14 +230,13 @@ $(document).ready(function() {
 			$('.section-home .grid').isotope({ filter: '.c-' + $(item).attr('data-category') })
 		});
   });
-
   $('.header .app-loader-home').each(function(index, item){
 		$(item).click(function(e){
 			e.preventDefault();
 			if(!$('.section-home .grid').length)
 			{
 				var url = $(item).attr('href');
-				ChangeMenu();
+				ChangeMenu();			
 			}
 			ChangeMenu();
 			$('.section-home .grid').isotope({ filter: '*' })

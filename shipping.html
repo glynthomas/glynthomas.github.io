@@ -165,6 +165,13 @@ $(document).on('click','.minicart-remove', function () {/*paypal.minicart.cart.r
 CartCount();
 });
 
+var CartCount = function(){
+  var dataminicart = '';
+  $("input[class=minicart-quantity]").each(function(){dataminicart = +dataminicart + +$(this).val();});
+  if (dataminicart > 0) {$('.items-count').html(dataminicart);$('.items-count').show();} 
+  else {$('.items-count').hide();$('.items-count').html('0');}  
+}
+
 var ChangeMenu = function(){
   $('.header .menu li a.active').removeClass('active');
   $('.header .menu > li a').each(function(index, el) {
@@ -194,7 +201,7 @@ $(document).ready(function() {
       if(!$('.section-home .grid').length)
       {
         var url = $(item).attr('href');
-        ChangeMenu();    
+        ChangeMenu();  
       }
       ChangeMenu();
       $('.section-home .grid').isotope({ filter: '*' })
