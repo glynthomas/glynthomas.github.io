@@ -1350,6 +1350,7 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
    .section-events .event figure{
 	    margin-top: 20px;
+	    margin-bottom: 20px;
         text-align: center;
     }
 
