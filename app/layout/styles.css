@@ -668,10 +668,13 @@ h1, h2, h3, h4, h5, h6, b, strong {
 	height: 60%;
 	width: 60%;
 }
+
 .section-events .event figure{
 	margin-top: 20px;
+	margin-bottom: 20px;
     text-align: center;
 }
+
 .section-events .event h1{
     color: black;
     font-family: "MuseoSans",Helvetica,Arial,sans-serif;
@@ -1546,6 +1549,7 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
     .section-events .event figure{
 	   margin-top: 20px;
+	   margin-bottom: 20px;
        text-align: center;
     }
 
