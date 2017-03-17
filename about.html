@@ -157,7 +157,7 @@ window.fbAsyncInit = function() {
 
 <p>Here’s what I’m working on <a href="/">right now</a>.</p>
 
-<p>If you are thinking of hiring my <a href="/really">services</a> or want to chat, <a href="mailto:hello@mrglynthomas.apc">email</a> me directly in the studio or at the <a class="redatag" href="mailto:shop@mrglynthomas.apc">shop</a>.</p>
+<p>If you are thinking of hiring my <a href="/really">services</a> or want to chat, <a href="mailto://hello@mrglynthomas.apc">email</a> me directly in the studio or at the <a class="redatag" href="mailto://shop@mrglynthomas.apc">shop</a>.</p>
 
 </div>
 </article>
@@ -235,7 +235,7 @@ $(document).ready(function() {
       $('.section-home .grid').isotope({ filter: '*' })
     });
   });
-  $('a').on('touchend', function(event) {
+  $('.header .menu li a').on('touchend', function(event) {
       window.location.href = $(this).attr("href");
   });
   
