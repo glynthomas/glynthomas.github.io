@@ -422,7 +422,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
     padding: 1.5rem 0;
 }
 
-.post-content a, .post-really a, .post-contact a {
+.post-content a, .post-really a, .post-contact a, .post-shop a {
     text-decoration: none;
     color: red;
     font-weight: 600;
