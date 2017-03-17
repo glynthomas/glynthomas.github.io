@@ -527,6 +527,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
 
 .section-events .event figure{
 	margin-top: 20px;
+	margin-bottom: 10px;
     text-align: center;
 }
 
@@ -671,7 +672,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
 
 .section-events .event figure{
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
     text-align: center;
 }
 
@@ -1018,6 +1019,7 @@ background:url(ico/share.gif) no-repeat -67px top !important
     }
     .section-events .event figure{
 	    margin-top: 20px;
+	    margin-bottom: 10px;
         text-align: center;
     }
 
@@ -1350,7 +1352,7 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
    .section-events .event figure{
 	    margin-top: 20px;
-	    margin-bottom: 20px;
+	    margin-bottom: 10px;
         text-align: center;
     }
 
@@ -1441,6 +1443,7 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
    .section-events .event figure{
 	   margin-top: 20px;
+	   margin-bottom: 10px;
        text-align: center;
     }
 
@@ -1550,7 +1553,7 @@ background:url(ico/share.gif) no-repeat -67px top !important
 
     .section-events .event figure{
 	   margin-top: 20px;
-	   margin-bottom: 20px;
+	   margin-bottom: 10px;
        text-align: center;
     }
 
