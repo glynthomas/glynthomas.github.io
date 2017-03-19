@@ -9,10 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="index,follow">
-<title id="head-title">Thomas</title>
-<meta name="twitter:title" content="Contact" />
-<meta property="og:title" name="og:title" content="Contact" />
-
+<title id="head-title">Thomas &bull; Contact</title>
 
 <meta id="head-description" name="description" content="
 
@@ -42,7 +39,13 @@ INFO ☛&nbsp;info@mrglynthomas.apc
 
 " />
 
+<meta name="author" content="Glyn Thomas">
+<meta name="description" content="Glyn Thomas Artist Creative">
+<meta name="keywords" content="British, Art, Creative">
+
+<meta name="twitter:title" content="Contact" />
 <meta name="twitter:image" content="/app/layout/logo-big.png" />
+<meta property="og:title" name="og:title" content="Contact" />
 <meta property="og:image" name="og:image" content="/app/layout/logo-big.png" />
 <meta property="og:url" name="og:url" content="/contact" />
 <meta property="og:type" name="og:type" content="website" />
@@ -299,6 +302,7 @@ $(document).ready(function() {
       ChangeMenu();
       $('.section-home .grid').isotope({ filter: '*' })
     });
+      window.document.title = 'Thomas';
   });
   $('.header .menu li a').on('touchend', function(event) {
       window.location.href = $(this).attr("href");
