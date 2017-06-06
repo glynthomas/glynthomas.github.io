@@ -7,6 +7,12 @@ Disallow: /blog/
 Disallow: /fav/
 Disallow: /i/
 Disallow: /pdf/
+Disallow: /blog.html
+Disallow: /tumblr.html
+Disallow: /legal-warning.html
+Disallow: /really.html
+Disallow: /shipping.html
+Disallow: /contact.html
 
 # Wait 1 second between successive requests.
 Crawl-delay: 1
