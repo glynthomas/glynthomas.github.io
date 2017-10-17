@@ -2,17 +2,15 @@
 
 User-agent: *
 
-Disallow: /app/
-Disallow: /blog/
-Disallow: /fav/
-Disallow: /i/
+Disallow: /404/
+Disallow: /assets/
+Disallow: /cache/
+Disallow: /experiments/
+Disallow: /fonts/
+Disallow: /ico/
+Disallow: /images/
 Disallow: /pdf/
-Disallow: /blog.html
-Disallow: /tumblr.html
-Disallow: /legal-warning.html
-Disallow: /really.html
-Disallow: /shipping.html
-Disallow: /contact.html
+Disallow: /404.html
 
 # Wait 1 second between successive requests.
 Crawl-delay: 1

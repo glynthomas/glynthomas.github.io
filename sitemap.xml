@@ -8,27 +8,10 @@
    <priority>0.5</priority>
   </url>
   <url> 
-   <loc>http://mrglynthomas.com/about/</loc>  
+   <loc>http://mrglynthomas.com/experiments/</loc>  
    <lastmod>2017-03-19</lastmod>
    <changefreq>monthly</changefreq>
    <priority>0.5</priority>
   </url>
   <url> 
-   <loc>http://mrglynthomas.com/shop/</loc>  
-   <lastmod>2017-03-19</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>0.5</priority>
-  </url>
-  <url> 
-  <loc>http://mrglynthomas.com/events/</loc>  
-   <lastmod>2017-03-19</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>0.5</priority>
-  </url>
-  <url> 
-   <loc>http://mrglynthomas.com/contact</loc>  
-   <lastmod>2017-03-19</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>0.5</priority>
-  </url>
 </urlset>
