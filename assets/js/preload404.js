@@ -26,7 +26,7 @@ window.onbeforeunload = function(e) {
 };
 */
 
-var myImages = new Array('oksauce-a.jpeg');
+var myImages = new Array('oksauce-bw.jpeg');
 
 $(window).load(function() {
 
