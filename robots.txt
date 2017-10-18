@@ -7,7 +7,6 @@ Disallow: /assets/
 Disallow: /cache/
 Disallow: /experiments/
 Disallow: /fonts/
-Disallow: /ico/
 Disallow: /images/
 Disallow: /pdf/
 Disallow: /404.html
