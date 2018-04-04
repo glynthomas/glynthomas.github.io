@@ -26,6 +26,8 @@ window.onbeforeunload = function(e) {
 };
 */
 
+
+
 var myImages = new Array('oksauce-a.jpeg');
 
 $(window).load(function() {
@@ -49,3 +51,5 @@ $(window).load(function() {
         //$('div.zn1').fadeIn(2000);
         //}, 2000);
     }
+
+
