@@ -114,6 +114,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 3 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-optimize-contrast;
 }
 
 /**
