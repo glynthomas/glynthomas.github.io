@@ -3712,6 +3712,8 @@ div.icons {
     align-items: flex-end
 }
 
+h2.h4.mb3 { letter-spacing: 0.01px }
+
 /*
 .social-icons li:nth-child(1) {margin-right: 5px;}
 .social-icons li:nth-child(2) {margin-right: 5px;}
