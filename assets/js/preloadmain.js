@@ -45,22 +45,18 @@ $(window).load(function() {
   var topdom = topimg[Math.floor(Math.random() * topimg.length)];
       topdom = 'assets/img/' + topdom + ')';
       $('#topimg').attr('src','/'+ topdom );
-      //setInterval(function() {
-        SetTop();
-      //}, 5000);
-
+      SetTop();
+      setInterval(function() {SetTop();}, 5000);
 
 });
 
     function SetTop() {
         var topdom = topimg[Math.floor(Math.random() * topimg.length)];
         topdom = 'assets/img/' + topdom;
-        //$('div.zn1').fadeOut(2000);
-        //$('div.zn1').css({'background-image': 'none'});
-        //setTimeout(function () {
+        // setTimeout(function () {
         $('#topimg').attr('src','/'+ topdom);
         //$('div.zn1').fadeIn(2000);
-        //}, 2000);
+        // }, 2000);
     }
 
     function SetImg() {
