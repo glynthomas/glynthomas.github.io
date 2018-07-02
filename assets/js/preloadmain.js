@@ -28,21 +28,43 @@ window.onbeforeunload = function(e) {
 
 
 
-var myImages = new Array('oksauce-a.jpeg');
+var bckimg = new Array('IMG_7396.JPEG','IMG_7381.JPEG');
+
+var topimg = new Array('s+m-blk-62x26.png','s+m-red-62x26.png');
 
 $(window).load(function() {
 
   $('div.zn1').css({'background-image': 'none'});
-  var random = myImages[Math.floor(Math.random() * myImages.length)];
+  var random = bckimg[Math.floor(Math.random() * bckimg.length)];
       random = 'url(images/' + random + ')';
       $('div.zn1').css('background-image', random);
       //setInterval(function() {
-        SetImage();
+        SetImg();
       //}, 5000);
+
+  var topdom = topimg[Math.floor(Math.random() * topimg.length)];
+      topdom = 'assets/img/' + topdom + ')';
+      $('#topimg').attr('src','/'+ topdom );
+      //setInterval(function() {
+        SetTop();
+      //}, 5000);
+
+
 });
 
-    function SetImage() {
-        var random = myImages[Math.floor(Math.random() * myImages.length)];
+    function SetTop() {
+        var topdom = topimg[Math.floor(Math.random() * topimg.length)];
+        topdom = 'assets/img/' + topdom;
+        //$('div.zn1').fadeOut(2000);
+        //$('div.zn1').css({'background-image': 'none'});
+        //setTimeout(function () {
+        $('#topimg').attr('src','/'+ topdom);
+        //$('div.zn1').fadeIn(2000);
+        //}, 2000);
+    }
+
+    function SetImg() {
+        var random = bckimg[Math.floor(Math.random() * bckimg.length)];
         random = 'url(images/' + random + ')';
         //$('div.zn1').fadeOut(2000);
         //$('div.zn1').css({'background-image': 'none'});
