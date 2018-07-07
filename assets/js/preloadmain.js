@@ -38,9 +38,7 @@ $(window).load(function() {
   var random = bckimg[Math.floor(Math.random() * bckimg.length)];
       random = 'url(images/' + random + ')';
       $('div.zn1').css('background-image', random);
-      //setInterval(function() {
-        SetImg();
-      //}, 5000);
+      //setInterval(function() {SetImg();}, 5000);
 
   var topdom = topimg[Math.floor(Math.random() * topimg.length)];
       topdom = 'assets/img/' + topdom + ')';
