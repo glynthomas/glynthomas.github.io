@@ -30,7 +30,7 @@ window.onbeforeunload = function(e) {
 
 var bckimg = new Array('IMG_7396.JPEG','IMG_7381.JPEG');
 
-var topimg = new Array('s+m-blk-62x26.png','s+m-red-62x26.png');
+var topimg = new Array('julayn-blk-62x26.png','julayn-red-62x26.png');
 
 $(window).load(function() {
 
