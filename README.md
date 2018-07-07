@@ -1,4 +1,4 @@
-# glyn thomas == julayn tomas - creative, hacker, electronica artist
+# julayn tomas { glyn thomas } - creative, hacker, electronica artist
 
 This is my personal website. A simple custom built website at http://julayn.com
 
