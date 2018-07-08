@@ -27,7 +27,6 @@ window.onbeforeunload = function(e) {
 */
 
 
-
 var bckimg = new Array('IMG_7396.JPEG','IMG_7381.JPEG');
 
 var topimg = new Array('julayn-blk-62x26.png','julayn-red-62x26.png');
@@ -50,9 +49,8 @@ $(window).load(function() {
 
   var newdom = news[Math.floor(Math.random() * news.length)];
       $('#news').removeClass().toggleClass('' + newdom + '');
-      SetNew();
+      SetNew('blackhead');
       setInterval(function() {SetNew();}, 6000);
-
 });
 
     function SetTop() {
@@ -75,9 +73,9 @@ $(window).load(function() {
         //}, 2000);
     }
 
-    function SetNew() {
+    function SetNew(n) {
         var newdom = news[Math.floor(Math.random() * news.length)];
+        if( n == 'blackhead') { newdom = 'blackhead'};
         $('#news').removeClass().toggleClass('' + newdom + '');
     }
-
 
