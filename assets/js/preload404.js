@@ -41,7 +41,7 @@ $(window).load(function() {
 
     function SetImage() {
         var random = myImages[Math.floor(Math.random() * myImages.length)];
-        random = 'url(images/' + random + ')';
+        random = 'url(/images/' + random + ')';
         //$('div.zn1').fadeOut(2000);
         //$('div.zn1').css({'background-image': 'none'});
         //setTimeout(function () {
