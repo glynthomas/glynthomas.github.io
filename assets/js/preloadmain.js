@@ -32,6 +32,8 @@ var bckimg = new Array('IMG_7396.JPEG','IMG_7381.JPEG');
 
 var topimg = new Array('julayn-blk-62x26.png','julayn-red-62x26.png');
 
+var news = new Array('blackhead','orangehead','greenhead','purplehead','redhead');
+
 $(window).load(function() {
 
   $('div.zn1').css({'background-image': 'none'});
@@ -45,6 +47,11 @@ $(window).load(function() {
       $('#topimg').attr('src','/'+ topdom );
       SetTop();
       setInterval(function() {SetTop();}, 5000);
+
+  var newdom = news[Math.floor(Math.random() * news.length)];
+      $('#news').removeClass().toggleClass('' + newdom + '');
+      SetNew();
+      setInterval(function() {SetNew();}, 6000);
 
 });
 
@@ -66,6 +73,11 @@ $(window).load(function() {
           $('div.zn1').css('background-image', random);
         //$('div.zn1').fadeIn(2000);
         //}, 2000);
+    }
+
+    function SetNew() {
+        var newdom = news[Math.floor(Math.random() * news.length)];
+        $('#news').removeClass().toggleClass('' + newdom + '');
     }
 
 

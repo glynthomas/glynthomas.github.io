@@ -554,9 +554,15 @@ header a {text-decoration: none}
 
 .redneck {background-color: red; color:white; font-weight: 600;}
 
-.redhead {background-color: red; color:white; margin-left: 1px; padding-top: 0.5px; padding-bottom: 2px; font-weight: 500;font-size: 1.53rem; text-decoration: none}
+.redhead {background-color: red; color:white; margin-left: 1px; padding-top: 0.5px; padding-bottom: 2px; font-weight: 600;font-size: 1.34rem; text-decoration: none}
 
 .blackhead {background-color: #000000; color: white; margin-left: 1px; padding-top: 0.5px; padding-bottom: 3px; font-weight: 600; font-size: 1.34rem; text-decoration: none; border-radius: 1px;}
+
+.orangehead {background-color: orange; color: white; margin-left: 1px; padding-top: 0.5px; padding-bottom: 3px; font-weight: 600; font-size: 1.34rem; text-decoration: none; border-radius: 1px;}
+
+.greenhead {background-color: green; color: white; margin-left: 1px; padding-top: 0.5px; padding-bottom: 3px; font-weight: 600; font-size: 1.34rem; text-decoration: none; border-radius: 1px;}
+
+.purplehead {background-color: purple; color: white; margin-left: 1px; padding-top: 0.5px; padding-bottom: 3px; font-weight: 600; font-size: 1.34rem; text-decoration: none; border-radius: 1px;}
 
 .greyhead {background-color: #e3e7ea; color: white; margin-left: 1px; padding-top: 0.5px; padding-bottom: 3px; font-weight: 500; font-size: 1.53rem; text-decoration: none; border-radius: 1px;}
 
