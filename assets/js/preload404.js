@@ -26,7 +26,7 @@ window.onbeforeunload = function(e) {
 };
 */
 
-var myImages = new Array('404.jpeg');
+var myImages = new Array('okchips-bw.jpg');
 
 $(window).load(function() {
 
@@ -41,7 +41,7 @@ $(window).load(function() {
 
     function SetImage() {
         var random = myImages[Math.floor(Math.random() * myImages.length)];
-        random = 'url(/images/' + random + ')';
+        random = 'url(images/' + random + ')';
         //$('div.zn1').fadeOut(2000);
         //$('div.zn1').css({'background-image': 'none'});
         //setTimeout(function () {
