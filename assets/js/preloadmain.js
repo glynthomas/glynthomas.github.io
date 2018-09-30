@@ -35,24 +35,13 @@ var news = new Array('blackhead','orangehead','greenhead','purplehead','redhead'
 
 $(window).load(function() {
 
-/*
+
   $('div.zn1').css({'background-image': 'none'});
   var random = bckimg[Math.floor(Math.random() * bckimg.length)];
       random = 'url(images/' + random + ')';
       $('div.zn1').css('background-image', random);
-      setInterval(function() {SetImg();}, 5000);
-*/
+      setInterval(function() {SetImg();}, 7000);
 
-  $('div.zn1').css({'background-image': 'none'});
-  var random = bckimg[0].src + "";
-      for(var i=0;i<bckimg.length-1;i++){
-        bckimg[i].src=bckimg[i+1].src+"";
-    }
-      bckimg[bckimg.length-1].src=bckimg; //replace last image src with first one
-      
-      random = 'url(images/' + random + ')';
-      $('div.zn1').css('background-image', random);
-      setInterval(function() {SetImg();}, 8000);
 
   var topdom = topimg[Math.floor(Math.random() * topimg.length)];
       topdom = 'assets/img/' + topdom + ')';
