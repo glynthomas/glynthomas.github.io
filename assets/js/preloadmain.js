@@ -40,7 +40,7 @@ $(window).load(function() {
   var random = bckimg[Math.floor(Math.random() * bckimg.length)];
       random = 'url(images/' + random + ')';
       $('div.zn1').css('background-image', random);
-      setInterval(function() {SetImg();}, 7000);
+      setInterval(function() {SetImg();}, 8000);
 
 
   var topdom = topimg[Math.floor(Math.random() * topimg.length)];
