@@ -27,7 +27,7 @@ window.onbeforeunload = function(e) {
 */
 
 
-var bckimg = new Array('IMG_7396.JPEG','IMG_7381.JPEG','IMG_7523.JPEG');
+var bckimg = new Array('IMG_7396.JPEG','IMG_7523.JPEG');
 
 var topimg = new Array('julayn-blk-62x26.png','julayn-red-62x26.png');
 
@@ -40,7 +40,7 @@ $(window).load(function() {
   var random = bckimg[Math.floor(Math.random() * bckimg.length)];
       random = 'url(images/' + random + ')';
       $('div.zn1').css('background-image', random);
-      setInterval(function() {SetImg();}, 12000);
+      setInterval(function() {SetImg();}, 16000);
 
 
   var topdom = topimg[Math.floor(Math.random() * topimg.length)];
