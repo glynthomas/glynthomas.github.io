@@ -27,7 +27,7 @@ window.onbeforeunload = function(e) {
 */
 
 
-var bckimg = new Array('IMG_7396.JPEG','IMG_7381.JPEG');
+var bckimg = new Array('IMG_7396.JPEG','IMG_7381.JPEG','IMG_7523.JPEG');
 
 var topimg = new Array('julayn-blk-62x26.png','julayn-red-62x26.png');
 
@@ -35,11 +35,24 @@ var news = new Array('blackhead','orangehead','greenhead','purplehead','redhead'
 
 $(window).load(function() {
 
+/*
   $('div.zn1').css({'background-image': 'none'});
   var random = bckimg[Math.floor(Math.random() * bckimg.length)];
       random = 'url(images/' + random + ')';
       $('div.zn1').css('background-image', random);
-      //setInterval(function() {SetImg();}, 5000);
+      setInterval(function() {SetImg();}, 5000);
+*/
+
+  $('div.zn1').css({'background-image': 'none'});
+  var random = bckimg[0].src + "";
+      for(var i=0;i<bckimg.length-1;i++){
+        bckimg[i].src=bckimg[i+1].src+"";
+    }
+      bckimg[bckimg.length-1].src=bckimg; //replace last image src with first one
+      
+      random = 'url(images/' + random + ')';
+      $('div.zn1').css('background-image', random);
+      setInterval(function() {SetImg();}, 5000);
 
   var topdom = topimg[Math.floor(Math.random() * topimg.length)];
       topdom = 'assets/img/' + topdom + ')';
@@ -68,8 +81,8 @@ $(window).load(function() {
         //$('div.zn1').fadeOut(2000);
         //$('div.zn1').css({'background-image': 'none'});
         //setTimeout(function () {
-          $('div.zn1').css('background-image', random);
-        //$('div.zn1').fadeIn(2000);
+        $('div.zn1').css('background-image', random);
+        //  $('div.zn1').fadeIn(2000);
         //}, 2000);
     }
 
