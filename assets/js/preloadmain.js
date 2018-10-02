@@ -31,6 +31,8 @@ var bckimg = new Array('IMG_7396.JPEG','IMG_7523.JPEG');
 
 var topimg = new Array('julayn-blk-62x26.png','julayn-red-62x26.png');
 
+/*var menimg = new Array('julayn-wht-62x26.png','julayn-wht-red-62x26.png','julayn-wht-62x26.png',);*/
+
 var news = new Array('blackhead','orangehead','greenhead','purplehead','redhead');
 
 $(window).load(function() {
@@ -42,12 +44,18 @@ $(window).load(function() {
       $('div.zn1').css('background-image', random);
       setInterval(function() {SetImg();}, 16000);
 
-
   var topdom = topimg[Math.floor(Math.random() * topimg.length)];
       topdom = 'assets/img/' + topdom + ')';
       $('#topimg').attr('src','/'+ topdom );
       SetTop();
       setInterval(function() {SetTop();}, 5000);
+/*
+  var mendom = menimg[Math.floor(Math.random() * menimg.length)];
+      topdom = 'assets/img/' + mendom + ')';
+      $('#menimg').attr('src','/'+ mendom );
+      SetMen();
+      setInterval(function() {SetMen();}, 5000);
+*/
 
   var newdom = news[Math.floor(Math.random() * news.length)];
       $('#news').removeClass().toggleClass('' + newdom + '');
@@ -62,6 +70,12 @@ $(window).load(function() {
         $('#topimg').attr('src','/'+ topdom);
         //$('div.zn1').fadeIn(2000);
         // }, 2000);
+    }
+
+    function SetMen() {
+        var mendom = menimg[Math.floor(Math.random() * menimg.length)];
+        mendom = 'assets/img/' + mendom;
+        $('#menimg').attr('src','/'+ mendom);
     }
 
     function SetImg() {
