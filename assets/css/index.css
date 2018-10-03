@@ -830,6 +830,10 @@ p {font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53;}
 
 .p3  { padding: 1.25rem }
 
+.p3m { padding-left: 1.25rem; padding-bottom: 1.25rem; font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53;}
+
+.pt1 { padding-top: 1rem }
+
 .pt3 { padding-top: 1.25rem }
 
 .pr3 { padding-right: 1.25rem }
@@ -3354,8 +3358,8 @@ button {
 :root { /* 5px */ /* 10px */ /* 15px */ /* 20px */ /* 30px */ /* 40px */
 }
 
-.mb40px { 
-    margin-bottom: 40px;
+.mb4rem { 
+    margin-bottom: 4rem;
 }
 
 .mb1px {
