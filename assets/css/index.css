@@ -550,21 +550,24 @@ textarea {
 
 header a {text-decoration: none}
 
+#news {font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53; padding-left:0.55rem;}
+.news {font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53; }
+
 .viewer-position {font-size: 1.4rem; font-weight: 500; color:red;}
 
 .redneck {background-color: red; color:white; font-weight: 600;}
 
-.redhead {color:red; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600;font-size: 1.43rem; text-decoration: none}
+.redhead {color:red; padding-top: 3px; padding-bottom: 4px; text-decoration: none}
 
-.blackhead {color: black; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.blackhead {color: black; padding-top: 3px; padding-bottom: 4px; text-decoration: none; border-radius: 1px;}
 
-.orangehead {color: orange; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.orangehead {color: orange; padding-top: 3px; padding-bottom: 4px; text-decoration: none; border-radius: 1px;}
 
-.greenhead {color: green; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.greenhead {color: green; padding-top: 3px; padding-bottom: 4px; text-decoration: none; border-radius: 1px;}
 
-.purplehead {color: purple; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.purplehead {color: purple; padding-top: 3px; padding-bottom: 4px; text-decoration: none; border-radius: 1px;}
 
-.greyhead {color: #e3e7ea; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 500; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.greyhead {color: #e3e7ea; padding-top: 3px; padding-bottom: 4px; text-decoration: none; border-radius: 1px;}
 
 
 .twit {text-decoration: underline;text-decoration-color:#1da1f2;}
@@ -836,7 +839,9 @@ p {font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53;}
 
 .pl3 { padding-left: 1.25rem }
 
-.py3 { padding-top: 1.25rem; padding-bottom: 1.25rem; font-weight: 600 }
+.py3 { padding-top: 1.25rem; padding-bottom: 1.25rem; font-weight: 400 }
+
+.pym { padding-top: 1rem; padding-bottom: 1.25rem; font-weight: 400 }
 
 .px3 { padding-left: 1.25rem; padding-right: 1.25rem }
 
@@ -3258,10 +3263,10 @@ i {
 }
 
 .mr {
-    font-size: 1.3rem;
+    /*font-size: 1.3rem;
     line-height: 1.8;
     letter-spacing: 0.03rem;
-    font-weight: 600;
+    font-weight: 600;*/
 }
 
 h1, .h1  {

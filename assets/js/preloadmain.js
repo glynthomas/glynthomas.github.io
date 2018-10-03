@@ -29,8 +29,7 @@ window.onbeforeunload = function(e) {
 
 var bckimg = new Array('IMG_7396.JPEG','IMG_7523.JPEG');
 
-var topimg = new Array('julayn-wht-blk-blk-dot-62x26.png','julayn-wht-blk-gry-dot-62x26.png','julayn-wht-blk-gry-an-62x26.png','julayn-wht-blk-gry-u-62x26.png');
-
+/*var topimg = new Array('julayn-blk-wht-62x26.png','julayn-red-bck-62x26.png','julayn-wht-blk-62x26.png');*/
 /*var menimg = new Array('julayn-wht-62x26.png','julayn-wht-red-62x26.png','julayn-wht-62x26.png',);*/
 
 var news = new Array('blackhead','redhead');
@@ -44,6 +43,7 @@ $(window).load(function() {
       $('div.zn1').css('background-image', random);
       setInterval(function() {SetImg();}, 16000);
 
+/*
   var topdom = topimg[Math.floor(Math.random() * topimg.length)];
       topdom = 'assets/img/' + topdom + ')';
       $('#topimg').attr('src','/'+ topdom );
