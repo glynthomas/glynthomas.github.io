@@ -29,11 +29,11 @@ window.onbeforeunload = function(e) {
 
 var bckimg = new Array('IMG_7396.JPEG','IMG_7523.JPEG');
 
-var topimg = new Array('julayn-blk-62x26.png','julayn-red-62x26.png');
+var topimg = new Array('julayn-wht-blk-blk-dot-62x26.png','julayn-wht-blk-gry-dot-62x26.png','julayn-wht-blk-gry-an-62x26.png','julayn-wht-blk-gry-u-62x26.png');
 
 /*var menimg = new Array('julayn-wht-62x26.png','julayn-wht-red-62x26.png','julayn-wht-62x26.png',);*/
 
-var news = new Array('blackhead','orangehead','greenhead','purplehead','redhead');
+var news = new Array('blackhead','redhead');
 
 $(window).load(function() {
 
@@ -48,7 +48,7 @@ $(window).load(function() {
       topdom = 'assets/img/' + topdom + ')';
       $('#topimg').attr('src','/'+ topdom );
       SetTop();
-      setInterval(function() {SetTop();}, 5000);
+      setInterval(function() {SetTop();}, 3000);
 /*
   var mendom = menimg[Math.floor(Math.random() * menimg.length)];
       topdom = 'assets/img/' + mendom + ')';

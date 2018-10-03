@@ -554,17 +554,17 @@ header a {text-decoration: none}
 
 .redneck {background-color: red; color:white; font-weight: 600;}
 
-.redhead {background-color: red; color:white; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600;font-size: 1.43rem; text-decoration: none}
+.redhead {color:red; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600;font-size: 1.43rem; text-decoration: none}
 
-.blackhead {background-color: #000000; color: white; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.blackhead {color: black; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
 
-.orangehead {background-color: orange; color: white; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.orangehead {color: orange; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
 
-.greenhead {background-color: green; color: white; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.greenhead {color: green; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
 
-.purplehead {background-color: purple; color: white; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.purplehead {color: purple; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 600; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
 
-.greyhead {background-color: #e3e7ea; color: white; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 500; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
+.greyhead {color: #e3e7ea; margin-left: 1px; padding-top: 3px; padding-bottom: 4px; font-weight: 500; font-size: 1.43rem; text-decoration: none; border-radius: 1px;}
 
 
 .twit {text-decoration: underline;text-decoration-color:#1da1f2;}
