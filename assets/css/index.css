@@ -743,6 +743,8 @@ p {font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53;}
 
 .my3 { margin-top: 1.25rem; margin-bottom: 1.25rem }
 
+.myz { margin-top: 1.34rem; margin-bottom: 1.34rem }
+
 .m4  { margin: 1.667rem }
 
 .mt4 { margin-top: 1.667rem }
@@ -766,11 +768,19 @@ p {font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53;}
 
 .mxn4 { margin-left: -1.667rem; margin-right: -1.667rem; }
 
-.ml-auto { margin-left: auto }
+.m-auto  { margin: auto; }
+
+.mt-auto { margin-top: auto }
 
 .mr-auto { margin-right: auto }
 
+.mb-auto { margin-bottom: auto }
+
+.ml-auto { margin-left: auto }
+
 .mx-auto { margin-left: auto; margin-right: auto; }
+
+.my-auto { margin-top: auto; margin-bottom: auto; }
 
 /* Basscss Padding */
 
@@ -818,18 +828,7 @@ p {font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53;}
 
 .px2 { padding-left: 0.8333rem; padding-right: 0.8333rem }
 
-.p3  { 
-
-  /*
-  padding-top: 1.1rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  */
-  padding-left: 1.20rem;
-  padding-right: 1.20rem;
-  padding-bottom: 1.25rem;
-
- }
+.p3  { padding: 1.25rem }
 
 .pt3 { padding-top: 1.25rem }
 
@@ -1167,6 +1166,8 @@ p {font-size: 1.53rem; letter-spacing: 0.01rem; line-height: 1.53;}
 .content-around  { -webkit-align-content: space-around; -ms-flex-line-pack: distribute; align-content: space-around }
 
 .content-stretch { -webkit-align-content: stretch; -ms-flex-line-pack: stretch; align-content: stretch }
+
+.content-stretch { -ms-flex-line-pack: stretch; align-content: stretch }
 
 /* 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893 */
 
