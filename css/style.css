@@ -456,7 +456,8 @@ pre {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  width: 20%; /* new */
+  /*width: 20%; /* new    */
+  width: 10%;   /* update */
   /*min-width: 400px;*/
   min-width: 320px;
   height: 100vh;
