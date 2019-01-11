@@ -442,7 +442,6 @@ function shareClickon(id) {
        document.getElementById("playpause0").classList.add("invisible");
        document.getElementById("outpi0").classList.add("hidden");       
        vidselect = 0;
-       justPause(0);
     break;
     case 1:
        document.getElementById("sharelay1").classList.remove("invisible");
@@ -452,9 +451,10 @@ function shareClickon(id) {
        document.getElementById("playpause1").classList.add("invisible");
        document.getElementById("outpi1").classList.add("hidden");
        vidselect = 1;
-       justPause(1);
     break;
   }
+
+  if (document.getElementById("video" + id).ended != true){justPause(id)}
 }
 
 
@@ -471,7 +471,6 @@ function shareClickoff(id) {
        document.getElementById("playpause0").classList.remove("invisible");
        document.getElementById("outpi0").classList.remove("hidden");
        vidselect = 0;
-       justPlay(0);
     break;
     case 1:
        document.getElementById("sharelay1").classList.add("invisible");
@@ -482,9 +481,10 @@ function shareClickoff(id) {
        document.getElementById("playpause1").classList.remove("invisible");
        document.getElementById("outpi1").classList.remove("hidden");
        vidselect = 1;
-       justPlay(1);
     break;
   }
+
+  if (document.getElementById("video" + id).ended != true){justPlay(id)}
 }
 
 
@@ -1065,7 +1065,6 @@ function justPlay(id) {
         $("#pause01").show();
         player = 1;
         vidend = 0;
-        console.log( document.getElementById("video0").paused );
         (document.getElementById("video0")).play();
      break;
 
