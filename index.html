@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! home | index.html v1.00.01 | (c) 2018 julayn | julayn.com */-->
+<!--/*! home | index.html v1.0.02 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -407,9 +407,7 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
   
 <script type="text/javascript">
 
-// update.io
-
-// v1.0 simple video wrapper
+// v1.0.02 simple video wrapper
 // styled like you know who
 // quick and dirty!
 // easily extendable, to add another video
@@ -422,6 +420,7 @@ var vidleave = 0;
 var playmouseon = 0;
 var player = 0;
 var vidend = 0;
+var ghost;
 var playoff = 0;
 
 // turn off the default controls
@@ -540,7 +539,7 @@ function shareOut(id) {
 
 function cntEnter(id) {
 
- if (vidend == 0) {
+ //if (vidend == 0) {
 
   switch(id) {
   
@@ -558,7 +557,7 @@ function cntEnter(id) {
     break;
   }
     clearTimeout(vidleave);
- }
+ //}
 }
 
 function cntLeave(id) {
@@ -568,7 +567,9 @@ function cntLeave(id) {
  // play, however, adding static in progress
  // pictures could create user confusion !
 
- if (vidend == 0 && player == 1) {
+ //if (vidend == 0 && player == 1) {
+
+ if (player == 1) {
 
   switch(id) {
   
@@ -580,7 +581,7 @@ function cntLeave(id) {
 
       document.getElementById("replay0").classList.add('fill');
       document.getElementById("replay0").classList.remove("playover");
-      }, 1000000);
+      }, 700);
       vidselect = 0;
    break;
    case 1:
@@ -591,7 +592,7 @@ function cntLeave(id) {
 
       document.getElementById("replay1").classList.add('fill');
       document.getElementById("replay1").classList.remove("playover");
-      }, 10000000);
+      }, 700);
       vidselect = 1;
    break;
  }
@@ -857,58 +858,49 @@ function cuePoint(id) {
  switch(id) {
   
    case 0:
-       //console.log( document.getElementById('pause01').style.display );
-       //if (document.getElementById('pause01').style.display == 'none') {
        if ( (document.getElementById("video0").paused) === false) {
-
-       $("#play0").show();
-       $("#parrot0").show();
-       $("#pause01").hide();
+       $("#play0").hide();
+       $("#parrot0").hide();
+       $("#pause01").show();
        $("#replay0").hide();
        player = 1;     
        vidend = 0;
        }
        cuepoint = document.getElementById("cuepoint0");
        video = document.getElementById("video0");
+       ghost = document.getElementById("ghostpoint0").style.left;
        vidselect = 0;
    break;
    case 1:
-       //console.log( document.getElementById('pause11').style.display );
-       //if (document.getElementById('pause11').style.display == 'none') {
-       if ( (document.getElementById("video1").paused) === false) {
-       
-       $("#play1").show();
-       $("#parrot1").show();
-       $("#pause11").hide();
+       if ( (document.getElementById("video1").paused) === false) {    
+       $("#play1").hide();
+       $("#parrot1").hide();
+       $("#pause11").show();
        $("#replay1").hide();
        player = 1;     
        vidend = 0;
        }
        cuepoint = document.getElementById("cuepoint1");
        video = document.getElementById("video1");
+       ghost = document.getElementById("ghostpoint1").style.left;
        vidselect = 1;
    break;
 
  }
  
- cuepoint.addEventListener("click", function(e) {
+   cuepoint.addEventListener("click", function(e) {
 
- if (!e) {
-      e = window.event;
-     } //get the latest windows event if it isn't set
-     try {
-       //calculate the current time based on position of mouse cursor in canvas box
-     video.currentTime = video.duration * (e.offsetX / cuepoint.clientWidth);
+    if (!e) {e = window.event;}
+      
+    if ( ghost <= (80 +'%') && ghost != (100 +'%') ) {
 
-     removeEventListener('click', cuepoint, false)
-     }
-     catch (err) {
-       // Fail silently but show in F12 developer tools console
-     if (window.console && console.error("Error:" + err));
-     }
- }, true);
+       try {video.currentTime = video.duration * (e.offsetX / cuepoint.clientWidth);removeEventListener('click', cuepoint, false)}
+       catch (err) {if (window.console && console.error("Error:" + err));}
+    }
 
-     video.addEventListener("timeupdate", updatePlayed, true);
+   }, true);
+      
+      video.addEventListener("timeupdate", updatePlayed, true);
 }
    
 
@@ -930,7 +922,12 @@ function togglePlayPause(id) {
         document.getElementById("played0").setAttribute("aria-valuenow",0);
         document.getElementById("played0").setAttribute("aria-valuetext",0);
         document.getElementById("played0").style.width = 0 + "%";
-        
+
+        document.getElementById("pause02").classList.add('playover');
+        document.getElementById("pause02").classList.remove("fill");
+        document.getElementById("pause03").classList.add('playover');
+        document.getElementById("pause03").classList.remove("fill");
+
         $("#replay0").hide();
         $("#parrot0").hide();
         $("#play0").hide();
@@ -981,6 +978,11 @@ function togglePlayPause(id) {
          document.getElementById("played1").setAttribute("aria-valuenow",0);
          document.getElementById("played1").setAttribute("aria-valuetext",0);
          document.getElementById("played1").style.width = 0 + "%";
+
+         document.getElementById("pause12").classList.add('playover');
+         document.getElementById("pause12").classList.remove("fill");
+         document.getElementById("pause13").classList.add('playover');
+         document.getElementById("pause13").classList.remove("fill");
         
          $("#replay1").hide();
          $("#parrot1").hide();
@@ -1104,7 +1106,7 @@ function updateProgress() {
         playing = 1;
 
         if (Math.floor(document.getElementById("video0").currentTime) == Math.floor( document.getElementById("video0").duration)) {
-        //  video ended
+        // video ended
         //(document.getElementById("video0")).removeEventListener("timeupdate", updateProgress, false);
            $("#parrot0").hide();
            $("#pause01").hide();
@@ -1143,8 +1145,8 @@ function updateProgress() {
         document.getElementById("played1").style.width = value + "%";
         playing = 1;
 
-        if (Math.floor(document.getElementById("video1").currentTime) == Math.floor( document.getElementById("video1").duration)) { //   video ended
-        //  video ended
+        if (Math.floor(document.getElementById("video1").currentTime) == Math.floor( document.getElementById("video1").duration)) { 
+        // video ended
         //(document.getElementById("video1")).removeEventListener("timeupdate", updateProgress, false);	
            $("#parrot1").hide();
            $("#pause11").hide();
@@ -1205,14 +1207,16 @@ function updatePlayed() {
            $("#replay0").show();
 
            /* optional * display other videos options */
-           document.getElementById("playbar0").style.visibility = 'hidden';
-           document.getElementById("outro0").style.display = 'block';
-           playing = 0;
+           // document.getElementById("playbar0").style.visibility = 'hidden';
+           // document.getElementById("outro0").style.display = 'block';
            /* optional * display other videos options */
+
+           //cntEnter(vidselect); // optional display controls on video end */
 
            vidend = 1;
            clearTimeout(vidleave);
 
+           playing = 0;
            if (playmouseon == 1){
              document.getElementById("replay-icon0").classList.add('playover');
              document.getElementById("replay-icon0").classList.remove("fill");
@@ -1222,7 +1226,7 @@ function updatePlayed() {
            }
 
            playoff = 0;
-           }}, 100);
+           }}, 10);
         }
         
         clearTimeout(playoff); 
@@ -1253,16 +1257,18 @@ function updatePlayed() {
            $("#pause11").hide();
            $("#play1").hide();
            $("#replay1").show();
+           
+           /* optional * display other videos options */
+           // document.getElementById("playbar1").style.visibility = 'hidden';
+           // document.getElementById("outro1").style.display = 'block';
+           /* optional * display other videos options */
+
+           //cntEnter(vidselect); // optional display controls on video end */
 
            vidend = 1;
            clearTimeout(vidleave);
-           
-           /* optional * display other videos options */
-           document.getElementById("playbar1").style.visibility = 'hidden';
-           document.getElementById("outro1").style.display = 'block';
-           playing = 0;
-           /* optional * display other videos options */
 
+           playing = 0;
            if (playmouseon == 1){
              document.getElementById("replay-icon1").classList.add('playover');
              document.getElementById("replay-icon1").classList.remove("fill");
@@ -1272,7 +1278,7 @@ function updatePlayed() {
            }
 
            playoff = 0;
-           }}, 100);
+           }}, 10);
         }
         
         clearTimeout(playoff); 
