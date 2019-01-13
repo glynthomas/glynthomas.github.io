@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! home | index.html v1.0.05 | (c) 2019 julayn | julayn.com */-->
+<!--/*! home | index.html v1.0.06 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -413,7 +413,7 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
   
 <script type="text/javascript">
 
-// v1.0.05 simple video wrapper
+// v1.0.06 simple video wrapper
 // styled like you know who
 // quick and dirty!
 // easily extendable, to add another video
@@ -449,9 +449,12 @@ function checkLoad(id) {
     //document.getElementById("vid0shade").classList.add('vp-shade-visible');
     document.getElementById("vid0spin").classList.remove('vp-spin-invisible');
     document.getElementById("vid0spin").classList.add('vp-shade-visible');
+
+    //console.log('buffered end :  ' + document.getElementById("video0").buffered.end(0));
+    //console.log('duration :  ' + document.getElementById("video0").duration);
   
-      if (document.getElementById("video0").readyState === 4) {
- 
+      if (document.getElementById("video0").buffered.end(0) == document.getElementById("video0").duration) {
+
         //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
         //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
         document.getElementById("vid0spin").classList.remove('vp-spin-visible');
@@ -474,7 +477,7 @@ function checkLoad(id) {
     document.getElementById("vid1spin").classList.remove('vp-spin-invisible');
     document.getElementById("vid1spin").classList.add('vp-shade-visible');
   
-      if (document.getElementById("video1").readyState === 4) {
+      if (document.getElementById("video1").buffered.end(0) == document.getElementById("video1").duration) {
 
         //document.getElementById("vid1shade").classList.remove('vp-shade-visible');
         //document.getElementById("vid1shade").classList.add('vp-shade-invisible');
