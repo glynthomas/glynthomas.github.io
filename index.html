@@ -449,11 +449,8 @@ function checkLoad(id) {
     //document.getElementById("vid0shade").classList.add('vp-shade-visible');
     document.getElementById("vid0spin").classList.remove('vp-spin-invisible');
     document.getElementById("vid0spin").classList.add('vp-shade-visible');
-
-    //console.log('buffered end :  ' + document.getElementById("video0").buffered.end(0));
-    //console.log('duration :  ' + document.getElementById("video0").duration);
-  
-      if (document.getElementById("video0").buffered.end(0) == document.getElementById("video0").duration) {
+    
+      if ( (parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 80) {
 
         //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
         //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
@@ -476,8 +473,9 @@ function checkLoad(id) {
     //document.getElementById("vid1shade").classList.add('vp-shade-visible');
     document.getElementById("vid1spin").classList.remove('vp-spin-invisible');
     document.getElementById("vid1spin").classList.add('vp-shade-visible');
+
   
-      if (document.getElementById("video1").buffered.end(0) == document.getElementById("video1").duration) {
+      if ( (parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 80) {
 
         //document.getElementById("vid1shade").classList.remove('vp-shade-visible');
         //document.getElementById("vid1shade").classList.add('vp-shade-invisible');
