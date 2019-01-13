@@ -439,62 +439,54 @@ var ghost;
 document.getElementById("video0").controls = false;
 document.getElementById("video1").controls = false;
 
- 
 function checkLoad(id) {
 
  switch(id) {
   case 0:
     if (preload0 == 0) {
-    //document.getElementById("vid0shade").classList.remove('vp-shade-invisible');
-    //document.getElementById("vid0shade").classList.add('vp-shade-visible');
-    document.getElementById("vid0spin").classList.remove('vp-spin-invisible');
-    document.getElementById("vid0spin").classList.add('vp-shade-visible');
-    
-      if ( (parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 80) {
+  
+    document.getElementById("video0").onprogress = function() {vidLoading(0)};
+    document.getElementById("video0").oncanplaythrough = function() {vidLoad(0)};
 
-        //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
-        //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
-        document.getElementById("vid0spin").classList.remove('vp-spin-visible');
-        document.getElementById("vid0spin").classList.add('vp-spin-invisible');
-  	    preload0 = 1; // loaded!
-
-  	    // console.log('video0 now loaded');
-
+      if (vidLoad(0)) {
+  	    preload0 = 1; // video loaded!
   	    cntLeave(id);
-  	    return true;
-  	  } else {
-  	    setTimeout(checkLoad(0), 100); //return false;
   	  }
   	}
   break;
   case 1:
     if (preload1 == 0) {
-    //document.getElementById("vid1shade").classList.remove('vp-shade-invisible');
-    //document.getElementById("vid1shade").classList.add('vp-shade-visible');
-    document.getElementById("vid1spin").classList.remove('vp-spin-invisible');
-    document.getElementById("vid1spin").classList.add('vp-shade-visible');
 
-  
-      if ( (parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 80) {
+    document.getElementById("video1").onprogress = function() {vidLoading(1)};
+    document.getElementById("video1").oncanplaythrough = function() {vidLoad(1)};
 
-        //document.getElementById("vid1shade").classList.remove('vp-shade-visible');
-        //document.getElementById("vid1shade").classList.add('vp-shade-invisible');
-        document.getElementById("vid1spin").classList.remove('vp-spin-visible');
-        document.getElementById("vid1spin").classList.add('vp-spin-invisible');
-  	    preload1 = 1; // loaded!
-
-  	    // console.log('video1 now loaded');
-
+      if (vidLoad(1)) {
+  	    preload1 = 1; // video loaded!
   	    cntLeave(id);
-  	    return true;
-  	  } else {
-  	    setTimeout(checkLoad(1), 100); //return false;
   	  }
   	}
   break;
  }
  return true;
 }
+
+function vidLoading(id) {
+	console.log("video loading ...");
+	//document.getElementById("vid0shade").classList.remove('vp-shade-invisible');
+    //document.getElementById("vid0shade").classList.add('vp-shade-visible');
+    document.getElementById("vid" + id + "spin").classList.remove('vp-spin-invisible');
+    document.getElementById("vid" + id + "spin").classList.add('vp-shade-visible');
+}
+
+function vidLoad(id) {
+	console.log("video loaded :-)");
+	//document.getElementById("vid0shade").classList.remove('vp-shade-visible');
+    //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
+	document.getElementById("vid" + id + "spin").classList.remove('vp-spin-visible');
+    document.getElementById("vid" + id + "spin").classList.add('vp-spin-invisible');
+    return true;
+}
+
 
 // mouseover mouseout of video area hide controls
 
