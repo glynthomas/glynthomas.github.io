@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! home | index.html v1.0.02 | (c) 2019 julayn | julayn.com */-->
+<!--/*! home | index.html v1.0.05 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -208,6 +208,9 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
 
 </p></section></div></div><div class="vp-overlay-icon-wrapper hidden"><div class="vp-overlay-icon"></div></div><div class="vp-overlay-logo logo hidden"></div></div><nav><button type="button" class="vp-nav-prevButton js-back cloaked" aria-label="Back"><svg class="icon-prev" viewBox="0 0 27 48" preserveAspectRatio="xMidYMid" tabindex="-1"><path class="fill" d="M7.243,24L26.414,4.828c0.781-0.781,0.781-2.047,0-2.828L25,0.586 c-0.781-0.781-2.047-0.781-2.828,0L0.879,21.879c-1.172,1.172-1.172,3.071,0,4.243l21.293,21.293c0.781,0.781,2.047,0.781,2.828,0 L26.414,46c0.781-0.781,0.781-2.047,0-2.828L7.243,24z"></path></svg></button><button type="button" onclick="shareClickoff(0)" class="vp-nav-closeButton js-close" aria-label="Close overlay"><svg class="icon-close-new" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid" tabindex="-1"><path class="fill" d="M8.001 9.416l6.437 6.437a.497.497 0 0 0 .713-.001l.7-.7a.503.503 0 0 0 .002-.714L9.416 8.001l6.437-6.436a.497.497 0 0 0-.001-.713l-.7-.7a.503.503 0 0 0-.714-.002L8.001 6.587 1.565.15a.497.497 0 0 0-.713.001l-.7.7a.503.503 0 0 0-.002.714L6.587 8 .15 14.438a.497.497 0 0 0 .001.713l.7.7a.503.503 0 0 0 .714.002L8 9.416z"></path></svg></button></nav></div></div>
 
+<div id="vid0shade" class="vp-shade vp-shade-invisible"></div>
+<div id="vid0spin" class="vp-spin vp-spin-invisible"> <svg class="vp-spin-trace" viewBox="0 0 50 50"><circle cx="50%" cy="50%" r="20"></circle></svg><svg class="vp-spin-circle" viewBox="0 0 50 50"><circle cx="50%" cy="50%" r="20"></circle></svg> </div>
+
 </div>
 </div>
 </div>
@@ -352,6 +355,9 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
 
 </p></section> </div></div><div class="vp-overlay-icon-wrapper hidden"><div class="vp-overlay-icon"></div></div><div class="vp-overlay-logo logo hidden"></div></div><nav><button type="button" class="vp-nav-prevButton js-back cloaked" aria-label="Back"><svg class="icon-prev" viewBox="0 0 27 48" preserveAspectRatio="xMidYMid" tabindex="-1"><path class="fill" d="M7.243,24L26.414,4.828c0.781-0.781,0.781-2.047,0-2.828L25,0.586 c-0.781-0.781-2.047-0.781-2.828,0L0.879,21.879c-1.172,1.172-1.172,3.071,0,4.243l21.293,21.293c0.781,0.781,2.047,0.781,2.828,0 L26.414,46c0.781-0.781,0.781-2.047,0-2.828L7.243,24z"></path></svg></button><button type="button" onclick="shareClickoff(1)" class="vp-nav-closeButton js-close" aria-label="Close overlay"><svg class="icon-close-new" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid" tabindex="-1"><path class="fill" d="M8.001 9.416l6.437 6.437a.497.497 0 0 0 .713-.001l.7-.7a.503.503 0 0 0 .002-.714L9.416 8.001l6.437-6.436a.497.497 0 0 0-.001-.713l-.7-.7a.503.503 0 0 0-.714-.002L8.001 6.587 1.565.15a.497.497 0 0 0-.713.001l-.7.7a.503.503 0 0 0-.002.714L6.587 8 .15 14.438a.497.497 0 0 0 .001.713l.7.7a.503.503 0 0 0 .714.002L8 9.416z"></path></svg></button></nav></div></div>
 
+<div id="vid1shade" class="vp-shade vp-shade-invisible"></div>
+<div id="vid1spin" class="vp-spin vp-spin-invisible"> <svg class="vp-spin-trace" viewBox="0 0 50 50"><circle cx="50%" cy="50%" r="20"></circle></svg><svg class="vp-spin-circle" viewBox="0 0 50 50"><circle cx="50%" cy="50%" r="20"></circle></svg> </div>
+
 </div>
 </div>
 </div>
@@ -407,7 +413,7 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
   
 <script type="text/javascript">
 
-// v1.0.02 simple video wrapper
+// v1.0.05 simple video wrapper
 // styled like you know who
 // quick and dirty!
 // easily extendable, to add another video
@@ -417,15 +423,77 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
 // grab a handle to the video
 var vidselect;
 var vidleave = 0;
+var player0  = 0;
+var player1  = 0;
+/*  player*  == 0 start * 1 == play */
+/*  playend* == 0 start * 1 == end  */ 
+var vidend0 = 0;
+var vidend1 = 0;
 var playmouseon = 0;
-var player = 0;
-var vidend = 0;
+var preload0 = 0;
+var preload1 = 0;
+var playoff  = 0;
 var ghost;
-var playoff = 0;
 
 // turn off the default controls
 document.getElementById("video0").controls = false;
 document.getElementById("video1").controls = false;
+
+ 
+function checkLoad(id) {
+
+ switch(id) {
+  case 0:
+    if (preload0 == 0) {
+    //document.getElementById("vid0shade").classList.remove('vp-shade-invisible');
+    //document.getElementById("vid0shade").classList.add('vp-shade-visible');
+    document.getElementById("vid0spin").classList.remove('vp-spin-invisible');
+    document.getElementById("vid0spin").classList.add('vp-shade-visible');
+  
+      if (document.getElementById("video0").readyState === 4) {
+ 
+        //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
+        //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
+        document.getElementById("vid0spin").classList.remove('vp-spin-visible');
+        document.getElementById("vid0spin").classList.add('vp-spin-invisible');
+  	    preload0 = 1; // loaded!
+
+  	    // console.log('video0 now loaded');
+
+  	    cntLeave(id);
+  	    return true;
+  	  } else {
+  	    setTimeout(checkLoad(0), 100); //return false;
+  	  }
+  	}
+  break;
+  case 1:
+    if (preload1 == 0) {
+    //document.getElementById("vid1shade").classList.remove('vp-shade-invisible');
+    //document.getElementById("vid1shade").classList.add('vp-shade-visible');
+    document.getElementById("vid1spin").classList.remove('vp-spin-invisible');
+    document.getElementById("vid1spin").classList.add('vp-shade-visible');
+  
+      if (document.getElementById("video1").readyState === 4) {
+
+        //document.getElementById("vid1shade").classList.remove('vp-shade-visible');
+        //document.getElementById("vid1shade").classList.add('vp-shade-invisible');
+        document.getElementById("vid1spin").classList.remove('vp-spin-visible');
+        document.getElementById("vid1spin").classList.add('vp-spin-invisible');
+  	    preload1 = 1; // loaded!
+
+  	    // console.log('video1 now loaded');
+
+  	    cntLeave(id);
+  	    return true;
+  	  } else {
+  	    setTimeout(checkLoad(1), 100); //return false;
+  	  }
+  	}
+  break;
+ }
+ return true;
+}
 
 // mouseover mouseout of video area hide controls
 
@@ -536,69 +604,103 @@ function shareOut(id) {
   }
 }
 
-
 function cntEnter(id) {
-
- //if (vidend == 0) {
-
-  switch(id) {
-  
-    case 0:
-       document.getElementById("playpause0").style.opacity = "1";
-       document.getElementById("playbar0").style.opacity = '1';
-       document.getElementById("butshare0").style.opacity = '1';
-       vidselect = 0;
-    break;
-    case 1:
-       document.getElementById("playpause1").style.opacity = "1";
-       document.getElementById("playbar1").style.opacity = '1';
-       document.getElementById("butshare1").style.opacity = '1';
-       vidselect = 1;
-    break;
+ switch(id) {
+   case 0:
+      document.getElementById("playpause0").style.opacity = "1";
+      document.getElementById("playbar0").style.opacity = '1';
+      document.getElementById("butshare0").style.opacity = '1';
+      vidselect = 0;
+   break;
+   case 1:
+      document.getElementById("playpause1").style.opacity = "1";
+      document.getElementById("playbar1").style.opacity = '1';
+      document.getElementById("butshare1").style.opacity = '1';
+      vidselect = 1;
+   break;
   }
     clearTimeout(vidleave);
- //}
 }
 
 function cntLeave(id) {
 
- // all video's Id's could be combined, all
- // videos would hide controls after first
- // play, however, adding static in progress
- // pictures could create user confusion !
-
- //if (vidend == 0 && player == 1) {
-
- if (player == 1) {
-
   switch(id) {
-  
    case 0:
-      vidleave = setTimeout(function(){
+     if (player0 == 1) {                   /* hide replay links after play */
+     //if (player0 == 1 && vidend0 == 0) { /* show replay links after play * enabled line 1271 & 1322 */
+      vidleave = setTimeout(function(){    
       document.getElementById("playpause0").style.opacity = '0';
       document.getElementById("playbar0").style.opacity = '0';
       document.getElementById("butshare0").style.opacity = '0';
-
       document.getElementById("replay0").classList.add('fill');
       document.getElementById("replay0").classList.remove("playover");
-      }, 700);
+      }, 1000);
       vidselect = 0;
+     }
    break;
    case 1:
+     if (player1 == 1) {                   /* hide replay links after play */
+     //if (player0 == 1 && vidend1 == 0) { /* show replay links after play * enabled line 1271 & 1322 */
       vidleave = setTimeout(function(){
       document.getElementById("playpause1").style.opacity = '0';
       document.getElementById("playbar1").style.opacity = '0';
       document.getElementById("butshare1").style.opacity = '0';
-
       document.getElementById("replay1").classList.add('fill');
       document.getElementById("replay1").classList.remove("playover");
-      }, 700);
+      }, 1000);
       vidselect = 1;
+     }
    break;
  }
  playmouseon = 0;
- }
 }
+
+/* start * for mobile devices hack */
+
+$('.player-0').on('mouseenter touchstart', function(){
+      document.getElementById("playpause0").style.opacity = "1";
+      document.getElementById("playbar0").style.opacity = '1';
+      document.getElementById("butshare0").style.opacity = '1';
+      vidselect = 0;
+});
+
+$('.player-0').on('mouseleave touchend', function(){
+
+   if (player0 == 1) {
+      vidleave = setTimeout(function(){    
+      document.getElementById("playpause0").style.opacity = '0';
+      document.getElementById("playbar0").style.opacity = '0';
+      document.getElementById("butshare0").style.opacity = '0';
+      //document.getElementById("replay0").classList.add('fill');
+      //document.getElementById("replay0").classList.remove("playover");
+      }, 1000);
+      vidselect = 0;
+   }
+});
+
+$('.player-1').on('mouseenter touchstart', function(){
+      document.getElementById("playpause1").style.opacity = "1";
+      document.getElementById("playbar1").style.opacity = '1';
+      document.getElementById("butshare1").style.opacity = '1';
+      vidselect = 1;
+      clearTimeout(vidleave);
+});
+
+$('.player-1').on('mouseleave touchend', function(){
+ 
+   if (player1 == 1) {
+      vidleave = setTimeout(function(){
+      document.getElementById("playpause1").style.opacity = '0';
+      document.getElementById("playbar1").style.opacity = '0';
+      document.getElementById("butshare1").style.opacity = '0';
+      //document.getElementById("replay1").classList.add('fill');
+      //document.getElementById("replay1").classList.remove("playover");
+      }, 1000);
+      vidselect = 1;
+   }
+});
+
+/* end * for mobile devices hack */
 
 function playEnter(id) {
  playmouseon = 1;
@@ -606,91 +708,71 @@ function playEnter(id) {
 
 function playOver(id) {
 
- if (vidend == 0) {
-
-  switch(id) {
-  
+  switch(id) {  
     case 0:
-       document.getElementById("parrot0").classList.add('playover');
-       document.getElementById("parrot0").classList.remove('fill');
-       document.getElementById("pause02").classList.add("playover");
-       document.getElementById("pause02").classList.remove("fill");
-       document.getElementById("pause03").classList.add("playover");
-       document.getElementById("pause03").classList.remove("fill");
-       vidselect = 0;
+      if (vidend0 == 1 ){ // replay
+      	 document.getElementById("replay-icon0").classList.add('playover');
+         document.getElementById("replay-icon0").classList.remove('fill');
+        } else {  
+         document.getElementById("parrot0").classList.add('playover');
+         document.getElementById("parrot0").classList.remove('fill');
+         document.getElementById("pause02").classList.add("playover");
+         document.getElementById("pause02").classList.remove("fill");
+         document.getElementById("pause03").classList.add("playover");
+         document.getElementById("pause03").classList.remove("fill");
+        }
+        vidselect = 0;
     break;
     case 1:
-       document.getElementById("parrot1").classList.add('playover');
-       document.getElementById("parrot1").classList.remove('fill');
-       document.getElementById("pause12").classList.add("playover");
-       document.getElementById("pause12").classList.remove("fill");
-       document.getElementById("pause13").classList.add("playover");
-       document.getElementById("pause13").classList.remove("fill");
-       vidselect = 1;
+        if (vidend1 == 1 ){ // replay
+         document.getElementById("replay-icon1").classList.add('playover');
+         document.getElementById("replay-icon1").classList.remove('fill'); 
+        } else { 
+         document.getElementById("parrot1").classList.add('playover');
+         document.getElementById("parrot1").classList.remove('fill');
+         document.getElementById("pause12").classList.add("playover");
+         document.getElementById("pause12").classList.remove("fill");
+         document.getElementById("pause13").classList.add("playover");
+         document.getElementById("pause13").classList.remove("fill");   
+        }
+      vidselect = 1; 
     break;
   }
- 
- } else {
-
-  switch(id) { // replay
-  
-    case 0:
-       document.getElementById("replay-icon0").classList.add('playover');
-       document.getElementById("replay-icon0").classList.remove('fill');
-       vidselect = 0;
-    break;
-    case 1:
-       document.getElementById("replay-icon1").classList.add('playover');
-       document.getElementById("replay-icon1").classList.remove('fill');
-       vidselect = 1;
-    break;
-  }
- }
- playmouseon = 0;
+ playmouseon = 1;
 }
 
 function playOut(id) {
 
- if (vidend == 0) {
-
   switch(id) {
-  
     case 0:
-       document.getElementById("parrot0").classList.remove('playover');
-       document.getElementById("parrot0").classList.add("fill");
-       document.getElementById("pause02").classList.remove('playover');
-       document.getElementById("pause02").classList.add('fill');
-       document.getElementById("pause03").classList.remove('playover');
-       document.getElementById("pause03").classList.add("fill");
-       vidselect = 0;
+      if (vidend0 == 1 ){ // replay
+        document.getElementById("replay-icon0").classList.add('fill');
+        document.getElementById("replay-icon0").classList.remove("playover");
+      } else {
+        document.getElementById("parrot0").classList.remove('playover');
+        document.getElementById("parrot0").classList.add("fill");
+        document.getElementById("pause02").classList.remove('playover');
+        document.getElementById("pause02").classList.add('fill');
+        document.getElementById("pause03").classList.remove('playover');
+        document.getElementById("pause03").classList.add("fill");
+      }
+      vidselect = 0;
     break;
     case 1:
-       document.getElementById("parrot1").classList.remove('playover');
-       document.getElementById("parrot1").classList.add("fill");
-       document.getElementById("pause12").classList.remove('playover');
-       document.getElementById("pause12").classList.add('fill');
-       document.getElementById("pause13").classList.remove('playover');
-       document.getElementById("pause13").classList.add("fill");
-       vidselect = 1;
+      if (vidend1 == 1 ){ // replay
+        document.getElementById("replay-icon1").classList.add('fill');
+        document.getElementById("replay-icon1").classList.remove("playover");
+      } else { 
+        document.getElementById("parrot1").classList.remove('playover');
+        document.getElementById("parrot1").classList.add("fill");
+        document.getElementById("pause12").classList.remove('playover');
+        document.getElementById("pause12").classList.add('fill');
+        document.getElementById("pause13").classList.remove('playover');
+        document.getElementById("pause13").classList.add("fill");
+      }	
+      vidselect = 1;
     break;
   }
-     
- } else {
-
-  switch(id) { // replay
-  
-    case 0:
-       document.getElementById("replay-icon0").classList.add('fill');
-       document.getElementById("replay-icon0").classList.remove("playover");
-       vidselect = 0;
-    break;
-    case 1:
-       document.getElementById("replay-icon1").classList.add('fill');
-       document.getElementById("replay-icon1").classList.remove("playover");
-       vidselect = 1;
-    break;
-  }
- }
  playmouseon = 0;
 }
 
@@ -862,10 +944,8 @@ function cuePoint(id) {
        $("#play0").hide();
        $("#parrot0").hide();
        $("#pause01").show();
-       $("#replay0").hide();
-       player = 1;     
-       vidend = 0;
-       }
+       $("#replay0").hide();   
+       } 
        cuepoint = document.getElementById("cuepoint0");
        video = document.getElementById("video0");
        ghost = document.getElementById("ghostpoint0").style.left;
@@ -876,10 +956,8 @@ function cuePoint(id) {
        $("#play1").hide();
        $("#parrot1").hide();
        $("#pause11").show();
-       $("#replay1").hide();
-       player = 1;     
-       vidend = 0;
-       }
+       $("#replay1").hide();    
+       } 
        cuepoint = document.getElementById("cuepoint1");
        video = document.getElementById("video1");
        ghost = document.getElementById("ghostpoint1").style.left;
@@ -932,11 +1010,14 @@ function togglePlayPause(id) {
         $("#parrot0").hide();
         $("#play0").hide();
         $("#pause01").show();
-        player = 1;
-        vidend = 0;
+        player0 = 1;
+        vidend0 = 0;
+      
         (document.getElementById("video0")).play();
-       }
-       else if (document.getElementById("video0").paused) {
+    
+        } else if (document.getElementById("video0").paused) {
+
+        if (checkLoad(0)) {
 
         document.getElementById("pause02").classList.add('playover');
         document.getElementById("pause02").classList.remove("fill");
@@ -947,18 +1028,22 @@ function togglePlayPause(id) {
        	$("#parrot0").hide();
         $("#play0").hide();
         $("#pause01").show();
-        player = 1;       
-        vidend = 0;
+        player0 = 1;
+        vidend0 = 0;       
+
         (document.getElementById("video0")).play();
+
+        }
+
         } else {
 
         $("#replay0").hide();
         $("#parrot0").show();
         $("#play0").show();
         $("#pause01").hide();
-        player = 1;       
-        vidend = 0;
-        // player = 0; controls only hide while playing, if // controls hide after first play!
+        player0 = 1;
+        vidend0 = 0;       
+  
         (document.getElementById("video0")).pause();
        }
         vidselect = 0;
@@ -972,50 +1057,57 @@ function togglePlayPause(id) {
        settingClose(1);
        if (document.getElementById("video1").ended) {
        
-         document.getElementById("loaded1").setAttribute("aria-valuenow",0);
-         document.getElementById("loaded1").setAttribute("aria-valuetext",0);
-         document.getElementById("loaded1").style.width = 0 + "%";
-         document.getElementById("played1").setAttribute("aria-valuenow",0);
-         document.getElementById("played1").setAttribute("aria-valuetext",0);
-         document.getElementById("played1").style.width = 0 + "%";
+        document.getElementById("loaded1").setAttribute("aria-valuenow",0);
+        document.getElementById("loaded1").setAttribute("aria-valuetext",0);
+        document.getElementById("loaded1").style.width = 0 + "%";
+        document.getElementById("played1").setAttribute("aria-valuenow",0);
+        document.getElementById("played1").setAttribute("aria-valuetext",0);
+        document.getElementById("played1").style.width = 0 + "%";
 
-         document.getElementById("pause12").classList.add('playover');
-         document.getElementById("pause12").classList.remove("fill");
-         document.getElementById("pause13").classList.add('playover');
-         document.getElementById("pause13").classList.remove("fill");
+        document.getElementById("pause12").classList.add('playover');
+        document.getElementById("pause12").classList.remove("fill");
+        document.getElementById("pause13").classList.add('playover');
+        document.getElementById("pause13").classList.remove("fill");
         
-         $("#replay1").hide();
-         $("#parrot1").hide();
-         $("#play1").hide();
-         $("#pause11").show();
-         player = 1;
-         vidend = 0;
-         (document.getElementById("video1")).play();
+        $("#replay1").hide();
+        $("#parrot1").hide();
+        $("#play1").hide();
+        $("#pause11").show();
+        player1 = 1;
+        vidend1 = 0;
+
+        (document.getElementById("video1")).play();
+
+        } else if (document.getElementById("video1").paused) {
+
+        if (checkLoad(1)) {
+
+        document.getElementById("pause12").classList.add('playover');
+        document.getElementById("pause12").classList.remove("fill");
+        document.getElementById("pause13").classList.add('playover');
+        document.getElementById("pause13").classList.remove("fill");
+
+       	$("#replay1").hide();
+       	$("#parrot1").hide();
+        $("#play1").hide();
+        $("#pause11").show();
+        player1 = 1;
+        vidend1 = 0;
+  
+        (document.getElementById("video1")).play();
+
         }
-        else if (document.getElementById("video1").paused) {
 
-         document.getElementById("pause12").classList.add('playover');
-         document.getElementById("pause12").classList.remove("fill");
-         document.getElementById("pause13").classList.add('playover');
-         document.getElementById("pause13").classList.remove("fill");
+        } else {
 
-       	 $("#replay1").hide();
-       	 $("#parrot1").hide();
-         $("#play1").hide();
-         $("#pause11").show();
-         player = 1;
-         vidend = 0;
-         (document.getElementById("video1")).play();
-
-         } else {
-         $("#replay1").hide();
-         $("#parrot1").show();
-         $("#play1").show();
-         $("#pause11").hide();
-         player = 1;       
-         vidend = 0;
-         // player = 0; controls only hide while playing, if // controls hide after first play!
-         (document.getElementById("video1")).pause();
+        $("#replay1").hide();
+        $("#parrot1").show();
+        $("#play1").show();
+        $("#pause11").hide();
+        player1 = 1;
+        vidend1 = 0;       
+ 
+        (document.getElementById("video1")).pause();
        }
         vidselect = 1;
     break;
@@ -1031,10 +1123,7 @@ function justPause(id) {
          $("#replay0").hide();
          $("#parrot0").show();
          $("#play0").show();
-         $("#pause01").hide();
-         player = 1;       
-         vidend = 0;
-        // player = 0; controls only hide while playing, if // controls hide after first play!
+         $("#pause01").hide();      
         (document.getElementById("video0")).pause();
      break;
 
@@ -1042,10 +1131,7 @@ function justPause(id) {
          $("#replay1").hide();
          $("#parrot1").show();
          $("#play1").show();
-         $("#pause11").hide();
-         player = 1;       
-         vidend = 0;
-        // player = 0; controls only hide while playing, if // controls hide after first play!
+         $("#pause11").hide();      
         (document.getElementById("video1")).pause();
      break;
 
@@ -1063,8 +1149,6 @@ function justPlay(id) {
         $("#parrot0").hide();
         $("#play0").hide();
         $("#pause01").show();
-        player = 1;
-        vidend = 0;
         (document.getElementById("video0")).play();
      break;
 
@@ -1073,8 +1157,6 @@ function justPlay(id) {
         $("#parrot1").show();
         $("#play1").show();
         $("#pause11").hide();
-        player = 1;
-        vidend = 0;
         (document.getElementById("video1")).play();
      break;
 
@@ -1083,41 +1165,30 @@ function justPlay(id) {
 }
 
 function updateProgress() {
-
   var vload = 0;
   var value = 0;
-
   switch(vidselect) {
-  
    case 0:
-
         if ((Math.floor((109 / document.getElementById("video0").duration) * document.getElementById("video0").currentTime)) < 101) {vload = Math.floor((109 / document.getElementById("video0").duration) * document.getElementById("video0").currentTime);} else {vload = 100;}
-
         document.getElementById("loaded0").setAttribute("aria-valuenow",vload);
         document.getElementById("loaded0").setAttribute("aria-valuetext",vload);
-        document.getElementById("loaded0").style.width = vload + "%";
-                                                        
+        document.getElementById("loaded0").style.width = vload + "%";                                             
         if ( document.getElementById("video0").currentTime > 0) { value = Math.floor((100 / document.getElementById("video0").duration) * document.getElementById("video0").currentTime);}
-
         document.getElementById("played0").setAttribute("aria-valuenow",value);
         document.getElementById("played0").setAttribute("aria-valuetext",value);
         document.getElementById("played0").style.width = value + "%";
-        playing = 1;
-
+        player0 = 1;
         if (Math.floor(document.getElementById("video0").currentTime) == Math.floor( document.getElementById("video0").duration)) {
-        // video ended
-        //(document.getElementById("video0")).removeEventListener("timeupdate", updateProgress, false);
            $("#parrot0").hide();
            $("#pause01").hide();
            $("#replay0").show();
            $("#play0").hide();
+           vidend0 = 1;
            document.getElementById("playbar0").style.visibility = 'hidden';
-           vidend = 1;
            clearTimeout(vidleave);
            document.getElementById("outro0").style.display = 'block';
            document.getElementById("loaded0").style.width = "0%";
            document.getElementById("played0").style.width = "0%";
-           playing = 0;
         }
         if (playmouseon == 1){
             document.getElementById("replay-icon0").classList.add('playover');
@@ -1126,38 +1197,29 @@ function updateProgress() {
             document.getElementById("replay-icon0").classList.remove('playover');
             document.getElementById("replay-icon0").classList.add("fill");
         }
-
    break;
    
    case 1:
- 
         if ((Math.floor((109 / document.getElementById("video1").duration) * document.getElementById("video1").currentTime)) < 101) {vload = Math.floor((109 / document.getElementById("video1").duration) * document.getElementById("video1").currentTime);} else {vload = 100;}
-
         document.getElementById("loaded1").setAttribute("aria-valuenow",vload);
         document.getElementById("loaded1").setAttribute("aria-valuetext",vload);
-        document.getElementById("loaded1").style.width = vload + "%";
-                                                         
+        document.getElementById("loaded1").style.width = vload + "%";                                          
         if ( document.getElementById("video1").currentTime > 0) { value = Math.floor((100 / document.getElementById("video1").duration) *   document.getElementById("video1").currentTime);}
-
         document.getElementById("played1").setAttribute("aria-valuenow",value);
         document.getElementById("played1").setAttribute("aria-valuetext",value);
         document.getElementById("played1").style.width = value + "%";
-        playing = 1;
-
+        player1 = 1;
         if (Math.floor(document.getElementById("video1").currentTime) == Math.floor( document.getElementById("video1").duration)) { 
-        // video ended
-        //(document.getElementById("video1")).removeEventListener("timeupdate", updateProgress, false);	
            $("#parrot1").hide();
            $("#pause11").hide();
            $("#replay1").show();
            $("#play1").hide();
+           vidend1 = 1;
            document.getElementById("playbar1").style.visibility = 'hidden';
-           vidend = 1;
            clearTimeout(vidleave);
            document.getElementById("outro1").style.display = 'block';
            document.getElementById("loaded1").style.width = "0%";
            document.getElementById("played1").style.width = "0%";
-           playing = 0;
         }
         if (playmouseon == 1){
             document.getElementById("replay-icon1").classList.add('playover');
@@ -1167,7 +1229,6 @@ function updateProgress() {
             document.getElementById("replay-icon1").classList.add("fill");
         }
    break;
-   
   }
 }
 
@@ -1192,7 +1253,7 @@ function updatePlayed() {
         document.getElementById("loaded0").setAttribute("aria-valuenow",vload);
         document.getElementById("loaded0").setAttribute("aria-valuetext",vload);
         document.getElementById("loaded0").style.width = vload + "%";
-        playing = 1;
+        player0 = 1;
 
         if ( (Math.floor(document.getElementById("video0").currentTime) ) == (Math.floor( document.getElementById("video0").duration)) ) {
         
@@ -1204,18 +1265,15 @@ function updatePlayed() {
            $("#pause01").hide();
            $("#play0").hide();
            $("#replay0").show();
+           vidend0 = 1;
 
-           /* optional * display other videos options */
+           /* optional * display video link options */
            // document.getElementById("playbar0").style.visibility = 'hidden';
            // document.getElementById("outro0").style.display = 'block';
-           /* optional * display other videos options */
+           /* optional * display videos link options */
 
            //cntEnter(vidselect); // optional display controls on video end */
 
-           vidend = 1;
-           clearTimeout(vidleave);
-
-           playing = 0;
            if (playmouseon == 1){
              document.getElementById("replay-icon0").classList.add('playover');
              document.getElementById("replay-icon0").classList.remove("fill");
@@ -1224,11 +1282,21 @@ function updatePlayed() {
              document.getElementById("replay-icon0").classList.add("fill");
            }
 
+           clearTimeout(vidleave);
+
            playoff = 0;
-           }}, 10);
+           }}, 100);
         }
         
-        clearTimeout(playoff); 
+        clearTimeout(playoff);
+
+        if (document.getElementById("video0").ended == true) { /* just to be sure :-) */
+        	$("#parrot0").hide();
+        	$("#pause01").hide();
+        	$("#play0").hide();
+        	$("#replay0").show();
+        	vidend0 = 1;
+        } 
 
    break;
    case 1:
@@ -1245,7 +1313,7 @@ function updatePlayed() {
         document.getElementById("loaded1").setAttribute("aria-valuenow",vload);
         document.getElementById("loaded1").setAttribute("aria-valuetext",vload);
         document.getElementById("loaded1").style.width = vload + "%";
-        playing = 1;
+        player1 = 1;
 
         if ( (Math.floor(document.getElementById("video1").currentTime) ) == (Math.floor( document.getElementById("video1").duration)) ) {
         
@@ -1256,18 +1324,15 @@ function updatePlayed() {
            $("#pause11").hide();
            $("#play1").hide();
            $("#replay1").show();
+           vidend1 = 1;
            
-           /* optional * display other videos options */
+           /* optional * display video link options */
            // document.getElementById("playbar1").style.visibility = 'hidden';
            // document.getElementById("outro1").style.display = 'block';
-           /* optional * display other videos options */
+           /* optional * display video link options */
 
            //cntEnter(vidselect); // optional display controls on video end */
 
-           vidend = 1;
-           clearTimeout(vidleave);
-
-           playing = 0;
            if (playmouseon == 1){
              document.getElementById("replay-icon1").classList.add('playover');
              document.getElementById("replay-icon1").classList.remove("fill");
@@ -1276,11 +1341,21 @@ function updatePlayed() {
              document.getElementById("replay-icon1").classList.add("fill");
            }
 
+           clearTimeout(vidleave);
+
            playoff = 0;
-           }}, 10);
+           }}, 100);
         }
-        
+      
         clearTimeout(playoff); 
+
+        if (document.getElementById("video1").ended == true) { /* just to be sure :-) */
+        	$("#parrot1").hide();
+        	$("#pause11").hide();
+        	$("#play1").hide();
+        	$("#replay1").show();
+        	vidend1 = 1;
+        }
 
    break;
   }
