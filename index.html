@@ -440,14 +440,7 @@ document.getElementById("video1").controls = false;
 //
 // - the timout of togglePlayPause(id) is too long (the controls will not hide for the
 //   length of video), on subsequent plays, the controls hide too quickly ...
-//
-// - the play button's icon does not update correctly, but only when touched off !   
-//
 
-//function isMobile() {
-//  try{ document.createEvent("TouchEvent"); return true; }
-//  catch(e){ return false; }
-//}
 
 // after searching around the internet, seemingly none of the events or hacks associated
 // with detecting a video loading on an iphone, ready to play, % buffered, communicating
@@ -455,6 +448,23 @@ document.getElementById("video1").controls = false;
 // therefore, to keep it simple, as a video is buffering == loading when selected to play;
 // play video (start buffering), shaded with spinner indicating buffering,
 // finally remove shade / spinner, upon update of played progress, continue playing video ... 
+
+// alt function ...
+// function isMobile() {
+//   if(window.innerWidth <= 800 && window.innerHeight <= 600 && localStorage.mobile) {return true;} else {return false;}
+// }
+
+var ismobile = isMobile();
+
+function isMobile() {
+	 
+ if (typeof window.matchMedia != 'undefined' || typeof window.msMatchMedia != 'undefined'){
+     var mq = window.matchMedia("(pointer:coarse)");
+     return mq.matches;
+ }
+     return false;
+}
+
 
 function checkLoad(id) {
 
@@ -470,16 +480,8 @@ function checkLoad(id) {
     	  (document.getElementById("video0")).play;
     	  // (document.getElementById("video0")).play();
 
-    	  vidleave = setTimeout(function(){    
-          document.getElementById("playpause0").style.opacity = '0';
-          document.getElementById("playbar0").style.opacity = '0';
-          document.getElementById("butshare0").style.opacity = '0';
-          document.getElementById("replay0").classList.add('fill');
-          document.getElementById("replay0").classList.remove("playover");
-          }, 500);
-          vidselect = 0;
-
           preload0 = 1; // video loaded!
+          cntLeave(0);
     }
   break;
   case 1:
@@ -507,17 +509,9 @@ function checkLoad(id) {
           // console.log('preload1 == ' + preload1);
           //}                   
           //},1);
-
-          vidleave = setTimeout(function(){
-          document.getElementById("playpause1").style.opacity = '0';
-          document.getElementById("playbar1").style.opacity = '0';
-          document.getElementById("butshare1").style.opacity = '0';
-          document.getElementById("replay1").classList.add('fill');
-          document.getElementById("replay1").classList.remove("playover");
-          }, 500);
-          vidselect = 1;
-    
+  
           preload1 = 1; // video loaded!
+          cntLeave(1)
     }
   break;
  }
@@ -653,6 +647,10 @@ function cntEnter(id) {
 
 function cntLeave(id) {
 
+  var showtime = 2000;
+
+  if (ismobile) {showtime = 500;}
+
   switch(id) {
    case 0:
      if (player0 == 1) {                   /* hide replay links after play */
@@ -663,7 +661,7 @@ function cntLeave(id) {
       document.getElementById("butshare0").style.opacity = '0';
       document.getElementById("replay0").classList.add('fill');
       document.getElementById("replay0").classList.remove("playover");
-      }, 2000);
+      }, showtime);
       vidselect = 0;
      }
    break;
@@ -676,7 +674,7 @@ function cntLeave(id) {
       document.getElementById("butshare1").style.opacity = '0';
       document.getElementById("replay1").classList.add('fill');
       document.getElementById("replay1").classList.remove("playover");
-      }, 2000);
+      }, showtime);
       vidselect = 1;
      }
    break;
@@ -713,6 +711,10 @@ $('.player-0').on('mouseleave touchend', function(){
 });
 
 $('.player-1').on('mouseenter touchstart', function(){
+	  document.getElementById("playpause1").style.opacity = '0';
+      document.getElementById("playbar1").style.opacity = '0';
+      document.getElementById("butshare1").style.opacity = '0';
+
       document.getElementById("playpause1").style.opacity = "1";
       document.getElementById("playbar1").style.opacity = '1';
       document.getElementById("butshare1").style.opacity = '1';
