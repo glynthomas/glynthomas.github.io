@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! home | index.html v1.0.09 | (c) 2019 julayn | julayn.com */-->
+<!--/*! home | index.html v1.0.11 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -413,7 +413,7 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
   
 <script type="text/javascript">
 
-// v1.0.09 simple video wrapper, styled like you know who a bit quick and dirty!
+// v1.0.11 simple video wrapper, styled like you know who a bit quick and dirty!
 // easily extendable, to add another video, just increment the id and passed id
 // no javascript objects allowed :-)
 
@@ -436,22 +436,31 @@ var ghost;
 document.getElementById("video0").controls = false;
 document.getElementById("video1").controls = false;
 
-// after searching around the internet, seemingly none of the events associated detecting a
-// video loading on an iphone, ready to play, buffered, and communicating this status
-// to the user seem to work consistently without some addtional programatic issues...
+// for touch screen devices, on first play;
+//
+// - the timout of togglePlayPause(id) is too long (the controls will not hide for the
+//   length of video), on subsequent plays, the controls hide too quickly ...
+//
+// - the play button's icon does not update correctly, but only when touched off !   
+//
+
+//function isMobile() {
+//  try{ document.createEvent("TouchEvent"); return true; }
+//  catch(e){ return false; }
+//}
+
+// after searching around the internet, seemingly none of the events or hacks associated
+// with detecting a video loading on an iphone, ready to play, % buffered, communicating
+// status to user seem not to work consistently without some programatic issues...**
 // therefore, to keep it simple, as a video is buffering == loading when selected to play;
 // play video (start buffering), shaded with spinner indicating buffering,
 // finally remove shade / spinner, upon update of played progress, continue playing video ... 
-
 
 function checkLoad(id) {
 
  switch(id) {
   case 0:
     if (preload0 == 0) {
-
-    	  // console.log('buffered end :  ' + document.getElementById("video0").buffered.end(0));
-          // console.log('duration :  ' + document.getElementById("video0").duration);
 
           //document.getElementById("vid0shade").classList.remove('vp-shade-invisible');
           //document.getElementById("vid0shade").classList.add('vp-shade-visible');
@@ -461,31 +470,20 @@ function checkLoad(id) {
     	  (document.getElementById("video0")).play;
     	  // (document.getElementById("video0")).play();
 
-    	  // console.log('buffered end :  ' + document.getElementById("video0").buffered.end(0));
-          // console.log('duration :  ' + document.getElementById("video0").duration);
+    	  vidleave = setTimeout(function(){    
+          document.getElementById("playpause0").style.opacity = '0';
+          document.getElementById("playbar0").style.opacity = '0';
+          document.getElementById("butshare0").style.opacity = '0';
+          document.getElementById("replay0").classList.add('fill');
+          document.getElementById("replay0").classList.remove("playover");
+          }, 500);
+          vidselect = 0;
 
-          // var playready = setInterval(()=>{
-          // if((parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 1 ){
-
-          //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
-          //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
-          //document.getElementById("vid0spin").classList.remove('vp-spin-visible');
-          //document.getElementById("vid0spin").classList.add('vp-spin-invisible'); 
-          // you can now stop checking every half second
-          //clearInterval(playready);
           preload0 = 1; // video loaded!
-          //console.log('preload0 == ' + preload0);
-          //}                   
-          //},1);
-  	    
- 	   cntLeave(id);
     }
   break;
   case 1:
     if (preload1 == 0) {
-
-    	  // console.log('buffered end :  ' + document.getElementById("video1").buffered.end(0));
-          // console.log('duration :  ' + document.getElementById("video1").duration);
 
           //document.getElementById("vid1shade").classList.remove('vp-shade-invisible');
           //document.getElementById("vid1shade").classList.add('vp-shade-visible');
@@ -498,22 +496,28 @@ function checkLoad(id) {
     	  // console.log('buffered end :  ' + document.getElementById("video1").buffered.end(0));
           // console.log('duration :  ' + document.getElementById("video1").duration);
 
-          // var playready = setInterval(()=>{
+          // var playready = setInterval(()=>{ ** does not work on mobile !
           // if((parseInt((document.getElementById("video1").buffered.end(0) / document.getElementById("video1").duration)) * 100) > 1 ){
+          // document.getElementById("vid0shade").classList.remove('vp-shade-visible');
+          // document.getElementById("vid0shade").classList.add('vp-shade-invisible');
+          // document.getElementById("vid1spin").classList.remove('vp-spin-visible');
+          // document.getElementById("vid1spin").classList.add('vp-spin-invisible'); 
+          // you can now stop checking every half second
+          // clearInterval(playready);
+          // console.log('preload1 == ' + preload1);
+          //}                   
+          //},1);
 
-           //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
-           //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
-           // document.getElementById("vid1spin").classList.remove('vp-spin-visible');
-           // document.getElementById("vid1spin").classList.add('vp-spin-invisible'); 
-
-           // you can now stop checking every half second
-           // clearInterval(playready);
-           preload1 = 1; // video loaded!
-           // console.log('preload1 == ' + preload1);
-           //}                   
-           //},1);
-  	    
- 	   cntLeave(id);
+          vidleave = setTimeout(function(){
+          document.getElementById("playpause1").style.opacity = '0';
+          document.getElementById("playbar1").style.opacity = '0';
+          document.getElementById("butshare1").style.opacity = '0';
+          document.getElementById("replay1").classList.add('fill');
+          document.getElementById("replay1").classList.remove("playover");
+          }, 500);
+          vidselect = 1;
+    
+          preload1 = 1; // video loaded!
     }
   break;
  }
@@ -659,7 +663,7 @@ function cntLeave(id) {
       document.getElementById("butshare0").style.opacity = '0';
       document.getElementById("replay0").classList.add('fill');
       document.getElementById("replay0").classList.remove("playover");
-      }, 1000);
+      }, 2000);
       vidselect = 0;
      }
    break;
@@ -672,7 +676,7 @@ function cntLeave(id) {
       document.getElementById("butshare1").style.opacity = '0';
       document.getElementById("replay1").classList.add('fill');
       document.getElementById("replay1").classList.remove("playover");
-      }, 1000);
+      }, 2000);
       vidselect = 1;
      }
    break;
@@ -683,10 +687,15 @@ function cntLeave(id) {
 /* start * for mobile devices hack */
 
 $('.player-0').on('mouseenter touchstart', function(){
+	  document.getElementById("playpause0").style.opacity = '0';
+      document.getElementById("playbar0").style.opacity = '0';
+      document.getElementById("butshare0").style.opacity = '0';
+      
       document.getElementById("playpause0").style.opacity = "1";
       document.getElementById("playbar0").style.opacity = '1';
       document.getElementById("butshare0").style.opacity = '1';
       vidselect = 0;
+      clearTimeout(vidleave);
 });
 
 $('.player-0').on('mouseleave touchend', function(){
@@ -698,7 +707,7 @@ $('.player-0').on('mouseleave touchend', function(){
       document.getElementById("butshare0").style.opacity = '0';
       //document.getElementById("replay0").classList.add('fill');
       //document.getElementById("replay0").classList.remove("playover");
-      }, 1000);
+      }, 2000);
       vidselect = 0;
    }
 });
@@ -720,7 +729,7 @@ $('.player-1').on('mouseleave touchend', function(){
       document.getElementById("butshare1").style.opacity = '0';
       //document.getElementById("replay1").classList.add('fill');
       //document.getElementById("replay1").classList.remove("playover");
-      }, 1000);
+      }, 2000);
       vidselect = 1;
    }
 });
