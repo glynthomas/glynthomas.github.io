@@ -464,7 +464,7 @@ function checkLoad(id) {
           console.log('duration :  ' + document.getElementById("video0").duration);
 
           var playready = setInterval(()=>{
-           if((parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 10 ){
+           if((parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 1 ){
 
            //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
            //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
@@ -498,7 +498,7 @@ function checkLoad(id) {
           console.log('duration :  ' + document.getElementById("video1").duration);
 
           var playready = setInterval(()=>{
-           if((parseInt((document.getElementById("video1").buffered.end(0) / document.getElementById("video1").duration)) * 100) > 10 ){
+           if((parseInt((document.getElementById("video1").buffered.end(0) / document.getElementById("video1").duration)) * 100) > 1 ){
 
            //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
            //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
