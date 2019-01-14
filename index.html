@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! home | index.html v1.0.08 | (c) 2019 julayn | julayn.com */-->
+<!--/*! home | index.html v1.0.09 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -413,7 +413,7 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
   
 <script type="text/javascript">
 
-// v1.0.08 simple video wrapper, styled like you know who a bit quick and dirty!
+// v1.0.09 simple video wrapper, styled like you know who a bit quick and dirty!
 // easily extendable, to add another video, just increment the id and passed id
 // no javascript objects allowed :-)
 
@@ -437,11 +437,11 @@ document.getElementById("video0").controls = false;
 document.getElementById("video1").controls = false;
 
 // after searching around the internet, seemingly none of the events associated detecting a
-// video loading on an iphone, ready to play, but not playing, and communicating this status
+// video loading on an iphone, ready to play, buffered, and communicating this status
 // to the user seem to work consistently without some addtional programatic issues...
 // therefore, to keep it simple, as a video is buffering == loading when selected to play;
-// play video (start buffering), shaded with spinner indicating buffering, check buffered status
-// and finally remove shade / spinner, continue playing video ... 
+// play video (start buffering), shaded with spinner indicating buffering,
+// finally remove shade / spinner, upon update of played progress, continue playing video ... 
 
 
 function checkLoad(id) {
@@ -450,8 +450,8 @@ function checkLoad(id) {
   case 0:
     if (preload0 == 0) {
 
-    	console.log('buffered end :  ' + document.getElementById("video0").buffered.end(0));
-        console.log('duration :  ' + document.getElementById("video0").duration);
+    	  // console.log('buffered end :  ' + document.getElementById("video0").buffered.end(0));
+          // console.log('duration :  ' + document.getElementById("video0").duration);
 
           //document.getElementById("vid0shade").classList.remove('vp-shade-invisible');
           //document.getElementById("vid0shade").classList.add('vp-shade-visible');
@@ -459,24 +459,24 @@ function checkLoad(id) {
           document.getElementById("vid0spin").classList.add('vp-spin-visible');
 
     	  (document.getElementById("video0")).play;
+    	  // (document.getElementById("video0")).play();
 
-    	  console.log('buffered end :  ' + document.getElementById("video0").buffered.end(0));
-          console.log('duration :  ' + document.getElementById("video0").duration);
+    	  // console.log('buffered end :  ' + document.getElementById("video0").buffered.end(0));
+          // console.log('duration :  ' + document.getElementById("video0").duration);
 
-          var playready = setInterval(()=>{
-           if((parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 1 ){
+          // var playready = setInterval(()=>{
+          // if((parseInt((document.getElementById("video0").buffered.end(0) / document.getElementById("video0").duration)) * 100) > 1 ){
 
-           //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
-           //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
-           document.getElementById("vid0spin").classList.remove('vp-spin-visible');
-           document.getElementById("vid0spin").classList.add('vp-spin-invisible'); 
-
-           // you can now stop checking every half second
-           clearInterval(playready);
-           preload0 = 1; // video loaded!
-           console.log('preload0 == ' + preload0);
-           }                   
-          },1);
+          //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
+          //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
+          //document.getElementById("vid0spin").classList.remove('vp-spin-visible');
+          //document.getElementById("vid0spin").classList.add('vp-spin-invisible'); 
+          // you can now stop checking every half second
+          //clearInterval(playready);
+          preload0 = 1; // video loaded!
+          //console.log('preload0 == ' + preload0);
+          //}                   
+          //},1);
   	    
  	   cntLeave(id);
     }
@@ -484,8 +484,8 @@ function checkLoad(id) {
   case 1:
     if (preload1 == 0) {
 
-    	console.log('buffered end :  ' + document.getElementById("video1").buffered.end(0));
-        console.log('duration :  ' + document.getElementById("video1").duration);
+    	  // console.log('buffered end :  ' + document.getElementById("video1").buffered.end(0));
+          // console.log('duration :  ' + document.getElementById("video1").duration);
 
           //document.getElementById("vid1shade").classList.remove('vp-shade-invisible');
           //document.getElementById("vid1shade").classList.add('vp-shade-visible');
@@ -493,24 +493,25 @@ function checkLoad(id) {
           document.getElementById("vid1spin").classList.add('vp-spin-visible');
 
     	  (document.getElementById("video1")).play;
+    	  // (document.getElementById("video0")).play();
 
-    	  console.log('buffered end :  ' + document.getElementById("video1").buffered.end(0));
-          console.log('duration :  ' + document.getElementById("video1").duration);
+    	  // console.log('buffered end :  ' + document.getElementById("video1").buffered.end(0));
+          // console.log('duration :  ' + document.getElementById("video1").duration);
 
-          var playready = setInterval(()=>{
-           if((parseInt((document.getElementById("video1").buffered.end(0) / document.getElementById("video1").duration)) * 100) > 1 ){
+          // var playready = setInterval(()=>{
+          // if((parseInt((document.getElementById("video1").buffered.end(0) / document.getElementById("video1").duration)) * 100) > 1 ){
 
            //document.getElementById("vid0shade").classList.remove('vp-shade-visible');
            //document.getElementById("vid0shade").classList.add('vp-shade-invisible');
-           document.getElementById("vid1spin").classList.remove('vp-spin-visible');
-           document.getElementById("vid1spin").classList.add('vp-spin-invisible'); 
+           // document.getElementById("vid1spin").classList.remove('vp-spin-visible');
+           // document.getElementById("vid1spin").classList.add('vp-spin-invisible'); 
 
            // you can now stop checking every half second
-           clearInterval(playready);
+           // clearInterval(playready);
            preload1 = 1; // video loaded!
-           console.log('preload1 == ' + preload1);
-           }                   
-          },1);
+           // console.log('preload1 == ' + preload1);
+           //}                   
+           //},1);
   	    
  	   cntLeave(id);
     }
@@ -1266,6 +1267,12 @@ function updatePlayed() {
    case 0:
         var value = 0;
         if ((document.getElementById("video0")).currentTime > 0) {
+	    // video started * playing, remove any buffering * loading indicators
+	    // document.getElementById("vid0shade").classList.remove('vp-shade-visible');
+        // document.getElementById("vid0shade").classList.add('vp-shade-invisible');
+        document.getElementById("vid0spin").classList.remove('vp-spin-visible');
+        document.getElementById("vid0spin").classList.add('vp-spin-invisible'); 
+
             value = Math.floor((100 / (document.getElementById("video0")).duration) * (document.getElementById("video0")).currentTime);}
         
         document.getElementById("played0").setAttribute("aria-valuenow",value);
@@ -1326,6 +1333,12 @@ function updatePlayed() {
    case 1:
         var value = 0;
         if ((document.getElementById("video1")).currentTime > 0) {
+        // video started * playing, remove any buffering * loading indicators
+	    // document.getElementById("vid1shade").classList.remove('vp-shade-visible');
+        // document.getElementById("vid1shade").classList.add('vp-shade-invisible');
+        document.getElementById("vid1spin").classList.remove('vp-spin-visible');
+        document.getElementById("vid1spin").classList.add('vp-spin-invisible');
+
             value = Math.floor((100 / (document.getElementById("video1")).duration) * (document.getElementById("video1")).currentTime);}
         
         document.getElementById("played1").setAttribute("aria-valuenow",value);
