@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! home | index.html v1.0.11 | (c) 2019 julayn | julayn.com */-->
+<!--/*! home | index.html v1.0.12 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -413,7 +413,7 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
   
 <script type="text/javascript">
 
-// v1.0.11 simple video wrapper, styled like you know who a bit quick and dirty!
+// v1.0.12 simple video wrapper, styled like you know who a bit quick and dirty!
 // easily extendable, to add another video, just increment the id and passed id
 // no javascript objects allowed :-)
 
@@ -430,6 +430,7 @@ var playmouseon = 0;
 var preload0 = 0;
 var preload1 = 0;
 var playoff  = 0;
+var showtime = 2000;
 var ghost;
 
 // turn off the default controls
@@ -453,18 +454,12 @@ document.getElementById("video1").controls = false;
 // function isMobile() {
 //   if(window.innerWidth <= 800 && window.innerHeight <= 600 && localStorage.mobile) {return true;} else {return false;}
 // }
-
-var ismobile = isMobile();
-
-function isMobile() {
 	 
- if (typeof window.matchMedia != 'undefined' || typeof window.msMatchMedia != 'undefined'){
-     var mq = window.matchMedia("(pointer:coarse)");
-     return mq.matches;
+// quick & dirty global mobile check ...
+ if (typeof window.matchMedia != 'undefined' || typeof window.msMatchMedia != 'undefined' && localStorage.mobile){
+     //var mq = window.matchMedia("(pointer:coarse)"); return mq.matches;
+     showtime = 500;
  }
-     return false;
-}
-
 
 function checkLoad(id) {
 
@@ -480,8 +475,16 @@ function checkLoad(id) {
     	  (document.getElementById("video0")).play;
     	  // (document.getElementById("video0")).play();
 
-          preload0 = 1; // video loaded!
-          cntLeave(0);
+    	  vidleave = setTimeout(function(){    
+          document.getElementById("playpause0").style.opacity = '0';
+          document.getElementById("playbar0").style.opacity = '0';
+          document.getElementById("butshare0").style.opacity = '0';
+          document.getElementById("replay0").classList.add('fill');
+          document.getElementById("replay0").classList.remove("playover");
+          }, 500);
+          vidselect = 0;
+          preload0  = 1; // video loaded!
+ 
     }
   break;
   case 1:
@@ -509,9 +512,17 @@ function checkLoad(id) {
           // console.log('preload1 == ' + preload1);
           //}                   
           //},1);
-  
-          preload1 = 1; // video loaded!
-          cntLeave(1)
+
+    	  vidleave = setTimeout(function(){    
+          document.getElementById("playpause1").style.opacity = '0';
+          document.getElementById("playbar1").style.opacity = '0';
+          document.getElementById("butshare1").style.opacity = '0';
+          document.getElementById("replay1").classList.add('fill');
+          document.getElementById("replay1").classList.remove("playover");
+          }, 500);
+          vidselect = 1; 
+          preload1  = 1; // video loaded!
+
     }
   break;
  }
@@ -646,10 +657,6 @@ function cntEnter(id) {
 }
 
 function cntLeave(id) {
-
-  var showtime = 2000;
-
-  if (ismobile) {showtime = 500;}
 
   switch(id) {
    case 0:
