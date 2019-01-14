@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! home | index.html v1.0.12 | (c) 2019 julayn | julayn.com */-->
+<!--/*! home | index.html v1.0.14 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -413,7 +413,7 @@ title="Share via Email" role="button" aria-label="Share via Email"><svg class="m
   
 <script type="text/javascript">
 
-// v1.0.12 simple video wrapper, styled like you know who a bit quick and dirty!
+// v1.0.14 simple video wrapper, styled like you know who a bit quick and dirty!
 // easily extendable, to add another video, just increment the id and passed id
 // no javascript objects allowed :-)
 
@@ -456,9 +456,10 @@ document.getElementById("video1").controls = false;
 // }
 	 
 // quick & dirty global mobile check ...
- if (typeof window.matchMedia != 'undefined' || typeof window.msMatchMedia != 'undefined' && localStorage.mobile){
+// ref : https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser#11381730
+ if (typeof window.matchMedia != 'undefined' || typeof window.msMatchMedia != 'undefined'){
      //var mq = window.matchMedia("(pointer:coarse)"); return mq.matches;
-     showtime = 500;
+     showtime = 1000;
  }
 
 function checkLoad(id) {
@@ -781,7 +782,8 @@ function playOver(id) {
       vidselect = 1; 
     break;
   }
- playmouseon = 1;
+    if (typeof window.matchMedia == 'undefined' || typeof window.msMatchMedia == 'undefined'){clearTimeout(vidleave);}
+    playmouseon = 1;
 }
 
 function playOut(id) {
@@ -816,7 +818,8 @@ function playOut(id) {
       vidselect = 1;
     break;
   }
- playmouseon = 0;
+  if (typeof window.matchMedia == 'undefined' || typeof window.msMatchMedia == 'undefined'){clearTimeout(vidleave);}
+  playmouseon = 0;
 }
 
 function cogOver(id) {
