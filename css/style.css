@@ -154,7 +154,8 @@ pre {
   display: inline-block;
   /*margin-right: 1.94rem;*/
   margin-right: 2rem;
-  /*padding-bottom: 2px;*/  
+  
+  /*padding-bottom: 2px;*/
   /*margin-bottom: 6px;*/
 
   margin-bottom: 12px;
@@ -173,10 +174,13 @@ pre {
 }
 
 .ui-order-link {
+  display: inline-block;
   /*margin-right: 1.94rem;*/
   margin-right: 2rem;
-  /*padding-bottom: 2px;*/
+
+  padding-bottom: 2px;
   margin-bottom: 6px;
+
   border-bottom: 1px solid #ceced6;
   /* color: #443e3c;*/
   text-decoration: none;
@@ -897,10 +901,17 @@ hr {
     padding-left: 1.0rem;
   }
   .col-container{
+    padding-bottom: 2.7rem;
+  }
+  /* original setting
+  .col-container{
     padding-bottom: 6rem;
   }
+  */
   .site-content .ui-link{
-    margin-bottom: 1rem;
+    /*margin-bottom: 1rem;*/
+    margin-bottom: 0.9rem;
+
   }
   .link-list-item-2 {
     list-style-type: none;
