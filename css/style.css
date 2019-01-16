@@ -436,7 +436,8 @@ pre {
   /* smaller width increase of video */
   /* width: 25%; /* new */
   /* min-width: 400px;*/
-  min-width: 320px;
+  /* min-width: 320px;*/
+  min-width: 250px;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -457,9 +458,11 @@ pre {
   display: flex;
   overflow: hidden;
   /*width: 20%; /* new    */
-  width: 10%;   /* update */
+  /*width: 10%; /* update */
+  width: 9%;    /* update */
   /*min-width: 400px;*/
-  min-width: 320px;
+  /*min-width: 320px;*/
+  min-width: 250px;
   height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
