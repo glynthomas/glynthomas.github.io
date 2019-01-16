@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! biblio | index.html v1.00.00 | (c) 2018 julayn | julayn.io */-->
+<!--/*! biblio | index.html v1.0.17 | (c) 2019 julayn | julayn.io */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -21,6 +21,7 @@
 <script>
 $(document).ready(function(){
   $(".site-content").fitVids();
+  cleanURL();
 });
 </script>
 
@@ -72,7 +73,7 @@ $(document).ready(function(){
               
 <h1>julayn biblio</h1>
 
-<h2><a href="/#luck" class="ui-link-biblio-underline">luck</a></h2>
+<h2 id="luck"><a href="/#luck" class="ui-link-biblio-underline">luck</a></h2>
 
 <p>exploring the silence of noticing change, seemingly half imagined, luck moves small egg like white balls into view, rocking back and forth until fully out, or half out, or nearly in, or hidden from side view, giving birth to moments of time.</p>
 
@@ -81,7 +82,7 @@ $(document).ready(function(){
 <p>this is the first piece which examines perfect randomness, perfect luck, this theme will continue to be explored in future pieces.<p>
 
 
-<h2><a href="/#moment" class="ui-link-biblio-underline">moment</a></h2>
+<h2 id="moment"><a href="/#moment" class="ui-link-biblio-underline">moment</a></h2>
 
 <p>a mechanical heart with red veins leaking to light bulbs which flicker between the years of young and old, carrying moments of being, numbers of lights representing years have dimmed now and only the a few are strong enough to be noticed, the red light signals change.</p>
 
@@ -112,6 +113,19 @@ $(document).ready(function(){
 </div>
 </div><!--.site-container-->
 </div><!--.site-restraint-->
+
+<script type="text/javascript">
+
+function cleanURL() {
+ // clean URL back from social url shares, see https://stackoverflow.com/
+ // questions/22753052/remove-url-parameters-without-refreshing-page
+ if ((location.hash.replace('#','')) != '') {
+      location.hash = '';
+      window.history.replaceState(null, null, window.location.pathname);
+ }
+}
+
+</script>
   
 <script src="/js/screenfull.js" type="text/javascript"></script> 
 
