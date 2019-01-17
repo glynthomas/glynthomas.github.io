@@ -234,6 +234,10 @@ pre {
   font-size: 11px;
 }
 
+.w-nav-brand-color {
+  color: #333333;
+}
+
 .ui-text.ui-link.ui-link-sm {
   margin-right: 1.5rem;
   /*padding-bottom: 1px;*/
@@ -876,6 +880,13 @@ hr {
     /*display: inline-block;*/
     border-bottom: 1px solid #ffffff;
   }
+  .site-content .ui-link{
+    margin-left: 0.5px;
+    margin-bottom: 1rem;
+  }
+  .site-content .ui-order-link{
+    margin-left: 0.5px;
+  }
   .ui-order-link:hover {
     color: #3061ec;
     border-bottom: 1px solid #2b57d4;
@@ -889,6 +900,9 @@ hr {
   }
   .site-logo {
     top: 14px;
+  }
+  .site-content .ui-link{
+    margin-bottom: 1rem;
   }
   .mobile-menu-btn {
     right: -1rem;
@@ -943,9 +957,12 @@ hr {
     padding-bottom: 3.7rem;
   }
   .site-content .ui-link{
-    /*margin-bottom: 1rem;*/
-    margin-bottom: 0.9rem;
-
+    margin-bottom: 1rem;
+    margin-left: 0.5px;
+    /*margin-bottom: 0.9rem;*/
+  }
+  .site-content .ui-order-link{
+    margin-left: 0.5px;
   }
   .link-list-item-2 {
     list-style-type: none;
