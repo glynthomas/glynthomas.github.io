@@ -467,14 +467,15 @@ document.getElementById("video1").controls = false;
 //   if(window.innerWidth <= 800 && window.innerHeight <= 600 && localStorage.mobile) {return true;} else {return false;}
 // }
 	 
-// quick & dirty global mobile check ...
+
+function checkLoad(id) {
+
+// dirty mobile check ...
 // ref : https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser#11381730
  if (typeof window.matchMedia != 'undefined' || typeof window.msMatchMedia != 'undefined'){
      //var mq = window.matchMedia("(pointer:coarse)"); return mq.matches;
      showtime = 1000; // mobile timeout
  }
-
-function checkLoad(id) {
 
  switch(id) {
   case 0:
@@ -563,6 +564,7 @@ function shareClickon(id) {
        document.getElementById("sharelay1").classList.remove("hidden");
        document.getElementById("butshare1").classList.add("hidden");
        document.getElementById("butshare1").classList.add("invisible");
+       document.getElementById("playbar1").classList.add("invisible");
        document.getElementById("playpause1").classList.add("invisible");
        document.getElementById("outpi1").classList.add("hidden");
        vidselect = 1;
@@ -608,10 +610,9 @@ function shareOver(id) {
  switch(id) {
   
     case 0:
-       document.getElementById("share0").classList.add('visible');
-       /* change for share label document.getElementById("share0").classList.remove('invisible'); */
+       document.getElementById("share0").classList.remove('visible');
        document.getElementById("share0").classList.add("invisible");
-       document.getElementById("share0").classList.remove("hidden");
+       document.getElementById("share0").classList.add("hidden");
        document.getElementById("sparrow0").classList.remove("fill");
        document.getElementById("sparrow0").classList.add("playover");
        vidselect = 0;
