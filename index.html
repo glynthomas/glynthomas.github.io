@@ -554,8 +554,10 @@ function shareClickon(id) {
        document.getElementById("sharelay0").classList.remove("hidden");
        document.getElementById("butshare0").classList.add("hidden");
        document.getElementById("butshare0").classList.add("invisible");
-       document.getElementById("playbar0").classList.add("invisible");
-       document.getElementById("playpause0").classList.add("invisible");
+  
+       document.getElementById("playbar0").classList.add("hidden");
+       document.getElementById("playpause0").classList.add("hidden");
+
        document.getElementById("outpi0").classList.add("hidden");       
        vidselect = 0;
     break;
@@ -564,8 +566,10 @@ function shareClickon(id) {
        document.getElementById("sharelay1").classList.remove("hidden");
        document.getElementById("butshare1").classList.add("hidden");
        document.getElementById("butshare1").classList.add("invisible");
-       document.getElementById("playbar1").classList.add("invisible");
-       document.getElementById("playpause1").classList.add("invisible");
+       
+       document.getElementById("playbar1").classList.add("hidden");
+       document.getElementById("playpause1").classList.add("hidden");
+  
        document.getElementById("outpi1").classList.add("hidden");
        vidselect = 1;
     break;
@@ -584,8 +588,10 @@ function shareClickoff(id) {
        document.getElementById("sharelay0").classList.add("hidden");
        document.getElementById("butshare0").classList.remove("hidden");
        document.getElementById("butshare0").classList.remove("invisible");
-       document.getElementById("playbar0").classList.remove("invisible");
-       document.getElementById("playpause0").classList.remove("invisible");
+      
+       document.getElementById("playbar0").classList.remove("hidden"); 
+       document.getElementById("playpause0").classList.remove("hidden");
+
        document.getElementById("outpi0").classList.remove("hidden");
        vidselect = 0;
     break;
@@ -594,8 +600,10 @@ function shareClickoff(id) {
        document.getElementById("sharelay1").classList.add("hidden");
        document.getElementById("butshare1").classList.remove("hidden");
        document.getElementById("butshare1").classList.remove("invisible");
-       document.getElementById("playbar1").classList.remove("invisible");
-       document.getElementById("playpause1").classList.remove("invisible");
+       
+       document.getElementById("playbar1").classList.remove("hidden"); 
+       document.getElementById("playpause1").classList.remove("hidden");
+       
        document.getElementById("outpi1").classList.remove("hidden");
        vidselect = 1;
     break;

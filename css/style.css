@@ -228,14 +228,20 @@ pre {
 }
 
 .ui-text.ui-link.ui-link-mm {
-  /* margin-right: 1.5rem; */
-  /* padding-bottom: 1px;  */
-  /* margin-bottom: 2px;   */
+  /*margin-right: 1.5rem;*/
+  /*padding-bottom: 1px;*/
+  /*margin-bottom: 2px;*/
   font-size: 11px;
 }
 
-.w-nav-brand-color {
-  color: #333333;
+.ui-text.ui-link.ui-link-sm.w-nav-brand-color {
+  /*color: #333333; original brand color*/
+  color: #222222;
+}
+
+.ui-text.ui-link.ui-link-sm.w-nav-brand-color:hover {
+  /*color: #333333; original brand color*/
+  color: #3061ec;
 }
 
 .ui-text.ui-link.ui-link-sm {
