@@ -16,6 +16,9 @@
 <script src="/js/webflow.js" type="text/javascript"></script>
 <script src="/js/jquery.fitvids.js" type="text/javascript"></script>
 
+<!-- passive default-passive-events * https://github.com/zzarcon/default-passive-events -->
+<script type="text/javascript" src="/js/index.js"></script>
+
 <script>
 $(document).ready(function(){
   $(".site-content").fitVids();
@@ -71,7 +74,6 @@ $(document).ready(function(){
 <a href="http://julayn.com/biblio" class="ui-text ui-link ui-link-mm">biblio</a>
 
 </div>
-
 </div>
 
 <div class="site-footer">
@@ -246,7 +248,6 @@ title="share via email" role="button" aria-label="share via email">
 <!-- <div class="ui-order" style="max-width: 280px;"><a href="luck/index.html" class="ui-text ui-order-link">Order</a></div> -->
 
 </div>
-
 </div>
 
 <!-- video 1 start -->
@@ -578,7 +579,6 @@ function shareClickon(id) {
   if (document.getElementById("video" + id).ended != true){justPause(id)}
 }
 
-
 function shareClickoff(id) {
 
  switch(id) {
@@ -611,7 +611,6 @@ function shareClickoff(id) {
 
   if (document.getElementById("video" + id).ended != true){justPlay(id)}
 }
-
 
 function shareOver(id) {
 
@@ -656,11 +655,11 @@ function shareOut(id) {
        document.getElementById("sparrow1").classList.remove("playover");
        vidselect = 1;
     break;
-
   }
 }
 
 function cntEnter(id) {
+
  switch(id) {
    case 0:
       document.getElementById("playpause0").style.opacity = "1";
@@ -675,7 +674,7 @@ function cntEnter(id) {
       vidselect = 1;
    break;
   }
-    clearTimeout(vidleave);
+   clearTimeout(vidleave);
 }
 
 function cntLeave(id) {
@@ -768,9 +767,9 @@ $('.player-1').on('mouseleave touchend', function(){
 /* end * for mobile devices hack */
 
 function playEnter(id) {
+
  if (typeof window.matchMedia == 'undefined' || typeof window.msMatchMedia == 'undefined'){clearTimeout(vidleave);}
  playmouseon = 1;
-
 }
 
 function playOver(id) {
@@ -859,7 +858,6 @@ function cogOver(id) {
        document.getElementById("gear-cog1").classList.add("cogover");
        vidselect = 1;
     break;
-
   }
 }
 
@@ -938,7 +936,6 @@ function vidOut(id) {
   }
 }
 
-
 function cueOver(id) {
 
  var value = 0;
@@ -966,11 +963,8 @@ function cueOver(id) {
        document.getElementById("box1").innerHTML = (date.toISOString().substr(11, 8).replace(/^.{3}/g, ''));}catch(e){}});
        vidselect = 1;
   break;
-
  }
-
 }
-
 
 function cueOut(id) {
 
@@ -999,10 +993,8 @@ function cueOut(id) {
        document.getElementById("box1").innerHTML = date.toISOString().substr(11, 8).replace(/^.{3}/g, '');}catch(e){}});
        vidselect = 1;
    break;
-
  }
 }
-
 
 function cuePoint(id) {
 
@@ -1032,9 +1024,7 @@ function cuePoint(id) {
        ghost = document.getElementById("ghostpoint1").style.left;
        vidselect = 1;
    break;
-
  }
- 
    cuepoint.addEventListener("click", function(e) {
 
     if (!e) {e = window.event;}
@@ -1050,7 +1040,6 @@ function cuePoint(id) {
       video.addEventListener("timeupdate", updatePlayed, true);
 }
    
-
 function togglePlayPause(id) {
 
   switch(id) {
@@ -1183,7 +1172,6 @@ function togglePlayPause(id) {
   }   
 }
 
-
 function justPause(id) {
 
 	switch(id) {
@@ -1234,6 +1222,7 @@ function justPlay(id) {
 }
 
 function updateProgress() {
+
   var vload = 0;
   var value = 0;
   switch(vidselect) {
@@ -1519,8 +1508,8 @@ window.onload = function(){
     document.getElementById("video1").classList.add('site-load');
     cntEnter(0);cntEnter(1);
   }, 1000);
-
 }
+
 </script>
 
 <!--
