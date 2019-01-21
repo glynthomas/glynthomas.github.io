@@ -1,5 +1,10 @@
 <!--/*! fullscreen | fullscreen.js v1.0.19 | (c) 2019 julayn | julayn.com */-->
 
+/*!
+* screenfull
+* v4.0.0 - 2018-12-15
+* (c) Sindre Sorhus; MIT License
+*/
 (function () {
 	'use strict';
 
@@ -81,29 +86,43 @@
 
 	var screenfull = {
 		request: function (elem) {
-			var request = fn.requestFullscreen;
+			return new Promise(function (resolve) {
+				var request = fn.requestFullscreen;
 
-			elem = elem || document.documentElement;
+				var onFullScreenEntered = function () {
+					this.off('change', onFullScreenEntered);
+					resolve();
+				}.bind(this);
 
-			// Work around Safari 5.1 bug: reports support for
-			// keyboard in fullscreen even though it doesn't.
-			// Browser sniffing, since the alternative with
-			// setTimeout is even worse.
-			// if (/ Version\/5\.1(?:\.\d+)? Safari\//.test(navigator.userAgent)) {
-			 	 elem[request]();
-			// } else {
-			// 	elem[request](keyboardAllowed ? Element.ALLOW_KEYBOARD_INPUT : {});
-			// }
+				elem = elem || document.documentElement;
+
+				// Work around Safari 5.1 bug: reports support for
+				// keyboard in fullscreen even though it doesn't.
+				// Browser sniffing, since the alternative with
+				// setTimeout is even worse.
+				if (/ Version\/5\.1(?:\.\d+)? Safari\//.test(navigator.userAgent)) {
+					elem[request]();
+				} else {
+					elem[request](keyboardAllowed ? Element.ALLOW_KEYBOARD_INPUT : {});
+				}
+
+				this.on('change', onFullScreenEntered);
+			}.bind(this));
 		},
 		exit: function () {
-			document[fn.exitFullscreen]();
+			return new Promise(function (resolve) {
+				var onFullScreenExit = function () {
+					this.off('change', onFullScreenExit);
+					resolve();
+				}.bind(this);
+
+				document[fn.exitFullscreen]();
+
+				this.on('change', onFullScreenExit);
+			}.bind(this));
 		},
 		toggle: function (elem) {
-			if (this.isFullscreen) {
-				this.exit();
-			} else {
-				this.request(elem);
-			}
+			return this.isFullscreen ? this.exit() : this.request(elem);
 		},
 		onchange: function (callback) {
 			this.on('change', callback);
