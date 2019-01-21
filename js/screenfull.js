@@ -1,10 +1,5 @@
 <!--/*! fullscreen | fullscreen.js v1.0.19 | (c) 2019 julayn | julayn.com */-->
 
-/* change | v1.0.19
-
-31 var fnMap added 'webkitEnterFullscreen', to support iphone safari browser
-
-*/
 
 (function () {
 	'use strict';
@@ -28,7 +23,6 @@
 			// New WebKit
 			[
 				'webkitRequestFullscreen',
-				'webkitEnterFullscreen',
 				'webkitExitFullscreen',
 				'webkitFullscreenElement',
 				'webkitFullscreenEnabled',
