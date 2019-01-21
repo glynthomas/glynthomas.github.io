@@ -1544,7 +1544,7 @@ function cleanURL() {
 //
 
 function addFullscreenButton() {
- if (document.fullscreenEnabled) {
+ if (document.webkitSupportsFullscreen) {
      // enable fullscreen icon
      // var fs = document.getElementById("fs");
      // fs.style.visibility = "visible";
@@ -1557,7 +1557,7 @@ function goFullscreen(id) {
     screenfull.toggle($('.player-'+id)[0]);
   } else { 
   // mobile browser
-    document.getElementById('video'+id).requestFullscreen();
+    document.getElementById('video'+id).webkitEnterFullscreen();
   }
 }
 
