@@ -89,11 +89,11 @@
 			// keyboard in fullscreen even though it doesn't.
 			// Browser sniffing, since the alternative with
 			// setTimeout is even worse.
-			if (/ Version\/5\.1(?:\.\d+)? Safari\//.test(navigator.userAgent)) {
-				elem[request]();
-			} else {
-				elem[request](keyboardAllowed ? Element.ALLOW_KEYBOARD_INPUT : {});
-			}
+			// if (/ Version\/5\.1(?:\.\d+)? Safari\//.test(navigator.userAgent)) {
+			 	 elem[request]();
+			// } else {
+			// 	elem[request](keyboardAllowed ? Element.ALLOW_KEYBOARD_INPUT : {});
+			// }
 		},
 		exit: function () {
 			document[fn.exitFullscreen]();
