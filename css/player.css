@@ -1,4 +1,15 @@
-/* player | player.css v1.0.18 | (c) 2019 julayn | julayn.com */
+/* player | player.css v1.0.19 | (c) 2019 julayn | julayn.com */
+
+/* change | v1.0.19
+
+189  added max-height: 100%;
+style.css --> .col-container 344 added margin-top: -2px;
+767  bottom: 1.3em; --> bottom: 1.2em; .player .vp-controls (original 1em;)
+2019 margin: 1em;   --> margin: 0.4em; .player .vp-share-buttons
+3111 added bottom-margin: 2px;
+5103 transform: scale(1.03); --> transform: scale(1.00);
+
+*/
 
 /* VimeoPlayer - v3.5.6 - 2018-10-11 */
 @charset "UTF-8";
@@ -180,6 +191,7 @@ body:not(.showfocus) .player button,body:not(.showfocus) .player li,body:not(.sh
 
 .player {
  position:relative;
+ max-height: 100%;
  width:100%;
  height:100%;
  overflow:hidden;
@@ -188,7 +200,9 @@ body:not(.showfocus) .player button,body:not(.showfocus) .player li,body:not(.sh
  -webkit-font-smoothing:auto;
  line-height:normal;
  border-collapse:separate;
- user-select:none
+ user-select:none;
+ -ms-touch-action: manipulate;
+ touch-action: manipulate;
 }
 .player,.player h1,.player h2 {
  font-family:"Helvetica Neue",Helvetica,Arial!important;
@@ -754,7 +768,7 @@ body:not(.showfocus) .player button,body:not(.showfocus) .player li,body:not(.sh
 .player .vp-controls {
  position:absolute;
  /*bottom:1em;*/
- bottom:1.3em;
+ bottom:1.2em;
  left:1em;
  right:1em;
  height:0;
@@ -2006,7 +2020,7 @@ body:not(.showfocus) .player button,body:not(.showfocus) .player li,body:not(.sh
 .player .vp-share-buttons {
  color:#fff;
  display:inline-block;
- margin:1em .5em 0;
+ margin:0.4em .5em 0;
  padding:0;
  list-style:none
 }
@@ -3110,6 +3124,7 @@ body:not(.showfocus) .player button,body:not(.showfocus) .player li,body:not(.sh
  top:0;
  left:0;
  bottom:0;
+ margin-bottom: 2px;
  right:0;
  z-index:12;
  -webkit-transition:background-color .2s;
@@ -5091,7 +5106,7 @@ video.player {
   filter: blur(3px); /* blur the lowres image */
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  transform: scale(1.03);
+  transform: scale(1.00);
 }
 
 video.player.site-load {

@@ -1,4 +1,10 @@
-/* style | style.css v1.0.18 | (c) 2019 julayn | julayn.com */
+/* style | style.css v1.0.19 | (c) 2019 julayn | julayn.com */
+
+/* change | v1.0.19
+
+style.css -- > .col-container 344 added margin-top: -2px;
+
+*/
 
 /* CSS Reset */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -344,6 +350,7 @@ pre {
 .col-container {
   display: block;
   /*padding: 4rem;*/
+  margin-top: -2px;
   padding-top: 4rem;
   padding-left: 4rem;
   padding-right: 2rem;
