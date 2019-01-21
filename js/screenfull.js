@@ -1,6 +1,5 @@
 <!--/*! fullscreen | fullscreen.js v1.0.19 | (c) 2019 julayn | julayn.com */-->
 
-
 (function () {
 	'use strict';
 

@@ -2,12 +2,7 @@
 <!--/*! home | index.html v1.0.19 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
-
 <title>julayn</title>
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <link href="/css/fonts.css" rel="stylesheet" type="text/css">
 <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -1542,12 +1537,43 @@ function cleanURL() {
  }
 }
 
-$('#videofull0').click(function () {screenfull.toggle($('.player-0')[0]);});
-$('#videofull1').click(function () {screenfull.toggle($('.player-1')[0]);});
+// HTML 5 apple video fullscreen support check * default to desktop screenfull.js hack 
+//
+// ref: https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual
+//     /Using_HTML5_Audio_Video/ControllingMediaWithJavaScript/ControllingMediaWithJavaScript.html 
+//
+
+function addFullscreenButton() {
+ if (document.fullscreenEnabled) {
+     // enable fullscreen icon
+     // var fs = document.getElementById("fs");
+     // fs.style.visibility = "visible";
+ }
+}
+
+function goFullscreen(id) {
+  if (typeof window.matchMedia == 'undefined' || typeof window.msMatchMedia == 'undefined'){
+  // desktop browser
+    screenfull.toggle($('.player-'+id)[0]);
+  } else { 
+  // mobile browser
+    document.getElementById('video'+id).requestFullscreen();
+  }
+}
+
+// $('#videofull0').click(function () {screenfull.toggle($('.player-0')[0]);});
+// $('#videofull1').click(function () {screenfull.toggle($('.player-1')[0]);});
+
+$('#videofull0').click(function () { goFullscreen(0); });
+$('#videofull1').click(function () { goFullscreen(0); });
+
 
 // var timeout; // mimic load of elements
 window.onload = function(){
 
+// added to enable webkit safari mobile fullscreen support !
+  document.getElementById("video0").addEventListener("loadedmetadata", addFullscreenButton, false);
+  
   setTimeout(function(){
   	document.getElementsByClassName("site-restraint")[0].classList.remove('site-preload');
     document.getElementById("video0").classList.add('site-load');
