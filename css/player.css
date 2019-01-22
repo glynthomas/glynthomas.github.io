@@ -6,7 +6,7 @@
 style.css --> .col-container 344 added margin-top: -2px;
 767  bottom: 1.3em; --> bottom: 1.2em; .player .vp-controls (original 1em;)
 2019 margin: 1em;   --> margin: 0.4em; .player .vp-share-buttons
-3111 added bottom-margin: 2px;
+3122 added bottom-margin: 3px;
 5103 transform: scale(1.03); --> transform: scale(1.00);
 
 */
@@ -3124,7 +3124,7 @@ body:not(.showfocus) .player button,body:not(.showfocus) .player li,body:not(.sh
  top:0;
  left:0;
  bottom:0;
- margin-bottom: 2px;
+ margin-bottom: 3px;
  right:0;
  z-index:12;
  -webkit-transition:background-color .2s;
