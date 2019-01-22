@@ -1528,23 +1528,56 @@ function settingClose(id) {
  }
 }
 
-function vidFull(id) { 
+function vidFull(id) {
+ 
+ // check user agents for best guess full screen api!
+ // seems to work on current browsers
+ // if no api, then may unable fullscreen control  
 
-  var video = 0;
+ var video = 0;
   
-  switch(id) {
-  
+ switch(id) {
    case 0:
         video = document.getElementById("video0");
-        video.webkitEnterFullScreen();
-        //video.requestFullscreen();
+        //video.webkitEnterFullScreen();        	
+        vidOut(0);
    break;
    case 1:
         video = document.getElementById("video1");
-        video.webkitEnterFullScreen();
-        //video.requestFullscreen();
+        //video.webkitEnterFullScreen();
+        vidOut(1);
    break;
-   
+ }
+
+ if (navigator.userAgent.indexOf("iPhone") != -1) {
+    video.webkitEnterFullScreen();
+
+ } else if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+ 	//console.log('Safari only!');
+ 	video.webkitEnterFullScreen();
+
+ } else if(navigator.userAgent.indexOf("Opera") != -1 || navigator.userAgent.indexOf('OPR') != -1 || navigator.userAgent.indexOf("Opera Mini") != -1 ) {
+    //console.log('Opera');
+    video.webkitRequestFullscreen();
+
+ // } else if (navigator.userAgent.match(/Opera Mini/i) != -1 && navigator.userAgent.indexOf("Firefox") == -1) {
+ // video.webkitRequestFullscreen(); // don't think this is supported !
+
+ } else if ((navigator.userAgent.indexOf("Chrome") || navigator.userAgent.indexOf('Android')) != -1 ) {
+    //console.log('Chrome or Android');
+    video.requestFullscreen();
+
+ } else if (navigator.userAgent.indexOf("Firefox") != -1 ) {
+ 	//console.log('Firefox');
+    video.mozRequestFullScreen();
+
+ } else if ((navigator.userAgent.indexOf("MSIE") || (navigator.userAgent.match(/IEMobile/i)) != -1) || (!!document.documentMode == true )) {
+    console.log('IE');
+    video.msRequestFullscreen(); 
+ 
+ } else {
+    // console.log('default browser!');
+    video.webkitEnterFullScreen();
  }
 }
 
@@ -1556,29 +1589,6 @@ function cleanURL() {
       window.history.replaceState(null, null, window.location.pathname);
  }
 }
-
-
-function fullscreen(id) {
-// HTML 5 fullscreen video * check mobile
-  if (typeof window.matchMedia == 'undefined' || typeof window.msMatchMedia == 'undefined'){
-  // desktop browser
-    screenfull.toggle($('.player-'+id)[0]);
-    // console.log('desktop browser!'); * works on all current desktop browsers
-  } else { 
-  // mobile browser
-
-    document.getElementById('video'+id).webkitEnterFullScreen();
-  }
-}
-
-function addFullscreenButton() {
- if (document.webkitSupportsFullscreen) {
-     // enable fullscreen icon
-     // var fs = document.getElementById("fs");
-     // fs.style.visibility = "visible";
- }
-}
-
 
 // var timeout; // mimic load of elements
 window.onload = function(){
@@ -1616,8 +1626,6 @@ function modalhide() {
 }
 </script>
 -->
-
-<!-- <script src="/js/screenfull.js" type="text/javascript"></script> -->
 
 </body>
 </html>
