@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--/*! home | index.html v1.0.19 | (c) 2019 julayn | julayn.com */-->
+<!--/*! home | index.html v1.0.20 | (c) 2019 julayn | julayn.com */-->
 <head>
 <meta charset="utf-8">
 <title>julayn</title>
@@ -99,6 +99,7 @@ $(document).ready(function(){
 <!-- video 0 start -->
 
 <div id="player0" onmouseover="cntEnter(0)" onmouseenter="cntEnter(0)" onmouseleave="cntLeave(0)" class="player player-0 js-player-fullscreen with-fullscreen with-sticky-custom-logo player-sm player-cardsCorner">
+
 <div class="vp-video">
 <div id="luck" class="vp-telecine vp-telecine-cover" value="luck">
 
@@ -214,6 +215,7 @@ title="share via email" role="button" aria-label="share via email">
 
 <div id="vid0shade" class="vp-shade vp-shade-invisible"></div>
 <div id="vid0spin" class="vp-spin vp-spin-invisible"> <svg class="vp-spin-trace" viewBox="0 0 50 50"><circle cx="50%" cy="50%" r="20"></circle></svg><svg class="vp-spin-circle" viewBox="0 0 50 50"><circle cx="50%" cy="50%" r="20"></circle></svg> </div>
+
 
 </div>
 </div>
@@ -435,7 +437,7 @@ title="share via email" role="button" aria-label="share via email">
   
 <script type="text/javascript">
 
-// v1.0.19 simple video wrapper, styled like you know who a bit quick and dirty!
+// v1.0.20 simple video wrapper, styled like you know who a bit quick and dirty!
 // easily extendable, to add another video, just increment the id and passed id
 // no javascript objects allowed :-)
 
@@ -612,14 +614,14 @@ function shareClickoff(id) {
        document.getElementById("playbar0").classList.remove("hidden"); 
        document.getElementById("playpause0").classList.remove("hidden");
        
-       }, 250);
+       }, 100);
 
        setTimeout(function(){
 
        document.getElementById("sharelayin0").classList.remove("in");
        document.getElementById("sharelayin0").classList.add("out");
        
-       }, 170);
+       }, 150);
 
        document.getElementById("outpi0").classList.remove("hidden");
        vidselect = 0;
@@ -636,14 +638,14 @@ function shareClickoff(id) {
        document.getElementById("playbar1").classList.remove("hidden"); 
        document.getElementById("playpause1").classList.remove("hidden");
 
-       }, 250);
+       }, 100);
 
        setTimeout(function(){
 
        document.getElementById("sharelayin1").classList.remove("in");
        document.getElementById("sharelayin1").classList.add("out");
  
-       }, 170);
+       }, 150);
 
        document.getElementById("outpi1").classList.remove("hidden");
        vidselect = 1;
