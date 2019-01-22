@@ -6,7 +6,8 @@
 style.css --> .col-container 344 added margin-top: -2px;
 767  bottom: 1.3em; --> bottom: 1.2em; .player .vp-controls (original 1em;)
 2019 margin: 1em;   --> margin: 0.4em; .player .vp-share-buttons
-3122 added bottom-margin: 3px;
+3089 .player .vp-overlay-bg bottom: 0.5px;
+3122 .player .vp-overlay-wrapper added bottom-margin: 3px;
 5103 transform: scale(1.03); --> transform: scale(1.00);
 
 */
