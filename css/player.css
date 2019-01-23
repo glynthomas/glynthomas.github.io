@@ -24,9 +24,19 @@ replace
 
 move
 .player li.vp-panel-item::before {content: "";display: inline-block;vertical-align: 2%;margin-right: .2em;width: .7em;height: .7em;border-radius: 50%;border: 1px solid #666}
+* -->
+.player .vp-share-buttons-item {background-color: #ffffff;}
+.cogover {fill:rgba(255,255,255,0.5);}
+.vidover {fill:rgba(255,255,255,0.5);}
+.pinover {fill: #767676;}
+.play-icon .playover {fill:#848484;}
+.playover {fill:#848484;}
+.play:hover {background-color:rgba(255,255,255,255);}
+.pause-icon:hover {background-color:rgba(255,255,255,255);}
+* --> line:6030 * alt color support
 
 
-/*  mods end */
+/* mods end */
 
 
 @charset "UTF-8";
@@ -5954,18 +5964,6 @@ screen and (max-height:249px) {
 
 /* start * added * see mods above */
 
-.play-icon .playover {fill:#848484;}
-
-.playover {fill:#848484;}
-
-.play:hover {
- background-color:rgba(255,255,255,255);
-}
-
-.pause-icon:hover {
- background-color:rgba(255,255,255,255);
-}
-
 div .box label .rounded-box .share-label {
  -webkit-transition: all 0.5s ease-out;
  -moz-transition: all 0.5s ease-out;
@@ -5982,11 +5980,6 @@ div .box label .rounded-box .share-label {
   -o-transition: background-color 0.5s ease-out;
   transition: background-color 0.5s ease-out;
 }
-
-.cogover {fill:rgba(255,255,255,0.5);}
-.vidover {fill:rgba(255,255,255,0.5);}
-
-.pinover {fill: #767676;}
 
 video.player {
   filter: blur(3px); /* blur the lowres image */
@@ -6010,6 +6003,40 @@ video.player.site-load {
   transition-duration: 3s;
 }
 
+/* alt colors * for individual video(s) */
+
+/*
+#setting0 .cogover {fill:rgba(255,119,0,255);}
+#videofull0 .vidover {fill:rgba(255,119,0,255);}
+#sharelayin0 .vp-share-buttons .vp-share-buttons-item {background-color:rgba(255,119,0,255);}
+#sharelayin0 .vp-share-buttons .vp-share-buttons-item {fill:rgba(255,119,0,255);}
+#playpause0.play:hover {background-color:rgba(255,119,0,255);}
+#playpause0 .pause-icon:hover {background-color:rgba(255,119,0,255);}
+
+#playpause0 .play-icon .playover {fill:rgba(255,255,255,255);}
+#playpause0 .playover {fill:rgba(255,255,255,255);}
+#playpause0 .pause-icon .playover {background-color:rgba(255,119,0,255);}
+
+#butshare0.share-button:hover {background-color:rgba(255,119,0,255);}
+#butshare0.share-button .share-icon #sparrow0 {fill:rgba(255,255,255,255);}
+#sharelayin0 .vp-share-buttons .playover {fill:rgba(255,255,255,255);}
+#sharelayin0 .vp-share-buttons .pinover {fill:rgba(255,255,255,255);}
+#sharelayin0 .player .vp-share-buttons-item {background-color:rgba(255,119,0,255);}
+#played0.played {background-color:rgba(255,119,0,255);}
+*/
+
+/* default colors */
+
 .player .vp-share-buttons-item {background-color: #ffffff;}
+.cogover {fill:rgba(255,255,255,0.5);}
+.vidover {fill:rgba(255,255,255,0.5);}
+.pinover {fill: #767676;}
+.play-icon .playover {fill:#848484;}
+.playover {fill:#848484;}
+.play:hover {background-color:rgba(255,255,255,255);}
+.pause-icon:hover {background-color:rgba(255,255,255,255);}
+
+/* default colors */
+
 
 /* end * added * see mods above */
