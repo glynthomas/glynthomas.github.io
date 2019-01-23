@@ -4,15 +4,11 @@
 
 /* mods start
 
-comment out
-
-
 add
 .player,.player *,.player::after,.player::before {box-sizing: border-box;-webkit-tap-highlight-color: transparent;line-height: 0.5; <-- added}
 .player .vp-controls .pause-icon,.player .vp-controls .play-icon {margin: 0 auto;padding: .2em 0 0 .2em;line-height:normal; <-- added}
 .played {background-color: rgb(255,255,255);}
 .player .vp-panel-title {display: none;margin: 0;line-height: 1.4;margin-bottom: 1.9em; <-- add}
-
 
 replace
 .player .vp-share-buttons {color: #fff;display: inline-block; *margin: 1em .5em 0;* *margin-top: 1em;* margin-top: 0.5em;margin-right: 0.5em;margin-left: 0.5em;margin-bottom: 0;padding: 0;list-style: none}
@@ -21,20 +17,21 @@ replace
 .player .vp-panel-title { *margin-bottom: 1.9em;* --> changed to --> margin-bottom: 0.6em; ...}
 .player li.vp-panel-item::before {... *border: 1px solid #666; --> change to --> border: 1px solid #999;}
 
-
 move
 .player li.vp-panel-item::before {content: "";display: inline-block;vertical-align: 2%;margin-right: .2em;width: .7em;height: .7em;border-radius: 50%;border: 1px solid #666}
-* -->
-.player .vp-share-buttons-item {background-color: #ffffff;}
-.cogover {fill:rgba(255,255,255,0.5);}
-.vidover {fill:rgba(255,255,255,0.5);}
-.pinover {fill: #767676;}
-.play-icon .playover {fill:#848484;}
-.playover {fill:#848484;}
-.play:hover {background-color:rgba(255,255,255,255);}
-.pause-icon:hover {background-color:rgba(255,255,255,255);}
-* --> line:6030 * alt color support
+* alt color support
+*.player .vp-share-buttons-item {background-color: #ffffff;}
+*.cogover {fill:rgba(255,255,255,0.5);}
+*.vidover {fill:rgba(255,255,255,0.5);}
+*.pinover {fill: #767676;}
+*.play-icon .playover {fill:#848484;}
+*.playover {fill:#848484;}
+*.play:hover {background-color:rgba(255,255,255,255);}
+*.pause-icon:hover {background-color:rgba(255,255,255,255);}
+* ->6030 
 
+comment out
+*.player .vp-sidedock {visibility: hidden;} * 
 
 /* mods end */
 
