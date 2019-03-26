@@ -67,10 +67,10 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #443e3c;
   font-size: 15px;
   line-height: 1.55rem;
-  color: #443e3c;
+  /*color: #443e3c;*/
+  color: #333333;
 }
 
 p {
@@ -78,6 +78,7 @@ p {
   margin-bottom: 1rem;
   font-size: 0.9rem;
   line-height: 1.7;
+  color: #111111;
 }
 
 .container .p, .container p {
@@ -158,6 +159,7 @@ pre {
   /*text-transform: uppercase;*/
   letter-spacing: 0.3px;
   font-family: 'Roboto Condensed';
+  color: #333333;
 }
 
 .f1.measure {
@@ -362,7 +364,8 @@ pre {
 /* Detail List */
 
 .detail-list {
-  color: #999;
+  /*color: #999;*/
+  color: rgba(106,106,106,1);
   margin-bottom: 2rem;
   line-height: 1.2;
   font-size: 0.8rem;
