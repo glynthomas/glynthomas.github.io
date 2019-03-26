@@ -573,7 +573,8 @@ pre {
 .docs-header {
   display: block;
   padding: 0.5rem 2rem;
-  background-color: #ececec;
+  /*background-color: #ececec;*/
+  background-color: rgba(196,196,196,0.35);
 }
 
 .docs-header-container{
@@ -600,14 +601,15 @@ pre {
 
 .docs-nav-biblio a{
   font-size: 12px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 400;
   text-transform: uppercase;
   display: inline-block;
   margin-right: 2rem;
   padding-bottom: 2px;
-  color: #443e3c;
+  /*color: #443e3c;*/
+  color: #333333;
   text-decoration: none;
   padding: 0;
 }
