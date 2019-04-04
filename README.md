@@ -1,5 +1,5 @@
-# julayn tomas ^glyn thomas - creative, hacker, electronica artist
+# julayn tomas ^glyn thomas ~ electronica
 
-This is my personal website. A simple custom built website at http://julayn.com
+simple website @ http://julayn.com
 
-Built with love.
+made with love
