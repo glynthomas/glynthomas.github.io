@@ -215,7 +215,7 @@ pre {
   letter-spacing: 0.5px;
   text-decoration: none;
   font-weight: 400;
-  color: black;
+  color: black !important;
 }
 
 .ui-text-last:hover{
@@ -622,8 +622,8 @@ pre {
   /*padding-left: 4rem;*/
   padding-left: 2rem;
   padding-right: 2rem;
-  /*padding-bottom: 2rem;*/
-  padding-bottom: 2.8rem;
+  padding-bottom: 1.95rem;
+  /*padding-bottom: 2.8rem;*/
   /*border-right: 1px solid rgba(213,213,213,0.5);*/
 }
 
