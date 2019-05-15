@@ -1,4 +1,4 @@
-/* style | style.css v1.0.20 | (c) 2019 julayn | oksauce.com */
+/* style | style.css v1.0.20 | (c) 2019 julayn | julayn.com */
 
 /* based on vimeoplayer - v3.8.4 - 2019-01-16 */
 
@@ -63,12 +63,13 @@ img,legend{border:0}legend,td,th{padding:0}html{font-family:sans-serif;-ms-text-
 
 html {
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  /* font-family: 'Roboto', sans-serif;*/
-  font-family: Helvetica, sans-serif;
-  font-size: 15px;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
   line-height: 1.55rem;
   /*color: #443e3c;*/
   color: #000000;
@@ -156,11 +157,12 @@ pre {
 
 .f1-title {
   /*margin-bottom: 1.6rem;*/
-  /*font-size: 1.8rem;*/
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  /*font-family: 'Roboto Condensed';*/
-  color: #333333;
+  margin-bottom: 1.1rem;
+  /*font-size: 2.8rem;*/
+  font-size: 2.2rem;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: black;
 }
 
 .f1.measure {
@@ -170,10 +172,11 @@ pre {
 .f2 {
   margin-top: 0px;
   margin-bottom: 1.5rem;
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   line-height: 1.55;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  color: #333333;
+  font-weight: 400;
 }
 
 .f2-subhead {
@@ -203,16 +206,28 @@ pre {
 /* UI Text */
 
 .ui-text {
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   /*text-transform: uppercase;*/
   font-weight: 400;
 }
 
 .ui-text-last {
-  letter-spacing: 1.2px;
-  /*text-transform: uppercase;*/
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  font-weight: 400;
+  color: black;
+}
+
+.ui-text-last:hover{
+  color:red;
+}
+
+.ui-text-last-at {
+  font-family: helvetica;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: black !important;
+  letter-spacing: -0.5px;
+  color: black;
 }
 
 .ui-order {
@@ -435,12 +450,12 @@ pre {
   display: block;
   /*padding: 4rem;*/
   /*padding-top: 4rem;*/
-  padding-top: 1rem;
+  padding-top: 1.1rem;
   /*padding-left: 4rem;*/
   padding-left: 2.2rem;
   padding-right: 2rem;
   /*padding-bottom: 4rem;*/
-  padding-bottom: 0.5rem;
+  padding-bottom: 1.5rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -503,8 +518,8 @@ pre {
 .site-logo {
   position: static;
   width: 90px;
-  font-size: 15px;
-  letter-spacing: 1px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .site-logo:hover{
@@ -607,7 +622,8 @@ pre {
   /*padding-left: 4rem;*/
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-bottom: 2rem;
+  /*padding-bottom: 2rem;*/
+  padding-bottom: 2.8rem;
   /*border-right: 1px solid rgba(213,213,213,0.5);*/
 }
 
@@ -623,7 +639,7 @@ pre {
   display: block;
   /*padding: 0.5rem 2rem;*/
   padding: 1.4rem 2rem;
-  /*background-color: #ececec;*/
+  background-color: #ececec;
   /*background-color: rgba(196,196,196,0.40);*/
 }
 
@@ -699,6 +715,11 @@ hr {
 .link-list-item {
   list-style-type: none;
   margin-bottom: 10px;
+}
+
+.float-right {
+  float:right;
+  margin-top: -50px;
 }
 
 .link-list-item-2 {
@@ -925,7 +946,7 @@ hr {
     background-color: #ececec;
     /*border-top: 1px solid rgba(213,213,213,0.5);*/
     border-top: 1px solid rgba(176,176,176,0.1);
-    font-size: 14px;
+    font-size: 1rem;
     letter-spacing: 1px;
     /*text-transform: uppercase;*/
   }
@@ -938,7 +959,7 @@ hr {
     /*border-bottom: 1px solid #666666;*/
     border-top: 1px solid rgba(176,176,176,0.1);
     /*border-top: 1px solid rgba(213,213,213,0.5);*/
-    font-size: 14px;
+    font-size: 1rem;
     letter-spacing: 1px;
     /*text-transform: uppercase;*/
   }
