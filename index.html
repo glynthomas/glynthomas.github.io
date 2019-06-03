@@ -1634,17 +1634,28 @@ function loadVideo(vid0, vid1, src0, src1) {
 
     requests[i].onprogress = function(event) {
       if (event.lengthComputable) {
-        var percentComplete = event.loaded/event.total;
+         var percentComplete = event.loaded/event.total;
          percentComplete = ((percentComplete * 100).toFixed(0)+ "%");
          //console.log(requests[i].readyState + ' progress:', percentComplete);
-         
+
+         if (percentComplete == '100%') {
+
+         	 document.getElementById("butshare0").style.pointerEvents = "auto"; 
+             document.getElementById("player0").style.pointerEvents = "auto";
+             document.getElementById("butshare1").style.pointerEvents = "auto";
+             document.getElementById("player1").style.pointerEvents = "auto";  
+         }
+
          if (requests[0].readyState == 3) {document.getElementById("butshare0").innerHTML = percentComplete;}
          	 if (percentComplete == '100%') {
                  if (requests[0].readyState == 4) {
                      //console.log(requests[0] + ' progress: done!');
                      setTimeout(function(){document.getElementById("butshare0").innerHTML="<svg id='share0-icon' class='share-icon' viewBox='0 0 20 20' preserveAspectRatio='xMidYMid' tabindex='-1'><polygon id='sparrow0' class='fill' points='20,0 0,12 5,15 17,4 7,16 7,19 9,17 14,20'></polygon></svg>"}, 50);
                      setTimeout(function(){document.getElementById("playbar0").style.opacity = '1';}, 100); 
-                     setTimeout(function(){document.getElementById("playpause0").style.opacity = '1';}, 150);              
+                     setTimeout(function(){document.getElementById("playpause0").style.opacity = '1';}, 150);
+                     
+                     document.getElementById("butshare0").style.pointerEvents = "auto"; 
+                     document.getElementById("player0").style.pointerEvents = "auto";             
                  } 
              }
           }
@@ -1655,7 +1666,10 @@ function loadVideo(vid0, vid1, src0, src1) {
                      //console.log(requests[1] + ' progress: done!');
                      setTimeout(function(){document.getElementById("butshare1").innerHTML="<svg id='share1-icon' class='share-icon' viewBox='0 0 20 20' preserveAspectRatio='xMidYMid' tabindex='-1'><polygon id='sparrow1' class='fill' points='20,0 0,12 5,15 17,4 7,16 7,19 9,17 14,20'></polygon></svg>"}, 50);
                      setTimeout(function(){document.getElementById("playbar1").style.opacity = '1';}, 100); 
-                     setTimeout(function(){document.getElementById("playpause1").style.opacity = '1';}, 150);                
+                     setTimeout(function(){document.getElementById("playpause1").style.opacity = '1';}, 150);
+                     
+                     document.getElementById("butshare1").style.pointerEvents = "auto";
+                     document.getElementById("player1").style.pointerEvents = "auto";                
                  }
              }
           }
