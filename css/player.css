@@ -216,7 +216,7 @@ body:not(.showfocus) .player svg {
 .player::before {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-    line-height: 0.5;
+    /*line-height: 0.5;*/
 }
 
 .player.scrubbing * {
@@ -1722,7 +1722,7 @@ body:not(.showfocus) .player svg {
     overflow: hidden;
     min-width: 10.5em;
     background-color: rgba(23, 35, 34, .75);
-    padding-top: 0.7em; 
+    /*padding-top: 0.7em;*/ 
 }
 
 .player li.vp-panel-item::before {
