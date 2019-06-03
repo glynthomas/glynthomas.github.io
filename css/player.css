@@ -35,8 +35,129 @@ comment out
 
 /* mods end */
 
-
 @charset "UTF-8";
+
+/* this used to work for the parent element of button divs */
+/* but it does not work with newer browsers, the below doesn't hide the play button parent div */
+
+*::-webkit-media-controls {
+  display:none !important;
+  -webkit-appearance: none;
+}
+
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* old shadow dom for play button */
+
+*::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* new shadow dom for play button */
+
+/* this one works! */
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+#video0 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -100;
+    right: 0;
+    bottom: 0;
+    background: url(/vcover/mobile.jpg) no-repeat center center;
+    background-size: contain;
+    overflow: hidden;
+}
+
+#video1 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -100;
+    right: 0;
+    bottom: 0;
+    background: url(/vcover/desktop.jpg) no-repeat center center;
+    background-size: contain;
+    overflow: hidden;
+}
+
+#video3 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -100;
+    right: 0;
+    bottom: 0;
+    background: url(/vcover/desktop-demo.jpg) no-repeat center center;
+    background-size: contain;
+    overflow: hidden;
+}
+
+#videostore {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -100;
+    right: 0;
+    bottom: 0;
+    background: url(/vcover/store.png) no-repeat center center;
+    background-size: contain;
+    overflow: hidden;
+}
+
+
+#mobile {
+    height: 100%;
+    width: 100%;
+    background: #000000 url(/vcover/mobile.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+#desktop {
+    height: 100%;
+    width: 100%;
+    background: #000000 url(/vcover/desktop.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+#desktop-demo {
+    height: 100%;
+    width: 100%;
+    background: #000000 url(/vcover/desktop-demo.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+#vid0 {display: none}
+#vid1 {display: none}
+#vid3 {display: none}
+
+
+/*
+.video-0-wrapper {
+
+    height: 100%;
+    width: 100%;
+    background: #ff0000 url(/vcover/luck.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+.video-1-wrapper {
+
+    height: 100%;
+    width: 100%;
+    background: #ff0000 url(/vcover/desktop.jpg) no-repeat center center;
+    background-size: contain;
+}
+*/
 
 .played {background-color: rgb(255,255,255);}
 
@@ -216,7 +337,7 @@ body:not(.showfocus) .player svg {
 .player::before {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-    /*line-height: 0.5;*/
+    line-height: 0.5;
 }
 
 .player.scrubbing * {
@@ -991,7 +1112,8 @@ body:not(.showfocus) .player svg {
 .player .vp-controls .play-icon {
     margin: 0 auto;
     padding: .2em 0 0 .2em;
-    line-height: normal;
+    /*line-height: normal; safari mobile fix * specify line height */
+    line-height: 1.3;
 }
 
 .player .vp-controls .pause-icon svg,
@@ -1720,10 +1842,9 @@ body:not(.showfocus) .player svg {
 .player .vp-panel {
     position: relative;
     overflow: hidden;
-    /*min-width: 10.5em;*/
-    width:6.3em;
+    min-width: 10.5em;
     background-color: rgba(23, 35, 34, .75);
-    /*padding-top: 0.7em;*/ 
+    padding-top: 0.7em; 
 }
 
 .player li.vp-panel-item::before {
@@ -1754,14 +1875,14 @@ body:not(.showfocus) .player svg {
     /*padding: 0 .5em;*/
     padding-top: 0px;
     padding-bottom: 0px;
-    /*padding-left: 0.5em;*/
-    padding-left: 0.8em;
-    /*padding-right: 0.5em;*/
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
     /*margin: 0 .5em;*/
     margin-top: 0px;
     margin-bottom: 0px;
-    /*margin-left: 0.5em;*/
-    /*margin-right: 0.5em;*/
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 
     font-size: 1.2em;
     font-weight: 700;
@@ -1829,8 +1950,7 @@ body:not(.showfocus) .player svg {
     margin: 0;
     line-height: 1.4;
     /*margin-bottom: 1.9em;*/
-    /*margin-bottom: 0.6em;*/
-    /*margin-bottom: 0.4em;*/
+    margin-bottom: 0.6em;
 }
 
 .player .vp-panel-collapsible .vp-panel-title,
@@ -1937,8 +2057,7 @@ body:not(.showfocus) .player svg {
     padding-top: 0px;
     padding-bottom: 0px;
     padding-right: 0.5em;
-    /*padding-left: 0.5em;*/
-    padding-left: 0.3em;
+    padding-left: 0.5em;
 
     margin-top: 0px;
     margin-bottom: 0px;
@@ -4484,7 +4603,7 @@ screen and (max-height:189px) {
 }
 
 .player .vp-video-wrapper .vp-preview-cover {
-    background-size: cover
+    background-size: cover;
 }
 
 .player .vp-video-wrapper .vp-preview-invisible {
@@ -5981,34 +6100,21 @@ div .box label .rounded-box .share-label {
   -o-transition: background-color 0.5s ease-out;
   transition: background-color 0.5s ease-out;
 }
-/*
+
 video.player {
-  filter: blur(3px);
+  filter: blur(3px); /* blur the lowres image */
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
+  /*transform: scale(1.00); warning do not use !*/
 }
+
 video.player.site-load {
-  filter: none;
+  filter: none; /* remove the blur on fullres image */
   transition: filter 1s;
 }
-*/
 
 .container{ overflow:hidden; position:relative; }
-
-/*.site-preload {pointer-events: none;}*/
-/*#player0 {pointer-events: none;}*/
-/*#player1 {pointer-events: none;}*/
-
-#butshare0 {pointer-events: none;}
-#butshare1 {pointer-events: none;}
-
-#playbar0, #playpause0 {
-  -webkit-transition: opacity 0.1s ease-in;
-  -moz-transition: opacity 0.1s ease-in;
-  -o-transition: opacity 0.1s ease-in;
-  -ms-transition: opacity 0.1s ease-in;
-  transition: opacity 0.1s ease-in;
-}
+.site-preload {pointer-events: none;}
 
 /* .player .vp-sidedock {visibility: hidden;} * experiment */
 
@@ -6044,7 +6150,9 @@ video.player.site-load {
 .player .vp-share-buttons-item {background-color: #ffffff;}
 .cogover {fill:rgba(255,255,255,0.5);}
 .vidover {fill:rgba(255,255,255,0.5);}
+
 .pinover {fill: #767676;}
+
 .play-icon .playover {fill:#848484;}
 .playover {fill:#848484;}
 .play:hover {background-color:rgba(255,255,255,255);}
@@ -6058,7 +6166,7 @@ video.player.site-load {
 
 .play:hover {background: rgba(23, 35, 34, .75);}
 .pause-icon:hover {background: transparent;}
-.playover {fill: #fff;}
+/*.playover {fill: #fff;}*/
 .play-icon .playover {fill: #fff;}
 .share-button:hover {background: rgba(23, 35, 34, .75);}
 }
@@ -6067,7 +6175,7 @@ video.player.site-load {
 
 .play:hover {background: rgba(23, 35, 34, .75);}
 .pause-icon:hover {background: transparent;}
-.playover {fill: #fff;}
+/*.playover {fill: #fff;}*/
 .play-icon .playover {fill: #fff;}
 .share-button:hover {background: rgba(23, 35, 34, .75);}
 
