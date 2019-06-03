@@ -5977,21 +5977,33 @@ div .box label .rounded-box .share-label {
   -o-transition: background-color 0.5s ease-out;
   transition: background-color 0.5s ease-out;
 }
-
+/*
 video.player {
-  filter: blur(3px); /* blur the lowres image */
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  /*transform: scale(1.00); warning do not use !*/
 }
-
 video.player.site-load {
-  filter: none; /* remove the blur on fullres image */
+  filter: none;
   transition: filter 1s;
 }
+*/
 
 .container{ overflow:hidden; position:relative; }
-.site-preload {pointer-events: none;}
+
+/*.site-preload {pointer-events: none;}*/
+#player0 {pointer-events: none;}
+#player1 {pointer-events: none;}
+#butshare0 {pointer-events: none;}
+#butshare1 {pointer-events: none;}
+
+#playbar0, #playpause0 {
+  -webkit-transition: opacity 0.1s ease-in;
+  -moz-transition: opacity 0.1s ease-in;
+  -o-transition: opacity 0.1s ease-in;
+  -ms-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
+}
 
 /* .player .vp-sidedock {visibility: hidden;} * experiment */
 
