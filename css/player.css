@@ -5993,8 +5993,9 @@ video.player.site-load {
 .container{ overflow:hidden; position:relative; }
 
 /*.site-preload {pointer-events: none;}*/
-#player0 {pointer-events: none;}
-#player1 {pointer-events: none;}
+/*#player0 {pointer-events: none;}*/
+/*#player1 {pointer-events: none;}*/
+
 #butshare0 {pointer-events: none;}
 #butshare1 {pointer-events: none;}
 
