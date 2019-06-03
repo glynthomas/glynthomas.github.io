@@ -5997,6 +5997,12 @@ video.player.site-load {
 
 /*.site-preload {pointer-events: none;}*/
 
+#player0 {pointer-events: none;}
+#player1 {pointer-events: none;}
+
+#butshare0 {pointer-events: none;}
+#butshare1 {pointer-events: none;}
+
 #playbar0, #playpause0 {
   -webkit-transition: opacity 0.1s ease-in;
   -moz-transition: opacity 0.1s ease-in;
