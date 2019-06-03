@@ -1720,7 +1720,8 @@ body:not(.showfocus) .player svg {
 .player .vp-panel {
     position: relative;
     overflow: hidden;
-    min-width: 10.5em;
+    /*min-width: 10.5em;*/
+    width:6.3em;
     background-color: rgba(23, 35, 34, .75);
     /*padding-top: 0.7em;*/ 
 }
@@ -1753,14 +1754,14 @@ body:not(.showfocus) .player svg {
     /*padding: 0 .5em;*/
     padding-top: 0px;
     padding-bottom: 0px;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-
+    /*padding-left: 0.5em;*/
+    padding-left: 0.8em;
+    /*padding-right: 0.5em;*/
     /*margin: 0 .5em;*/
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    /*margin-left: 0.5em;*/
+    /*margin-right: 0.5em;*/
 
     font-size: 1.2em;
     font-weight: 700;
@@ -1828,7 +1829,8 @@ body:not(.showfocus) .player svg {
     margin: 0;
     line-height: 1.4;
     /*margin-bottom: 1.9em;*/
-    margin-bottom: 0.6em;
+    /*margin-bottom: 0.6em;*/
+    /*margin-bottom: 0.4em;*/
 }
 
 .player .vp-panel-collapsible .vp-panel-title,
@@ -1935,7 +1937,8 @@ body:not(.showfocus) .player svg {
     padding-top: 0px;
     padding-bottom: 0px;
     padding-right: 0.5em;
-    padding-left: 0.5em;
+    /*padding-left: 0.5em;*/
+    padding-left: 0.3em;
 
     margin-top: 0px;
     margin-bottom: 0px;
