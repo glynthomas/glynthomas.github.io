@@ -1659,14 +1659,14 @@ function loadVideo(vid0, vid1, src0, src1) {
          }
          	 if (requests[0].readyState == 4 && percentComplete == '100%') {
                  //console.log(requests[0] + ' progress: done!');
-                 setTimeout(function(){document.getElementById("butshare0").innerHTML="<svg id='share0-icon' class='share-icon' viewBox='0 0 20 20' preserveAspectRatio='xMidYMid' tabindex='-1'><polygon id='sparrow0' class='fill' points='20,0 0,12 5,15 17,4 7,16 7,19 9,17 14,20'></polygon></svg>"}, 10);
-                 setTimeout(function(){document.getElementById("playbar0").style.opacity = '1';}, 50); 
+                 setTimeout(function(){document.getElementById("butshare0").innerHTML="<svg id='share0-icon' class='share-icon' viewBox='0 0 20 20' preserveAspectRatio='xMidYMid' tabindex='-1'><polygon id='sparrow0' class='fill' points='20,0 0,12 5,15 17,4 7,16 7,19 9,17 14,20'></polygon></svg>"}, 20);
+                 setTimeout(function(){document.getElementById("playbar0").style.opacity = '1';}, 80); 
                  setTimeout(function(){document.getElementById("playpause0").style.opacity = '1';
                    
                  document.getElementById("butshare0").style.pointerEvents = "auto"; 
                  document.getElementById("player0").style.pointerEvents = "auto";
                  document.getElementById("butshare0").style.backgroundColor = '';  
-                 }, 100);             
+                 }, 130);             
                 
              }
          }
