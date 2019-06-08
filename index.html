@@ -47,7 +47,8 @@ $(document).ready(function(){
 
 </nav>
 
-<a id="w-nav-brand" href="/" class="site-logo w-nav-brand">julayn</a>
+<a id="w-nav-brand-m" href="/" class="site-logo w-nav-brand">julayn</a>
+
 </div>
 
 <div class="mobile-menu-container w-container">
@@ -62,7 +63,9 @@ $(document).ready(function(){
 <div class="fixed-col">
 
 <div class="site-header">
-<a href="/" class="site-logo w-nav-brand">julayn</a>
+
+<a id="w-nav-brand-d" href="/" class="site-logo w-nav-brand">julayn</a>
+
 </div>
 
 <div class="col-container sidebar-content">
@@ -1656,7 +1659,8 @@ function loadVideo(vid0, vid1, src0, src1) {
          	 document.getElementById("butshare0").innerHTML = percentComplete;
          	 document.getElementById("butshare0").style.backgroundColor = 'rgba(51,51,51,1)';
          }
-         	 if (requests[0].readyState == 4 && percentComplete == '100%') {
+         	 //if (requests[0].readyState == 4 && percentComplete == '100%') { // firefox bug !
+         	 if (percentComplete == '100%') {
                  //console.log(requests[0] + ' progress: done!');
                  setTimeout(function(){document.getElementById("butshare0").innerHTML="<svg id='share0-icon' class='share-icon' viewBox='0 0 20 20' preserveAspectRatio='xMidYMid' tabindex='-1'><polygon id='sparrow0' class='fill' points='20,0 0,12 5,15 17,4 7,16 7,19 9,17 14,20'></polygon></svg>"}, 20);
                  setTimeout(function(){document.getElementById("playbar0").style.opacity = '1';}, 80); 
@@ -1674,7 +1678,8 @@ function loadVideo(vid0, vid1, src0, src1) {
          	 document.getElementById("butshare1").innerHTML = percentComplete;
          	 document.getElementById("butshare1").style.backgroundColor = 'rgba(51,51,51,1)';
          }
-             if (requests[1].readyState == 4 && percentComplete == '100%') {
+             //if (requests[0].readyState == 4 && percentComplete == '100%') { // firefox bug !
+             if (percentComplete == '100%') {
                   //console.log(requests[1] + ' progress: done!');
                   setTimeout(function(){document.getElementById("butshare1").innerHTML="<svg id='share1-icon' class='share-icon' viewBox='0 0 20 20' preserveAspectRatio='xMidYMid' tabindex='-1'><polygon id='sparrow1' class='fill' points='20,0 0,12 5,15 17,4 7,16 7,19 9,17 14,20'></polygon></svg>"}, 10);
                   setTimeout(function(){document.getElementById("playbar1").style.opacity = '1';}, 50); 
@@ -1701,7 +1706,6 @@ function roundUp(num, precision) {
 window.onload = function(){
 
   loadVideo("luck.mp4","moment.mp4","src0","src1");
-  
   loadOK();
   
   setTimeout(function(){
@@ -1713,30 +1717,13 @@ window.onload = function(){
 
 }
 
-function loadOK(cIDload1) {
-  document.getElementById("w-nav-brand").style.color = "#ff0000";
-   
-  setTimeout(function(){/*console.clear();*/
-
-  document.getElementById("butshare0").innerHTML="<svg id='share0-icon' class='share-icon' viewBox='0 0 20 20' preserveAspectRatio='xMidYMid' tabindex='-1'><polygon id='sparrow0' class='fill' points='20,0 0,12 5,15 17,4 7,16 7,19 9,17 14,20'></polygon></svg>";
-  
-  document.getElementById("playbar0").style.opacity = '1';
-  document.getElementById("playpause0").style.opacity = '1';
-  document.getElementById("butshare0").style.pointerEvents = "auto"; 
-  document.getElementById("player0").style.pointerEvents = "auto";
-  document.getElementById("butshare0").style.backgroundColor = '';
-
-  document.getElementById("butshare1").innerHTML="<svg id='share1-icon' class='share-icon' viewBox='0 0 20 20' preserveAspectRatio='xMidYMid' tabindex='-1'><polygon id='sparrow1' class='fill' points='20,0 0,12 5,15 17,4 7,16 7,19 9,17 14,20'></polygon></svg>";
-
-  document.getElementById("playbar1").style.opacity = '1'; 
-  document.getElementById("playpause1").style.opacity = '1';
-  document.getElementById("butshare1").style.pointerEvents = "auto";
-  document.getElementById("player1").style.pointerEvents = "auto";
-  document.getElementById("butshare1").style.backgroundColor = '';  
-          
-  }, 1000);
-
-  setTimeout(function(){document.getElementById("w-nav-brand").style.color = "#000000";}, 2000);
+function loadOK() {
+  document.getElementById("w-nav-brand-m").style.color = "#ff0000";
+  document.getElementById("w-nav-brand-d").style.color = "#ff0000";
+  setTimeout(function(){
+  document.getElementById("w-nav-brand-m").style.color = "#000000";
+  document.getElementById("w-nav-brand-d").style.color = "#000000";
+  }, 6000);
 }
 
 function cleanURL() {
@@ -1749,6 +1736,8 @@ function cleanURL() {
 }
 
 </script>
+
+<script src="/js/screenfull.js" type="text/javascript"></script>
 
 </body>
 </html>
