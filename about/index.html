@@ -47,7 +47,8 @@ $(document).ready(function(){
 
 </nav>
 
-<a href="http://julayn.com" class="site-logo w-nav-brand">julayn</a>
+<a id="w-nav-brand-m" href="/" class="site-logo w-nav-brand">julayn</a>
+
 </div>
 
 <div class="mobile-menu-container w-container">
@@ -62,7 +63,9 @@ $(document).ready(function(){
 <div class="fixed-col">
 
 <div class="site-header">
-<a href="http://julayn.com" class="site-logo w-nav-brand">julayn</a>
+
+<a id="w-nav-brand-d" href="/" class="site-logo w-nav-brand">julayn</a>
+
 </div>
 
 <div class="col-container sidebar-content">
@@ -227,12 +230,11 @@ title="share via email" role="button" aria-label="share via email">
 <!-- video 0 end -->
 
 <div class="col-container-text">
-<h1 class="f1-title">love</h1>
+<h1 class="f1-title">design</h1>
 <!-- <p style="margin-top:18px;"> -->
-
-<p>creating <a class="ui-link-text" href="http://oksauce.com" target="_blank">sounds</a>, objects and thought experiments</p>
-<p>working with available materials, a laptop, sometimes a drawing tablet and a small collection of dreams</p>
-<p>design and quality which are paramount together with the flexibility to pursue interesting new directions</p>
+<p>build • experiment • produce</p>
+<p>working with imagination, laptop, sometimes drawing tablet</p>
+<p>focus, design and delivering product are paramount, together with the flexibility to pursue interesting new directions</p>
 
 <p>2019</p> 
 
@@ -1324,20 +1326,13 @@ function settingClose(id) {
  }
 }
 
-function cleanURL() {
- // clean URL back from social url shares, see https://stackoverflow.com/
- // questions/22753052/remove-url-parameters-without-refreshing-page
- if ((location.hash.replace('#','')) != '') {
-      location.hash = '';
-      window.history.replaceState(null, null, window.location.pathname);
- }
-}
-
 $('#videofull0').click(function () {screenfull.toggle($('.player-0')[0]);});
 $('#videofull1').click(function () {screenfull.toggle($('.player-1')[0]);});
 
 // var timeout; // mimic load of elements
 window.onload = function(){
+
+  loadOK();
 
   setTimeout(function(){
   	document.getElementsByClassName("site-restraint")[0].classList.remove('site-preload');
@@ -1347,31 +1342,26 @@ window.onload = function(){
   }, 1000);
 
 }
+
+function loadOK() {
+  document.getElementById("w-nav-brand-m").style.color = "#ff0000";
+  document.getElementById("w-nav-brand-d").style.color = "#ff0000";
+  setTimeout(function(){
+  document.getElementById("w-nav-brand-m").style.color = "#000000";
+  document.getElementById("w-nav-brand-d").style.color = "#000000";
+  }, 6000);
+}
+
+function cleanURL() {
+ // clean URL back from social url shares, see https://stackoverflow.com/
+ // questions/22753052/remove-url-parameters-without-refreshing-page
+ if ((location.hash.replace('#','')) != '') {
+      location.hash = '';
+      window.history.replaceState(null, null, window.location.pathname);
+ }
+}
+
 </script>
-
-<!--
-<script type="text/javascript">
-function workmail() {
- console.log('work mail');
-}
-
-function mailer() {
- console.log('mailer click');
- document.getElementsByTagName("body")[0].style.overflow = 'visible';
- document.getElementById("overlay").classList.remove("hidemodal");
-}
-
-function modalshow() {
- document.getElementsByTagName("body")[0].style.overflow = 'hidden';
- document.getElementById("overlay").classList.remove("hidemodal");
-}
-
-function modalhide() {
- document.getElementsByTagName("body")[0].style.overflow = 'visible';
- document.getElementById("overlay").classList.add("hidemodal");
-}
-</script>
--->
 
 <script src="/js/screenfull.js" type="text/javascript"></script>
 
