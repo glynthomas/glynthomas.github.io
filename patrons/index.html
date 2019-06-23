@@ -76,20 +76,46 @@ $(document).ready(function(){
               
 <h1 class="f1-title">julayn patron</h1>
 
-<h4 id="why"><a href="/#why" class="ui-link-biblio-underline">why?</a></h4>
+<h4 id="why"><a href="?state=2" class="ui-link-biblio-underline">why?</a></h4>
 
-<p id="downmsg" style="color:#ff0000;">File download in 9 seconds</p>
+<!-- <p id="downmsg" style="color:#ff0000;">File download in 9 seconds</p> -->
 
 <div id="helpnow" style="display:none;">
-<p>thank you for your donation</p>
-<p>every donation helps pay for future updates</p>
-<p>if you like this update let me know what you think</p>
+
+thank you for your donation every donation helps pay for future projects</p>
+by becoming a patron you have contribututed to the freedom to experiment & develop new projects, please email if you have donated £100 + , with a donation of this size, you have :</p>
+
+<ul>
+<li class="space-the-final-frontier">first refusal on larger projects offered for sale online</li>
+<li class="space-the-final-frontier">any project purchased by a patron signed by artist</li>
+<li class="space-the-final-frontier">patrons have prority for any commission works</li>
+<li class="space-the-final-frontier">patrons only private emails of new works in progress</li>
+</ul>
+
 </div>
 
 <div id="helplater" style="display:block;">
-<p>please try out this b2 sauce update</p>
-<p>if you like it let me know</p>
-<p>every donation helps pay for future updates ...</p>
+
+<p>become a patron by donating, donations contribute to the freedom to experiment & develop new projects, please email if you are happy to donate ( £100 + ) with a donation of this size :</p>
+
+<ul>
+<li class="space-the-final-frontier">first refusal on larger projects offered for sale online</li>
+<li class="space-the-final-frontier">any project purchased by a patron signed by artist</li>
+<li class="space-the-final-frontier">patrons only private emails of new works in progress</li>
+</ul>
+
+</div>
+
+<div id="helpineedsomebody" style="display:none;">
+
+<p>become a patron by donating, donations contribute to the freedom to experiment & develop new projects, please email if you are happy to donate ( £100 + ) with a donation of this size :</p>
+
+<ul>
+<li class="space-the-final-frontier">first refusal on larger projects offered for sale online</li>
+<li class="space-the-final-frontier">any project purchased by a patron signed by artist</li>
+<li class="space-the-final-frontier">patrons only private emails of new works in progress</li>
+</ul>
+
 </div>
 
 <p>
@@ -97,7 +123,7 @@ $(document).ready(function(){
 <a href="/terms/" class="tc50 ui-text ui-link-red">terms</a>
 </p>
 
-<div class="short-order">> donate to fund future updates</div>
+<div class="short-order">> patrons fund future work</div>
 
 <div class="product-buttons">
 
@@ -106,11 +132,11 @@ $(document).ready(function(){
 </button>
 
 <span class="leftpad"></span>
-
+<!--
 <button id="download" class="button small red">
 <span class="text">download</span>
 </button>
-
+-->
 </div>
 
 <!-- web site ends :-( -->
@@ -176,16 +202,16 @@ window.mobileCheck = {
   }())
 
 };
-
+/*
 var downloadButton = document.getElementById("down");
 var counter = 9;
 var msgElement = document.getElementById("downmsg");
 var newElement = document.getElementById("download");
-
 newElement.innerHTML = "<a id='b2update' href='samp/htmldoc.html' style='color: white !important;''>9 seconds</a>";
-
 var id;
+*/
 
+/*
 id = setInterval(function() {
     counter--;
     if(counter < 0) {
@@ -209,6 +235,8 @@ id = setInterval(function() {
     }
 }, 1000);
 
+*/
+
 function loadOK(cIDload1) {
   document.getElementById("ktopd").style.color = "#ff0000";
   document.getElementById("ktopm").style.color = "#ff0000";
@@ -230,13 +258,31 @@ function cleanURL() {
  var queryString = decodeURIComponent(window.location.search);
      queryString = queryString.substring(1);
 
- if (queryString == 'state=1'){
-     document.getElementById("helpnow").style.display = "block";
-     document.getElementById("helplater").style.display = "none";
- } else {
+ if (queryString == 'state=0'){
+
      document.getElementById("helpnow").style.display = "none";
      document.getElementById("helplater").style.display = "block";
- }
+     document.getElementById("helpineedsomebody").style.display = "none";
+
+ } else if (queryString == 'state=1'){
+
+     document.getElementById("helpnow").style.display = "block";
+     document.getElementById("helplater").style.display = "none";
+     document.getElementById("helpineedsomebody").style.display = "none";
+ 
+ } else if (queryString == 'state=2'){
+
+     document.getElementById("helpnow").style.display = "none";
+     document.getElementById("helplater").style.display = "none";
+     document.getElementById("helpineedsomebody").style.display = "block";
+
+} else {
+  
+     document.getElementById("helpnow").style.display = "none";
+     document.getElementById("helplater").style.display = "block";
+     document.getElementById("helpineedsomebody").style.display = "none";
+}
+
    // if mobile download button disabled
   if ( mobileCheck.all ) { 
      document.getElementById("downbutton").classList.remove('black');
