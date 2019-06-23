@@ -25,6 +25,7 @@ $(document).ready(function(){
   $(".site-content").fitVids();
   cleanURL();
 });
+  var donate = 0;
 </script>
 
 </head>
@@ -39,13 +40,13 @@ $(document).ready(function(){
 
 <nav role="navigation" class="mobile-nav w-nav-menu">
 
-<a href="http://julayn.com/biblio" class="mobile-nav-link w-nav-link">biblio</a>
-<!-- <a href="/lab/index.html" class="ui-text ui-link">laboratory</a> -->
-<a href="http://julayn.com/about" class="mobile-nav-link mobile-nav-link-last w-nav-link">about</a>
+<a href="/biblio" class="mobile-nav-link w-nav-link">biblio</a>
+<a href="/about" class="mobile-nav-link mobile-nav-link-last w-nav-link">about</a>
 
 </nav>
 
-<a href="http://julayn.com" class="site-logo w-nav-brand">julayn</a>
+<a href="/" class="site-logo w-nav-brand"><span id="ktopm">></span><span class="space-out-top"></span>sauce</a>
+
 </div>
 
 <div class="mobile-menu-container w-container">
@@ -58,24 +59,25 @@ $(document).ready(function(){
 <div data-collapse="medium" data-animation="default" data-duration="400" class="docs-header w-nav">
 
 <div class="docs-header-container">
+
 <nav role="navigation" class="mobile-nav w-nav-menu docs-nav-biblio">
-<!-- <a href="/biblio/index.html" class="mobile-nav-link w-nav-link">biblio</a> -->
-<a href="http://julayn.com/biblio" class="ui-text ui-link-biblio w--current">biblio</a>
-<!-- <a href="/lab/index.html" class="ui-text ui-link">lab</a> -->
-<a href="http://julayn.com/about" class="ui-text ui-link-biblio w--current">about</a>
-<!-- <a href="/about/index.html" class="mobile-nav-link w-nav-link">about</a> -->
+
+<a href="/biblio" class="ui-text ui-link ui-link-mm">biblio</a>
+<a href="/about" class="ui-text ui-link ui-link-mm">about</a>
+
 </nav>
 
 <a href="/" class="site-logo w-nav-brand">julayn</a>
+
 </div>
 </div>
 <div class="center-wrapper page-content">
 
 <div class="col-flex site-content-docs page-container-docs">
               
-<h1>julayn biblio</h1>
+<h1 class="f1-title">julayn biblio</h1>
 
-<h2 id="luck"><a href="/#luck" class="ui-link-biblio-underline">luck</a></h2>
+<h2 id="luck" style="font-weight: 600;margin-top: 40px;"><a href="/#luck" class="ui-link-biblio-underline">luck</a></h2>
 
 <p>seemingly half imagined, exploring the silence of noticing change, luck slowly moves small egg like balls into view, rocking back and forth almost hidden, rolling into view, giving birth to moments of time</p>
 
@@ -84,7 +86,7 @@ $(document).ready(function(){
 <p>first prototype examines perfect randomness, perfect luck, this theme will continue to be explored in future projects
 <p>
 
-<h2 id="moment"><a href="/#moment" class="ui-link-biblio-underline">moment</a></h2>
+<h2 id="moment" style="font-weight: 600;"><a href="/#moment" class="ui-link-biblio-underline">moment</a></h2>
 
 <p>a mechanical heart with red veins leaking to light bulbs which flicker between the years of young and old, carrying moments of being, numbers of light represent years dimming into the past,  now only a few are strong enough to be noticed, the red light signals change</p>
 
@@ -92,19 +94,27 @@ $(document).ready(function(){
 
 <p>each year light is on for only a second and soon the red light will dominate signaling change, a chance for new beginnings<p>   
 
+<p>
+<a href="/moreapp/" class="ui-text ui-link-red">become a patron</a>
+<a href="/terms/" class="tc100 ui-text ui-link-red">terms & conditions</a>
+<a href="/terms/" class="tc50 ui-text ui-link-red">terms</a>
+</p>
+
+<div class="short-order">> patrons fund future work</div>
 
 <div class="product-buttons">
 
-<!-- <button onclick="location.href='/store'" class="button small black"> -->
-<!-- <span class="text">donate</span> -->
-<span><a href="mailto:&#106;&#117;&#108;&#097;&#121;&#110;&#116;&#111;&#109;&#097;&#115;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;?subject=information%20@%20julayn%2Ecom" class="ui-text ui-link">contact</a></span>
-<!-- </button> -->
-<!-- <span class="leftpad"></span> -->
+<button onclick="window.open('/patrons/?state=' + donate +'','_blank');" id="downbutton" class="button small red">
+<span class="text">patrons</span>
+</button>
 
-<div class="in100"><a href="/biblio/#luck" class="ui-text ui-link">more info</a></div>
-<div class="in50"><a href="/biblio/#luck" class="in50 ui-text ui-link">info</a></div>
-<div class="tc100"><a href="/terms/" class="tc100 ui-text ui-link">terms & conditions</a></div>
-<div class="tc50"><a href="/terms/" class="tc50 ui-text ui-link">terms</a></div>
+<span class="leftpad"></span>
+
+<button onclick="window.open('https://www.paypal.com/paypalme2/oksauce','_blank');donate=1;console.log('clicked donate')" class="button small black">
+<span class="text">donate</span>
+</button>
+
+</div>
 
 <div class="ui-order">
 
