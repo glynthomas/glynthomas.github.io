@@ -1126,8 +1126,8 @@ button button.small .text {
 
   .center-wrapper .link-list {margin-left: 1px;}
 
-  ul {padding-inline-start: 2.2rem;}
-  ol {padding-inline-start: 2.2rem;}
+  ul {padding-inline-start: 1rem;}
+  ol {padding-inline-start: 1rem;}
 
 }
 
@@ -1157,8 +1157,8 @@ button button.small .text {
   .tc50  {margin-top: 0.3rem;display:inline-block;}
   .tc100 {margin-top: 0.3rem;display:none;}
 
-  ul {padding-inline-start: 1.8rem;}
-  ol {padding-inline-start: 1.8rem;}
+  ul {padding-inline-start: 0.05rem;}
+  ol {padding-inline-start: 0.05rem;}
 
 }
 
@@ -1289,8 +1289,8 @@ button button.small .text {
     border-bottom: 1px solid #2b57d4;
   }
 
-  ul {padding-inline-start: 1rem;}
-  ol {padding-inline-start: 1rem;}
+  ul {padding-inline-start: 0.05rem;}
+  ol {padding-inline-start: 0.05rem;}
 
 }
 
@@ -1308,11 +1308,11 @@ button button.small .text {
   .tc50  {margin-top: 0.3rem;display:inline-block;}
   .tc100 {margin-top: 0.3rem;display:none;}
 
-  ul {padding-inline-start: 0.99rem;
-      padding-inline-end: 0.99rem;
+  ul {padding-inline-start: 0.05rem;
+      padding-inline-end: 0.05rem;
   }
-  ol {padding-inline-start: 0.99rem;
-      padding-inline-end: 0.99rem;
+  ol {padding-inline-start: 0.05rem;
+      padding-inline-end: 0.05rem;
   }
 
 }
