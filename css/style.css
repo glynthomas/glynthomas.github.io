@@ -402,6 +402,7 @@ pre {
 .site-content-docs a{
   color: #443e3c;
   text-decoration: none;
+  letter-spacing: -0.8px;
   /* border-bottom: 1px solid #ddd; */
 }
 
