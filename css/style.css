@@ -177,7 +177,7 @@ pre {
   font-weight: 600;
   font-family: 'Roboto';
   color: black;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.3px;
 }
 
 .f1.measure {
