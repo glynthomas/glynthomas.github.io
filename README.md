@@ -1,5 +1,5 @@
 # +sci ^ glyn thomas ~ electronica
 
-simple website @ http://julayn.com
+simple website @ http://addonscience.com
 
 made with love
