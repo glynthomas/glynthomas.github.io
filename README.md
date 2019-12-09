@@ -1,4 +1,4 @@
-# julayn tomas ^glyn thomas ~ electronica
+# +sci ^ glyn thomas ~ electronica
 
 simple website @ http://julayn.com
 
