@@ -1,5 +1,4 @@
 # +sci ^ glyn thomas ~ electronica
 
-simple website @ http://addonscience.com
-
+simple website experiment
 made with love
